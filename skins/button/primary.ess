@@ -1,0 +1,4 @@
+`props.selector`
+  background-color = __.color.primary
+  &:hover
+    background-color = __.color.primary.dark
