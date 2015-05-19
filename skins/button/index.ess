@@ -1,16 +1,18 @@
 border-radius 999px
 box-sizing border-box
+color white
 cursor pointer
 display flex
-font-weight bold
 font-size = __.h8
+font-weight bold
 height auto
+justify-content center
 line-height 3rem
 margin 0
-justify-content center
 padding-left 1.5rem
 padding-right 1.5rem
 text-decoration none
+text-transform uppercase
 user-select none
 vertical-align middle
 -webkit-appearance none
