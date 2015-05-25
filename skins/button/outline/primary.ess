@@ -1,0 +1,7 @@
+color = __.color.primary
+background = __.color[props.background || 'white']
+
+&:hover
+  background-color = __.color.primary.dark
+  border-color = __.color.primary.dark
+  color = background
