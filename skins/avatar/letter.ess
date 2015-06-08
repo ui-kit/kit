@@ -1,0 +1,14 @@
+box-sizing border-box
+height 36px
+width 36px
+line-height 32px
+border 2px solid
+font-size 14px
+border-color currentColor
+text-align center
+text-transform capitalize
+font-weight bold
+if process.env.FEATURE_BRAND === 'enterprise'
+  color = __.color.white
+else
+  color = __.color.gray.light
