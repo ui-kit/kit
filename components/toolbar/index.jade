@@ -1,0 +1,43 @@
+import './index.ess'
+import ToolbarAccount from './account.jade'
+
+.flex.flex-stretch.flex-column
+
+  .Toolbar-inner
+    .Toolbar-row.flex
+      if props.logo
+        a(to='/').self-center.mr1.focus-outline-0
+          img.Toolbar-left-logo.flex.flex-auto.self-center(src=props.logo)
+
+      if props.left
+        .Toolbar-left-content
+          yield left
+
+      if props.links
+        .Toolbar-row.flex.lte-sm-hide
+          yield links
+
+      if props.center
+        .Toolbar-center
+          yield center
+
+      if props.right
+        .Toolbar-right
+          yield right
+
+      var account = props.account || _.account
+      if props.accountImg
+        // TODO get links somehow
+        ToolbarAccount(image=account.image)
+      // TODO else block
+
+    if props.links
+      .Toolbar-row-short.flex.gt-sm-hide.justify-center
+        yield links
+
+  .Toolbar-buffer
+    if props.links
+      .Toolbar-row-short.flex.gt-sm-hide
+
+export var mergeProps = true
+export var displayName = 'Toolbar'

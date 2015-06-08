@@ -1,0 +1,118 @@
+.Toolbar
+
+  &-inner
+    background-color inherit
+    box-sizing border-box
+    color inherit
+    height inherit
+    line-height inherit
+    position fixed
+    top 0
+    width 100%
+    z-index 10
+
+    + *
+      margin-top 6rem
+      @media all and (max-height: 600px)
+        margin-top 4.5rem
+
+  &:hover a
+    ='will-change: border-bottom-color, color, text-shadow;'
+
+  &-left-content,
+  &-right,
+    display flex
+    flex-direction row
+    align-self center
+    align-items center
+    
+  &-center
+    font-size = __.h8
+    left 0
+    position absolute
+    right 0
+    z-index -1
+
+  &-right
+    flex-direction row-reverse
+    flex 1
+
+  &-left-logo
+    height 2.25rem
+    padding 1.5rem
+    transition all .15s ease
+    &:focus
+      outline 0
+
+  &-inner,
+  &-buffer
+    height inherit
+
+  &-block-left
+    height 100%
+
+  &-block-left,
+  &-block-center,
+  &-block-right
+    align-items center
+
+    &:focus
+      outline 0
+      &:not(.active)
+        text-shadow 0 2px 15px hsla(0, 0%, 0%, .3)
+
+    &.active
+      border-bottom-color inherit
+
+    &:focus,
+    &.active,
+    &:hover:not(label),
+    .active
+      opacity 1
+
+hr.Toolbar-block-left,
+hr.Toolbar-block-center
+  height 1.5rem
+  margin auto 2em auto 1em
+  // why does this have to be buffered?
+  opacity ='.4!important'
+
+.Toolbar-row
+  height 6rem
+  line-height 5.75rem
+  position relative
+
+  @media all and (max-height: 600px)
+    height 4.5rem
+    line-height 4.25rem
+
+  &-short
+    height 3rem
+    line-height 3rem
+
+.nav-home
+  width 72px
+  text-align center
+  display: inline-block;
+
+  .icon
+    font-size 24px
+  @media screen and (max-height: 600px)
+    width 54px
+    .icon
+      font-size: 16px
+
+.nav-link
+  border-bottom 2px solid transparent
+  font-size 14px
+  font-weight bold
+  text-transform uppercase
+  transition color .25s ease-out,border-color .25s ease-out,opacity .25s linear,background .25s ease-out
+  // leave these styles up to app. opt-in for default state colors
+  &-default
+    &.is-active
+      border-color = __.color.primary
+      color = __.color.primary
+    &:hover
+      color = __.color.primary
+      transition none
