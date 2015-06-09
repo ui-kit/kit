@@ -1,3 +1,3 @@
-background-color = __.color.primary
-&:hover
-  background-color = __.color.primary.dark
+%./index.ess
+%./color/primary.ess
+%./shape/rounded.ess

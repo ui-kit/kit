@@ -1,5 +1,4 @@
 background-color = __.color.gray
-border-radius 999px
 box-sizing border-box
 color white
 cursor pointer
