@@ -1,0 +1,10 @@
+background-color = __.color.red
+border-color = __.color.red
+color = __.color.red
+&:hover
+  color = __.white
+  background-color = __.color.red.dark
+  border-color = __.color.red.dark
+&:active
+  background-color = __.color.red.darker
+  border-color = __.color.red.darker
