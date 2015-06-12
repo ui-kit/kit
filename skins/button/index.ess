@@ -1,6 +1,6 @@
+border-radius 1000px
 border-style solid
 border-width 2px
-border-radius 1000px
 box-sizing border-box
 color = __.color.gray
 cursor pointer
@@ -11,8 +11,8 @@ height auto
 justify-content center
 letter-spacing .05em
 line-height 1em
-padding 9px 1.5rem
 margin 0
+padding 9px 1.5rem
 text-align center
 text-decoration none
 text-transform uppercase
@@ -25,9 +25,9 @@ vertical-align middle
 &:hover
   background-color = __.color.gray.dark
   border-color = __.color.gray.dark
+  color = __.color.white
   text-decoration none
   transition none
-  color = __.color.white
 
 &:active
   background-color = __.color.gray.darker

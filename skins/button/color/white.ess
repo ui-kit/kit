@@ -16,5 +16,5 @@ color = __.color.white
   
 &[disabled],
 &:disabled
-  opacity .1
   color = __.color.primary
+  opacity .1

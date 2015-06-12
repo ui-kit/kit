@@ -1,0 +1,39 @@
+%./index.ess
+%./color/white.ess
+%./style/shadow-dark.ess
+%./style/fill-light.ess
+%./corners/corners.ess
+
+color = __.color.primary
+display inline-block
+letter-spacing 1px
+line-height 1.25rem
+padding 6px 6px 7px
+position relative
+&:hover
+  opacity 1
+  color = __.color.white
+  background = __.color.primary.dark
+  border-color = __.color.primary.dark
+  .button-sub-label
+    color = __.color.white
+&:active
+  background = __.color.primary.darker
+  border-color = __.color.primary.darker
+  color = __.color.white
+  opacity 1
+
+// Children
+.button-label
+  display block
+  font-size = __.h8
+  font-weight bold
+  padding 0 6px
+
+.button-sub-label
+  font-weight 400
+  opacity .5
+  color = __.color.gray
+  font-size = __.h9
+  padding 0 6px
+  text-transform none
