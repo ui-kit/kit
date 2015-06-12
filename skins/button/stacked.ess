@@ -6,15 +6,13 @@
 
 color = __.color.primary
 display inline-block
-letter-spacing 1px
 line-height 1.25rem
 padding 6px 6px 7px
-position relative
 &:hover
-  opacity 1
-  color = __.color.white
   background = __.color.primary.dark
   border-color = __.color.primary.dark
+  color = __.color.white
+  opacity 1
   .button-sub-label
     color = __.color.white
 &:active
