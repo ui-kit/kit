@@ -1,0 +1,7 @@
+&:last-child
+  .item-label
+    &:after
+      bottom 0
+      width auto
+      left 0
+      right 0

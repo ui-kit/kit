@@ -1,0 +1,11 @@
+// Modifies to:
+// height 24px
+// font-size h9
+.item-label
+  padding 3px 0
+  font-size = __.h9
+  line-height 1.5em
+  &:after
+    width calc(100% - 24px)
+.item-icon
+  width 24px

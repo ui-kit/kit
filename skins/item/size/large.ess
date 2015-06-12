@@ -1,0 +1,8 @@
+// Modifies to:
+// height: 48px
+.item-label
+  padding 14px 0
+  &:after
+    width calc(100% - 48px)
+.item-icon
+  width 48px

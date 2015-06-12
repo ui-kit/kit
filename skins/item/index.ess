@@ -1,0 +1,73 @@
+display flex
+align-items center
+color = __.color.gray
+cursor pointer
+position relative
+background = __.color.white
+padding 0 16px
+flex-direction row-reverse
+justify-content space-between
+
+input,
+textarea
+  border none
+  outline none
+  background transparent
+      
+&:hover
+  color = __.color.primary
+  .item-label:after
+    background = __.color.primary  
+
+&:active,
+&.is-active
+  cursor default
+  z-index 2
+  background = __.color.primary  
+  color #fff
+  box-shadow none
+  
+.item-label
+  line-height 1.45em
+  font-size = __.h8
+  padding 8px 0
+  flex-grow 1
+  &:after
+    display block
+    content ""
+    height 1px
+    position absolute
+    bottom 0
+    width calc(100% - 36px)
+    background = __.color.azure
+  
+.item-icon
+  display block
+  position relative
+  width 36px
+  z-index 1
+  align-self stretch
+  margin-left -16px
+  .icon
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%,-50%)
+
+.item-actions
+  line-height 20px
+  height 20px
+  white-space nowrap
+  display flex
+  flex-wrap nowrap
+  
+.item-input
+  line-height 1.45em
+  font-size = __.h8
+  flex 1
+  text-align right
+  width 100%
+  &:focus
+    + .item-label:after
+      background = __.color.primary
+      height 2px
