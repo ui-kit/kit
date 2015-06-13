@@ -1,7 +1,3 @@
-&:last-child
-  .item-label
-    &:after
-      bottom 0
-      width auto
-      left 0
-      right 0
+&:last-of-type .item-content,
+&:last-of-type &-content
+  position static

@@ -4,16 +4,16 @@
 font-size = __.h6
 
 .item-content,
-&-item-content
+&-content
   margin-left 24px
   padding-right 24px
 .item-label,
-&-item-label
+&-label
   padding 17px 0
 .item-input,
-&-item-input
+&-input
   padding 17px 0
 .item-icon,
-&-item-icon
+&-icon
   width 60px
   margin-right -24px

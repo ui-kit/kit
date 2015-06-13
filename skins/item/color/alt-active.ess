@@ -7,17 +7,23 @@
   box-shadow none
   
 &:active .item-label,
-&.is-active &-item-label
+&.is-active &-label
   &:after
     opacity 0
 
 &:active .item-input,
-&:active &-item-input,
+&:active &-input,
 &.is-active .item-input,
-&.is-active &-item-input
+&.is-active &-input
   color #fff
   &::placeholder
     color = __.color.white.clearer(.7)
   color #fff
   &::placeholder
     color = __.color.white.clearer(.7)
+    
+&:active > .item-content .item-action,
+&:active > &-content &-action,
+&.is-active > .item-content .item-action,
+&.is-active > &-content &-action
+  color inherit

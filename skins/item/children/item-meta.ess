@@ -4,10 +4,5 @@ height 20px
 white-space nowrap
 display flex
 flex-wrap nowrap
+opacity .5
 color inherit
-&:hover
-  color inherit
-&:active
-  color inherit
-.icon
-  font-size = __.h7

@@ -2,13 +2,17 @@ background = __.color.charcoal
 color #fff
 
 .item-label,
-&-item-label
-  color #fff
+&-label
   &:after
     border-color = __.color.black
+    
 // doesn't use variable because the placeholder hijacks it for some reason
 .item-input,
-&-item-input
+&-input
   color #fff
   &::placeholder
     color = __.color.white.clearer(.5)
+    
+.item-action,
+&-action
+  color hsla(0,0%,100%,.5)

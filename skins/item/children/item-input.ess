@@ -12,7 +12,7 @@ color = __.color.gray
 &:focus
   +
     .item-label,
-    &-item-label
+    &-label
       color = __.color.primary
       &:after
         background = __.color.primary

@@ -23,26 +23,27 @@ textarea
   background transparent
   
 .item-content,
-&-item-content
+&-content
   %./children/item-content.ess
-  
 .item-icon,
-&-item-icon
+&-icon
   %./children/item-icon.ess
 .item-label,
-&-item-label
+&-label
   %./children/item-label.ess
 .item-input,
-&-item-input
+&-input
   %./children/item-input.ess
 .item-action,
-&-item-action
+&-action
   %./children/item-action.ess
+
+&:hover
+  color = __.color.primary
    
 // Trying to have these descend causes a bug that makes the css not output  
-&:hover .item-label,
-&:hover &-item-label
-  color = __.color.primary
+&:hover > .item-content .item-label,
+&:hover > &-content &-label
   &:after
     border-color = __.color.primary
 
@@ -50,22 +51,25 @@ textarea
 &.is-active
   cursor default
   z-index 2
-  color #fff
+  color = __.color.white
   background = __.color.primary  
   box-shadow none
-  
-&:active .item-label,
-&.is-active &-item-label
+
+&:active > .item-content .item-label,
+&.is-active > &-content &-label
   &:after
     opacity 0
-
-&:active .item-input,
-&:active &-item-input,
-&.is-active .item-input,
-&.is-active &-item-input
+  
+&:active > .item-content .item-input,
+&:active > &-content &-input,
+&.is-active > .item-content .item-input,
+&.is-active > &-content &-input,
+&:active > .item-content .item-action,
+&:active > &-content &-action,
+&.is-active > .item-content .item-action,
+&.is-active > &-content &-action
   color #fff
   &::placeholder
     color = __.color.white.clearer(.7)
-  color #fff
   &::placeholder
     color = __.color.white.clearer(.7)
