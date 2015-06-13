@@ -1,11 +1,17 @@
 // Modifies to:
 // height 24px
 // font-size h9
+font-size = __.h9
+padding-right 8px
+
 .item-label
   padding 3px 0
-  font-size = __.h9
   line-height 1.5em
+  margin-left 8px
   &:after
     width calc(100% - 24px)
+.item-input
+  padding 3px 0
 .item-icon
   width 24px
+  margin-right -8px

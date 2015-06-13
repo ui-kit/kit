@@ -1,3 +1,0 @@
-.item-label
-  &:after
-    width calc(100% - 16px)

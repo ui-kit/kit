@@ -1,10 +1,16 @@
 // Modifies to:
 // height 72px
 // font-size 18px
+font-size = __.h6
+padding-right 30px
+
 .item-label
-  font-size = __.h6
   padding 23px 0
+  margin-left 30px
   &:after
     width calc(100% - 72px)
+.item-input
+  padding 23px 0
 .item-icon
   width 72px
+  margin-right -30px

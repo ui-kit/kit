@@ -1,0 +1,8 @@
+padding-left 1em
+line-height 20px
+height 20px
+white-space nowrap
+display flex
+flex-wrap nowrap
+.icon
+  font-size = __.h7

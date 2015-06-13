@@ -1,0 +1,8 @@
+position relative
+display flex
+align-items center
+flex-direction row-reverse
+justify-content space-between
+flex 2000
+margin-left 18px
+padding-right 18px

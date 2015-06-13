@@ -4,9 +4,16 @@ color = __.color.gray
 cursor pointer
 position relative
 background = __.color.white
-padding 0 16px
 flex-direction row-reverse
 justify-content space-between
+font-size = __.h8
+
+&:first-of-type
+  border-top-right-radius 2px
+  border-top-left-radius 2px
+&:last-of-type
+  border-bottom-right-radius 2px
+  border-bottom-left-radius 2px
 
 input,
 textarea
@@ -16,8 +23,11 @@ textarea
       
 &:hover
   color = __.color.primary
-  .item-label:after
-    background = __.color.primary  
+  .item-label,
+  &-item-label
+    color = __.color.primary
+    &:after
+      background = __.color.primary  
 
 &:active,
 &.is-active
@@ -26,48 +36,18 @@ textarea
   background = __.color.primary  
   color #fff
   box-shadow none
+
+.item-content
+  %./children/item-content.ess
   
 .item-label
-  line-height 1.45em
-  font-size = __.h8
-  padding 8px 0
-  flex-grow 1
-  &:after
-    display block
-    content ""
-    height 1px
-    position absolute
-    bottom 0
-    width calc(100% - 36px)
-    background = __.color.azure
+  %./children/item-label.ess
   
 .item-icon
-  display block
-  position relative
-  width 36px
-  z-index 1
-  align-self stretch
-  margin-left -16px
-  .icon
-    position absolute
-    top 50%
-    left 50%
-    transform translate(-50%,-50%)
+  %./children/item-icon.ess
 
-.item-actions
-  line-height 20px
-  height 20px
-  white-space nowrap
-  display flex
-  flex-wrap nowrap
+.item-action
+  %./children/item-action.ess
   
 .item-input
-  line-height 1.45em
-  font-size = __.h8
-  flex 1
-  text-align right
-  width 100%
-  &:focus
-    + .item-label:after
-      background = __.color.primary
-      height 2px
+  %./children/item-input.ess
