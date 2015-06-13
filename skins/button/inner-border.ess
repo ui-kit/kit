@@ -2,7 +2,7 @@
 %./index.ess
 
 %./size/huge.ess
-%./style/shadow-dark.ess
+%./shadow/shadow-dark.ess
 
 background = __.color.white
 border-color = __.color.white

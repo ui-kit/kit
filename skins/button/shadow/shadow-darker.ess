@@ -1,0 +1,3 @@
+box-shadow = "0 10px 10px " + __.color.black.clone().clearer(.3)
+&:active
+  box-shadow none

@@ -1,0 +1,8 @@
+&:last-child .item-label,
+&:last-child &-item-label
+    &:after
+      border-color transparent
+&:last-child:hover .item-label,
+&:last-child:hover &-item-label
+  &:after
+    border-color = __.color.primary

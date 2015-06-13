@@ -1,9 +1,9 @@
 %./index.ess
 
 %./color/white.ess
-%./style/corners.ess
-%./style/fill-light.ess
-%./style/shadow-dark.ess
+%./corners/sharp.ess
+%./fill/fill-light.ess
+%./shadow/shadow-dark.ess
 
 color = __.color.primary
 display inline-block

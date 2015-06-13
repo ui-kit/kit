@@ -1,0 +1,23 @@
+&:active,
+&.is-active
+  cursor default
+  z-index 2
+  color = __.color.primary
+  background = __.color.azure  
+  box-shadow none
+  
+&:active .item-label,
+&.is-active &-item-label
+  &:after
+    opacity 0
+
+&:active .item-input,
+&:active &-item-input,
+&.is-active .item-input,
+&.is-active &-item-input
+  color #fff
+  &::placeholder
+    color = __.color.white.clearer(.7)
+  color #fff
+  &::placeholder
+    color = __.color.white.clearer(.7)

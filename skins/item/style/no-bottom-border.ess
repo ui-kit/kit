@@ -1,8 +1,0 @@
-&:last-child
-  .item-label
-    &:after
-      background transparent
-  &:hover
-    .item-label
-      &:after
-        background = __.color.primary
