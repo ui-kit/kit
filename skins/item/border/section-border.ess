@@ -1,3 +1,2 @@
-&:last-of-type .item-content,
 &:last-of-type &-content
   position static

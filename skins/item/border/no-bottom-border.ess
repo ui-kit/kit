@@ -1,8 +1,6 @@
-&:last-of-type .item-label,
-&:last-of-type &-label
-    &:after
-      border-color transparent
-&:last-of-type:hover .item-label,
-&:last-of-type:hover &-label
+&:last-child &-label
   &:after
-    border-color = __.color.primary
+    opacity 0
+&:last-child:hover &-label
+  &:after
+    opacity 1

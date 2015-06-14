@@ -5,6 +5,8 @@ color = __.color.accent
   color = __.white
   background-color = __.color.accent.dark
   border-color = __.color.accent.dark
-&:active
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&  
   background-color = __.color.accent.darker
   border-color = __.color.accent.darker

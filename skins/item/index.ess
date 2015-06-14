@@ -8,6 +8,7 @@ flex-direction row-reverse
 justify-content space-between
 font-size = __.h8
 text-align left
+padding-left 18px
 
 &:first-of-type
   border-top-right-radius 2px
@@ -22,27 +23,23 @@ textarea
   outline none
   background transparent
   
-.item-content,
 &-content
   %./children/item-content.ess
-.item-icon,
 &-icon
   %./children/item-icon.ess
-.item-label,
 &-label
   %./children/item-label.ess
-.item-input,
 &-input
   %./children/item-input.ess
-.item-action,
 &-action
   %./children/item-action.ess
+&-main
+  %./children/item-main.ess
 
 &:hover
   color = __.color.primary
    
 // Trying to have these descend causes a bug that makes the css not output  
-&:hover > .item-content .item-label,
 &:hover > &-content &-label
   &:after
     border-color = __.color.primary
@@ -55,21 +52,30 @@ textarea
   background = __.color.primary  
   box-shadow none
 
-&:active > .item-content .item-label,
+&:active > &-content &-label,
 &.is-active > &-content &-label
   &:after
     opacity 0
   
-&:active > .item-content .item-input,
 &:active > &-content &-input,
-&.is-active > .item-content .item-input,
-&.is-active > &-content &-input,
-&:active > .item-content .item-action,
 &:active > &-content &-action,
-&.is-active > .item-content .item-action,
+&.is-active > &-content &-input,
 &.is-active > &-content &-action
-  color #fff
+  color inherit
   &::placeholder
     color = __.color.white.clearer(.7)
   &::placeholder
     color = __.color.white.clearer(.7)
+    
+&.is-disabled,
+&[disabled],
+&:disabled
+  cursor default
+  color = __.color.gray.clearer(.7)
+  
+&.is-not-link
+  cursor default
+  &:hover,
+  &:active
+    color = __.color.gray
+    background = __.color.white

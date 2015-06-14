@@ -6,24 +6,28 @@
   background = __.color.azure  
   box-shadow none
   
-&:active .item-label,
 &.is-active &-label
   &:after
     opacity 0
 
-&:active .item-input,
 &:active &-input,
-&.is-active .item-input,
 &.is-active &-input
   color #fff
   &::placeholder
-    color = __.color.white.clearer(.7)
-  color #fff
-  &::placeholder
-    color = __.color.white.clearer(.7)
+    color rgba(255,255,255,.3)
     
-&:active > .item-content .item-action,
 &:active > &-content &-action,
-&.is-active > .item-content .item-action,
 &.is-active > &-content &-action
   color inherit
+  
+&.is-disabled:hover &-label,
+&[disabled]:hover &-label,
+&:disabled:hover &-label
+  &:after
+    border-color = __.color.azure
+  
+&.is-not-link
+  &:hover,
+  &:active
+    color hsl(210, 11%, 47%)
+    background = __.color.white

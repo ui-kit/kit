@@ -5,6 +5,8 @@ color = __.color.primary
   color = __.white
   background-color = __.color.primary.dark
   border-color = __.color.primary.dark
-&:active
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
   background-color = __.color.primary.darker
   border-color = __.color.primary.darker

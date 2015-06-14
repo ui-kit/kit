@@ -108,6 +108,7 @@ hr.Toolbar-block-center
   font-weight bold
   text-transform uppercase
   transition color .25s ease-out,border-color .25s ease-out,opacity .25s linear,background .25s ease-out
+  letter-spacing .05em
   // leave these styles up to app. opt-in for default state colors
   &-default
     &.is-active

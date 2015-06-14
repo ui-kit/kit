@@ -6,14 +6,11 @@
   background = __.color.black  
   box-shadow none
   
-&:active .item-label,
 &.is-active &-label
   &:after
     opacity 0
 
-&:active .item-input,
 &:active &-input,
-&.is-active .item-input,
 &.is-active &-input
   color #fff
   &::placeholder
@@ -22,8 +19,23 @@
   &::placeholder
     color = __.color.white.clearer(.7)
 
-&:active > .item-content .item-action,
 &:active > &-content &-action,
-&.is-active > .item-content .item-action,
 &.is-active > &-content &-action
   color inherit
+  
+&.is-disabled,
+&[disabled],
+&:disabled
+  cursor default
+  color hsla(0,0%,100%,.1)
+&.is-disabled:hover &-label,
+&[disabled]:hover &-label,
+&:disabled:hover &-label
+  &:after
+    border-color = __.color.black
+
+&.is-not-link
+  &:hover,
+  &:active
+    color = __.color.primary
+    background = __.color.black

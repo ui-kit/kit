@@ -1,1 +1,4 @@
 background transparent
+&-split-left
+  border-right transparent
+  margin-right -2px

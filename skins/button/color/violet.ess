@@ -5,6 +5,8 @@ color = __.color.violet
   color = __.white
   background-color = __.color.violet.dark
   border-color = __.color.violet.dark
-&:active
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
   background-color = __.color.violet.darker
   border-color = __.color.violet.darker

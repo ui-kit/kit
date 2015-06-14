@@ -1,16 +1,15 @@
 // Modifies to:
 // height: 48px
-.item-content,
+padding-left 18px
+
 &-content
-  margin-left 18px
   padding-right 18px
-.item-label,
 &-label
   padding 14px 0
-.item-input,
 &-input
   padding 14px 0
-.item-icon,
 &-icon
   width 48px
-  margin-right -18px
+  margin-left -18px
+&-main
+  padding 0 18px 18px 0

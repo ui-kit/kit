@@ -30,7 +30,10 @@ vertical-align middle
   text-decoration none
   transition none
 
-&:active
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  color = __.color.white
   background-color = __.color.gray.darker
   border-color = __.color.gray.darker
   
@@ -39,7 +42,12 @@ vertical-align middle
 
 &[disabled],
 &:disabled
+  cursor default
   opacity .1
-
+  &:hover,
+  &:active
+    color = __.color.gray
+    border-color = __.color.gray
+    
 if props.children
   yield

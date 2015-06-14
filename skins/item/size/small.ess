@@ -2,19 +2,17 @@
 // height 24px
 // font-size h9
 font-size = __.h9
+padding-left 8px
 
-.item-content,
 &-content
-  margin-left 8px
   padding-right 8px
-.item-label,
 &-label
   padding 3px 0
   line-height 1.5em
-.item-input,
 &-input
   padding 3px 0
-.item-icon,
 &-icon
   width 24px
-  margin-right -8px
+  margin-left -8px
+&-main
+  padding 0 8px 8px 0

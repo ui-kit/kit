@@ -1,0 +1,14 @@
+width 100%
+box-sizing border-box
+position relative
+padding 0 12px 12px 0
+
+&:after
+  display block
+  content ""
+  height 0
+  position absolute
+  bottom 0
+  left 0
+  right 0
+  border-top = '1px solid '+__.color.azure

@@ -1,0 +1,39 @@
+border-top-left-radius 2px
+border-bottom-left-radius 2px
+margin-left 2px
+position relative
+&:before
+  content "\25bc"
+  color transparent
+  display inline-block
+&:after
+  content "\203A"
+  font-weight bold
+  width 16px
+  height 16px
+  line-height 16px
+  text-align center
+  color inherit
+  margin -8px 0 0 -10px
+  transform rotate(90deg)
+  display inline-block
+  position absolute
+  top 50%
+  left 50%
+  box-sizing border-box
+  font-size = __.h6
+  transition all .1s ease
+
+&:active,
+&.is-active,
+.is-active &
+  &:after
+    transform rotate(270deg)
+
+&:hover,
+&:active,
+&.is-active,
+.is-active &
+  &:after
+    border-bottom-color initial
+    border-right-color initial

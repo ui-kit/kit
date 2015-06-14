@@ -8,7 +8,9 @@ color = __.color.white
   color = __.color.primary
   opacity .8
 
-&:active
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
   background-color = __.color.white
   border-color = __.color.white
   color = __.color.primary
