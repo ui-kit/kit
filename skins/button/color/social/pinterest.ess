@@ -1,0 +1,12 @@
+background-color = __.color.pinterest
+border-color = __.color.pinterest
+color = __.color.pinterest
+&:hover
+  color = __.white
+  background-color = __.color.pinterest.dark
+  border-color = __.color.pinterest.dark
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.pinterest.darker
+  border-color = __.color.pinterest.darker

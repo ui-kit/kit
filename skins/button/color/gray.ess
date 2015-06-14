@@ -1,0 +1,12 @@
+background-color = __.color.gray
+border-color = __.color.gray
+color = __.color.gray
+&:hover
+  color = __.white
+  background-color = __.color.gray.dark
+  border-color = __.color.gray.dark
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.gray.darker
+  border-color = __.color.gray.darker

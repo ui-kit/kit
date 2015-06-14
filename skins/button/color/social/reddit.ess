@@ -1,0 +1,13 @@
+background-color = __.color.reddit
+border-color = __.color.reddit
+color hsla(210,47%,40%,1)
+&:hover
+  color hsla(210,47%,40%,1)
+  background-color = __.color.reddit.dark
+  border-color = __.color.reddit.dark
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  color #fff
+  background-color = __.color.reddit.darker
+  border-color = __.color.reddit.darker

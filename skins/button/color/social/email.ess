@@ -1,0 +1,12 @@
+background-color = __.color.cyan
+border-color = __.color.cyan
+color = __.color.cyan
+&:hover
+  color = __.white
+  background-color = __.color.cyan.dark
+  border-color = __.color.cyan.dark
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.cyan.darker
+  border-color = __.color.cyan.darker

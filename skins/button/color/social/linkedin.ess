@@ -1,0 +1,12 @@
+background-color = __.color.linkedin
+border-color = __.color.linkedin
+color = __.color.linkedin
+&:hover
+  color = __.white
+  background-color = __.color.linkedin.dark
+  border-color = __.color.linkedin.dark
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.linkedin.darker
+  border-color = __.color.linkedin.darker

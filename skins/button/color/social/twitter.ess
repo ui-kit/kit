@@ -1,0 +1,12 @@
+background-color = __.color.twitter
+border-color = __.color.twitter
+color = __.color.twitter
+&:hover
+  color = __.white
+  background-color = __.color.twitter.dark
+  border-color = __.color.twitter.dark
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.twitter.darker
+  border-color = __.color.twitter.darker
