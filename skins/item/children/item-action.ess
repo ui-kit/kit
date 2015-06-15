@@ -1,10 +1,10 @@
-padding-left 1em
-line-height 20px
-height 20px
-white-space nowrap
+color inherit
 display flex
 flex-wrap nowrap
-color inherit
+height 20px
+line-height 20px
+padding-left 1em
+white-space nowrap
 &:hover
   color inherit
 &:active

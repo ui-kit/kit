@@ -1,8 +1,8 @@
-padding-left 1em
-line-height 20px
-height 20px
-white-space nowrap
+color inherit
 display flex
 flex-wrap nowrap
+height 20px
+line-height 20px
 opacity .5
-color inherit
+padding-left 1em
+white-space nowrap

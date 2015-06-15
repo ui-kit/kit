@@ -30,9 +30,9 @@ padding 6px 6px 7px
   padding 0 6px
 
 .button-sub-label
-  font-weight 400
-  opacity .5
   color = __.color.gray
   font-size = __.h9
+  font-weight 400
+  opacity .5
   padding 0 6px
   text-transform none

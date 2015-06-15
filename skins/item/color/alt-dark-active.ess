@@ -1,10 +1,10 @@
 &:active,
 &.is-active
-  cursor default
-  z-index 2
-  color = __.color.primary
   background = __.color.black  
   box-shadow none
+  color = __.color.primary
+  cursor default
+  z-index 2
   
 &.is-active &-label
   &:after
@@ -26,8 +26,8 @@
 &.is-disabled,
 &[disabled],
 &:disabled
-  cursor default
   color hsla(0,0%,100%,.1)
+  cursor default
 &.is-disabled:hover &-label,
 &[disabled]:hover &-label,
 &:disabled:hover &-label
@@ -37,5 +37,5 @@
 &.is-not-link
   &:hover,
   &:active
-    color = __.color.primary
     background = __.color.black
+    color = __.color.primary

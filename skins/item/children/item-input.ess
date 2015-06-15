@@ -1,11 +1,11 @@
+color = __.color.gray
+flex 1000
+font-size 1em
 line-height 1.45em
 padding 8px 0
-font-size 1em
-flex 1000
+padding-left 12px
 text-align right
 width 100%
-padding-left 12px
-color = __.color.gray
 &::placeholder
   color = __.color.gray.clearer(.5)
 // Styles underline on focus

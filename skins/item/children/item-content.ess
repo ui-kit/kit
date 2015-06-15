@@ -1,9 +1,9 @@
-position relative
-display flex
 align-items center
+box-sizing border-box
+color inherit
+display flex
+flex 2000
 flex-direction row-reverse
 justify-content space-between
-flex 2000
 padding-right 18px
-color inherit
-box-sizing border-box
+position relative

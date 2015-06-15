@@ -1,27 +1,27 @@
-display flex
 align-items center
+background = __.color.white
 color = __.color.gray
 cursor pointer
-position relative
-background = __.color.white
+display flex
 flex-direction row-reverse
-justify-content space-between
 font-size = __.h8
-text-align left
+justify-content space-between
 padding-left 18px
+position relative
+text-align left
 
 &:first-of-type
-  border-top-right-radius 2px
   border-top-left-radius 2px
+  border-top-right-radius 2px
 &:last-of-type
-  border-bottom-right-radius 2px
   border-bottom-left-radius 2px
+  border-bottom-right-radius 2px
 
 input,
 textarea
+  background transparent
   border none
   outline none
-  background transparent
   
 &-content
   %./children/item-content.ess
@@ -70,12 +70,12 @@ textarea
 &.is-disabled,
 &[disabled],
 &:disabled
-  cursor default
   color = __.color.gray.clearer(.7)
+  cursor default
   
 &.is-not-link
   cursor default
   &:hover,
   &:active
-    color = __.color.gray
     background = __.color.white
+    color = __.color.gray

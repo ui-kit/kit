@@ -26,5 +26,5 @@ color #fff
 &.is-not-link
   &:hover,
   &:active
-    color = __.color.primary
-    background = __.color.black  
+    background = __.color.black 
+    color = __.color.primary 

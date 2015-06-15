@@ -1,28 +1,28 @@
-border-top-left-radius 2px
 border-bottom-left-radius 2px
+border-top-left-radius 2px
 margin-left 2px
 position relative
 &:before
-  content "\25bc"
   color transparent
+  content "\25bc"
   display inline-block
 &:after
-  content "\203A"
-  font-weight bold
-  width 16px
-  height 16px
-  line-height 16px
-  text-align center
-  color inherit
-  margin -8px 0 0 -10px
-  transform rotate(90deg)
-  display inline-block
-  position absolute
-  top 50%
-  left 50%
   box-sizing border-box
+  color inherit
+  content "\203A"
+  display inline-block
   font-size = __.h6
+  font-weight bold
+  height 16px
+  left 50%
+  line-height 16px
+  margin -8px 0 0 -10px
+  position absolute
+  text-align center
+  top 50%
+  transform rotate(90deg)
   transition all .1s ease
+  width 16px
 
 &:active,
 &.is-active,

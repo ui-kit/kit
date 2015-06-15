@@ -7,12 +7,12 @@ padding-left 8px
 &-content
   padding-right 8px
 &-label
-  padding 3px 0
   line-height 1.5em
+  padding 3px 0
 &-input
   padding 3px 0
 &-icon
-  width 24px
   margin-left -8px
+  width 24px
 &-main
   padding 0 8px 8px 0

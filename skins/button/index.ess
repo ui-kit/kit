@@ -1,5 +1,5 @@
-border-radius 1000px
 border = '2px solid ' +__.color.gray
+border-radius 1000px
 box-sizing border-box
 color = __.color.gray
 cursor pointer
@@ -32,9 +32,9 @@ vertical-align middle
 &:active,
 &.is-active,
 .is-active .dropdown-trigger&
-  color = __.color.white
   background-color = __.color.gray.darker
   border-color = __.color.gray.darker
+  color = __.color.white
   
 &:after
   border-radius 1000px
@@ -45,8 +45,16 @@ vertical-align middle
   opacity .1
   &:hover,
   &:active
-    color = __.color.gray
     border-color = __.color.gray
+    color = __.color.gray
     
+&-icon
+  box-sizing border-box
+  display inline-block
+  height 1em
+  line-height 1em
+  padding-top 2px
+  vertical-align middle
+  
 if props.children
   yield

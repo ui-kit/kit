@@ -11,7 +11,7 @@ padding-left 24px
 &-input
   padding 17px 0
 &-icon
-  width 60px
   margin-left -24px
+  width 60px
 &-main
   padding 0 24px 24px 0
