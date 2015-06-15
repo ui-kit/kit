@@ -69,7 +69,8 @@ textarea
     
 &.is-disabled,
 &[disabled],
-&:disabled
+&:disabled,
+.is-disabled &
   color = __.color.gray.clearer(.7)
   cursor default
   
