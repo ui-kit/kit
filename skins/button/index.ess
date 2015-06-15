@@ -47,7 +47,7 @@ vertical-align middle
   &:active
     border-color = __.color.gray
     color = __.color.gray
-    
+
 &-icon,
 .icon
   box-sizing border-box

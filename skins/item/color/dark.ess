@@ -11,10 +11,7 @@ color #fff
   color #fff
   &::placeholder
     color = __.color.white.clearer(.5)
-    
-&-action
-  color hsla(0,0%,100%,.5)
-  
+      
 &.is-disabled,
 &[disabled],
 &:disabled
