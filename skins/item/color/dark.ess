@@ -10,7 +10,7 @@ color #fff
 &-input
   color #fff
   &::placeholder
-    color = __.color.white.clearer(.5)
+    color = __.color.white.clone().clearer(.5)
       
 &.is-disabled,
 &[disabled],

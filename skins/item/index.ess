@@ -63,16 +63,23 @@ textarea
 &.is-active > &-content &-action
   color inherit
   &::placeholder
-    color = __.color.white.clearer(.7)
+    color = __.color.white.clone().clearer(.7)
   &::placeholder
-    color = __.color.white.clearer(.7)
+    color = __.color.white.clone().clearer(.7)
     
 &.is-disabled,
 &[disabled],
 &:disabled,
 .is-disabled &
-  color = __.color.gray.clearer(.7)
+  color = __.color.gray.clone().clearer(.7)
   cursor default
+
+// Styles underline on focus
+&:focus + &-label
+  color = __.color.primary
+  &:after
+    background = __.color.primary
+    height 2px
   
 &.is-not-link
   cursor default
