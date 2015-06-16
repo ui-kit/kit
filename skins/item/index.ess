@@ -78,8 +78,7 @@ textarea
 &-input:focus + &-label
   color = __.color.primary
   &:after
-    background = __.color.primary
-    height 2px
+    border-top = '2px solid '+__.color.primary
   
 &.is-not-link
   cursor default
