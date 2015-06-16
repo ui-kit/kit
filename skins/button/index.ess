@@ -41,10 +41,13 @@ vertical-align middle
 
 &[disabled],
 &:disabled
+  background transparent
+  border-color = __.color.gray
+  color = __.color.gray
   cursor default
   opacity .1
-  &:hover,
-  &:active
+  &:hover, &:active
+    background transparent
     border-color = __.color.gray
     color = __.color.gray
 

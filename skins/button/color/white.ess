@@ -18,5 +18,12 @@ color = __.color.white
   
 &[disabled],
 &:disabled
-  color = __.color.primary
+  background transparent
+  border-color = __.color.white
+  color = __.color.white
+  cursor default
   opacity .1
+  &:hover, &:active
+    background transparent
+    border-color = __.color.white
+    color = __.color.white
