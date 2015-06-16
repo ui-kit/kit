@@ -24,4 +24,10 @@ color #fff
   &:hover,
   &:active
     background = __.color.black 
-    color = __.color.primary 
+    color = __.color.primary
+    
+&.is-input
+  &:active,
+  &.is-active
+    color = __.color.white
+    background = __.color.charcoal

@@ -51,22 +51,13 @@ textarea
   color = __.color.white
   background = __.color.primary  
   box-shadow none
-
-&:active > &-content &-label,
-&.is-active > &-content &-label
-  &:after
-    opacity 0
   
 &:active > &-content &-input,
 &:active > &-content &-action,
 &.is-active > &-content &-input,
 &.is-active > &-content &-action
   color inherit
-  &::placeholder
-    color = __.color.white.clone().clearer(.7)
-  &::placeholder
-    color = __.color.white.clone().clearer(.7)
-    
+      
 &.is-disabled,
 &[disabled],
 &:disabled,
@@ -78,6 +69,7 @@ textarea
 &-input:focus + &-label
   color = __.color.primary
   &:after
+    opacity 1
     border-top = '2px solid '+__.color.primary
   
 &.is-not-link
@@ -86,3 +78,9 @@ textarea
   &:active
     background = __.color.white
     color = __.color.gray
+
+&.is-input
+  &:active,
+  &.is-active
+    color = __.color.gray
+    background = __.color.white 

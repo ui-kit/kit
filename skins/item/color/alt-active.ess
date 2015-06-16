@@ -31,3 +31,8 @@
   &:active
     background = __.color.white
     color hsl(210, 11%, 47%)
+
+&.is-input
+  &:active,
+  &.is-active
+    background = __.color.azure  

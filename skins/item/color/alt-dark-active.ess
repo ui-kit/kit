@@ -39,3 +39,8 @@
   &:active
     background = __.color.black
     color = __.color.primary
+
+&.is-input
+  &:active,
+  &.is-active
+    background = __.color.black  

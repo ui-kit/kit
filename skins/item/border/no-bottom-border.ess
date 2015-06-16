@@ -1,6 +1,10 @@
 &:last-child &-label
   &:after
-    opacity 0
+    border-color transparent
 &:last-child:hover &-label
   &:after
-    opacity 1
+    border-color = __.color.primary
+    
+&:last-child &-input:focus + &-label
+  &:after
+    border-color = __.color.primary
