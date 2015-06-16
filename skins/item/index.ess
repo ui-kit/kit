@@ -75,7 +75,7 @@ textarea
   cursor default
 
 // Styles underline on focus
-&:focus + &-label
+&-input:focus + &-label
   color = __.color.primary
   &:after
     background = __.color.primary
