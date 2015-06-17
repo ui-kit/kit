@@ -1,4 +1,5 @@
-border = '2px solid ' +__.color.gray
+border 2px solid
+border-color = __.color.gray
 border-radius 1000px
 box-sizing border-box
 color = __.color.gray
