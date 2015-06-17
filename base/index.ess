@@ -1,0 +1,3 @@
+.translate-component.is-loading:after
+  content '-'
+  color transparent
