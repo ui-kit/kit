@@ -1,0 +1,24 @@
+div(class=props.className onClick=this.submitForm)
+  yield
+
+export.
+  function submitForm() {
+    if (this.props.confirmMessage) {
+      if (window.confirm(this.props.confirmMessage)) this.sendForm();
+    } else {
+      this.sendForm();
+    }
+  }
+
+export.
+  function sendForm () {
+    var self = this;
+    var template = this.props.template;
+    this.context.forms.create(template)
+      .submit(function(err, res) {
+        if (err) self.setState({error: err});
+        if (self.props.onFinish) self.props.onFinish(err, res);
+      });
+  }
+
+export var displayName = 'Submit';
