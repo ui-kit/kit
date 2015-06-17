@@ -1,0 +1,4 @@
+// Modifies to:
+// height: 48px
+&-input
+  padding 16px 0 15px

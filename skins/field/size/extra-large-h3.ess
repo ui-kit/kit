@@ -1,0 +1,6 @@
+// Modifies to:
+// height 60px
+// font-size h6
+&-input
+  font-size = __.h3
+  padding 3px 0 3px 0
