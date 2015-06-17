@@ -1,3 +1,4 @@
+// this normalizes the vertical height on translation strings before they've loaded
 .translate-component.is-loading:after
-  content '-'
   color transparent
+  content '-'
