@@ -25,7 +25,7 @@
     flex-direction row
     align-self center
     align-items center
-    
+
   &-center
     font-size = __.h8
     left 0
@@ -117,3 +117,11 @@ hr.Toolbar-block-center
     &:hover
       color = __.color.primary
       transition none
+
+.lte-sm-hide
+  @media all and (max-width: 599px)
+    display none
+
+.gt-sm-hide
+  @media all and (min-width: 600px)
+    display none
