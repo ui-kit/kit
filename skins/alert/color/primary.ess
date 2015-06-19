@@ -1,0 +1,4 @@
+background-color = __.color.primary
+
+&-label
+  background-color pink

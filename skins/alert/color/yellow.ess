@@ -1,0 +1,4 @@
+background-color = __.color.yellow
+
+&-label
+  color = __.color.white
