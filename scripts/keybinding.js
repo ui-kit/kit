@@ -3,12 +3,12 @@ var KEY_NAMES = {
   'esc': 27
 };
 
-exports.attach = function (char, callback) {
+exports.attachKeybinding = function (char, callback) {
   var handler = bindings[char] = keyupHandler.bind(null, char, callback);
   window.addEventListener('keyup', handler);
 }
 
-exports.removeAll = function (matchChar, callback, evt) {
+exports.removeAllKeybindings = function (matchChar, callback, evt) {
   for (var key in bindings) {
     window.removeEventListener('keyup', bindings[key]);
   }
