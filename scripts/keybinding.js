@@ -10,15 +10,26 @@ exports.attachKeybinding = function (char, callback) {
   window.addEventListener('keyup', handler);
 }
 
-exports.removeAllKeybindings = function (matchChar, callback, evt) {
-  for (var key in bindings) {
-    window.removeEventListener('keyup', bindings[key]);
-    delete bindings[key];
+// keys can be array of strings or single string
+exports.removeKeybindings = function (keys) {
+  var item, handler;
+  if (Array.isArray(keys)) {
+    for (var i in keys) {
+      item = keys[i];
+      handler = bindings[item];
+      if (handler) {
+        window.removeEventListener('keyup', handler);
+        delete bindings[item];
+      }
+    }
+  } else {
+    window.removeEventListener('keyup', bindings[keys]);
+    delete bindings[keys];
   }
 }
 
 function keyupHandler (matchChar, callback, evt) {
   if (evt.target.tagName !== 'INPUT' && evt.target.tagName !== 'TEXTAREA') {
-    if (String.fromCharCode(evt.keyCode) === matchChar.toUpperCase() || evt.keyCode === KEY_NAMES[matchChar]) callback.apply(null);
+    if (evt.keyCode === KEY_NAMES[matchChar] || String.fromCharCode(evt.keyCode) === matchChar.toUpperCase()) callback.apply(null);
   }
 }
