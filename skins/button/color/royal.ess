@@ -1,0 +1,12 @@
+background-color = __.color.royal
+border-color = __.color.royal
+color = __.color.royal
+&:hover
+  color = __.white
+  background-color = __.color.royal.dark
+  border-color = __.color.royal.dark
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.royal.darker
+  border-color = __.color.royal.darker
