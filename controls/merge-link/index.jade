@@ -1,0 +1,22 @@
+var params = this.getParams()
+var query = this.getQuery()
+
+var.
+  linkProps = {
+    // yes, this is the only time you should use getRoutes().pop().name
+    to: props.to || this.getRoutes().pop().name,
+    params: this.context.encodeParams(merge(params, props.params)),
+    query: this.context.encodeParams(merge(query, props.query))
+  }
+
+a(className=props.className to=this.makePath(linkProps.to, linkProps.params, linkProps.query))= props.children
+
+export.
+  function merge(params, prev) {
+    params = JSON.parse(JSON.stringify(params));
+    for(var k in prev) {
+      if (prev[k]) params[k] = prev[k];
+      else delete params[k];
+    }
+    return params;
+  }
