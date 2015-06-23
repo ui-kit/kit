@@ -1,17 +1,17 @@
 %./size/medium.ess
 %./color/white.ess
 
-display flex
-justify-content center
 align-items center
 border-radius 2px
+display flex
+justify-content center
 
 &-content
   flex-grow 1
   
   &-heading
-    text-transform uppercase
     font-weight bold
+    text-transform uppercase
     
   &-body
     line-height 1.5em
