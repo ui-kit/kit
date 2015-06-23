@@ -1,0 +1,9 @@
+&:after
+  background-color = __.color.accent
+  color = __.color.white
+
+&:before
+  border-top-color = __.color.accent
+  border-bottom-color = __.color.accent 
+  border-left-color = __.color.accent 
+  border-right-color = __.color.accent 

@@ -1,0 +1,20 @@
+&:before, 
+&:after 
+  bottom auto
+  left auto
+  right 130%
+  top 50%
+  transform translateY(-50%)
+  
+&:before
+  transform translate3d(12px, -6px, 0)
+  border-top-color = 'transparent !important'
+  border-right-color = 'transparent !important'
+  border-bottom-color = 'transparent !important'
+  
+&:hover:after, 
+&:hover:before, 
+&:focus:after, 
+&:focus:before 
+  right 110%
+  bottom auto 
