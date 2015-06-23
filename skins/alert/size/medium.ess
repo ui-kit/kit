@@ -1,0 +1,10 @@
+// Modifies to:
+// height 36px
+// font-size h8
+
+font-size = __.h8
+
+&-content,
+&-action-left,
+&-action-right
+  padding 7px 8px 8px

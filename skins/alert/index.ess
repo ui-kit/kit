@@ -1,10 +1,23 @@
-background = __.color.white
+%./size/medium.ess
+%./color/white.ess
+
 display flex
 justify-content center
+align-items center
+border-radius 2px
 
-&-label
-  font-size = __.h8
-  line-height 1.5em
-  padding 7px 8px 8px
-  color = __.color.gray
+&-content
+  flex-grow 1
   
+  &-heading
+    text-transform uppercase
+    font-weight bold
+    
+  &-body
+    line-height 1.5em
+  
+&-action-left
+  order -1
+  
+&-action-right
+  order 99
