@@ -8,9 +8,8 @@
   
 &:before
   transform translate3d(12px, -6px, 0)
-  border-top-color = 'transparent !important'
-  border-right-color = 'transparent !important'
-  border-bottom-color = 'transparent !important'
+  border-top-color transparent
+  border-left-color inherit
   
 &:hover:after, 
 &:hover:before, 

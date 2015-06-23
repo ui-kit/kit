@@ -6,11 +6,11 @@
   top 130%
   transform translateX(-50%)
   
+  
 &:before
   transform translate3d(-6px, -12px, 0)
-  border-left-color = 'transparent !important'
-  border-right-color = 'transparent !important'
-  border-top-color = 'transparent !important'
+  border-top-color transparent
+  border-bottom-color inherit
   
 &:hover:after, 
 &:hover:before, 

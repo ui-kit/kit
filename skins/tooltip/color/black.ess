@@ -1,9 +1,5 @@
+border-color = __.color.black
+
 &:after
   background-color = __.color.black
   color = __.color.white
-
-&:before
-  border-top-color = __.color.black
-  border-bottom-color = __.color.black 
-  border-left-color = __.color.black 
-  border-right-color = __.color.black 

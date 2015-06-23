@@ -23,6 +23,7 @@ display inline-block
 &:before
   background transparent
   border-style solid 
+  border-color transparent  
   border-width 6px 
   content ''
   z-index 1000001 
@@ -39,6 +40,7 @@ display inline-block
   transition-delay 100ms 
   
 %./color/black.ess
+%./position/top.ess
 
   
 
