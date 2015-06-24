@@ -1,0 +1,9 @@
+border-color = __.color.gray
+color = __.color.white
+
+&:focus
+  &:after
+    border-color = __.color.gray.clone().clearer(.7)
+
+&:hover
+  background = __.color.gray  
