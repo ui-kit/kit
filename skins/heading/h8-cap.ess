@@ -1,7 +1,7 @@
 %./index.ess
 %./size/8.ess
 
-text-transform uppercase
-letter-spacing 0.5 em
 font-weight 600
+letter-spacing 0.5 em
+text-transform uppercase
 

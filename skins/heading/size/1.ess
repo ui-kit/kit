@@ -1,8 +1,8 @@
-margin-left -4px 
 font-size = __.h1
-letter-spacing -.02em
-text-rendering optimizeLegibility 
 font-weight 300
+letter-spacing -.02em
+margin-left -4px 
+text-rendering optimizeLegibility 
 
 @media screen and (max-width: 1024px)
   font-size = __.h2
