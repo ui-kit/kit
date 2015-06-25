@@ -21,16 +21,16 @@ vertical-align middle
   background = __.color.accent
   border-color = __.color.accent
   &:before
-    content ''
-    position absolute
-    top 2px
-    left 2px
-    right 2px
-    bottom 2px
-    box-shadow = "0 10px 10px " + __.color.black.clone().clearer(.9)
     background = __.color.white
     border-radius 100px
+    bottom 2px
+    box-shadow = '0 10px 10px ' + __.color.black.clone().clearer(.9)
+    content ''
     display block
+    left 2px
+    position absolute
+    right 2px
+    top 2px
 
 %./size/medium.ess
 %./color/gray.ess 
