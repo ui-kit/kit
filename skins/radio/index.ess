@@ -1,0 +1,36 @@
+-webkit-appearance none
+border 2px solid
+border-radius 100px
+box-sizing border-box
+outline none
+position relative
+vertical-align middle
+
+&:focus
+  &:after
+    border 2px solid
+    border-radius 100px
+    bottom -6px
+    content ''
+    left -6px
+    position absolute
+    right -6px
+    top -6px
+ 
+&:active, &:checked, &.is-active
+  background = __.color.accent
+  border-color = __.color.accent
+  &:before
+    content ''
+    position absolute
+    top 2px
+    left 2px
+    right 2px
+    bottom 2px
+    box-shadow = "0 10px 10px " + __.color.black.clone().clearer(.9)
+    background = __.color.white
+    border-radius 100px
+    display block
+
+%./size/medium.ess
+%./color/gray.ess 
