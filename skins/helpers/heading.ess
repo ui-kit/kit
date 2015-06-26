@@ -1,0 +1,45 @@
+// headings
+
+.h1
+  %./../heading/index.ess
+  %./../heading/size/1.ess
+  
+.h2
+  %./../heading/index.ess
+  %./../heading/size/2.ess
+  
+.h3
+  %./../heading/index.ess
+  %./../heading/size/3.ess
+  
+.h4
+  %./../heading/index.ess
+  %./../heading/size/4.ess
+  
+.h5
+  %./../heading/index.ess
+  %./../heading/size/5.ess
+  
+.h6
+  %./../heading/index.ess
+  %./../heading/size/6.ess
+  
+.h7
+  %./../heading/index.ess
+  %./../heading/size/7.ess
+  
+.h8
+  %./../heading/index.ess
+  %./../heading/size/8.ess
+   
+.h8-cap
+  %./../heading/h8-cap.ess
+  
+.h9
+  %./../heading/index.ess
+  %./../heading/size/9.ess
+  
+.h10
+  %./../heading/index.ess
+  %./../heading/size/10.ess
+  
