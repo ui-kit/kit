@@ -1,0 +1,19 @@
+&:before, 
+&:after 
+  left 130%
+  top 50%
+  bottom auto
+  right auto
+  transform translateY(-50%)
+  
+&:before
+  transform translate3d(-12px, -6px, 0)
+  border-top-color transparent
+  border-right-color inherit
+  
+&:hover:after, 
+&:hover:before, 
+&:focus:after, 
+&:focus:before 
+  left 110%
+  bottom auto

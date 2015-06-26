@@ -1,0 +1,46 @@
+position relative
+display inline-block
+ 
+&:after, 
+&:before 
+  position absolute
+  visibility hidden
+  opacity 0
+  pointer-events none
+  transition 0.3s ease
+  transition-delay 0ms 
+  
+&:after
+  content attr(data-tooltip)
+  z-index 1000000
+  padding 6px 8px
+  font-size = __.h8
+  line-height 21px
+  white-space nowrap 
+  border-radius 2px
+  max-width 200px
+  
+&:before
+  background transparent
+  border-style solid 
+  border-color transparent  
+  border-width 6px 
+  content ''
+  z-index 1000001 
+  
+&:hover:after, 
+&:focus:after,
+&:hover:before, 
+&:focus:before
+  visibility visible
+  opacity 1 
+  
+&:hover:after,
+&:hover:before
+  transition-delay 100ms 
+  
+%./color/black.ess
+%./position/top.ess
+
+  
+
