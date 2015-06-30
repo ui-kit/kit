@@ -5,7 +5,7 @@ box-sizing border-box
 color = __.color.gray
 cursor text
 display block
-font-size = __.h8
+font-size 1em
 height auto
 justify-content center
 letter-spacing .05em
