@@ -44,3 +44,19 @@
   &:active,
   &.is-active
     background = __.color.black  
+    
+
+// State classes
+&.is-not-link
+  &:hover,
+  &:active
+    background = __.color.black
+    color = __.color.white
+    & </-label:after
+      border-color = __.color.black
+
+&.is-input
+  &:active,
+  &.is-active
+    background = __.color.black
+    color = __.color.white

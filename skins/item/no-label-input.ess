@@ -1,0 +1,5 @@
+&-input
+  text-align left
+  padding-right 1.3em
+&-content
+  padding-right 0

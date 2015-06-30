@@ -66,18 +66,25 @@ textarea
   cursor default
 
 // Styles underline on focus
+&-input + &-label
+  font-weight bold
 &-input:focus + &-label
   color = __.color.primary
   &:after
     opacity 1
     border-top = '2px solid '+__.color.primary
   
+
+// State classes
 &.is-not-link
   cursor default
   &:hover,
   &:active
     background = __.color.white
     color = __.color.gray
+    & </-label:after
+      border-color = __.color.azure
+      border-width 1px
 
 &.is-input
   &:active,

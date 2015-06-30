@@ -18,14 +18,17 @@ color #fff
   color hsla(0,0%,100%,.1)
   &:hover &-label
     &:after
-      border-color = __.color.black  
-  
+      border-color = __.color.black
+
+// State classes
 &.is-not-link
   &:hover,
   &:active
-    background = __.color.black 
-    color = __.color.primary
-    
+    background = __.color.charcoal 
+    color = __.color.white
+    & </-label:after
+      border-color = __.color.black
+
 &.is-input
   &:active,
   &.is-active

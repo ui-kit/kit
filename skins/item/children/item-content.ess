@@ -2,8 +2,9 @@ align-items center
 box-sizing border-box
 color inherit
 display flex
-flex 2000
+flex 1
 flex-direction row-reverse
 justify-content space-between
 padding-right 18px
 position relative
+flex-wrap nowrap

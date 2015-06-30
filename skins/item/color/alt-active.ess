@@ -25,14 +25,18 @@
 &:disabled:hover &-label
   &:after
     border-color = __.color.azure
-  
+
+// State classes
 &.is-not-link
   &:hover,
   &:active
-    background = __.color.white
-    color hsl(210, 11%, 47%)
+    background = __.color.azure
+    color = __.color.gray
+    & </-label:after
+      border-color = __.color.azure
 
 &.is-input
   &:active,
   &.is-active
-    background = __.color.azure  
+    background = __.color.azure
+    color = __.color.gray 

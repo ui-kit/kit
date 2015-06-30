@@ -1,10 +1,18 @@
-&:last-child &-label
-  &:after
-    border-color transparent
-&:last-child:hover &-label
-  &:after
-    border-color = __.color.primary
-    
-&:last-child &-input:focus + &-label
-  &:after
-    border-color = __.color.primary
+&:last-child 
+  & </-input
+    box-shadow none
+    &:hover
+      box-shadow = 'inset 0 -1px 0 ' +__.color.primary
+    &:active,
+    &:focus
+      box-shadow = 'inset 0 -2px 0 ' +__.color.primary
+
+  & </-label
+    &:after
+      border-color transparent
+  &:hover </-label
+      &:after
+        border-color = __.color.primary
+  </-input:focus + </-label
+    &:after
+      border-color = __.color.primary
