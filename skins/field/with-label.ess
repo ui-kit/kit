@@ -1,0 +1,4 @@
+&-input::placeholder
+  color transparent
+&-input:focus::placeholder
+  color = __.color.gray.clone().clearer(.7)
