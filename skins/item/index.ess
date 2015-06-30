@@ -44,6 +44,10 @@ textarea
   &:after
     border-color = __.color.primary
 
+&:active > &-content &-label
+  &:after
+    border-top = '2px solid '+__.color.primary
+
 &:active,
 &.is-active
   cursor default

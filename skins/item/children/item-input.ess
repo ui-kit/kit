@@ -1,12 +1,13 @@
+align-self stretch
+box-shadow = 'inset 0 -1px 0 ' +__.color.azure
 color = __.color.gray
+flex-grow 1
 font-size 1em
 line-height 1.45em
+min-width 50%
 padding 8px 0
 padding-left 12px
 text-align right
-width 100%
-align-self stretch
-box-shadow = 'inset 0 -1px 0 ' +__.color.azure
 &::placeholder
   color = __.color.gray.clone().clearer(.5)
 
