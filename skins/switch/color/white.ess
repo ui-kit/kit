@@ -1,0 +1,16 @@
+border-color = __.color.white
+color = __.color.accent
+
+&:focus
+  &:after
+    border-color = __.color.white.clone().clearer(.7)
+
+&:hover
+  background = __.color.white  
+  
+&:active, &:checked, &.is-active
+  background = __.color.white
+  border-color = __.color.white
+
+  &:before
+    background = __.color.accent
