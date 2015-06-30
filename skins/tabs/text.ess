@@ -1,0 +1,26 @@
+%./index.ess
+
+.TabsText
+  &-item
+    color = __.color.primary
+    cursor pointer
+    display block
+    flex-grow 0
+    font-weight bold
+    letter-spacing .5
+    line-height 1em
+    margin 8px 18px 8px 0
+    padding 0 0 1px
+    text-align center
+    text-transform uppercase
+
+    &:hover
+      color = __.color.charcoal
+      
+    &:active, &:focus
+      border-bottom = '2px solid ' + (__.color.charcoal.dark)
+      color = __.color.charcoal.dark
+    
+    &.is-selected
+      border-bottom = '2px solid ' + (__.color.primary)
+      color = __.color.primary
