@@ -1,7 +1,22 @@
-display block
+display flex
 width 100%
+align-items center
+font-size = __.h8
+position relative
 
 &-label
   %./children/field-label.ess
+&-icon
+  %./children/field-icon.ess
 &-input
   %./children/field-input.ess
+  &:focus ~ .field-icon,
+  &:focus ~ </-label
+    color = __.color.primary
+  &:valid ~ </-label,
+  &:focus ~ </-label
+    top 4px
+    font-size = __.h9
+    letter-spacing .05em
+    font-weight bold
+    transform none
