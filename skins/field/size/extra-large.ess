@@ -1,6 +1,10 @@
 // Modifies to:
 // height 60px
 // font-size h6
+font-size = __.h6
 &-input
-  font-size = __.h6
   padding 17px 0 16px 0
+  
+&.has-label
+  & </-input
+    padding 17px 0 16px

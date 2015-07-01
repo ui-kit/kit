@@ -40,7 +40,9 @@ textarea
   color = __.color.primary
    
 // Trying to have these descend causes a bug that makes the css not output  
-&:hover > &-content &-label
+&:hover > &-content &-label,
+&:active > &-content &-label,
+&.is-active > &-content &-label
   &:after
     border-color = __.color.primary
 

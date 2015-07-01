@@ -1,1 +1,15 @@
-// 
+height 36px
+line-height 36px
+position absolute
+right 0
+text-align center
+top 50%
+transform translateY(-50%)
+width 36px
+color inherit
+
+&:hover
+  color = __.color.primary
+  
+&:active
+  color = __.color.primary.dark

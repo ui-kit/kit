@@ -1,6 +1,13 @@
 // Modifies to:
 // height 24px
 // font-size h9
+font-size = __.h9
 &-input
-  font-size = __.h9
   padding 3px 0 3px 0
+  
+&.has-label
+  font-size = __.h10
+  & </-input
+    padding 9px 0 0
+    &:focus ~ </-label
+      top 2px

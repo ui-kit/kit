@@ -8,15 +8,27 @@ position relative
   %./children/field-label.ess
 &-icon
   %./children/field-icon.ess
+&-action
+  %./children/field-action.ess
 &-input
   %./children/field-input.ess
-  &:focus ~ .field-icon,
+  &:focus ~ </-icon,
   &:focus ~ </-label
     color = __.color.primary
   &:valid ~ </-label,
   &:focus ~ </-label
-    top 4px
-    font-size = __.h9
+    top 3px
+    font-size = __.h10
     letter-spacing .05em
     font-weight bold
     transform none
+    
+&.has-label
+  & </-input
+    padding-top 14px
+    padding-bottom 1px
+    &::placeholder
+      color transparent
+    &:focus
+      &::placeholder
+        color = __.color.gray.clone().clearer(.7)

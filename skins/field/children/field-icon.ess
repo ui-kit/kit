@@ -2,3 +2,29 @@ order -1
 width 36px
 text-align center
 margin-top 2px
+position static
+&:after
+  content ""
+  display block
+  border = '1px solid ' + __.color.gray.lighter
+  border-top-width 0
+  border-left-width 0
+  border-right-width 0
+  bottom 0
+  left 0
+  right 0
+  position absolute
+
+</:hover
+  &-icon:after
+    border-color = __.color.primary
+
+</:active
+  &-icon:after
+    border-color = __.color.primary
+    border-bottom-width 2px
+
+</-input
+  &:focus ~ </-icon:after
+    border-color = __.color.primary
+    border-bottom-width 2px
