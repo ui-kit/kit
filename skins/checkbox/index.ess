@@ -16,7 +16,7 @@ vertical-align middle
     position absolute
     right -6px
     top -6px
- 
+
 &:active, &:checked, &.is-active
   background = __.color.accent
   border-color = __.color.accent
@@ -31,14 +31,3 @@ vertical-align middle
 
 %./size/medium.ess
 %./color/gray.ess
-
-    
-
-
-
-
-
-
-
-
-  
