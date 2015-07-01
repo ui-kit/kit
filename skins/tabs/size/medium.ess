@@ -1,0 +1,6 @@
+// Modifies to:
+// height 24px
+// font-size h8
+&-item
+  font-size = __.h8
+  padding 8px 0

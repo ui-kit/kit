@@ -1,0 +1,38 @@
+%./index.ess
+%./size/medium.ess
+
+.TabsProminent
+  &-item
+    background-color = __.color.white
+    border = '2px solid ' + __.color.primary
+    color = __.color.primary
+    cursor pointer
+    display block
+    flex-grow 1
+    font-weight bold
+    letter-spacing .5
+    line-height 1em
+    margin 0 -2px 0 0
+    text-align center
+    text-transform uppercase
+        
+    &:first-of-type
+      border-radius 2px 0 0 2px
+    
+    &:last-of-type
+      border-radius 0 2px 2px 0
+      margin-right 0
+
+    &:hover
+      border = '2px solid ' + __.color.primary.dark
+      color = __.color.primary.dark
+      
+    &:active, &:focus
+      background-color = __.color.primary.darker
+      border = '2px solid ' + __.color.primary.darker
+      color = __.color.primary.light
+    
+    &.is-selected
+      background-color = __.color.primary
+      border-color = __.color.primary
+      color = __.color.white

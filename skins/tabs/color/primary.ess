@@ -1,0 +1,13 @@
+&-item
+  background-color = __.color.white
+  border = __.color.primary
+  color = __.color.primary
+
+  &:hover
+    border = __.color.primary.dark
+    color = __.color.primary.dark
+    
+  &:active, &:focus
+    background-color = __.color.primary.darker
+    border = __.color.primary.darker
+    color = __.color.primary.light
