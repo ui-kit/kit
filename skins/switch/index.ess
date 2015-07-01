@@ -1,6 +1,3 @@
-%./size/medium.ess
-%./color/gray.ess 
-
 -webkit-appearance none
 border 2px solid
 border-radius 100px
@@ -8,6 +5,8 @@ box-sizing border-box
 outline none
 position relative
 vertical-align middle
+user-select none
+
 &:before
   background = __.color.white
   border-radius 100px
@@ -16,9 +15,16 @@ vertical-align middle
   display block
   width 12px
   height 12px
+  transition all .1s ease
  
 &:active, &:checked, &.is-active
-  background = __.color.accent
-  border-color = __.color.accent
+  background = __.color.green
+  border-color = __.color.green
   &:before
-    float right
+    margin-left 8px
+    
+%./size/medium.ess
+%./color/gray.ess 
+    
+
+
