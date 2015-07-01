@@ -1,0 +1,7 @@
+height 24px
+width 36px
+
+&:active, &:checked, &.is-active
+  &:before
+    margin-left 14px
+  
