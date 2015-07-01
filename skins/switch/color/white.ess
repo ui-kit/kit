@@ -1,10 +1,6 @@
 border-color = __.color.white
 color = __.color.accent
 
-&:focus
-  &:after
-    border-color = __.color.white.clone().clearer(.7)
-
 &:hover
   background = __.color.white  
   
