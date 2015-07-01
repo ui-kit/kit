@@ -1,7 +1,5 @@
 display flex
 font-size = __.h8
+letter-spacing .05em
 font-weight bold
 text-align center
-text-transform uppercase
-
-width 500px

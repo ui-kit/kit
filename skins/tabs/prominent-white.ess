@@ -10,7 +10,6 @@
     display block
     flex-grow 1
     font-weight bold
-    letter-spacing .5
     line-height 1em
     margin 0 -2px 0 0
     text-align center

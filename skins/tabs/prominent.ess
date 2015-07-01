@@ -3,19 +3,19 @@
 
 .TabsProminent
   &-item
-    background-color = __.color.white
-    border = '2px solid ' + __.color.primary
+    border-width 2px
+    border-style solid
     color = __.color.primary
     cursor pointer
     display block
-    flex-grow 1
+    flex 1 1 20em
     font-weight bold
-    letter-spacing .5
+    letter-spacing .05em
     line-height 1em
     margin 0 -2px 0 0
     text-align center
     text-transform uppercase
-        
+
     &:first-of-type
       border-radius 2px 0 0 2px
     
