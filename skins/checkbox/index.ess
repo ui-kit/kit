@@ -1,14 +1,19 @@
+%./size/medium.ess
+%./color/gray.ess 
+
 -webkit-appearance none
-border 2px solid
-border-radius 2px
+border-width 2px
+border-style solid
 box-sizing border-box
 outline none
 position relative
 vertical-align middle
+user-select none
 
 &:focus
   &:after
-    border 2px solid
+    border-width 2px
+    border-style solid
     border-radius 2px
     bottom -6px
     content ''
@@ -28,6 +33,3 @@ vertical-align middle
     left 50%
     transform translate(-50%, -50%)
     margin-top 2px
-
-%./size/medium.ess
-%./color/gray.ess
