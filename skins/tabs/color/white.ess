@@ -1,11 +1,10 @@
-&-item
-  border = '2px solid ' + __.color.white
+color = __.color.white.clone().clearer(.5)
+
+&:hover
+  color = __.color.white.clone().clearer(.3)
+  
+&:active, &:focus
   color = __.color.white
 
-  &:hover
-    color = __.color.gray.lighter
-    
-  &:active, &:focus
-    background-color = __.color.white
-    border = '2px solid ' + __.color.white
-    color = __.color.primary
+&.is-selected
+  color = __.color.primary

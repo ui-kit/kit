@@ -1,0 +1,24 @@
+color = __.color.gray
+cursor pointer
+display block
+font-weight bold
+letter-spacing .05em
+line-height 1em
+text-align center
+text-transform uppercase
+position relative
+
+&:hover:not(.is-selected)
+  color = __.color.gray.dark
+  
+&:active:not(.is-selected), &:focus:not(.is-selected), &.is-selected
+  border-style solid
+  border-width 0 0 2px 0
+  color = __.color.gray.darker
+  
+&:active:not(.is-selected), &:focus:not(.is-selected)
+  z-index 2
+
+&.is-selected
+  color = __.color.primary
+  z-index 1
