@@ -8,6 +8,7 @@ outline none
 position relative
 user-select none
 vertical-align middle
+margin 0
 
 &:before
   background = __.color.white
