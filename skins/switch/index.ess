@@ -1,11 +1,13 @@
+%./size/medium.ess
+%./color/gray.ess
+
 -webkit-appearance none
-border 2px solid
 border-radius 100px
 box-sizing border-box
 outline none
 position relative
-vertical-align middle
 user-select none
+vertical-align middle
 
 &:before
   background = __.color.white
@@ -13,18 +15,7 @@ user-select none
   box-shadow = '0 2px 4px ' + __.color.black.clone().clearer(.9)
   content ''
   display block
-  width 12px
-  height 12px
+  padding-bottom 50%
   transition all .1s ease
- 
-&:active, &:checked, &.is-active
-  background = __.color.green
-  border-color = __.color.green
-  &:before
-    margin-left 8px
-    
-%./size/medium.ess
-%./color/gray.ess 
-    
-
-
+  width 50%
+  margin 8.33333%

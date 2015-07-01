@@ -1,6 +1,10 @@
 border-color = __.color.gray
-color = __.color.white
 background-color = __.color.gray
 
 &:hover
-  background = __.color.gray  
+  background = __.color.gray.clone().dark
+  border-color = __.color.gray.clone().dark
+  
+&:active, &:checked, &.is-active
+  background = __.color.green
+  border-color = __.color.green

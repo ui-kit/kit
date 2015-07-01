@@ -1,14 +1,7 @@
 height 24px
 width 36px
-&:before
-  width 18px
-  height 18px
-  left 1px 
-  top 50%
-  transform translateY(-50%)
-  position absolute
 
 &:active, &:checked, &.is-active
   &:before
-    margin-left 12px
+    margin-left 14px
   
