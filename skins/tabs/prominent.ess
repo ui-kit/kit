@@ -1,5 +1,4 @@
 %./index.ess
-%./size/medium.ess
 &-item
   border-width 2px
   border-style solid
