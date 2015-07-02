@@ -26,15 +26,5 @@ width 100%
     top 4px
     transform none
 
-&.has-label
-  & </-input
-    padding-bottom 3px
-    padding-top 12px
-    &::placeholder
-      color transparent
-    &:focus
-      &::placeholder
-        color = __.color.gray.clone().clearer(.7)
-
 &.is-error
   %./color/yellow.ess
