@@ -1,14 +1,18 @@
 color = __.color.yellow
-&-input
+& </-input
   box-shadow = 'inset 0 -1px 0 ' +__.color.yellow
-
   &::placeholder
     color = __.color.yellow
   &:active,
   &.is-active,
   &:focus
+    box-shadow = 'inset 0 -2px 0 ' +__.color.yellow
     &::placeholder
       color = __.color.yellow
+  &:focus ~ </-icon,
+  &:focus ~ </-label
+    color = __.color.yellow
+    opacity 1
   &[disabled],
   &:disabled,
   .is-disabled &
@@ -18,6 +22,14 @@ color = __.color.yellow
       box-shadow = 'inset 0 -1px 0 ' +__.color.yellow
       color = __.color.yellow
       
-&-icon
+& </-label
+  opacity 1
+
+& </-icon
   &:after
     border-color = __.color.yellow
+
+&.has-label
+  & </-input
+    &::placeholder
+      color transparent
