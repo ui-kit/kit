@@ -1,7 +1,30 @@
-display block
+align-items center
+color = __.color.gray
+display flex
+font-size = __.h8
+position relative
 width 100%
 
 &-label
   %./children/field-label.ess
+&-icon
+  %./children/field-icon.ess
+&-action
+  %./children/field-action.ess
 &-input
   %./children/field-input.ess
+  &:focus ~ </-icon,
+  &:focus ~ </-label
+    color = __.color.primary
+    opacity 1
+  &:valid ~ </-label,
+  &:focus ~ </-label
+    font-size = __.h10
+    font-weight bold
+    letter-spacing .05em
+    opacity 1
+    top 4px
+    transform none
+
+&.is-error
+  %./color/yellow.ess

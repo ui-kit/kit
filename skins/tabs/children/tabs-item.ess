@@ -1,0 +1,29 @@
+color inherit
+cursor pointer
+display flex
+font-weight bold
+letter-spacing .05em
+line-height 1em
+text-align center
+text-transform uppercase
+position relative
+margin 0 1.5rem 0 0
+overflow hidden
+  
+&:hover
+  filter brightness(75%)
+  z-index 2
+  
+&:active, &.is-selected
+  border-style solid
+  border-width 0 0 2px 0
+  filter brightness(65%)
+  
+&:active:not(.is-selected)
+  z-index 2
+
+&.is-selected
+  color = __.color.primary
+  z-index 1
+  cursor default
+  filter none

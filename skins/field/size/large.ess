@@ -1,4 +1,11 @@
 // Modifies to:
 // height: 48px
 &-input
-  padding 16px 0 15px
+  padding 14px 0 13px
+
+&.has-label
+  & </-input
+    padding 20px 0 7px
+    &:valid ~ </-label,
+    &:focus ~ </-label
+      top 8px

@@ -1,3 +1,0 @@
-background-color = __.color.accent
-&:hover
-  background-color = __.color.accent.dark

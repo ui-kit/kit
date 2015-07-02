@@ -1,0 +1,55 @@
+%./index.ess
+&-item
+  border-width 2px
+  border-style solid
+  color inherit
+  flex 1 1 100em
+  margin 0 0 0 -2px
+  opacity 1
+  &:after
+    border 100px solid
+    border-color transparent
+    bottom 0
+    box-sizing border-box
+    content ""
+    display block
+    left 0
+    position absolute
+    right 0
+    top 0
+  
+  &:first-of-type
+    border-radius 2px 0 0 2px
+  
+  &:last-of-type
+    border-radius 0 2px 2px 0
+    
+  &:hover,
+  &:active
+    &:after
+      border-color initial
+      opacity .1
+    
+  &.is-selected,
+  &:active
+    border-color initial
+    color inherit
+    &:after
+      border-color initial
+      opacity 1
+
+  &.is-selected &-label,
+  &:active &-label
+    color = __.color.white
+  
+  &:active, &.is-selected
+    border-width 2px
+
+& &-item
+  border-color inherit
+  opacity 1
+  &:active, &.is-selected
+    border-color inherit
+  &:hover,
+  &:active
+    opacity 1

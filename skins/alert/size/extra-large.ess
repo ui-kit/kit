@@ -7,7 +7,7 @@ font-size = __.h6
 &-content,
 &-action-left,
 &-action-right
-  padding 16px 24px 17px
+  padding 22px 24px 11px
   
 
 &-action-left,

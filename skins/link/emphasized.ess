@@ -1,0 +1,15 @@
+%./index.ess
+
+color = __.color.primary
+
+&:after
+  border-bottom-color = __.color.gray
+  
+&:hover
+  border-bottom-color = __.color.primary
+  color = __.color.primary
+
+&:active,
+&.is-active
+  border-bottom-color = __.color.primary.dark
+  color = __.color.primary.dark

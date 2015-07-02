@@ -1,0 +1,33 @@
+%./size/scale.ess
+text-shadow = '0 1px 1px'+__.color.black
+&:after
+  background = 'linear-gradient('+__.color.black.clone().clearer(1)+', '+__.color.black+')'
+  border-radius 2px
+  bottom 0
+  position absolute
+  right 0
+  left 0
+  top 50%
+  content ' '
+  display block
+
+&-image
+  display block
+  position relative
+  border-radius 2px
+  display block
+  width 100%
+  
+&-caption
+  border-radius 2px
+  bottom 0
+  box-sizing border-box
+  color = __.color.white
+  font-size = __.h10
+  font-weight regular
+  padding 22px 8px 3px 8px
+  position absolute
+  right 0
+  left 0
+  text-align right
+  z-index 1

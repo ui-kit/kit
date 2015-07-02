@@ -1,1 +1,26 @@
-// 
+cursor text
+margin-top 2px
+order -1
+position static
+text-align center
+width 36px
+
+&:after
+  border = '1px solid ' + __.color.gray.lighter
+  border-left-width 0
+  border-right-width 0
+  border-top-width 0
+  bottom 0
+  content ""
+  display block
+  left 0
+  position absolute
+  right 0
+</:hover &:after
+  border-color = __.color.primary
+</:active &:after
+  border-bottom-width 2px
+  border-color = __.color.primary
+</-input:focus ~ </-icon:after
+  border-bottom-width 2px
+  border-color = __.color.primary

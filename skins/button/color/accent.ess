@@ -2,11 +2,8 @@ background-color = __.color.accent
 border-color = __.color.accent
 color = __.color.accent
 &:hover
-  color = __.white
   background-color = __.color.accent.dark
   border-color = __.color.accent.dark
-&:active,
-&.is-active,
-.is-active .dropdown-trigger&  
+&:active
   background-color = __.color.accent.darker
   border-color = __.color.accent.darker

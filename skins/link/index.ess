@@ -1,0 +1,32 @@
+-webkit-backface-visibility hidden
+color inherit
+display inline-block
+position relative
+text-decoration none
+transition color 0.25s ease-out, border-color 0.25s ease-out, opacity 0.25s linear, background 0.25s ease-out
+
+&:after
+  border-bottom 2px solid
+  border-bottom-color initial
+  bottom 0
+  content ''
+  left 0
+  opacity .2
+  position absolute
+  right 0
+
+// State classes
+&:hover 
+  cursor pointer
+  transition none
+  &:after
+    border-bottom-color = __.color.primary
+    opacity 1
+
+&:active 
+  color = __.color.primary
+  outline none
+  &:after 
+    border-bottom-color = __.color.primary
+    opacity 1
+

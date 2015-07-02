@@ -1,2 +1,2 @@
-border = '2px solid ' + __.color.white
+border-color = __.color.white
 color = __.color.white

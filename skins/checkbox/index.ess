@@ -1,25 +1,36 @@
+%./size/medium.ess
+
 -webkit-appearance none
-border 2px solid
 border-radius 2px
+border 2px solid
+border-color inherit
 box-sizing border-box
 outline none
 position relative
+user-select none
 vertical-align middle
+
+&:hover
+  filter brightness(65%)
 
 &:focus
   &:after
     border 2px solid
-    border-radius 2px
+    border-color inherit
+    border-radius 6px
     bottom -6px
+    display block
     content ''
     left -6px
     position absolute
     right -6px
     top -6px
- 
+    opacity .5
+
 &:active, &:checked, &.is-active
   background = __.color.accent
   border-color = __.color.accent
+  filter none
   &:before
     content '✓'
     font-family 'SSGeomiconsSquared'
@@ -28,17 +39,3 @@ vertical-align middle
     left 50%
     transform translate(-50%, -50%)
     margin-top 2px
-
-%./size/medium.ess
-%./color/gray.ess
-
-    
-
-
-
-
-
-
-
-
-  

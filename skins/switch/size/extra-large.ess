@@ -1,0 +1,10 @@
+height 36px
+width 54px
+
+&:before
+  padding-bottom 51.85185%
+  width 51.85185%
+
+&:active, &:checked, &.is-active
+  &:before
+    margin-left 20px
