@@ -1,4 +1,5 @@
 color = __.color.white
 &-item
-  &.is-selected </-item-label
+  &.is-selected </-item-label,
+  &:active </-item-label
     color = __.color.primary

@@ -14,7 +14,8 @@
   &:last-of-type
     border-radius 0 2px 2px 0
     
-  &.is-selected
+  &.is-selected,
+  &:active
     color inherit
     border-color initial
     &:after
@@ -29,8 +30,9 @@
       border 100px solid
       border-color inherit
 
-  &.is-selected </-item-label
+  &.is-selected </-item-label,
+  &:active </-item-label
     color = __.color.white
   
-  &:active, &:focus, &.is-selected
+  &:active, &.is-selected
     border-width 2px
