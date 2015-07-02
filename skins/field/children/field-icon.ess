@@ -15,16 +15,13 @@ position static
   right 0
   position absolute
 
-</:hover
-  &-icon:after
-    border-color = __.color.primary
+</:hover &:after
+  border-color = __.color.primary
 
-</:active
-  &-icon:after
-    border-color = __.color.primary
-    border-bottom-width 2px
+</:active &:after
+  border-color = __.color.primary
+  border-bottom-width 2px
 
-</-input
-  &:focus ~ </-icon:after
-    border-color = __.color.primary
-    border-bottom-width 2px
+</-input:focus ~ </-icon:after
+  border-color = __.color.primary
+  border-bottom-width 2px

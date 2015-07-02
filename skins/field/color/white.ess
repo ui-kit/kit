@@ -1,0 +1,25 @@
+color = __.color.white
+&-input
+  box-shadow = 'inset 0 -1px 0 ' +__.color.gray.light
+
+  &::placeholder
+    color = __.color.white.clone().clearer(.5)
+
+  &:active,
+  &.is-active,
+  &:focus
+    &::placeholder
+      color = __.color.white.clone().clearer(.7)
+
+  &[disabled],
+  &:disabled,
+  .is-disabled &
+    box-shadow = 'inset 0 -1px 0 ' +__.color.gray.light
+    color = __.color.white
+    &:hover, &:active
+      box-shadow = 'inset 0 -1px 0 ' +__.color.gray.light
+      color = __.color.white
+      
+&-icon
+  &:after
+    border-color = __.color.gray.light

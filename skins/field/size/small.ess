@@ -9,5 +9,6 @@ font-size = __.h9
   font-size = __.h10
   & </-input
     padding 9px 0 0
+    &:valid ~ </-label,
     &:focus ~ </-label
-      top 2px
+      top 0px

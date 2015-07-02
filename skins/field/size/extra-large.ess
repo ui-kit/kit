@@ -7,4 +7,7 @@ font-size = __.h6
   
 &.has-label
   & </-input
-    padding 17px 0 16px
+    padding 23px 0 10px
+    &:valid ~ </-label,
+    &:focus ~ </-label
+      top 12px

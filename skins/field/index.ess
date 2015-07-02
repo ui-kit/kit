@@ -3,6 +3,7 @@ width 100%
 align-items center
 font-size = __.h8
 position relative
+color = __.color.gray
 
 &-label
   %./children/field-label.ess
@@ -15,18 +16,20 @@ position relative
   &:focus ~ </-icon,
   &:focus ~ </-label
     color = __.color.primary
+    opacity 1
   &:valid ~ </-label,
   &:focus ~ </-label
-    top 3px
+    top 4px
     font-size = __.h10
     letter-spacing .05em
     font-weight bold
     transform none
+    opacity 1
     
 &.has-label
   & </-input
-    padding-top 14px
-    padding-bottom 1px
+    padding-top 12px
+    padding-bottom 3px
     &::placeholder
       color transparent
     &:focus

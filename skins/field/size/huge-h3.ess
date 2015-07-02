@@ -8,4 +8,7 @@ line-height 1.2em
     
 &.has-label
   & </-input
-    padding 15px 0 14px
+    padding 24px 0 5px
+    &:valid ~ </-label,
+    &:focus ~ </-label
+      top 16px
