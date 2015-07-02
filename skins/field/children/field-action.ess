@@ -1,3 +1,4 @@
+color inherit
 height 36px
 line-height 36px
 position absolute
@@ -6,10 +7,8 @@ text-align center
 top 50%
 transform translateY(-50%)
 width 36px
-color inherit
 
 &:hover
   color = __.color.primary
-  
 &:active
   color = __.color.primary.dark
