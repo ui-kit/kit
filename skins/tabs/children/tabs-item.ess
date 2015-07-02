@@ -1,4 +1,4 @@
-color = __.color.gray
+color inherit
 cursor pointer
 display flex
 font-weight bold
