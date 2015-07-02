@@ -3,10 +3,11 @@ cursor pointer
 display block
 font-weight bold
 letter-spacing .05em
-line-height 1em
+line-height 1.5em
 text-align center
 text-transform uppercase
 position relative
+margin 0 1.5rem 0 0
 
 &:hover
   color = __.color.gray.dark
