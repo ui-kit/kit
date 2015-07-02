@@ -1,6 +1,6 @@
 color = __.color.gray
 cursor pointer
-display block
+display flex
 font-weight bold
 letter-spacing .05em
 line-height 1.5em
@@ -8,14 +8,22 @@ text-align center
 text-transform uppercase
 position relative
 margin 0 1.5rem 0 0
+overflow hidden
 
+&-label
+  text-align center
+  width 100%
+  position relative
+  z-index 1
+  
 &:hover
-  color = __.color.gray.dark
+  filter brightness(75%)
+  z-index 2
   
 &:active, &:focus, &.is-selected
   border-style solid
   border-width 0 0 2px 0
-  color = __.color.gray.darker
+  filter brightness(65%)
   
 &:active:not(.is-selected), &:focus:not(.is-selected)
   z-index 2
@@ -23,3 +31,5 @@ margin 0 1.5rem 0 0
 &.is-selected
   color = __.color.primary
   z-index 1
+  cursor default
+  filter none

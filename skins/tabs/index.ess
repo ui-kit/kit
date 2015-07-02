@@ -3,6 +3,7 @@ font-size = __.h8
 letter-spacing .05em
 font-weight bold
 text-align center
+user-select none
 
 &-item
   %./children/tabs-item.ess

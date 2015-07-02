@@ -1,10 +1,4 @@
-color = __.color.white.clone().clearer(.5)
-
-&:hover
-  color = __.color.white.clone().clearer(.3)
-  
-&:active, &:focus
-  color = __.color.white
-
-&.is-selected
-  color = __.color.primary
+color = __.color.white
+&-item
+  &.is-selected </-item-label
+    color = __.color.primary

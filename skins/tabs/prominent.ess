@@ -2,8 +2,9 @@
 %./size/medium.ess
 &-item
   border-width 2px
-  border-style solid
   border-collapse collapse
+  border-style solid
+  color inherit
   flex 1 1 20em
   margin 0 0 0 -2px
   
@@ -14,15 +15,22 @@
     border-radius 0 2px 2px 0
     
   &.is-selected
-    border-width 2px
-    color = __.color.white
-    border-color = __.color.primary
-    background-color = __.color.primary
-  
-  &:active:not(.is-selected), &:focus:not(.is-selected)
-    background-color = __.color.primary.darker
-    border-color = __.color.primary.darker
-    color = __.color.white
+    color inherit
+    border-color initial
+    &:after
+      position absolute
+      left 0
+      right 0
+      bottom 0
+      top 0
+      box-sizing border-box
+      content ""
+      display block
+      border 100px solid
+      border-color inherit
 
+  &.is-selected </-item-label
+    color = __.color.white
+  
   &:active, &:focus, &.is-selected
     border-width 2px
