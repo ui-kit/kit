@@ -1,0 +1,39 @@
+.Modal
+  background = __.color.grayBlue
+  position fixed
+  top 0
+  left 0
+  bottom 0
+  right 0
+  overflow auto
+  color = __.color.white
+
+  &-close
+    position fixed
+    width 24px
+    height 24px
+    top 18px
+    left 18px
+    border = '2px solid ' + __.color.white
+    border-radius 1000px
+    font-size 25px
+    font-weight bold
+    background-color = __.color.gray
+    &:before
+      content '\00d7'
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+      margin 1px 0 0 0
+    
+  &-content
+    position absolute
+    left 50%
+    transform translate(-50%)
+    display block
+    max-width 600px
+    margin 76px 0 0 0
+    &-select-text
+      border-bottom = '1px solid ' + __.color.gray
+      padding 0 0 15px 0
