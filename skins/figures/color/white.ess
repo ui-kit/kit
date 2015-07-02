@@ -1,0 +1,2 @@
+border = '2px solid ' + __.color.white
+color = __.color.white

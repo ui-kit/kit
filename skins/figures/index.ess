@@ -1,0 +1,54 @@
+// initials
+border-radius 1000px
+cursor pointer
+position relative
+box-sizing border-box
+  
+&-content
+  font-weight bold
+  left 50%
+  margin 1px 0 0 0
+  position absolute
+  text-transform uppercase
+  top 50%
+  transform translate(-50%, -50%)
+
+// // avatars
+// .FiguresAvatar
+//   border-radius 1000px
+//   cursor pointer
+//   display block
+//   box-sizing border-box
+  
+//   &-content
+//     background-color = __.color.white
+//     background-position center center
+//     background-size cover
+//     border-radius 1000px
+//     padding-bottom 100%
+  
+// // 16/9
+// .Figures-16-9
+//   &-image
+//     display block
+//     position relative
+//     width 600px
+//     img
+//       border-radius 2px
+//       display block
+//       width 100%
+      
+//   &-caption
+//     background linear-gradient(rgba(36, 36, 38, 0), rgba(36, 36, 38, .9))
+//     border-bottom-left-radius 2px
+//     border-bottom-right-radius 2px
+//     bottom 0
+//     box-sizing border-box
+//     color = __.color.white
+//     font-size = __.h10
+//     font-weight regular
+//     padding 22px 8px 8px 8px
+//     position absolute
+//     right 0
+//     text-align right
+//     width 100%
