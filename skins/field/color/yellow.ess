@@ -1,0 +1,23 @@
+color = __.color.yellow
+&-input
+  box-shadow = 'inset 0 -1px 0 ' +__.color.yellow
+
+  &::placeholder
+    color = __.color.yellow
+  &:active,
+  &.is-active,
+  &:focus
+    &::placeholder
+      color = __.color.yellow
+  &[disabled],
+  &:disabled,
+  .is-disabled &
+    box-shadow = 'inset 0 -1px 0 ' +__.color.yellow
+    color = __.color.yellow
+    &:hover, &:active
+      box-shadow = 'inset 0 -1px 0 ' +__.color.yellow
+      color = __.color.yellow
+      
+&-icon
+  &:after
+    border-color = __.color.yellow

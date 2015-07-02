@@ -2,6 +2,7 @@
 // height 60px
 // font-size h6
 font-size = __.h6
+
 &-input
   padding 17px 0 16px 0
   

@@ -3,6 +3,7 @@
 // font-size h6
 font-size = __.h3
 line-height 1.2em
+
 &-input
   padding 3px 0 3px 0
   

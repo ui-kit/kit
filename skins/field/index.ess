@@ -1,9 +1,9 @@
-display flex
-width 100%
 align-items center
+color = __.color.gray
+display flex
 font-size = __.h8
 position relative
-color = __.color.gray
+width 100%
 
 &-label
   %./children/field-label.ess
@@ -19,17 +19,17 @@ color = __.color.gray
     opacity 1
   &:valid ~ </-label,
   &:focus ~ </-label
-    top 4px
     font-size = __.h10
-    letter-spacing .05em
     font-weight bold
-    transform none
+    letter-spacing .05em
     opacity 1
+    top 4px
+    transform none
     
 &.has-label
   & </-input
-    padding-top 12px
     padding-bottom 3px
+    padding-top 12px
     &::placeholder
       color transparent
     &:focus
