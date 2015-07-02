@@ -3,4 +3,4 @@
 // font-size h6
 &-item
   font-size = __.h6
-  padding 19px 24px
+  padding 19px 0

@@ -1,30 +1,26 @@
-order -1
-width 36px
-text-align center
+cursor text
 margin-top 2px
+order -1
 position static
+text-align center
+width 36px
+
 &:after
-  content ""
-  display block
   border = '1px solid ' + __.color.gray.lighter
-  border-top-width 0
   border-left-width 0
   border-right-width 0
+  border-top-width 0
   bottom 0
+  content ""
+  display block
   left 0
-  right 0
   position absolute
-
-</:hover
-  &-icon:after
-    border-color = __.color.primary
-
-</:active
-  &-icon:after
-    border-color = __.color.primary
-    border-bottom-width 2px
-
-</-input
-  &:focus ~ </-icon:after
-    border-color = __.color.primary
-    border-bottom-width 2px
+  right 0
+</:hover &:after
+  border-color = __.color.primary
+</:active &:after
+  border-bottom-width 2px
+  border-color = __.color.primary
+</-input:focus ~ </-icon:after
+  border-bottom-width 2px
+  border-color = __.color.primary

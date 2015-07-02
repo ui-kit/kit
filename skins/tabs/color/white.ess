@@ -1,11 +1,18 @@
+color = __.color.white
 &-item
-  border = '2px solid ' + __.color.white
-  color = __.color.white
-
+  opacity .5
+  &:hover,
+  &:active
+    filter none
   &:hover
-    color = __.color.gray.lighter
-    
-  &:active, &:focus
-    background-color = __.color.white
-    border = '2px solid ' + __.color.white
+    opacity .7
+  &:active
+    border-color = __.color.primary
+    opacity 1
+  &.is-selected,
+  &:active
+    opacity 1
+  &.is-selected &-label,
+  &:active &-label
     color = __.color.primary
+    

@@ -1,9 +1,8 @@
 %./size/medium.ess
-%./color/gray.ess 
 
 -webkit-appearance none
-border-width 2px
-border-style solid
+border 2px solid
+border-color inherit
 border-radius 100px
 box-sizing border-box
 outline none
@@ -11,10 +10,14 @@ position relative
 vertical-align middle
 user-select none
 
+&:hover
+  filter brightness(65%)
+
 &:focus
   &:after
-    border-width 2px
-    border-style solid
+    border 2px solid
+    border-color inherit
+    opacity .5
     border-radius 100px
     bottom -6px
     content ''
@@ -26,6 +29,7 @@ user-select none
 &:active, &:checked, &.is-active
   background = __.color.accent
   border-color = __.color.accent
+  filter none
   &:before
     background = __.color.white
     border-radius 100px

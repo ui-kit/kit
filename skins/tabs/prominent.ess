@@ -1,37 +1,55 @@
 %./index.ess
-%./size/medium.ess
-
-.TabsProminent
-  &-item
-    border-width 2px
-    border-style solid
-    color = __.color.primary
-    cursor pointer
+&-item
+  border-width 2px
+  border-style solid
+  color inherit
+  flex 1 1 100em
+  margin 0 0 0 -2px
+  opacity 1
+  &:after
+    border 100px solid
+    border-color transparent
+    bottom 0
+    box-sizing border-box
+    content ""
     display block
-    flex 1 1 20em
-    font-weight bold
-    line-height 1em
-    margin 0 -2px 0 0
-    text-align center
-    text-transform uppercase
-
-    &:first-of-type
-      border-radius 2px 0 0 2px
+    left 0
+    position absolute
+    right 0
+    top 0
+  
+  &:first-of-type
+    border-radius 2px 0 0 2px
+  
+  &:last-of-type
+    border-radius 0 2px 2px 0
     
-    &:last-of-type
-      border-radius 0 2px 2px 0
-      margin-right 0
-
-    &:hover
-      border = '2px solid ' + __.color.primary.dark
-      color = __.color.primary.dark
-      
-    &:active, &:focus
-      background-color = __.color.primary.darker
-      border = '2px solid ' + __.color.primary.darker
-      color = __.color.primary.light
+  &:hover,
+  &:active
+    &:after
+      border-color initial
+      opacity .1
     
-    &.is-selected
-      background-color = __.color.primary
-      border-color = __.color.primary
-      color = __.color.white
+  &.is-selected,
+  &:active
+    border-color initial
+    color inherit
+    &:after
+      border-color initial
+      opacity 1
+
+  &.is-selected &-label,
+  &:active &-label
+    color = __.color.white
+  
+  &:active, &.is-selected
+    border-width 2px
+
+& &-item
+  border-color inherit
+  opacity 1
+  &:active, &.is-selected
+    border-color inherit
+  &:hover,
+  &:active
+    opacity 1
