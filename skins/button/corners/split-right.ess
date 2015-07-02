@@ -1,7 +1,14 @@
 border-bottom-left-radius 0
 border-top-left-radius 0
-margin-left 2px
+margin-left -2px
 position relative
+
+&:hover,
+&:active,
+.is-active &,
+&.is-active
+  z-index 1
+
 &:before
   color transparent
   content "\25bc"
