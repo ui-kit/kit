@@ -1,0 +1,123 @@
+line-height 1.5em
+
+img 
+  display inline-block
+  margin .5em 0
+  max-width 100%
+
+hr 
+  border-top 2px solid
+  border-color inherit
+  clear both
+  margin 36px auto
+  opacity .3
+  width 8rem
+
+// Text-styles
+i,
+em
+  font-style italic
+
+b,
+strong
+  font-weight bold
+
+del 
+  text-decoration line-through
+
+a
+  %./../link/index.ess
+
+
+// Text-blocks
+p 
+  margin 1em 0
+
+blockquote 
+  position relative
+  color inheirt
+  padding-left 1.5em
+  font-style italic
+  &:after
+    left 0
+    top 0
+    bottom 0
+    position absolute
+    border-left 2px solid
+    border-color inherit
+
+
+// Lists
+ul 
+  margin .5em 0 .5em 1.5em
+  list-style disc
+ol 
+  margin .5em 0 .5em 1.5em
+  list-style decimal
+
+dt 
+  font-weight bold
+dd 
+  opacity .5
+
+
+// Headings
+h1
+  %./../heading/index.ess
+  %./../heading/size/1.ess
+  
+h2
+  %./../heading/index.ess
+  %./../heading/size/2.ess
+  
+h3
+  %./../heading/index.ess
+  %./../heading/size/3.ess
+  
+h4
+  %./../heading/index.ess
+  %./../heading/size/4.ess
+  
+h5
+  %./../heading/index.ess
+  %./../heading/size/5.ess
+  
+h6
+  %./../heading/index.ess
+  %./../heading/size/6.ess
+  
+big
+  %./../heading/index.ess
+  %./../heading/size/5.ess
+  
+small
+  %./../heading/index.ess
+  %./../heading/size/8.ess
+
+
+// Tables
+table 
+  width 100%
+
+td 
+  display table-cell !important
+  float none !important
+  text-align left
+  padding 1.5rem
+  border-top = '1px solid ' + __.color.black
+  &:first-child 
+    padding-left 0
+  &:last-child 
+    padding-right 0
+  
+th 
+  display table-cell
+  font-size = __.h8
+  text-align left
+  line-height 1em
+  padding-top 20px
+  padding-bottom 20px
+  &:first-child 
+    padding-left 0
+  &:last-child 
+    padding-right 0

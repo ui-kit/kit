@@ -31,9 +31,6 @@
 .h8
   %./../heading/index.ess
   %./../heading/size/8.ess
-   
-.h8-cap
-  %./../heading/h8-cap.ess
   
 .h9
   %./../heading/index.ess
@@ -42,4 +39,7 @@
 .h10
   %./../heading/index.ess
   %./../heading/size/10.ess
+   
+.cap
+  %./../heading/cap.ess
   
