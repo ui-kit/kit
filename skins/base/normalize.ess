@@ -105,10 +105,8 @@ th
   background = __.color.white
   display table-cell
   line-height 1.5em
-  padding 1.5rem
+  padding .75rem
   text-align left
-  &:after
-    content 'cat'
   &:nth-child(even)
     background = __.color.azure
   
