@@ -35,6 +35,7 @@ width 100%
 &.is-active,
 &:focus
   box-shadow = 'inset 0 -2px 0 ' +__.color.primary
+&:focus
   &::placeholder
     color = __.color.gray.clone().clearer(.7)
 &[disabled],

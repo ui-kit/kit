@@ -4,7 +4,8 @@ color = __.color.white
   &::placeholder
     color = __.color.white.clone().clearer(.5)
   &:active,
-  &.is-active,
+  &.is-active
+    color = __.color.white.clone().clearer(.5)
   &:focus
     &::placeholder
       color = __.color.white.clone().clearer(.7)
