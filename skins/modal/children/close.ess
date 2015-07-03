@@ -2,10 +2,14 @@
 %./../../button/size/small-square.ess
 %./../../button/color/gray.ess
 %./../../button/fill/fill.ess
+%./../../button/shadow/shadow-dark.ess
 border-color = __.color.white
 left 18px
 position fixed
 top 18px
+&:hover,
+&:active
+  border-color = __.color.white
 &:before
   content '\00d7'
   font-size 22px
