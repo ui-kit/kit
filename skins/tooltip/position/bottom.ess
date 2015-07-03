@@ -1,20 +1,18 @@
-&:before, 
-&:after 
+&:before,
+&:after
   bottom auto
   left 50%
   right auto
-  top 130%
+  top 110%
   transform translateX(-50%)
-  
-  
+
 &:before
   transform translate3d(-6px, -12px, 0)
   border-top-color transparent
   border-bottom-color inherit
-  
-&:hover:after, 
-&:hover:before, 
-&:focus:after, 
-&:focus:before 
-  top 110%
-  bottom auto 
+
+&:hover:after,
+&:hover:before,
+&:focus:after,
+&:focus:before
+  bottom auto

@@ -1,0 +1,5 @@
+&:after,
+&:before
+  transition-delay 0ms
+  visibility visible
+  opacity 1 

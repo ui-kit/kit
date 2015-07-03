@@ -1,6 +1,6 @@
-&:before, 
-&:after 
-  bottom 130%
+&:before,
+&:after
+  bottom 110%
   left 50%
   right auto
   top auto
@@ -10,8 +10,3 @@
   transform translate3d(-6px, 12px, 0)
   border-top-color inherit
 
-&:hover:after, 
-&:hover:before, 
-&:focus:after, 
-&:focus:before 
-  bottom 110%
