@@ -1,0 +1,35 @@
+%./size/scale.ess
+
+border none
+color = __.color.white
+cursor default
+display block
+font-size = __.h10
+font-weight normal
+text-align right
+text-shadow = '0 1px 1px '+__.color.black
+text-transform none
+
+&-image
+  border-radius 2px
+  display block
+  position relative
+  width 100%
+  
+&-content
+  bottom 0
+  box-sizing border-box
+  left 0
+  padding 22px 8px 3px 8px
+  position absolute
+  right 0
+  &:after
+    background = 'linear-gradient('+__.color.black.clone().clearer(1)+', '+__.color.black+')'
+    border-radius 2px
+    bottom 0
+    content ' '
+    display block
+    left 0
+    position absolute
+    right 0
+    top -2rem
