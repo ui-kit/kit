@@ -56,11 +56,10 @@ vertical-align middle
   box-sizing border-box
   display inline-block
   line-height 12px
-  padding-top 2px
   vertical-align middle
+  margin-top -1px
   &:before,
   &:after
-    margin-top -1px
     vertical-align middle
   
 if props.children

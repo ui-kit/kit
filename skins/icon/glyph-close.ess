@@ -1,0 +1,13 @@
+%./glyph-hamburger.ess
+
+border-color transparent
+
+&:before 
+  margin 0
+  transform rotate(45deg) 
+  transition all .15s linear 
+
+&:after 
+  margin 0
+  transform rotate(-45deg) 
+  transition all .15s linear 
