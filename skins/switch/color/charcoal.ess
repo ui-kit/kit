@@ -1,0 +1,16 @@
+border-color = __.color.charcoal
+background-color = __.color.charcoal
+
+&:before
+  background = __.color.white
+
+&:hover
+  background = __.color.charcoal.clone().dark
+  border-color = __.color.charcoal.clone().dark
+  
+&:active, &:checked, &.is-active
+  background = __.color.green
+  border-color = __.color.green
+
+  &:before
+    background = __.color.white

@@ -1,7 +1,10 @@
 font-size 12px
-height 16px
-margin-top -1px
 width 24px
+margin-top -1px
+border-top 8px solid
+border-bottom 8px solid
+border-color inherit
+height 0
 
 &:active, &:checked, &.is-active
   &:before

@@ -1,9 +1,9 @@
 %./size/medium.ess
-%./color/gray.ess
 
 -webkit-appearance none
 border-radius 100px
 box-sizing border-box
+cursor pointer
 outline none
 position relative
 user-select none
@@ -19,4 +19,16 @@ margin 0
   padding-bottom 50%
   transition all .1s ease
   width 50%
-  margin 8.33333%
+  margin-left 8.33333%
+  position absolute
+  left 0
+  top 50%
+  transform translateY(-50%)
+
+&:hover
+  filter brightness(75%)
+
+&:active, &:checked, &.is-active
+  filter none
+  background = __.color.green
+  border-color = __.color.green

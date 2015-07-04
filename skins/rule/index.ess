@@ -1,0 +1,8 @@
+border-radius 2px
+border-top 2px solid
+border-color inherit
+clear both
+margin 4rem auto
+max-width 8rem
+opacity .3
+width 100%
