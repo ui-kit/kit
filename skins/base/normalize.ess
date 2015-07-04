@@ -4,12 +4,8 @@ img
   max-width 100%
 
 hr 
-  border-top 2px solid
-  border-color inherit
-  clear both
-  margin 36px auto
-  opacity .3
-  width 8rem
+  %./../rule/index.ess
+  margin 4em auto
 
 // Text-styles
 i,
@@ -97,28 +93,13 @@ small
 
 // Tables
 table 
-  line-height 1.5em
-  width 100%
+  %./../table/index.ess
 
-td,
-th
-  background = __.color.white
-  display table-cell
-  line-height 1.35em
-  padding 1.5rem
-  text-align left
-  &:nth-child(even)
-    background = __.color.azure
+td
+  %./../table/children/cell.ess
   
 th 
-  color = __.color.white
-  background = __.color.gray
-  &:nth-child(even)
-    background = __.color.gray.dark
+  %./../table/children/header.ess
 
 tr
-  &:nth-child(even)
-    td
-      background = __.color.azure
-      &:nth-child(even)
-        background = __.color.azure.darker
+  %./../table/children/row.ess
