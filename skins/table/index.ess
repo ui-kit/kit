@@ -1,0 +1,29 @@
+line-height 1.5em
+width 100%
+display table
+
+&-row,
+&-head,
+&-foot
+  display table-row
+
+&-header,
+&-cell
+  background = __.color.white
+  display table-cell
+  line-height 1.5em
+  padding .75rem
+  text-align left
+  &:nth-child(even)
+    background = __.color.azure
+
+&-header
+  color = __.color.white
+  background = __.color.gray
+  &:nth-child(even)
+    background = __.color.gray.dark
+
+&-row:nth-child(even) > &-cell
+  background = __.color.azure
+  &:nth-child(even)
+    background = __.color.azure.darker
