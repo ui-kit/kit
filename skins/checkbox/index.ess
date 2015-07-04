@@ -1,11 +1,12 @@
 %./size/medium.ess
 
 -webkit-appearance none
-border-radius 2px
 border 2px solid
 border-color inherit
+border-radius 2px
 box-sizing border-box
 color = __.color.white
+cursor pointer
 outline none
 position relative
 user-select none
