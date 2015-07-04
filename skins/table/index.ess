@@ -5,25 +5,17 @@ display table
 &-row,
 &-head,
 &-foot
-  display table-row
-
-&-header,
-&-cell
-  background = __.color.white
-  display table-cell
-  line-height 1.35em
-  padding 1.5rem
-  text-align left
-  &:nth-child(even)
-    background = __.color.azure
-
+  %./children/row.ess
 &-header
-  color = __.color.white
-  background = __.color.gray
-  &:nth-child(even)
-    background = __.color.gray.dark
+  %./children/header.ess
+&-cell
+  %./children/cell.ess
 
+// I dont know how to get this to work once in the children folder BF
 &-row:nth-child(even) > &-cell
   background = __.color.azure
   &:nth-child(even)
     background = __.color.azure.darker
+
+
+
