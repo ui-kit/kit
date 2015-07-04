@@ -11,8 +11,8 @@ display table
 &-cell
   background = __.color.white
   display table-cell
-  line-height 1.5em
-  padding .75rem
+  line-height 1.35em
+  padding 1.5rem
   text-align left
   &:nth-child(even)
     background = __.color.azure
