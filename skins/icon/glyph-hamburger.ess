@@ -28,10 +28,10 @@ transition all .15s linear
   margin -6px 0 0 -2px
   &:after 
     margin 0 
-    transition all .4s linear 
+    transition all .15s linear 
     transform rotate(-45deg) 
 
   &:before 
     margin 0 
-    transition all .4s linear 
+    transition all .15s linear 
     transform rotate(45deg) 
