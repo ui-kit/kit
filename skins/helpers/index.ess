@@ -1,4 +1,5 @@
 %./heading.ess
 %./text-style.ess
 %./format-elements.ess
+%./icon.ess
 %./clearfix.ess
