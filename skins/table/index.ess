@@ -10,12 +10,3 @@ display table
   %./children/header.ess
 &-cell
   %./children/cell.ess
-
-// I dont know how to get this to work once in the children folder BF
-&-row:nth-child(even) > &-cell
-  background = __.color.azure
-  &:nth-child(even)
-    background = __.color.azure.darker
-
-
-
