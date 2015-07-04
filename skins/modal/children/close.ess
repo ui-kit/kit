@@ -1,12 +1,9 @@
-%./../../button/index.ess
-%./../../button/size/small-square.ess
-%./../../button/color/gray.ess
-%./../../button/fill/fill.ess
-%./../../button/shadow/shadow-dark.ess
+%./../../button/close.ess
 border-color = __.color.white
-left 18px
+left 0
+margin 18px
 position fixed
-top 18px
+top 0
 &:hover,
 &:active
   border-color = __.color.white
