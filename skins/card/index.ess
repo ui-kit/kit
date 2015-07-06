@@ -9,9 +9,18 @@ padding 18px
   padding-bottom 12px
   %./../heading/h4.ess
 
+&-subheader
+  padding-bottom 12px
+  %./../heading/h4.ess
+
 &-body
   padding 0
   %./../heading/h6.ess
+
+&-subfooter
+  %./../heading/h8.ess
+  opacity .5
+  padding-top 12px
 
 &-footer
   %./../heading/h8.ess

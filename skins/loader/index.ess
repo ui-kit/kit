@@ -1,0 +1,5 @@
+  display: block;
+  -webkit-animation: shift-rightwards 1s ease-in-out infinite;
+  animation: shift-rightwards 1s ease-in-out infinite;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: .4s;
