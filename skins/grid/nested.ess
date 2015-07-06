@@ -1,0 +1,24 @@
+box-sizing border-box
+display flex
+flex-direction row
+flex-wrap wrap
+padding 0
+
+&.show-grid &-item:first-of-type
+  &:after
+    bottom 0
+    left 0
+    top 0
+&.show-grid &-item:last-of-type
+  &:after
+    bottom 0
+    right 0
+    top 0
+
+&-item
+  padding-bottom 0
+  padding-top 0
+  &:first-of-type
+    padding-left 0
+  &:last-of-type
+    padding-right 0
