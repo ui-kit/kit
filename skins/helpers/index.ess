@@ -1,5 +1,7 @@
-%./heading.ess
-%./text-style.ess
-%./format-elements.ess
-%./icon.ess
 %./clearfix.ess
+%./format-elements.ess
+%./heading.ess
+%./icon.ess
+%./margin/index.ess
+%./padding/index.ess
+%./text-style.ess

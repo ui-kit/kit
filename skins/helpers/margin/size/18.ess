@@ -1,0 +1,77 @@
+&-18,
+&-18-s
+  margin 1.5rem !important
+&-18-s
+  @media screen and (max-width: 900px)
+    margin .75rem !important
+  @media screen and (max-width: 350px)
+    margin .333333rem !important
+
+&-18-y,
+&-18-sy
+  margin-top 1.5rem !important
+  margin-bottom 1.5rem !important
+&-18-sy
+  margin-top 1.5rem !important
+  margin-bottom 1.5rem !important
+  @media screen and (max-width: 900px)
+    margin-top .75rem !important
+    margin-bottom .75rem !important
+  @media screen and (max-width: 350px)
+    margin-top .333333rem !important
+    margin-bottom .333333rem !important
+
+
+&-18-x,
+&-18-sx
+  margin-left 1.5rem !important
+  margin-right 1.5rem !important
+&-18-sx
+  margin-left 1.5rem !important
+  margin-right 1.5rem !important
+  @media screen and (max-width: 900px)
+    margin-left .75rem !important
+    margin-right .75rem !important
+  @media screen and (max-width: 350px)
+    margin-left .333333rem !important
+    margin-right .333333rem !important
+
+&-18-t,
+&-18-st
+  margin-top 1.5rem !important
+&-18-st
+  margin-top 1.5rem !important
+  @media screen and (max-width: 900px)
+    margin-top .75rem !important
+  @media screen and (max-width: 350px)
+    margin-top .333333rem !important
+
+&-18-r,
+&-18-sr
+  margin-right 1.5rem !important
+&-18-sr
+  margin-right 1.5rem !important
+  @media screen and (max-width: 900px)
+    margin-right .75rem !important
+  @media screen and (max-width: 350px)
+    margin-right .333333rem !important
+
+&-18-b,
+&-18-sb
+  margin-bottom 1.5rem !important
+&-18-sb
+  margin-bottom 1.5rem !important
+  @media screen and (max-width: 900px)
+    margin-bottom .75rem !important
+  @media screen and (max-width: 350px)
+    margin-bottom .333333rem !important
+
+&-18-l,
+&-18-sl
+  margin-left 1.5rem !important
+&-18-sl
+  margin-left 1.5rem !important
+  @media screen and (max-width: 900px)
+    margin-left .75rem !important
+  @media screen and (max-width: 350px)
+    margin-left .333333rem !important

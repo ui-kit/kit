@@ -1,6 +1,6 @@
 .grid
   %./../grid/index.ess
-  %ui-kit/skins/grid/breakpoint.ess
+  %./../grid/breakpoint.ess
 .grid-nested
-  %ui-kit/skins/grid/nested.ess
+  %./../grid/nested.ess
   

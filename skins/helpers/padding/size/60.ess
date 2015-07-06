@@ -1,0 +1,76 @@
+&-60,
+&-60-s
+  padding 5rem !important
+&-60-s
+  @media screen and (max-width: 900px)
+    padding 2.5rem !important
+  @media screen and (max-width: 350px)
+    padding 1.25rem !important
+
+&-60-y,
+&-60-sy
+  padding-top 5rem !important
+  padding-bottom 5rem !important
+&-60-sy
+  padding-top 5rem !important
+  padding-bottom 5rem !important
+  @media screen and (max-width: 900px)
+    padding-top 2.5rem !important
+    padding-bottom 2.5rem !important
+  @media screen and (max-width: 350px)
+    padding-top 1.25rem !important
+    padding-bottom 1.25rem !important
+
+&-60-x,
+&-60-sx
+  padding-left 5rem !important
+  padding-right 5rem !important
+&-60-sx
+  padding-left 5rem !important
+  padding-right 5rem !important
+  @media screen and (max-width: 900px)
+    padding-left 2.5rem !important
+    padding-right 2.5rem !important
+  @media screen and (max-width: 350px)
+    padding-left 1.25rem !important
+    padding-right 1.25rem !important
+
+&-60-t,
+&-60-st
+  padding-top 5rem !important
+&-60-st
+  padding-top 5rem !important
+  @media screen and (max-width: 900px)
+    padding-top 2.5rem !important
+  @media screen and (max-width: 350px)
+    padding-top 1.25rem !important
+
+&-60-r,
+&-60-sr
+  padding-right 5rem !important
+&-60-sr
+  padding-right 5rem !important
+  @media screen and (max-width: 900px)
+    padding-right 2.5rem !important
+  @media screen and (max-width: 350px)
+    padding-right 1.25rem !important
+
+&-60-b,
+&-60-sb
+  padding-bottom 5rem !important
+&-60-sb
+  padding-bottom 5rem !important
+  @media screen and (max-width: 900px)
+    padding-bottom 2.5rem !important
+  @media screen and (max-width: 350px)
+    padding-bottom 1.25rem !important
+
+&-60-l,
+&-60-sl
+  padding-left 5rem !important
+&-60-sl
+  padding-left 5rem !important
+  @media screen and (max-width: 900px)
+    padding-left 2.5rem !important
+  @media screen and (max-width: 350px)
+    padding-left 1.25rem !important

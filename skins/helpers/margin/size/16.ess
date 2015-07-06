@@ -1,0 +1,76 @@
+&-16,
+&-16-s
+  margin 1.333333rem !important
+&-16-s
+  @media screen and (max-width: 900px)
+    margin .75rem !important
+  @media screen and (max-width: 350px)
+    margin .333333rem !important
+
+&-16-y,
+&-16-sy
+  margin-top 1.333333rem !important
+  margin-bottom 1.333333rem !important
+&-16-sy
+  margin-top 1.333333rem !important
+  margin-bottom 1.333333rem !important
+  @media screen and (max-width: 900px)
+    margin-top 1.333333rem !important
+    margin-bottom 1.333333rem !important
+  @media screen and (max-width: 350px)
+    margin-top 1.333333rem !important
+    margin-bottom 1.333333rem !important
+
+&-16-x,
+&-16-sx
+  margin-left 1.333333rem !important
+  margin-right 1.333333rem !important
+&-16-sx
+  margin-left 1.333333rem !important
+  margin-right 1.333333rem !important
+  @media screen and (max-width: 900px)
+    margin-left 1.333333rem !important
+    margin-right 1.333333rem !important
+  @media screen and (max-width: 350px)
+    margin-left 1.333333rem !important
+    margin-right 1.333333rem !important
+
+&-16-t,
+&-16-st
+  margin-top 1.333333rem !important
+&-16-st
+  margin-top 1.333333rem !important
+  @media screen and (max-width: 900px)
+    margin-top 1.333333rem !important
+  @media screen and (max-width: 350px)
+    margin-top 1.333333rem !important
+
+&-16-r,
+&-16-sr
+  margin-right 1.333333rem !important
+&-16-sr
+  margin-right 1.333333rem !important
+  @media screen and (max-width: 900px)
+    margin-right 1.333333rem !important
+  @media screen and (max-width: 350px)
+    margin-right 1.333333rem !important
+
+&-16-b,
+&-16-sb
+  margin-bottom 1.333333rem !important
+&-16-sb
+  margin-bottom 1.333333rem !important
+  @media screen and (max-width: 900px)
+    margin-bottom 1.333333rem !important
+  @media screen and (max-width: 350px)
+    margin-bottom 1.333333rem !important
+
+&-16-l,
+&-16-sl
+  margin-left 1.333333rem !important
+&-16-sl
+  margin-left 1.333333rem !important
+  @media screen and (max-width: 900px)
+    margin-left 1.333333rem !important
+  @media screen and (max-width: 350px)
+    margin-left 1.333333rem !important
