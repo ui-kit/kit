@@ -1,0 +1,3 @@
+background = __.color.gray.clone().clearer(.8)
+&-progress
+  background = __.color.gray.clone().clearer(.5)
