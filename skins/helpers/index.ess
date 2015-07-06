@@ -6,5 +6,5 @@
 %./icon.ess
 %./margin/index.ess
 %./padding/index.ess
-%./position/index.ess
+%./position.ess
 %./text-style.ess

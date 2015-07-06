@@ -1,0 +1,5 @@
+&-content
+  %./../../position/coordinates/bottom-middle.ess
+  margin-top .5rem
+  bottom auto
+  top 100%
