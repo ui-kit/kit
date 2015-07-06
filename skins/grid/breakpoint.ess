@@ -2,32 +2,16 @@
   &-item-1400
     %./children/grid-item.ess
 
-@media screen and (max-width: 1350px)
-  &-item-1350
-    %./children/grid-item.ess
-
 @media screen and (max-width: 1300px)
   &-item-1300
-    %./children/grid-item.ess
-
-@media screen and (max-width: 1250px)
-  &-item-1250
     %./children/grid-item.ess
 
 @media screen and (max-width: 1200px)
   &-item-1200
     %./children/grid-item.ess
 
-@media screen and (max-width: 1150px)
-  &-item-1150
-    %./children/grid-item.ess
-
 @media screen and (max-width: 1100px)
   &-item-1100
-    %./children/grid-item.ess
-
-@media screen and (max-width: 1050px)
-  &-item-1050
     %./children/grid-item.ess
 
 @media screen and (max-width: 1000px)
@@ -52,6 +36,14 @@
 
 @media screen and (max-width: 750px)
   &-item-750
+    %./children/grid-item.ess
+
+@media screen and (max-width: 700px)
+  &-item-600
+    %./children/grid-item.ess
+
+@media screen and (max-width: 650px)
+  &-item-600
     %./children/grid-item.ess
 
 @media screen and (max-width: 600px)
