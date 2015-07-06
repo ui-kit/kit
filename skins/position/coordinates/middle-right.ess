@@ -1,4 +1,4 @@
 position absolute
 top 50%
-right 18px
+right 0
 transform translateY(-50%)

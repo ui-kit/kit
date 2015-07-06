@@ -1,0 +1,8 @@
+// headings
+
+.absolute
+  %./../position/index.ess
+
+.fixed
+  %./../position/index.ess
+  %./../position/fixed.ess

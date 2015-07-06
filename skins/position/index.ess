@@ -1,0 +1,30 @@
+&-top
+  &-left
+    position absolute
+    %./../coordinates/top-left.ess
+  &-middle
+    position absolute
+    %./../coordinates/top-middle.ess
+  &-right
+    position absolute
+    %./../coordinates/top-right.ess
+&-middle
+  &-left
+    position absolute
+    %./../coordinates/middle-left.ess
+  &-middle
+    position absolute
+    %./../coordinates/middle-middle.ess
+  &-right
+    position absolute
+    %./../coordinates/middle-right.ess
+&-bottom
+  &-left
+    position absolute
+    %./../coordinates/bottom-left.ess
+  &-middle
+    position absolute
+    %./../coordinates/bottom-middle.ess
+  &-right
+    position absolute
+    %./../coordinates/bottom-right.ess

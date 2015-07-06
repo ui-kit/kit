@@ -1,0 +1,7 @@
+position relative
+
+&-close
+  %./children/close.ess
+  
+&-content
+  %./children/content.ess

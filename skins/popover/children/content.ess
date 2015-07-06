@@ -1,0 +1,17 @@
+display block
+max-width 300px
+padding 0 1.5rem
+overflow hidden
+width 0
+height 0
+left 50%
+position absolute
+top 100%
+z-index 10
+%./../shadow/shadow.ess
+
+.is-active &
+  width 200px
+  height auto
+  height auto
+  overflow visible

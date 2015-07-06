@@ -1,0 +1,16 @@
+%./../../button/close.ess
+border-color = __.color.white
+left -12px
+position absolute
+top -12px
+&:hover,
+&:active
+  border-color = __.color.white
+&:before
+  content '\00d7'
+  font-size 22px
+  left 50%
+  margin 1px 0 0 0
+  position absolute
+  top 50%
+  transform translate(-50%, -50%)
