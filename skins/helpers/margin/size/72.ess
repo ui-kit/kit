@@ -1,0 +1,76 @@
+&-72,
+&-72-s
+  margin 6rem !important
+&-72-s
+  @media screen and (max-width: 900px)
+    margin 3rem !important
+  @media screen and (max-width: 350px)
+    margin 1.5rem !important
+
+&-72-y,
+&-72-sy
+  margin-top 6rem !important
+  margin-bottom 6rem !important
+&-72-sy
+  margin-top 6rem !important
+  margin-bottom 6rem !important
+  @media screen and (max-width: 900px)
+    margin-top 3rem !important
+    margin-bottom 3rem !important
+  @media screen and (max-width: 350px)
+    margin-top 1.5rem !important
+    margin-bottom 1.5rem !important
+
+&-72-x,
+&-72-sx
+  margin-left 6rem !important
+  margin-right 6rem !important
+&-72-sx
+  margin-left 6rem !important
+  margin-right 6rem !important
+  @media screen and (max-width: 900px)
+    margin-left 3rem !important
+    margin-right 3rem !important
+  @media screen and (max-width: 350px)
+    margin-left 1.5rem !important
+    margin-right 1.5rem !important
+
+&-72-t,
+&-72-st
+  margin-top 6rem !important
+&-72-st
+  margin-top 6rem !important
+  @media screen and (max-width: 900px)
+    margin-top 3rem !important
+  @media screen and (max-width: 350px)
+    margin-top 1.5rem !important
+
+&-72-r,
+&-72-sr
+  margin-right 6rem !important
+&-72-sr
+  margin-right 6rem !important
+  @media screen and (max-width: 900px)
+    margin-right 3rem !important
+  @media screen and (max-width: 350px)
+    margin-right 1.5rem !important
+
+&-72-b,
+&-72-sb
+  margin-bottom 6rem !important
+&-72-sb
+  margin-bottom 6rem !important
+  @media screen and (max-width: 900px)
+    margin-bottom 3rem !important
+  @media screen and (max-width: 350px)
+    margin-bottom 1.5rem !important
+
+&-72-l,
+&-72-sl
+  margin-left 6rem !important
+&-72-sl
+  margin-left 6rem !important
+  @media screen and (max-width: 900px)
+    margin-left 3rem !important
+  @media screen and (max-width: 350px)
+    margin-left 1.5rem !important

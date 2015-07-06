@@ -1,0 +1,22 @@
+&-4
+  padding .333333rem !important
+
+&-4-y
+  padding-top .333333rem !important
+  padding-bottom .333333rem !important
+
+&-4-x
+  padding-left .333333rem !important
+  padding-right .333333rem !important
+
+&-4-t
+  padding-top .333333rem !important
+
+&-4-r
+  padding-right .333333rem !important
+
+&-4-b
+  padding-bottom .333333rem !important
+
+&-4-l
+  padding-left .333333rem !important

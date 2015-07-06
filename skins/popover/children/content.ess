@@ -1,0 +1,15 @@
+%./../../shadow/shadow.ess
+background = __.color.white
+border-radius 2px
+display block
+height 0
+max-width 300px
+overflow hidden
+position absolute
+width 0
+z-index 2
+
+.is-active &
+  width 200px
+  height auto
+  overflow visible

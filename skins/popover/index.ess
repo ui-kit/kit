@@ -1,0 +1,9 @@
+position relative
+display inline-block
+%./position/bottom.ess
+
+&-content
+  %./children/content.ess
+
+  &-close
+    %./children/content-close.ess

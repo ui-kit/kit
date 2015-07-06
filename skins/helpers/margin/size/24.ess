@@ -1,0 +1,76 @@
+&-24,
+&-24-s
+  margin 2rem !important
+&-24-s
+  @media screen and (max-width: 900px)
+    margin 1rem !important
+  @media screen and (max-width: 350px)
+    margin .5rem !important
+
+&-24-y,
+&-24-sy
+  margin-top 2rem !important
+  margin-bottom 2rem !important
+&-24-sy
+  margin-top 2rem !important
+  margin-bottom 2rem !important
+  @media screen and (max-width: 900px)
+    margin-top 1rem !important
+    margin-bottom 1rem !important
+  @media screen and (max-width: 350px)
+    margin-top .5rem !important
+    margin-bottom .5rem !important
+
+&-24-x,
+&-24-sx
+  margin-left 2rem !important
+  margin-right 2rem !important
+&-24-sx
+  margin-left 2rem !important
+  margin-right 2rem !important
+  @media screen and (max-width: 900px)
+    margin-left 1rem !important
+    margin-right 1rem !important
+  @media screen and (max-width: 350px)
+    margin-left .5rem !important
+    margin-right .5rem !important
+
+&-24-t,
+&-24-st
+  margin-top 2rem !important
+&-24-st
+  margin-top 2rem !important
+  @media screen and (max-width: 900px)
+    margin-top 1rem !important
+  @media screen and (max-width: 350px)
+    margin-top .5rem !important
+
+&-24-r,
+&-24-sr
+  margin-right 2rem !important
+&-24-sr
+  margin-right 2rem !important
+  @media screen and (max-width: 900px)
+    margin-right 1rem !important
+  @media screen and (max-width: 350px)
+    margin-right .5rem !important
+
+&-24-b,
+&-24-sb
+  margin-bottom 2rem !important
+&-24-sb
+  margin-bottom 2rem !important
+  @media screen and (max-width: 900px)
+    margin-bottom 1rem !important
+  @media screen and (max-width: 350px)
+    margin-bottom .5rem !important
+
+&-24-l,
+&-24-sl
+  margin-left 2rem !important
+&-24-sl
+  margin-left 2rem !important
+  @media screen and (max-width: 900px)
+    margin-left 1rem !important
+  @media screen and (max-width: 350px)
+    margin-left .5rem !important

@@ -1,0 +1,76 @@
+&-16,
+&-16-s
+  padding 1.333333rem !important
+&-16-s
+  @media screen and (max-width: 900px)
+    padding .75rem !important
+  @media screen and (max-width: 350px)
+    padding .333333rem !important
+
+&-16-y,
+&-16-sy
+  padding-top 1.333333rem !important
+  padding-bottom 1.333333rem !important
+&-16-sy
+  padding-top 1.333333rem !important
+  padding-bottom 1.333333rem !important
+  @media screen and (max-width: 900px)
+    padding-top 1.333333rem !important
+    padding-bottom 1.333333rem !important
+  @media screen and (max-width: 350px)
+    padding-top 1.333333rem !important
+    padding-bottom 1.333333rem !important
+
+&-16-x,
+&-16-sx
+  padding-left 1.333333rem !important
+  padding-right 1.333333rem !important
+&-16-sx
+  padding-left 1.333333rem !important
+  padding-right 1.333333rem !important
+  @media screen and (max-width: 900px)
+    padding-left 1.333333rem !important
+    padding-right 1.333333rem !important
+  @media screen and (max-width: 350px)
+    padding-left 1.333333rem !important
+    padding-right 1.333333rem !important
+
+&-16-t,
+&-16-st
+  padding-top 1.333333rem !important
+&-16-st
+  padding-top 1.333333rem !important
+  @media screen and (max-width: 900px)
+    padding-top 1.333333rem !important
+  @media screen and (max-width: 350px)
+    padding-top 1.333333rem !important
+
+&-16-r,
+&-16-sr
+  padding-right 1.333333rem !important
+&-16-sr
+  padding-right 1.333333rem !important
+  @media screen and (max-width: 900px)
+    padding-right 1.333333rem !important
+  @media screen and (max-width: 350px)
+    padding-right 1.333333rem !important
+
+&-16-b,
+&-16-sb
+  padding-bottom 1.333333rem !important
+&-16-sb
+  padding-bottom 1.333333rem !important
+  @media screen and (max-width: 900px)
+    padding-bottom 1.333333rem !important
+  @media screen and (max-width: 350px)
+    padding-bottom 1.333333rem !important
+
+&-16-l,
+&-16-sl
+  padding-left 1.333333rem !important
+&-16-sl
+  padding-left 1.333333rem !important
+  @media screen and (max-width: 900px)
+    padding-left 1.333333rem !important
+  @media screen and (max-width: 350px)
+    padding-left 1.333333rem !important

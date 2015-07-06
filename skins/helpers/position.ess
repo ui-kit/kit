@@ -1,0 +1,98 @@
+// headings
+
+.absolute
+  position aboslute
+  &-top
+    &-left
+      %./../position/coordinates/top-left.ess
+      &-spaced
+        %./../position/coordinates-spaced/top-left.ess
+    &-middle
+      %./../position/coordinates/top-middle.ess
+      &-spaced
+        %./../position/coordinates-spaced/top-middle.ess
+    &-right
+      %./../position/coordinates/top-right.ess
+      &-spaced
+        %./../position/coordinates-spaced/top-right.ess
+  &-middle
+    &-left
+      %./../position/coordinates/middle-left.ess
+      &-spaced
+        %./../position/coordinates-spaced/middle-left.ess
+    &-middle
+      %./../position/coordinates/middle.ess
+    &-right
+      %./../position/coordinates/middle-right.ess
+      &-spaced
+        %./../position/coordinates-spaced/middle-right.ess
+  &-bottom
+    &-left
+      %./../position/coordinates/bottom-left.ess
+      &-spaced
+        %./../position/coordinates-spaced/bottom-left.ess
+    &-middle
+      %./../position/coordinates/bottom-middle.ess
+      &-spaced
+        %./../position/coordinates-spaced/bottom-middle.ess
+    &-right
+      %./../position/coordinates/bottom-right.ess
+      &-spaced
+        %./../position/coordinates-spaced/bottom-right.ess
+
+
+.fixed
+  &-top
+    &-left
+      position fixed
+      %./../position/coordinates/top-left.ess
+      &-spaced
+        position fixed
+        %./../position/coordinates-spaced/top-left.ess
+    &-middle
+      position fixed
+      %./../position/coordinates/top-middle.ess
+      &-spaced
+        position fixed
+        %./../position/coordinates-spaced/top-middle.ess
+    &-right
+      position fixed
+      %./../position/coordinates/top-right.ess
+      &-spaced
+        position fixed
+        %./../position/coordinates-spaced/top-right.ess
+  &-middle
+    &-left
+      position fixed
+      %./../position/coordinates/middle-left.ess
+      &-spaced
+        position fixed
+        %./../position/coordinates-spaced/middle-left.ess
+    &-middle
+      position fixed
+      %./../position/coordinates/middle.ess
+    &-right
+      position fixed
+      %./../position/coordinates/middle-right.ess
+      &-spaced
+        position fixed
+        %./../position/coordinates-spaced/middle-right.ess
+  &-bottom
+    &-left
+      position fixed
+      %./../position/coordinates/bottom-left.ess
+      &-spaced
+        position fixed
+        %./../position/coordinates-spaced/bottom-left.ess
+    &-middle
+      position fixed
+      %./../position/coordinates/bottom-middle.ess
+      &-spaced
+        position fixed
+        %./../position/coordinates-spaced/bottom-middle.ess
+    &-right
+      position fixed
+      %./../position/coordinates/bottom-right.ess
+      &-spaced
+        position fixed
+        %./../position/coordinates-spaced/bottom-right.ess
