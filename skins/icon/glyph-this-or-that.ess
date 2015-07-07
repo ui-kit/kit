@@ -1,0 +1,11 @@
+border-color transparent
+
+&:before
+  content ''
+  display inline-block
+  height 2px
+  border-top 7px solid
+  border-bottom 7px solid
+  border-color initial
+  width 16px
+  border-radius 2px
