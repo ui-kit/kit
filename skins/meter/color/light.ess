@@ -1,3 +1,0 @@
-background = __.color.white.clone().clearer(.7)
-&-progress
-  background = __.color.white
