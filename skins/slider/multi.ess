@@ -1,0 +1,17 @@
+&-range
+  position relative
+  &-handle
+    position absolute
+    left 0
+    top 50%
+    transform translate(-50%, -50%)
+    &:last-of-type
+      left 100%
+
+&-label-left
+  .icon
+    font-size 9px
+  
+&-label-right
+  .icon
+    font-size 16px

@@ -1,0 +1,11 @@
+&-label-left,
+&-label-right
+  .icon
+    width 16px
+    font-size 9px
+    text-align center
+    display block
+  
+&-label-right
+  .icon
+    font-size 16px
