@@ -11,4 +11,5 @@ box-shadow = '0 10px 10px ' + __.color.black.clone().clearer(.9) + ', 0 0 1px 1p
 &:active
   background = __.color.primary
   border-color = __.color.primary
+  box-shadow none
   opacity 1
