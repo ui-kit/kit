@@ -1,0 +1,4 @@
+&-progress
+  display block
+  height 8px
+  width 0px
