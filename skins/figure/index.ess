@@ -8,8 +8,8 @@ box-sizing border-box
 cursor pointer
 display flex
 font-weight bold
+justify-content: center
 position relative
-text-align center
 text-transform uppercase
 
 &-content
