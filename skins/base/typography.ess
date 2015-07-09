@@ -1,20 +1,6 @@
-body 
-  // font = "400 " __.h6 /1.5em __.fontfamily
-  color __.color.gray
-  background-color __.color.azure
-  -webkit-text-size-adjust 100%
-  -webkit-font-smoothing antialiased
+font = '400 ' + __.h6 + '/1.5em colfax, Helvetica Neue, sans-serif'
+-webkit-text-size-adjust 100%
+-webkit-font-smoothing antialiased
 
-input,
-textarea,
-button,
-a
-  // font = "400 " __.h6 /1.5em __.fontfamily
-
-// +breakpoint(W M) 
-//   body,
-//   input,
-//   textarea,
-//   button 
-//     font 400 1em/1.5em $fontFamily
-//     color $grayDarkColor
+@media screen and (max-width: 600px) 
+  font = '400 ' + __.h8 + '/1.5em colfax, Helvetica Neue, sans-serif'

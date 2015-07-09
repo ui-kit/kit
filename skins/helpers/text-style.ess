@@ -1,3 +1,9 @@
+body,
+textarea,
+input,
+button
+  %./../base/typography.ess
+
 .weight-bold
   %./../text-style/weight/bold.ess
 .weight-normal
