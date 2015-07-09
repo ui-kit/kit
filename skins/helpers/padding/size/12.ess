@@ -1,17 +1,17 @@
-&-8,
-&-8-s
+&-12,
+&-12-s
   padding 1rem !important
-&-8-s
+&-12-s
   @media screen and (max-width: 900px)
     padding .5rem !important
   @media screen and (max-width: 350px)
     padding .25rem !important
 
-&-8-y,
-&-8-sy
+&-12-y,
+&-12-sy
   padding-top 1rem !important
   padding-bottom 1rem !important
-&-8-sy
+&-12-sy
   padding-top 1rem !important
   padding-bottom 1rem !important
   @media screen and (max-width: 900px)
@@ -21,11 +21,11 @@
     padding-top .25rem !important
     padding-bottom .25rem !important
 
-&-8-x,
-&-8-sx
+&-12-x,
+&-12-sx
   padding-left 1rem !important
   padding-right .25rem !important
-&-8-sx
+&-12-sx
   padding-left 1rem !important
   padding-right 1rem !important
   @media screen and (max-width: 900px)
@@ -33,20 +33,20 @@
   @media screen and (max-width: 350px)
     padding-right .25rem !important
 
-&-8-t,
-&-8-st
+&-12-t,
+&-12-st
   padding-top 1rem !important
-&-8-st
+&-12-st
   padding-top 1rem !important
   @media screen and (max-width: 900px)
     padding-top .5rem !important
   @media screen and (max-width: 350px)
     padding-top .25rem !important
 
-&-8-r,
-&-8-sr
+&-12-r,
+&-12-sr
   padding-right 1rem !important
-&-8-sr
+&-12-sr
   padding-right 1rem !important
   @media screen and (max-width: 900px)
     padding-right .5rem !important
@@ -54,10 +54,10 @@
     padding-right .25rem !important
 
 
-&-8-b,
-&-8-sb
+&-12-b,
+&-12-sb
   padding-bottom 1rem !important
-&-8-sb
+&-12-sb
   padding-bottom 1rem !important
   @media screen and (max-width: 900px)
     padding-bottom .5rem !important
@@ -65,10 +65,10 @@
     padding-bottom .25rem !important
 
 
-&-8-l,
-&-8-sl
+&-12-l,
+&-12-sl
   padding-left 1rem !important
-&-8-sl
+&-12-sl
   padding-left 1rem !important
   @media screen and (max-width: 900px)
     padding-left .5rem !important
