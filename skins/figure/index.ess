@@ -8,7 +8,7 @@ box-sizing border-box
 cursor pointer
 display flex
 font-weight bold
-justify-content: center
+justify-content center
 position relative
 text-transform uppercase
 
@@ -16,3 +16,6 @@ text-transform uppercase
   %./children/content.ess
   &-text
     %./children/content-text.ess
+    
+&-image
+  %./children/image.ess

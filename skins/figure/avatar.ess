@@ -1,5 +1,7 @@
-%./index.ess
+%./size/medium.ess
 
-border none
-background-position center center
-background-size cover
+&-content
+  %./children/content.ess
+    
+&-image
+  %./children/image.ess
