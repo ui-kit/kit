@@ -78,22 +78,21 @@ hr.Toolbar-block-center
   opacity ='.4!important'
 
 .Toolbar-row
+  align-items center
+  display flex
   height 6rem
-  line-height 5.75rem
   position relative
 
   @media all and (max-height: 600px)
     height 4.5rem
-    line-height 4.25rem
 
   &-short
     height 3rem
-    line-height 3rem
 
 .nav-home
   width 72px
   text-align center
-  display: inline-block;
+  display inline-block
 
   .icon
     font-size 24px
@@ -103,12 +102,18 @@ hr.Toolbar-block-center
       font-size: 16px
 
 .nav-link
-  border-bottom 2px solid transparent
   font-size 14px
   font-weight bold
   text-transform uppercase
-  transition color .25s ease-out,border-color .25s ease-out,opacity .25s linear,background .25s ease-out
+  transition all .15s ease
   letter-spacing .05em
+  height 2rem
+  line-height calc(2rem + 2px)
+  border-radius 2px
+  padding 0 .5rem
+  align-self center
+  &:hover
+    transition none
   // leave these styles up to app. opt-in for default state colors
   &-default
     &.is-active
