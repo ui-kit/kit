@@ -1,5 +1,4 @@
 .Toolbar
-
   &-inner
     background-color inherit
     box-sizing border-box
