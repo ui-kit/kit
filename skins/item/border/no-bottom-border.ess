@@ -1,4 +1,4 @@
-&:last-child 
+&:last-of-type 
   & </-input
     box-shadow none
     &:hover
