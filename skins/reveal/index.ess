@@ -14,3 +14,4 @@ position relative
   max-height 10rem
   max-width 10rem
   opacity 1
+  overflow visible

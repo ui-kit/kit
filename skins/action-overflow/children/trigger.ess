@@ -4,6 +4,8 @@ height 16px
 line-height 14px
 padding 0
 width 16px
+vertical-align middle
+margin-top -5px
 
 &:before
   border 7px solid transparent
