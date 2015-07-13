@@ -1,3 +1,6 @@
+.icon-glyph-overflow
+  %./../icon/index.ess
+  %./../icon/glyph-overflow.ess
 .icon-glyph-hamburger
   %./../icon/index.ess
   %./../icon/glyph-hamburger.ess

@@ -2,7 +2,6 @@ border 1px solid
 border-color initial 
 width 16px 
 border-radius 2px 
-transition all .4s linear 
 margin -4px 0 0 
 box-sizing border-box
 position relative

@@ -1,0 +1,10 @@
+max-height 0
+height 100%
+overflow hidden
+opacity 0
+width 10rem
+max-width 0
+position absolute
+transition all .3s ease
+display flex
+justify-content flex-end

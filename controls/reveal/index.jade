@@ -1,0 +1,10 @@
+import './index.js'
+
+var actions= { toggle: this.toggle, hide: this.hideReveal, show: this.showReveal }
+
+.Reveal(class={'is-active': state.isActive})
+  yield handler(actions, state.isActive)
+  yield menu(actions)
+
+export {toggle, onWindowClick, hideReveal, showReveal, initialState, displayName, attachKeyListener, componentWillMount, componentWillUnmount} from './reveal.js'
+export var mergeProps = true

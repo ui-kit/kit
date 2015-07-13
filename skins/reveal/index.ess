@@ -1,0 +1,16 @@
+%./position/left.ess
+align-items center
+display inline-block
+position relative
+
+&-trigger
+  %./children/trigger.ess
+
+&-menu
+  %./children/menu.ess
+
+&:hover &-menu,
+&.is-active &-menu
+  max-height 10rem
+  opacity 1
+  max-width 10rem

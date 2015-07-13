@@ -1,0 +1,17 @@
+%../reveal/index.ess
+
+&-trigger
+  %./children/trigger.ess
+
+&-menu
+  %./children/menu.ess
+
+&:hover &-trigger:before,
+&:active &-trigger:before,
+.is-active& > &-trigger:before
+  border-color inherit
+
+&:hover &-trigger,
+&:active &-trigger,
+.is-active& > &-trigger
+  color = __.color.white
