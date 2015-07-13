@@ -1,10 +1,10 @@
-max-height 0
+display flex
 height 100%
-overflow hidden
-opacity 0
-width 10rem
+justify-content flex-end
+max-height 0
 max-width 0
+opacity 0
+overflow hidden
 position absolute
 transition all .3s ease
-display flex
-justify-content flex-end
+width 10rem

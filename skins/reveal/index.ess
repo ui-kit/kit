@@ -12,5 +12,5 @@ position relative
 &:hover &-menu,
 &.is-active &-menu
   max-height 10rem
-  opacity 1
   max-width 10rem
+  opacity 1
