@@ -1,19 +1,6 @@
-import {attachKeybinding, removeKeybindings} from 'ui-kit/scripts/keybinding.js'
 
 export var initialState = {isActive: false};
 export var displayName = 'Reveal';
-
-exports.componentWillMount = function () {
-  if (this.props.showMenuKeyBinding) {
-    attachKeybinding(this.props.showMenuKeyBinding, this.showReveal);
-  }
-  if (this.props.hideMenuKeyBinding) {
-    attachKeybinding(this.props.hideMenuKeyBinding, this.hideReveal);
-  }
-  if (this.props.toggleMenuKeyBinding) {
-    attachKeybinding(this.props.toggleMenuKeyBinding, this.toggle);
-  }
-}
 
 exports.toggle = function (evt) {
   this.state.isActive ?
@@ -47,7 +34,6 @@ exports.onWindowClick = function(evt) {
 
 exports.componentWillUnmount = function () {
   window.removeEventListener('click', this.onWindowClick);
-  removeKeybindings([this.props.showMenuKeyBinding, this.props.hideMenuKeyBinding, this.props.toggleMenuKeyBinding]);
 };
 
 function elContains (container, el) {

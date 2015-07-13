@@ -2,7 +2,7 @@ border 2px solid
 border-color inherit
 border-radius 1000px
 box-sizing border-box
-color = __.color.gray
+color inherit
 cursor pointer
 display inline-block
 font-size = __.h8
