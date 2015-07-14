@@ -1,7 +1,4 @@
 
-export var initialState = {isActive: false};
-export var displayName = 'Reveal';
-
 exports.toggle = function (evt) {
   this.state.isActive ?
     this.hideReveal(evt) :
@@ -9,19 +6,32 @@ exports.toggle = function (evt) {
 };
 
 exports.hideReveal = function (evt) {
-  if (!this.state.isActive) return;
+  if (!this.state.isActive || this.isLocked) return;
   if (evt) evt.stopPropagation();
   this.setState({isActive: false});
-  window.removeEventListener('click', this.onWindowClick);
+  cleanup();
 };
+
+exports.unlockAndHide = function () {
+  this.isLocked = false;
+  this.hideReveal();
+}
 
 exports.showReveal = function (evt) {
   var self = this;
   if (this.state.isActive) return;
+  if (!this.isLocked && window.hideLockedReveal) window.hideLockedReveal();
+  
   this.setState({isActive: true});
   setTimeout(function () {
     window.addEventListener('click', self.onWindowClick);
   }, 0);
+};
+
+exports.lockReveal = function () {
+  if (window.hideLockedReveal) window.hideLockedReveal();
+  window.hideLockedReveal = this.unlockAndHide;
+  this.isLocked = true;
 };
 
 exports.onWindowClick = function(evt) {
@@ -33,6 +43,12 @@ exports.onWindowClick = function(evt) {
 };
 
 exports.componentWillUnmount = function () {
+  cleanup();
+};
+
+function cleanup () {
+  if (window.hideLockedReveal) window.hideLockedReveal;
+  delete window.hideLockedReveal;
   window.removeEventListener('click', this.onWindowClick);
 };
 
@@ -52,4 +68,4 @@ function elContains (container, el) {
   }
 
   return false;
-}
+};
