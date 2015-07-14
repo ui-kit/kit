@@ -1,3 +1,4 @@
+%./size/index.ess
 %./size/scale.ess
 
 border none
@@ -17,12 +18,16 @@ text-transform none
   width 100%
   
 &-content
+  border none
   bottom 0
   box-sizing border-box
+  justify-content flex-end
   left 0
   padding 22px 8px 3px 8px
   position absolute
   right 0
+  top auto
+  transform none
   &:after
     background = 'linear-gradient('+__.color.black.clone().clearer(1)+', '+__.color.black+')'
     border-radius 2px

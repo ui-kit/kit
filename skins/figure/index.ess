@@ -1,14 +1,12 @@
 %./size/medium.ess
 
-align-items center
-border 2px solid
+align-items stretch
 border-color inherit
 border-radius 1000px
 box-sizing border-box
 cursor pointer
 display flex
 font-weight bold
-justify-content center
 position relative
 text-transform uppercase
 
