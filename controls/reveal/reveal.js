@@ -9,7 +9,7 @@ exports.hideReveal = function (evt) {
   if (!this.state.isActive || this.isLocked) return;
   if (evt) evt.stopPropagation();
   this.setState({isActive: false});
-  cleanup();
+  this.cleanup();
 };
 
 exports.unlockAndHide = function () {
@@ -43,10 +43,10 @@ exports.onWindowClick = function(evt) {
 };
 
 exports.componentWillUnmount = function () {
-  cleanup();
+  this.cleanup();
 };
 
-function cleanup () {
+exports.cleanup = function () {
   if (window.hideLockedReveal) window.hideLockedReveal;
   delete window.hideLockedReveal;
   window.removeEventListener('click', this.onWindowClick);
