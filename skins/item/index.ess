@@ -84,13 +84,7 @@ textarea
 // State classes
 &.is-not-link
   cursor default
-  &:hover,
-  &:active
-    background = __.color.white
-    color = __.color.gray
-    & </-label:after
-      border-color = __.color.azure
-      border-width 1px
+  pointer-events none
 
 &.is-input
   &:active,
