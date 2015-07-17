@@ -1,11 +1,12 @@
 border 1px solid
 border-color initial 
-width 16px 
 border-radius 2px 
-margin -4px 0 0 
 box-sizing border-box
+height 0
+margin -4px 0 0 
 position relative
 transition all .15s linear
+width 16px 
 
 &:before,
 &:after 
