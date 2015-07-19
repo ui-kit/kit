@@ -1,6 +1,6 @@
 {
   "name": "ui-kit",
-  "version": "0.5.91",
+  "version": "0.5.92",
   "description": "user interface kit",
   "main": "index.js",
   "scripts": {

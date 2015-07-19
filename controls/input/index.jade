@@ -1,0 +1,77 @@
+var.
+  componentProps = {
+    className: props.skinName,
+    defaultValue: props.defaultValue,
+    maxLength: props.maxLength,
+    minLength: props.minLength,
+    onBlur: this.onBlur,
+    onChange: this.onChange,
+    onFocus: this.onFocus,
+    placeholder: props.placeholder,
+    readonly: props.readonly,
+    style: props.style,
+    tabIndex: props.tabIndex,
+    type: props.multiLine ? 'textarea' : props.type,
+    value: props.value
+  }
+
+div(class=props.className)
+  if componentProps.type !== 'textarea' && !props.multiLine
+    input(ref='input')&props(componentProps)
+  else
+    textarea(ref='input' rows='1')&props(componentProps)
+
+export var displayName = 'InputControl'
+
+export.
+  function getDefaultProps () {
+    return {
+      type: 'text'
+    };
+  }
+
+export.
+  function onBlur(ev) {
+    if (this.props.onBlur) this.props.onBlur.call(this, ev);
+    if (this.props.multiLine) this.recalculateSize(true);
+  }
+
+export.
+  function onFocus(ev) {
+    if (this.props.onFocus) this.props.onFocus.call(this, ev);
+    if (this.props.multiLine) this.recalculateSize();
+  }
+
+export.
+  function onChange(ev) {
+    if (this.props.onChange) this.props.onChange.call(this, ev);
+    if (this.props.multiLine) this.recalculateSize();
+  }
+
+export.
+  function componentDidMount() {
+    var self = this;
+    if (this.props.multiLine) setTimeout(function () { self.recalculateSize(true) }, 300);
+  }
+
+export.
+  function componentWillReceiveProps(props) {
+    if (this.props.multiLine && props.value !== this.props.value) this.recalculateSize(true);
+    return true;
+  }
+
+export.
+  function recalculateSize(reset) {
+    var input = this.refs.input.getDOMNode();
+    var oldHeight = input.style.height || 0;
+    if (reset) input.style.height = '';
+    var newHeight = input.scrollHeight;
+    input.style.height = [newHeight, 'px'].join('');
+    //- This makes it unable to type in input with Firefox and safari
+    //- if (reset) {
+    //-   input.animate([
+    //-     {height: oldHeight},
+    //-     {height: newHeight}
+    //-   ], 200);
+    //- }
+  }
