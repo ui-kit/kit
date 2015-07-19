@@ -1,5 +1,5 @@
 import './index.js'
-import './reveal.js'
+import './reveal-fns.js'
 
 var actions= { toggle: this.toggle, hide: this.hideReveal, show: this.showReveal }
 
@@ -10,6 +10,6 @@ var actions= { toggle: this.toggle, hide: this.hideReveal, show: this.showReveal
 
 export var mergeProps = true
 export var initialState = {isActive: false}
-export {toggle, onWindowClick, hideReveal, showReveal, cleanup, lockReveal, unlockAndHide, attachKeyListener, componentWillMount, componentWillUnmount} from './reveal.js'
+export {toggle, onWindowClick, hideReveal, showReveal, cleanup, lockReveal, unlockAndHide, attachKeyListener, componentWillMount, componentWillUnmount} from './reveal-fns.js'
 
 export var displayName = 'Reveal'
