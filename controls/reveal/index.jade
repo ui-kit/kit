@@ -1,15 +1,14 @@
-import './index.js'
 import './reveal-fns.js'
 
 var actions= { toggle: this.toggle, hide: this.hideReveal, show: this.showReveal }
 
-.Reveal(class={'is-active': state.isActive} onClick=this.lockReveal onMouseOver=this.showReveal onMouseOut=this.hideReveal)
+.Reveal(class={'is-active': state.isActive})
   yield handler(actions, state.isActive)
   yield menu(actions)
 
 
 export var mergeProps = true
-export var initialState = {isActive: false}
-export {toggle, onWindowClick, hideReveal, showReveal, cleanup, lockReveal, unlockAndHide, attachKeyListener, componentWillMount, componentWillUnmount} from './reveal-fns.js'
+export var initialState = {isActive: false, isLocked: false}
+export {componentWillUnmount, hideReveal, lockReveal, onWindowClick, showReveal, toggle, unLockReveal} from './reveal-fns.js'
 
 export var displayName = 'Reveal'
