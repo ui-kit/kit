@@ -20,16 +20,9 @@ var.
   }
 
 
-.FloatingTooltip-inner(class={'FloatingTooltip-inner-hidden': !state.visible}, style=style ref='FloatingTooltip-inner')
+.FloatingTooltip-inner(class={'FloatingTooltip-inner-hidden': !state.visible}, style=style ref='inner')
   yield inner
 yield content(actions, this)
-
-export.
-  function wrap(cb) {
-    return function(fn) {
-      return typeof fn !== 'function' ? cb.call(null, noop, fn) : cb.bind(null, fn);
-    }
-  }
 
 export.
   function handleMouseEnter(cb, ev) {
@@ -45,7 +38,7 @@ export.
 
 export.
   function handleMouseMove(cb, ev) {
-    var innerNode = this.refs['FloatingTooltip-inner'].getDOMNode();
+    var innerNode = this.refs.inner.getDOMNode();
     var innerNodeWidth = innerNode.offsetWidth;
     var top = ev.clientY;
     var left = ev.clientX - (innerNodeWidth / 2);
@@ -54,6 +47,17 @@ export.
       left: left
     });
     cb(ev);
+  }
+
+//-
+//- return a function that takes an optional `cb`
+//-
+
+export.
+  function wrap(cb) {
+    return function(fn) {
+      return typeof fn !== 'function' ? cb.call(null, noop, fn) : cb.bind(null, fn);
+    }
   }
 
 export var displayName = 'FloatingTooltip'
