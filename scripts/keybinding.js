@@ -28,6 +28,10 @@ exports.removeKeybindings = function (keys) {
   }
 }
 
+exports.hasKeybinding = function (key) {
+  return !!bindings[key];
+}
+
 function keyupHandler (matchChar, callback, evt) {
   if (evt.target.tagName !== 'INPUT' && evt.target.tagName !== 'TEXTAREA') {
     if (evt.keyCode === KEY_NAMES[matchChar] || String.fromCharCode(evt.keyCode) === matchChar.toUpperCase()) callback.apply(null);
