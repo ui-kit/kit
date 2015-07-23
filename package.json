@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/ui-kit/ui-kit/issues"
   },
-  "homepage": "https://github.com/ui-kit/ui-kit"
+  "homepage": "https://github.com/ui-kit/ui-kit",
+  "dependencies": {
+    "color": "^0.7.3"
+  }
 }
