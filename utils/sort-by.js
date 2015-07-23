@@ -1,4 +1,6 @@
-export default function (prop, $get) {
+exports = module.exports = sortBy;
+exports['default'] = sortBy;
+function sortBy(prop, $get) {
   var inverse = prop.substr(0, 1) === '!';
   if (inverse) prop = prop.slice(1, prop.length);
   return function(a, b) {
