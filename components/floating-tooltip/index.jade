@@ -1,0 +1,63 @@
+import './index.ess'
+
+const noop = function(){}
+const paddingTop = 50
+
+var top = state.top
+var left = state.left
+
+var.
+  style = {
+    'top': `${top - paddingTop}px`,
+    'left': `${left}px`
+  }
+
+var.
+  actions = {
+    onMouseMove: wrap(this.handleMouseMove),
+    onMouseEnter: wrap(this.handleMouseEnter),
+    onMouseOut: wrap(this.handleMouseOut)
+  }
+
+
+.FloatingTooltip-inner(class={'FloatingTooltip-inner-hidden': !state.visible}, style=style ref='inner')
+  yield inner
+yield content(actions, this)
+
+export.
+  function handleMouseEnter(cb, ev) {
+    this.setState({visible: true});
+    cb(ev);
+  }
+
+export.
+  function handleMouseOut(cb, ev) {
+    this.setState({visible: false, top: null, left: null});
+    cb(ev);
+  }
+
+export.
+  function handleMouseMove(cb, ev) {
+    var innerNode = this.refs.inner.getDOMNode();
+    var innerNodeWidth = innerNode.offsetWidth;
+    var top = ev.clientY;
+    var left = ev.clientX - (innerNodeWidth / 2);
+    this.setState({
+      top: top,
+      left: left
+    });
+    cb(ev);
+  }
+
+//-
+//- return a function that takes an optional `cb`
+//-
+
+export.
+  function wrap(cb) {
+    return function(fn) {
+      return typeof fn !== 'function' ? cb.call(null, noop, fn) : cb.bind(null, fn);
+    }
+  }
+
+export var displayName = 'FloatingTooltip'

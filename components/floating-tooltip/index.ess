@@ -1,0 +1,12 @@
+.FloatingTooltip
+  &-inner
+    background white
+    border-radius 2px
+    padding-bottom .5rem
+    padding-top .5rem
+    padding-left 1rem
+    padding-right 1rem
+    position fixed
+
+    &-hidden
+      left 9999px!important
