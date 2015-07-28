@@ -4,7 +4,7 @@ var query = this.getQuery()
 var.
   linkProps = {
     // yes, this is the only time you should use getRoutes().pop().name
-    to: props.to || this.getRoutes().pop().name,
+    to: props.to || this.getRoutes().pop().name || '/',
     params: this.context.encodeParams(merge(params, props.params)),
     query: this.context.encodeParams(merge(query, props.query))
   }
