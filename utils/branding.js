@@ -2,12 +2,12 @@ var out = {};
 
 // font
 
-out.fontFamily = "Colfax, effra, 'Helvetica Neue', Helvetica, sans-serif";
+out.fontFamily = "'Helvetica Neue', Helvetica, sans-serif";
 out.lineHeight = '1.5';
 out.headingFontFamily = out.fontFamily;
 out.headingFontWeight = 'bold';
 out.headingLineHeight = '1.25';
-out.monospaceFontFamily = "'Source Code Pro', Consolas, monospace",
+out.monospaceFontFamily = "'Source Code Pro', Consolas, monaco, monospace",
 out.h1 = '2rem';
 out.h2 = '1.5rem';
 out.h3 = '1.25rem';

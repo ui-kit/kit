@@ -4,5 +4,8 @@
 
 ::selection 
   background-color = __.color.primary
-  color #fff
+  color white
   text-shadow none
+
+html
+  %./typography.ess
