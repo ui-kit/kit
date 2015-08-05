@@ -2,6 +2,12 @@ div(class=props.className onClick=this.submitForm)
   yield
 
 export.
+  function shouldComponentUpdate(nextProps) {
+    var props = this.props;
+    return nextProps.className !== props.className;
+  }
+
+export.
   function submitForm() {
     if (this.props.confirmMessage) {
       if (window.confirm(this.props.confirmMessage)) this.sendForm();
