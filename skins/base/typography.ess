@@ -1,7 +1,7 @@
-font = '400 ' + __.h6 + '/1.5em ' + __.fontFamily
+font = 'normal ' + __.h6 + '/1.5em ' + __.fontFamily
 -webkit-text-size-adjust 100%
 -webkit-font-smoothing antialiased
 -moz-osx-font-smoothing auto
 
 @media screen and (max-width: 600px) 
-  font = '400 ' + __.h6 + '/1.5em ' + __.fontFamily
+  font = 'normal ' + __.h6 + '/1.5em ' + __.fontFamily

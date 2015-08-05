@@ -16,4 +16,4 @@ text-rendering optimizeLegibility
  
 @media screen and (max-width: 500px)
   font-size 28px
-  font-weight 400
+  font-weight normal
