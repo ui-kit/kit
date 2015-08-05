@@ -4,7 +4,11 @@ div(class=props.className onClick=this.submitForm)
 export.
   function shouldComponentUpdate(nextProps) {
     var props = this.props;
-    return nextProps.className !== props.className;
+    return !this.equalPairs(
+      props.className, nextProps.className,
+      props.confirmMessage, nextProps.confirmMessage,
+      props.template, nextProps.template
+    );
   }
 
 export.
@@ -27,4 +31,4 @@ export.
       });
   }
 
-export var displayName = 'Submit';
+export var displayName = 'Submit'
