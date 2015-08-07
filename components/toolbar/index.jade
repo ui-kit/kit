@@ -25,12 +25,6 @@ import ToolbarAccount from './account.jade'
         .Toolbar-right
           yield right
 
-      var account = props.account || _.account
-      if props.accountImg
-        // TODO get links somehow
-        ToolbarAccount(image=account.image)
-      // TODO else block
-
     if props.links
       .Toolbar-row-short.flex.gt-sm-hide.justify-center
         yield links
