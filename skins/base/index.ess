@@ -1,8 +1,14 @@
+html
+  font-size = __.baseFontSize || '12px'
+  -webkit-text-size-adjust 100%
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing auto
+
 // this normalizes the vertical height on translation strings before they've loaded
 .translate-component.is-loading:after
   content '\00a0'
 
-::selection 
+::selection
   background-color = __.color.primary
-  color #fff
+  color white
   text-shadow none

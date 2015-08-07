@@ -31,6 +31,6 @@ padding 6px 6px 7px
 &-sub-label
   color = __.color.gray
   font-size = __.h9
-  font-weight 400
+  font-weight normal
   opacity .5
   text-transform none
