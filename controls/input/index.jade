@@ -62,6 +62,7 @@ export.
 
 export.
   function recalculateSize(reset) {
+    if (!this.refs.input) return;
     var input = this.refs.input.getDOMNode();
     var oldHeight = input.style.height || 0;
     if (reset) input.style.height = '';
