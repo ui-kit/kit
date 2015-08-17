@@ -1,0 +1,77 @@
+@keyframes spin
+  0%
+    transform rotate(0deg)
+  100%
+    transform rotate(359deg)
+
+.Spinner
+  &-component
+    animation spin 1s infinite linear
+    height 24px
+    position relative
+    transform-origin center
+    width 24px
+
+  &-spoke
+    display block
+    height 24px
+    left 50%
+    margin -12px 0 0 -1px
+    position absolute
+    top 50%
+    width 2px
+
+    &:after
+      background white
+      border-radius 1000px
+      content ''
+      display block
+      height 6px
+      left 0
+      position absolute
+      right 0
+      top 0
+
+    &:nth-child(2)
+      opacity .8
+      transform rotate(30deg)
+
+    &:nth-child(3)
+      opacity .16
+      transform rotate(60deg)
+
+    &:nth-child(4)
+      opacity .24
+      transform rotate(90deg)
+
+    &:nth-child(5)
+      opacity .32
+      transform rotate(120deg)
+
+    &:nth-child(6)
+      opacity .40
+      transform rotate(150deg)
+
+    &:nth-child(7)
+      opacity .50
+      transform rotate(180deg)
+
+    &:nth-child(8)
+      opacity .60
+      transform rotate(210deg)
+
+    &:nth-child(9)
+      opacity .60
+      transform rotate(240deg)
+
+    &:nth-child(10)
+      opacity .70
+      transform rotate(270deg)
+
+    &:nth-child(11)
+      opacity .8
+      transform rotate(300deg)
+
+    &:nth-child(12)
+      opacity .9
+      transform rotate(330deg)
