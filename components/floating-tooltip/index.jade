@@ -19,7 +19,6 @@ var.
     onMouseOut: wrap(this.handleMouseOut)
   }
 
-
 .FloatingTooltip-inner(class={'FloatingTooltip-inner-hidden': !state.visible}, style=style ref='inner')
   yield inner
 yield content(actions, this)
@@ -57,7 +56,7 @@ export.
   function wrap(cb) {
     return function(fn) {
       return typeof fn !== 'function' ? cb.call(null, noop, fn) : cb.bind(null, fn);
-    }
+    };
   }
 
 export var displayName = 'FloatingTooltip'
