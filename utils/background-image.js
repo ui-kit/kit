@@ -4,7 +4,7 @@ function backgroundImage(path, options) {
   var style = {};
   if (path && path.src) path = path.src;
   if (path) style.backgroundImage = 'url(' + path + ')';
-  if (options.backgroundPosition) style.backgroundPosition = getBackgroundPosition(options.backgroundPosition)
+  if (options && options.backgroundPosition) style.backgroundPosition = getBackgroundPosition(options.backgroundPosition)
   return style;
 }
 
