@@ -1,0 +1,18 @@
+p
+  line-height 1.5em
+  margin 1em 0
+
+blockquote
+  color inheirt
+  font-style italic
+  margin 1em 0
+  padding-left 1.5em
+  position relative
+  &:after
+    border-left 2px solid
+    border-color inherit
+    bottom 0
+    content ''
+    left 0
+    position absolute
+    top 0
