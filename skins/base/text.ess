@@ -1,0 +1,10 @@
+i,
+em
+  font-style italic
+
+b,
+strong
+  font-weight bold
+
+del
+  text-decoration line-through

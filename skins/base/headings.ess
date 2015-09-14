@@ -1,0 +1,26 @@
+h1
+  %./../heading/h1.ess
+
+h2
+  %./../heading/h2.ess
+
+h3
+  %./../heading/h3.ess
+
+h4
+  %./../heading/h4.ess
+
+h5
+  %./../heading/h5.ess
+
+h6
+  %./../heading/h6.ess
+
+h1,h2,h3,h4,h5,h6
+  margin 1.5rem 0
+
+big
+  %./../heading/h5.ess
+
+small
+  %./../heading/h8.ess
