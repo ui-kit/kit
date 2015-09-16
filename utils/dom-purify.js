@@ -34,8 +34,9 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
   }
 });
 
-DOMPurify.addHook('afterSanitizeAttributes', function (node) {
-  var className = defaults.CUSTOM_CLASSES[node.nodeName.toLowerCase()]
+DOMPurify.addHook('afterSanitizeAttributes', function (node, data, config) {
+  if (!config.CUSTOM_CLASSES) return;
+  var className = config.CUSTOM_CLASSES[node.nodeName.toLowerCase()]
   if (!!className) node.classList.add(className);
 });
 
@@ -48,7 +49,7 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
 
 
 exports.sanitize = function (dirty, config) {
-  return DOMPurify.sanitize(dirty, objectAssign(defaults, config));
+  return DOMPurify.sanitize(dirty, objectAssign({}, defaults, config));
 }
 
 exports['default'] = DOMPurify;
