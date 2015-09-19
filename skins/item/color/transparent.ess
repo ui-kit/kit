@@ -1,0 +1,55 @@
+background transparent
+color #fff
+padding-left 0px
+
+.item-label,
+&-label
+  &:after
+    border-color = __.color.white.clone().clearer(.5)
+    
+// doesn't use variable because the placeholder hijacks it for some reason
+&-content
+  padding-right 0
+&-input
+  color #fff
+  box-shadow none
+  padding-right 0
+  &::placeholder
+    color = __.color.white.clone().clearer(.5)
+  &:hover  
+    box-shadow = 'inset 0 -1px 0 ' +__.color.primary
+  &:focus,
+  &:active
+    box-shadow = 'inset 0 -2px 0 ' +__.color.primary
+&-input:focus
+  &::placeholder
+    color = __.color.white.clone().clearer(.75)
+      
+&.is-disabled,
+&[disabled],
+&:disabled
+  color hsla(0,0%,100%,.1)
+  &:hover &-label
+    &:after
+      border-color = __.color.white.clone().clearer(.5)
+
+// State classes
+&.is-not-link
+  &:hover,
+  &:active
+    background transparent 
+    color = __.color.white
+    & </-label:after
+      border-color = __.color.white.clone().clearer(.5)
+
+&.is-input
+  &:active,
+  &.is-active
+    color = __.color.white
+    background transparent
+
+&:active,
+&.is-active
+  background transparent
+  color = __.color.primary
+  font-weight bold
