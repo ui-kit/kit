@@ -1,0 +1,5 @@
+html
+  font-size = __.baseFontSize || '12px'
+  -webkit-text-size-adjust 100%
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing auto
