@@ -13,12 +13,12 @@ width 100%
   %./children/field-action.ess
 &-input
   %./children/field-input.ess
-  &:focus ~ </-icon,
-  &:focus ~ </-label
+  &:focus ~ <-icon,
+  &:focus ~ <-label
     color = __.color.primary
     opacity 1
-  &:valid ~ </-label,
-  &:focus ~ </-label
+  &:valid ~ <-label,
+  &:focus ~ <-label
     font-size = __.h10
     font-weight bold
     letter-spacing .05em

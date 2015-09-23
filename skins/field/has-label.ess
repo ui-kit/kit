@@ -1,9 +1,8 @@
-.has-label &
-  &-input
-    padding-bottom 3px
-    padding-top 12px
+&-input
+  padding-bottom 3px
+  padding-top 12px
+  &::placeholder
+    opacity 0
+  &:focus
     &::placeholder
-      opacity 0
-    &:focus
-      &::placeholder
-        opacity 1
+      opacity 1
