@@ -1,8 +1,8 @@
-& </-input
+&-input
   padding-bottom 3px
   padding-top 12px
   &::placeholder
-    color transparent
+    opacity 0
   &:focus
     &::placeholder
-      opacity .3
+      opacity 1
