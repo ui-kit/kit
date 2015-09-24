@@ -35,7 +35,7 @@ user-select none
     background = __.color.white
     border-radius 100px
     bottom 2px
-    box-shadow = '0 10px 10px ' + __.color.black.clone().clearer(.9)
+    box-shadow = '0 5px 5px ' + __.color.black.clone().clearer(.7)
     content ''
     display block
     left 2px
