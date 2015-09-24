@@ -1,6 +1,6 @@
 {
   "name": "ui-kit",
-  "version": "0.7.2",
+  "version": "0.7.17",
   "description": "user interface kit",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,11 @@
   },
   "homepage": "https://github.com/ui-kit/ui-kit",
   "dependencies": {
-    "color": "^0.7.3"
+    "color": "^0.7.3",
+    "object-assign": "^4.0.1",
+    "//": [
+      "dompurify: 0.6.7 is borked"
+    ],
+    "dompurify": "0.6.6"
   }
 }

@@ -1,0 +1,15 @@
+ul
+  line-height 1.5em
+  margin .5em 0 .5em 1.5em
+  li
+    list-style disc
+ol
+  line-height 1.5em
+  margin .5em 0 .5em 1.5em
+  li
+    list-style decimal
+
+dt
+  font-weight bold
+dd
+  opacity .5

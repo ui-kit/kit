@@ -19,12 +19,13 @@ export.
 
 export.
   function submit (template) {
+    var self = this;
     var finished = this.props.onFinish;
     var start = this.props.onStart;
     if (start) start.apply(null, arguments);
     this.context.forms.create(template)
       .submit(function (err) {
-        if (err) this.setState({err: err});
+        if (err) self.setState({err: err});
         if (finished) finished.apply(null, arguments);
       });
   }

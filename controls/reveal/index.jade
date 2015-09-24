@@ -6,17 +6,8 @@ var actions= { toggle: this.toggle, hide: this.hideReveal, show: this.showReveal
   yield handler(actions, state.isActive)
   yield menu(actions)
 
-
 export var mergeProps = true
 export var initialState = {isActive: false, isLocked: false}
 export {componentWillUnmount, hideReveal, lockReveal, onWindowClick, showReveal, toggle, unLockReveal} from './reveal-fns.js'
 
 export var displayName = 'Reveal'
-
-export.
-  function shouldComponentUpdate(nextProps, nextState) {
-    var state = this.state;
-    if (nextState.isActive !== state.isActive) return true;
-    if (nextState.isLocked !== state.isLocked) return true;
-    return false;
-  }

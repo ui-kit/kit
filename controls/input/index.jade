@@ -62,16 +62,11 @@ export.
 
 export.
   function recalculateSize(reset) {
+    if (!this.refs.input) return;
     var input = this.refs.input.getDOMNode();
-    var oldHeight = input.style.height || 0;
     if (reset) input.style.height = '';
     var newHeight = input.scrollHeight;
     input.style.height = [newHeight, 'px'].join('');
-    //- This makes it unable to type in input with Firefox and safari
-    //- if (reset) {
-    //-   input.animate([
-    //-     {height: oldHeight},
-    //-     {height: newHeight}
-    //-   ], 200);
-    //- }
   }
+
+export var displayName = 'Input'
