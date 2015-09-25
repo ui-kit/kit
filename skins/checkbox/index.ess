@@ -5,7 +5,7 @@ border 2px solid
 border-color inherit
 border-radius 2px
 box-sizing border-box
-color = __.color.white
+color inherit
 cursor pointer
 outline none
 position relative

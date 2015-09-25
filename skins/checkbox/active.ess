@@ -1,5 +1,6 @@
 background = __.color.accent
 border-color = __.color.accent
+color = __.color.white
 filter none
 &:before
   content '✓'
