@@ -1,0 +1,71 @@
+import * as debounce from 'debounce'
+
+var fns = {onChange: this.onChange, setValue: this.setValue}
+div
+  if props.template
+    yield input(state.value, fns, state.error)
+
+export.
+  function componentWillMount() {
+    this.submit = debounce(this.submit, this.props.debounce || 300);
+  }
+
+export.
+  function submit () {
+    var self = this;
+    var template = self.props.template;
+    var value = self.state.value;
+    if (template.input.value.required && !value) {
+      self.setState({value: this.propValue()});
+      return;
+    }
+    this.context.forms.create(template)
+      .set({
+        'value': value,
+        '_name': template.input._name.value})
+      .set()
+      .submit(function(err) {
+        if (err) self.setState({error: err, value: this.propValue()});
+      });
+  }
+
+export.
+  function getInitialState() {
+    return {
+      value: this.propValue()
+    };
+  }
+
+export.
+  function componentWillReceiveProps(props) {
+    if (this.isUpToDate()) this.setState({value: this.propValue(props)});
+    return true;
+  }
+
+export.
+  function isUpToDate() {
+    return this.propValue() === this.state.value || !this.state.value;
+  }
+
+export.
+  function propValue(props) {
+    props = props || this.props
+    return props.template && props.template.input && props.template.input.value && props.template.input.value.value;
+  }
+
+export.
+  function onChange(evt, value) {
+    var value = value != null ? value : evt.target.value;
+    if (this.state.value === value) return;
+    this.setState({value: value});
+    this.submit();
+  }
+
+export.
+  function setValue (value) {
+    if (this.state.value === value) return;
+    this.setState({value: value});
+    this.submit();
+  }
+
+export var displayName = 'Autosave'
