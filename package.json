@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ui-kit/ui-kit",
   "dependencies": {
     "color": "^0.7.3",
+    "debounce": "^1.0.0",
     "object-assign": "^4.0.1",
     "//": [
       "dompurify: 0.6.7 is borked"
