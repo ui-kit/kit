@@ -4,11 +4,13 @@
 font-size = __.h3
 line-height 1.2em
 
-&-input
+&-input,
+.Input-input
   padding 3px 0 3px 0
   
 &.has-label
-  & </-input
+  & </-input,
+  .Input-input
     padding 17px 0 0
     &:valid ~ </-label,
     &:focus ~ </-label

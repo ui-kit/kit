@@ -2,11 +2,13 @@
 // height: 48px
 font-size = __.h6
 
-&-input
+&-input,
+.Input-input
   padding 11px 0 10px
   
 &.has-label
-  & </-input
+  & </-input,
+  .Input-input
     padding 17px 0 6px
     &:valid ~ </-label,
     &:focus ~ </-label

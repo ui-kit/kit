@@ -3,11 +3,13 @@
 // font-size h6
 font-size = __.h6
 
-&-input
+&-input,
+.Input-input
   padding 17px 0 16px 0
   
 &.has-label
-  & </-input
+  & </-input,
+  .Input-input
     padding 23px 0 10px
     &:valid ~ </-label,
     &:focus ~ </-label

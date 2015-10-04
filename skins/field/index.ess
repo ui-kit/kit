@@ -11,7 +11,8 @@ width 100%
   %./children/field-icon.ess
 &-action
   %./children/field-action.ess
-&-input
+&-input,
+.Input-input
   %./children/field-input.ess
   &:focus ~ <-icon,
   &:focus ~ <-label

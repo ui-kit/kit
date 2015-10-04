@@ -1,10 +1,12 @@
 // Modifies to:
 // height: 48px
-&-input
+&-input,
+.Input-input
   padding 14px 0 13px
 
 &.has-label
-  & </-input
+  & </-input,
+  .Input-input
     padding 20px 0 7px
     &:valid ~ </-label,
     &:focus ~ </-label

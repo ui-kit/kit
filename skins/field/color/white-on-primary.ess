@@ -1,6 +1,7 @@
 %./white.ess
 color = __.color.white
-&-input
+&-input,
+.Input-input
   &:hover
     box-shadow = 'inset 0 -1px 0 ' +__.color.white
   &:focus
