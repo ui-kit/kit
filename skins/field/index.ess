@@ -1,5 +1,5 @@
 align-items center
-color = __.color.gray
+color inherit
 display flex
 font-size = __.h8
 position relative
