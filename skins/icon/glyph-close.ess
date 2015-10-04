@@ -1,6 +1,6 @@
 %./glyph-hamburger.ess
 
-border 1px solid transparent
+border-color transparent
 
 &:before 
   margin 0
