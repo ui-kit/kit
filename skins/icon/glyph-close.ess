@@ -4,10 +4,8 @@ border 1px solid transparent
 
 &:before 
   margin 0
-  transform rotate(45deg) 
-  transition all .15s linear 
+  transform rotate(45deg)
 
 &:after 
   margin 0
   transform rotate(-45deg) 
-  transition all .15s linear 

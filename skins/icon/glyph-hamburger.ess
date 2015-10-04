@@ -1,24 +1,29 @@
 border 1px solid
+border-left none
+border-right none
 border-color initial 
 border-radius 2px 
 box-sizing border-box
 height 0
 margin -4px 0 0 
 position relative
-transition all .15s linear
+transition all .15s ease
 width 16px 
 
 &:before,
 &:after 
+  border 1px solid
+  border-color initial 
+  border-left none
+  border-radius 2px 
+  border-right none
+  box-sizing border-box
   content "" 
   display block 
   margin -8px 0 0 -1px 
   position absolute 
-  border 1px solid
-  border-color initial 
-  border-radius 2px 
+  transition all .15s ease 
   width 100%
-  transition all .15s linear 
 
 &:after 
   margin-top 6px 
@@ -28,10 +33,10 @@ width 16px
   margin -6px 0 0 -2px
   &:after 
     margin 0 
-    transition all .15s linear 
+    transition all .15s ease 
     transform rotate(-45deg) 
 
   &:before 
     margin 0 
-    transition all .15s linear 
+    transition all .15s ease 
     transform rotate(45deg) 
