@@ -2,6 +2,7 @@
 // height 60px
 // font-size h6
 font-size = __.h3
+letter-spacing 0
 line-height 1.2em
 
 &-input,

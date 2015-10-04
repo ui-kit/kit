@@ -1,6 +1,7 @@
 // Modifies to:
 // height: 48px
 font-size = __.h6
+letter-spacing 0
 
 &-input,
 .Input-input

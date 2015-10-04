@@ -2,6 +2,7 @@ align-items center
 color inherit
 display flex
 font-size = __.h8
+letter-spacing .05em
 position relative
 width 100%
 
