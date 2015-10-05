@@ -4,6 +4,8 @@ var KEY_NAMES = {
   'esc': 27
 };
 
+exports.KEY_NAMES = KEY_NAMES;
+
 exports.attachKeybinding = function (char, callback) {
   if (!char || !callback) return console.warn('attachKeybinding requires character and callback.');
   if (bindings[char]) return console.warn('keybinding for "' + char + '" already exists.');
