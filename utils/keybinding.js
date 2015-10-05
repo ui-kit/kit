@@ -1,5 +1,5 @@
 var bindings = {};
-export var KEY_NAMES = {
+var KEY_NAMES = {
   'enter': 13,
   'esc': 27
 };
