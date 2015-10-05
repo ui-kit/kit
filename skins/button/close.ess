@@ -3,3 +3,5 @@
 %./color/gray.ess
 %./fill/fill.ess
 %./shadow/shadow-dark.ess
+
+%./../../icon/glyph-close.ess
