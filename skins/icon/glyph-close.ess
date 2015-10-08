@@ -1,6 +1,6 @@
 %./glyph-hamburger.ess
 
-border-color transparent
+border-color = 'transparent !important'
 
 &:before 
   margin 0
