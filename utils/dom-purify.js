@@ -47,9 +47,9 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
   }
 });
 
-
 exports.sanitize = function (dirty, config) {
-  return DOMPurify.sanitize(dirty, objectAssign({}, defaults, config));
+  var val = DOMPurify.sanitize(dirty, objectAssign({}, defaults, config));
+  return val.replace(/&nbsp;/g, ' ');
 }
 
 exports['default'] = DOMPurify;

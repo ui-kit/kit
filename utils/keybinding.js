@@ -1,8 +1,10 @@
 var bindings = {};
-export var KEY_NAMES = {
+var KEY_NAMES = {
   'enter': 13,
   'esc': 27
 };
+
+exports.KEY_NAMES = KEY_NAMES;
 
 exports.attachKeybinding = function (char, callback) {
   if (!char || !callback) return console.warn('attachKeybinding requires character and callback.');
