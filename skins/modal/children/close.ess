@@ -4,14 +4,3 @@ left 0
 margin 18px
 position fixed
 top 0
-&:hover,
-&:active
-  border-color = __.color.white
-&:before
-  content '\00d7'
-  font-size 22px
-  left 50%
-  margin 1px 0 0 0
-  position absolute
-  top 50%
-  transform translate(-50%, -50%)
