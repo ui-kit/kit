@@ -10,18 +10,19 @@ module.exports = function(store, prefix = '', contextFn) {
         var contexts = contextFn ? contextFn($get) : [];
       } catch (err) {
         // TODO
-        return;
+        return console.error(err);
       }
 
       if (!context.stop()) return;
       context.destroy();
 
       if (userID) snowplow('setUserId', userID);
-
       snowplow('trackUnstructEvent', {
         schema: `iglu:${prefix}${namespace}/${eventName}/jsonschema/${version}`,
         data: data
       }, contexts);
     }
-  };
+    var context = store.context(render);
+    render();
+  }
 };
