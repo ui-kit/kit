@@ -1,28 +1,21 @@
 module.exports = function(store, prefix = '', contextFn) {
   return function(namespace, eventName, template, version = '1-0-0') {
-    function render() {
-      context.start();
-      var $get = context.get;
+    store.getAsync(function($get) {
+      return {
+        d: template($get),
+        u: $get('.account.id'),
+        c: contextFn ? contextFn($get) : [],
+        n: typeof namespace === 'function' ? namespace($get) : namespace,
+        e: typeof eventName === 'function' ? eventName($get) : eventName
+      };
+    }, function(err, data) {
+      if (err) return console.error(err);
+      if (data.u) snowplow('setUserId', data.u);
 
-      try {
-        var data = template($get);
-        var userID = $get(['', 'account', 'id']);
-        var contexts = contextFn ? contextFn($get) : [];
-      } catch (err) {
-        // TODO
-        return console.error(err);
-      }
-
-      if (!context.stop()) return;
-      context.destroy();
-
-      if (userID) snowplow('setUserId', userID);
       snowplow('trackUnstructEvent', {
-        schema: `iglu:${prefix}${namespace}/${eventName}/jsonschema/${version}`,
-        data: data
-      }, contexts);
-    }
-    var context = store.context(render);
-    render();
+        schema: `iglu:${prefix}${data.n}/${data.e}/jsonschema/${version}`,
+        data: data.d
+      }, data.c);
+    });
   }
 };
