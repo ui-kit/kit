@@ -2,7 +2,7 @@ module.exports = function(store, prefix = '', contextFn) {
   return function(namespace, eventName, template, version = '1-0-0') {
     store.getAsync(function($get) {
       return {
-        d: template($get),
+        d: template ? template($get) : {},
         u: $get('.account.id'),
         c: contextFn ? contextFn($get) : [],
         n: typeof namespace === 'function' ? namespace($get) : namespace,
