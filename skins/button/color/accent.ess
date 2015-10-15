@@ -1,9 +1,1 @@
-background-color = __.color.accent
-border-color = __.color.accent
-color = __.color.accent
-&:hover
-  background-color = __.color.accent.dark
-  border-color = __.color.accent.dark
-&:active
-  background-color = __.color.accent.darker
-  border-color = __.color.accent.darker
+%./generate.ess(color='accent')
