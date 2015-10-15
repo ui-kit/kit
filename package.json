@@ -24,10 +24,8 @@
   "dependencies": {
     "color": "^0.7.3",
     "debounce": "^1.0.0",
+    "dompurify": "0.7.0",
     "object-assign": "^4.0.1",
-    "//": [
-      "dompurify: 0.6.7 is borked"
-    ],
-    "dompurify": "0.6.6"
+    "sanitize-html": "^1.11.1"
   }
 }
