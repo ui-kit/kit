@@ -1,12 +1,1 @@
-background-color = __.color.green
-border-color = __.color.green
-color = __.color.green
-&:hover
-  color = __.white
-  background-color = __.color.green.dark
-  border-color = __.color.green.dark
-&:active,
-&.is-active,
-.is-active .dropdown-trigger&
-  background-color = __.color.green.darker
-  border-color = __.color.green.darker
+%./generate.ess(color='green')
