@@ -22,7 +22,7 @@ textarea
   background transparent
   border none
   outline none
-  
+
 &-content
   %./children/item-content.ess
 &-icon
@@ -38,32 +38,32 @@ textarea
 
 &:hover
   color = __.color.primary
-   
-// Trying to have these descend causes a bug that makes the css not output  
-&:hover > &-content &-label,
-&:active > &-content &-label,
-&.is-active > &-content &-label
+
+// Trying to have these descend causes a bug that makes the css not output
+&:not([disabled]):hover > &-content &-label,
+&:not([disabled]):active > &-content &-label,
+&:not([disabled]).is-active > &-content &-label
   &:after
     border-color = __.color.primary
 
-&:active > &-content &-label
+&:not([disabled]):active > &-content &-label
   &:after
     border-top = '2px solid '+__.color.primary
 
-&:active,
-&.is-active
+&:not([disabled]):active,
+&:not([disabled]).is-active
   cursor default
   z-index 2
   color = __.color.white
-  background = __.color.primary  
+  background = __.color.primary
   box-shadow none
-  
-&:active > &-content &-input,
-&:active > &-content &-action,
-&.is-active > &-content &-input,
-&.is-active > &-content &-action
+
+&:not([disabled]):active > &-content &-input,
+&:not([disabled]):active > &-content &-action,
+&:not([disabled]).is-active > &-content &-input,
+&:not([disabled]).is-active > &-content &-action
   color inherit
-      
+
 &.is-disabled,
 &[disabled],
 &:disabled,
@@ -79,7 +79,6 @@ textarea
   &:after
     opacity 1
     border-top = '2px solid '+__.color.primary
-  
 
 // State classes
 &.is-not-link
@@ -90,4 +89,4 @@ textarea
   &:active,
   &.is-active
     color = __.color.gray
-    background = __.color.white 
+    background = __.color.white

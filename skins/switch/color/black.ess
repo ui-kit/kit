@@ -4,11 +4,13 @@ background-color = __.color.black
 &:before
   background = __.color.white
 
-&:hover
+&:not([disabled]):hover
   background = __.color.black.clone().dark
   border-color = __.color.black.clone().dark
   
-&:active, &:checked, &.is-active
+&:not([disabled]):active,
+&:not([disabled]):checked,
+&:not([disabled]).is-active
   background = __.color.green
   border-color = __.color.green
 

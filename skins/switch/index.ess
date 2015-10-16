@@ -25,10 +25,12 @@ margin 0
   top 50%
   transform translateY(-50%)
 
-&:hover
+&:not([disabled]):hover
   filter brightness(75%)
 
-&:active, &:checked, &.is-active
+&:not([disabled]):active,
+&:not([disabled]):checked,
+&:not([disabled]).is-active
   filter none
   background = __.color.green
   border-color = __.color.green

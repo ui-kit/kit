@@ -6,6 +6,8 @@ border-bottom 8px solid
 border-color inherit
 height 0
 
-&:active, &:checked, &.is-active
+&:active,
+&:checked,
+&.is-active
   &:before
     margin-left 10px
