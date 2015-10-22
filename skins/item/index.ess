@@ -40,28 +40,28 @@ textarea
   color = __.color.primary
 
 // Trying to have these descend causes a bug that makes the css not output
-&:not([disabled]):hover > &-content &-label,
-&:not([disabled]):active > &-content &-label,
-&:not([disabled]).is-active > &-content &-label
+&:hover > &-content &-label,
+&:active > &-content &-label,
+&.is-active > &-content &-label
   &:after
     border-color = __.color.primary
 
-&:not([disabled]):active > &-content &-label
+&:active > &-content &-label
   &:after
     border-top = '2px solid '+__.color.primary
 
-&:not([disabled]):active,
-&:not([disabled]).is-active
+&:active,
+&.is-active
   cursor default
   z-index 2
   color = __.color.white
   background = __.color.primary
   box-shadow none
 
-&:not([disabled]):active > &-content &-input,
-&:not([disabled]):active > &-content &-action,
-&:not([disabled]).is-active > &-content &-input,
-&:not([disabled]).is-active > &-content &-action
+&:active > &-content &-input,
+&:active > &-content &-action,
+&.is-active > &-content &-input,
+&.is-active > &-content &-action
   color inherit
 
 &.is-disabled,
@@ -70,6 +70,7 @@ textarea
 .is-disabled &
   color = __.color.gray.clone().clearer(.7)
   cursor default
+  pointer-events none
 
 // Styles underline on focus
 &-input + &-label
