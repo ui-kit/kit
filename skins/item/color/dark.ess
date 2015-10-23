@@ -41,8 +41,11 @@ color #fff
   background = __.color.charcoal
   color = __.color.white
   cursor default
-  &:after
-    border-color = __.color.black
+
+&.has-no-hover <-label:after,
+&.has-no-hover:hover <-label:after,
+&.has-no-hover:active <-label:after
+  border-color = __.color.black
 
 &.is-input
   &:active,

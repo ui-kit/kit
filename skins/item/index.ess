@@ -92,8 +92,11 @@ textarea
   background = __.color.white
   color = __.color.gray
   cursor default
-  &:after
-    border-color = __.color.gray
+
+&.has-no-hover &-label:after,
+&.has-no-hover:hover &-label:after,
+&.has-no-hover:active &-label:after
+  border-color = __.color.gray
 
 &.is-input
   &:active,
