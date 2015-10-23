@@ -39,9 +39,13 @@
 &.has-no-hover,
 &.has-no-hover:hover,
 &.has-no-hover:active
-  background = __.color.azure
   color = __.color.primary
   cursor default
+
+&.has-no-active,
+&.has-no-active:hover,
+&.has-no-active:active
+  background = __.color.azure
 
 &.is-input
   &:active,

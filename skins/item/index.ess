@@ -89,14 +89,18 @@ textarea
 &.has-no-hover,
 &.has-no-hover:hover,
 &.has-no-hover:active
-  background = __.color.white
   color = __.color.gray
   cursor default
+
+&.has-no-active,
+&.has-no-active:hover,
+&.has-no-active:active
+  background = __.color.white
 
 &.has-no-hover &-label:after,
 &.has-no-hover:hover &-label:after,
 &.has-no-hover:active &-label:after
-  border-color = __.color.gray
+  border-top = '1px solid '+__.color.azure
 
 &.is-input
   &:active,

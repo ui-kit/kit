@@ -19,3 +19,7 @@
     &:after
       opacity 1
       border-color = __.color.primary
+  &.has-no-hover <-label:after,
+  &.has-no-hover:hover <-label:after,
+  &.has-no-hover:active <-label:after
+    opacity 0

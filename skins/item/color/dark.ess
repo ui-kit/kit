@@ -38,14 +38,18 @@ color #fff
 &.has-no-hover,
 &.has-no-hover:hover,
 &.has-no-hover:active
-  background = __.color.charcoal
   color = __.color.white
   cursor default
+
+&.has-no-active,
+&.has-no-active:hover,
+&.has-no-active:active
+  background = __.color.charcoal
 
 &.has-no-hover <-label:after,
 &.has-no-hover:hover <-label:after,
 &.has-no-hover:active <-label:after
-  border-color = __.color.black
+  border-top = '1px solid '+__.color.black
 
 &.is-input
   &:active,

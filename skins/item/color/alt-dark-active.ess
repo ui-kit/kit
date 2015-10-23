@@ -64,9 +64,13 @@
 &.has-no-hover,
 &.has-no-hover:hover,
 &.has-no-hover:active
-  background = __.color.black
   color = __.color.primary
   cursor default
+
+&.has-no-active,
+&.has-no-active:hover,
+&.has-no-active:active
+  background = __.color.black
 
 &.is-input
   &:active,
