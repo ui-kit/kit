@@ -9,10 +9,13 @@
 
   & </-label
     &:after
+      opacity 0
       border-color transparent
   &:hover </-label
       &:after
+        opacity 1
         border-color = __.color.primary
   </-input:focus + </-label
     &:after
+      opacity 1
       border-color = __.color.primary
