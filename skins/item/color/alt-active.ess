@@ -36,6 +36,13 @@
     & </-label:after
       border-color = __.color.azure
 
+&.has-no-hover,
+&.has-no-hover:hover,
+&.has-no-hover:active
+  background = __.color.azure
+  color = __.color.primary
+  cursor default
+
 &.is-input
   &:active,
   &.is-active

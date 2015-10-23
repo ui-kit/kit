@@ -35,6 +35,15 @@ color #fff
     & </-label:after
       border-color = __.color.black
 
+&.has-no-hover,
+&.has-no-hover:hover,
+&.has-no-hover:active
+  background = __.color.charcoal
+  color = __.color.white
+  cursor default
+  &:after
+    border-color = __.color.black
+
 &.is-input
   &:active,
   &.is-active
