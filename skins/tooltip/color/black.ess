@@ -1,5 +1,6 @@
 border-color = __.color.black
 
-&:after
+&:after,
+&-body
   background-color = __.color.black
   color = __.color.white

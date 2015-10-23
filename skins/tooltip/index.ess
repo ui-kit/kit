@@ -2,7 +2,8 @@ position relative
 display inline-block
  
 &:after, 
-&:before 
+&:before,
+&-body 
   position absolute
   visibility hidden
   opacity 0
@@ -11,7 +12,8 @@ display inline-block
   transition-delay 0ms 
   font-style normal
   
-&:after
+&:after,
+&-body
   content attr(data-tooltip)
   z-index 1000000
   padding 6px 8px
@@ -20,7 +22,7 @@ display inline-block
   white-space nowrap 
   border-radius 2px
   max-width 200px
-  
+
 &:before
   background transparent
   border-style solid 

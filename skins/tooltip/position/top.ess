@@ -1,5 +1,6 @@
 &:before,
-&:after
+&:after,
+&-body
   bottom 110%
   left 50%
   right auto
@@ -9,4 +10,3 @@
 &:before
   transform translate3d(-6px, 12px, 0)
   border-top-color inherit
-

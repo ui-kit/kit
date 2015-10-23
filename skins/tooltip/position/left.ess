@@ -1,5 +1,6 @@
 &:before,
-&:after
+&:after,
+&-body
   bottom auto
   left auto
   right 110%
@@ -14,5 +15,7 @@
 &:hover:after,
 &:hover:before,
 &:focus:after,
-&:focus:before
+&:focus:before,
+&:hover &-body,
+&:focus &-body
   bottom auto

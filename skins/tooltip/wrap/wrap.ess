@@ -1,3 +1,4 @@
-&:after 
+&:after,
+&-body
   width 200px
   white-space normal
