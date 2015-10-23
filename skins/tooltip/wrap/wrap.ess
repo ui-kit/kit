@@ -1,3 +1,5 @@
 &:after 
-  width 200px
+  padding 9px 6px 6px 12px
+  text-align left
   white-space normal
+  width 200px
