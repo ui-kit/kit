@@ -1,5 +1,6 @@
 module.exports = function(store, prefix = '', contextFn) {
   return function(namespace, eventName, template, version = '1-0-0') {
+    var sp = typeof snowplow === 'undefined' ? noop : snowplow;
     store.getAsync(function($get) {
       return {
         d: template ? template($get) : {},
@@ -10,12 +11,16 @@ module.exports = function(store, prefix = '', contextFn) {
       };
     }, function(err, data) {
       if (err) return console.error(err);
-      if (data.u) snowplow('setUserId', data.u);
+      if (data.u) sp('setUserId', data.u);
 
-      snowplow('trackUnstructEvent', {
+      sp('trackUnstructEvent', {
         schema: `iglu:${prefix}${data.n}/${data.e}/jsonschema/${version}`,
         data: data.d
       }, data.c);
     });
   }
 };
+
+function noop(event, data) {
+  console.info('snowplow', event, data);
+}
