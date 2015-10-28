@@ -21,7 +21,7 @@ display inline-block
   line-height 21px
   max-width 200px
   padding 6px 8px
-  text-transform initial 
+  text-transform none 
   white-space nowrap 
   z-index 1000000
 
