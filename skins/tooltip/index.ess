@@ -14,6 +14,7 @@ display inline-block
   
 &:after,
 &-body
+  font-weight normal 
   content attr(data-tooltip)
   z-index 1000000
   padding 6px 8px
