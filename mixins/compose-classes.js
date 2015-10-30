@@ -12,8 +12,8 @@ const DEFAULT_OPTIONS = {
  *
  *   var classFn = this.composeClasses('Foobar')
  *   div(class=classFn())
- *     div(class=classFn('-buz))
- *     div(class=classFn('-qux))
+ *     div(class=classFn('&-buz))
+ *     div(class=classFn('&-qux))
  *
  * Options
  *

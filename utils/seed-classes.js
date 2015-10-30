@@ -1,7 +1,7 @@
 import appendStatus from './append-status';
 
-export default function(base, statuses = {}, classNameReplace = {}) {
-  if (classNameReplace[base]) base = classNameReplace[base];
+export default function(base, statuses = {}, classes = {}) {
+  if (classes[base]) base = classes[base];
 
   var rootStatuses = addStatuses(statuses);
   var baseRegExp = new RegExp('^' + base + '-?');
@@ -11,20 +11,13 @@ export default function(base, statuses = {}, classNameReplace = {}) {
       ? addStatuses(classStatuses, rootStatuses)
       : rootStatuses;
 
-    if (classNameReplace[className]) className = classNameReplace[className];
+    if (classes[className]) className = classes[className];
 
-    var baseClassName = '';
-    if (typeof className === 'string') {
-      if (className.charAt(0) === '-') {
-        baseClassName = base + className;
-      } else {
-        baseClassName = base + '-' + className.replace(baseRegExp, '');
-      }
-    } else {
-      baseClassName = base + '';
-    }
+    var baseClassName = typeof className === 'string'
+      ? className.replace('&', base)
+      : base + '';
 
-    if (classNameReplace[baseClassName]) baseClassName = classNameReplace[baseClassName];
+    if (classes[baseClassName]) baseClassName = classes[baseClassName];
 
     var statusClasses = allStatuses.length
       ? baseClassName + allStatuses.join(' ' + baseClassName)
