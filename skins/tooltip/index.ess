@@ -14,14 +14,17 @@ display inline-block
   
 &:after,
 &-body
-  content attr(data-tooltip)
-  z-index 1000000
-  padding 6px 8px
-  font-size = __.h8
-  line-height 21px
-  white-space nowrap 
   border-radius 2px
+  content attr(data-tooltip)
+  font-size = __.h8
+  font-weight normal 
+  letter-spacing 0
+  line-height 21px
   max-width 200px
+  padding 6px 8px
+  text-transform none 
+  white-space nowrap 
+  z-index 1000000
 
 &:before
   background transparent
