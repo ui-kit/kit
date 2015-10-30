@@ -24,15 +24,15 @@ const DEFAULT_OPTIONS = {
  *
  */
 
-export function composeClasses(baseName, statuses) {
+export function composeClasses(baseName, statuses, options) {
   if (process.env.NODE_ENV === 'development' && !baseName)
     return console.error('You must pass a `baseName`');
 
   var props = this.props;
   var classes = props.classes;
   var base = baseName;
-  var opts = this.composeClassesOptions
-    ? Object.assign(DEFAULT_OPTIONS, this.composeClassesOptions)
+  var opts = options
+    ? Object.assign(DEFAULT_OPTIONS, options)
     : DEFAULT_OPTIONS;
 
   if (props.displayName) base = props.displayName;
