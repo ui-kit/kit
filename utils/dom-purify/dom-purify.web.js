@@ -18,8 +18,10 @@ var defaults = {
     'p',
     'span'
   ],
+  RETURN_DOM: true,
   CUSTOM_CLASSES: {
-    'a': 'link'
+    'a': 'link',
+    'iframe_container': 'embedded-iframe-container'
   }
 };
 
@@ -40,16 +42,30 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node, data, config) {
   if (!!className) node.classList.add(className);
 });
 
-DOMPurify.addHook('afterSanitizeAttributes', function (node) {
+DOMPurify.addHook('afterSanitizeElements', function (node, data, config) {
   if (node.nodeName.toLowerCase() === 'iframe') {
     node.width = '100%';
     node.style.width = '100%';
   }
 });
 
+function wrapIframes (val, options) {
+  var iframes = val.getElementsByTagName('iframe');
+  if (iframes.length) {
+    var iframeContainerClass = options.CUSTOM_CLASSES.iframe_container
+    for (var i = 0; i < iframes.length; i++) {
+      if (!iframes[i].parentNode.classList.contains(iframeContainerClass)) {
+        iframes[i].outerHTML = `<div class='${iframeContainerClass}'>${iframes[i].outerHTML}</div>`;  
+      }
+    }
+  }
+  return val.innerHTML;
+}
 
 exports.sanitize = function (dirty, config) {
-  return DOMPurify.sanitize(dirty, objectAssign({}, defaults, config));
+  var options = objectAssign({}, defaults, config);
+  var val = wrapIframes(DOMPurify.sanitize(dirty, options), options);
+  return val.replace(/&nbsp;/g, ' ');
 }
 
 exports['default'] = DOMPurify;
