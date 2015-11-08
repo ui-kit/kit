@@ -8,7 +8,6 @@ color = __.color.white
     box-shadow = 'inset 0 -1px 0 ' + __.color.primary
   &:active,
   &.is-active
-    color = __.color.white.clone().clearer(.5)
     box-shadow = 'inset 0 -2px 0 ' + __.color.primary
   &:focus
     box-shadow = 'inset 0 -2px 0 ' + __.color.primary
