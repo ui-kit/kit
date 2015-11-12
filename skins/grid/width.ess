@@ -16,6 +16,14 @@
   width 12.5% 
 &-1of12             
   width 8.3333333 
+&-none
+  display = 'none !important'
+&-flex
+  display = 'flex !important'
+&-block
+  display = 'block !important'
+&-inline-block
+  display = 'inline-block !important'
 
 &-1                 
   width 8.33333333% 
