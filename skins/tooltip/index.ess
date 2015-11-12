@@ -18,6 +18,7 @@ display inline-block
   content attr(data-tooltip)
   font-size = __.h8
   font-weight normal 
+  letter-spacing 0
   line-height 21px
   max-width 200px
   padding 6px 8px

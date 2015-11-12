@@ -45,7 +45,7 @@ vertical-align middle
   border-color = __.color.gray
   color = __.color.gray
   cursor default
-  opacity .1
+  opacity .3
   &:hover, &:active
     background transparent
     border-color = __.color.gray
