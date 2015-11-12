@@ -13,6 +13,12 @@ module.exports = function(store, prefix = '', contextFn) {
       if (err) return console.error(err);
       if (data.u) sp('setUserId', data.u);
 
+      if(process.env.DEBUG_EVENTS) {
+        console.log(`iglu:${prefix}${data.n}/${data.e}/jsonschema/${version}`);
+        console.log(data.d);
+        console.log(data.c);
+      }
+
       sp('trackUnstructEvent', {
         schema: `iglu:${prefix}${data.n}/${data.e}/jsonschema/${version}`,
         data: data.d
