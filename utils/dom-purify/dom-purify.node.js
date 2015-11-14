@@ -17,6 +17,9 @@ var defaults = {
     'iframe',
     'img',
     'p',
+    'small',
+    'sub',
+    'sup',
     'span'
   ],
   allowedAttributes: {

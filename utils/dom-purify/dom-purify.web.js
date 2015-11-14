@@ -16,6 +16,9 @@ var defaults = {
     'iframe',
     'img',
     'p',
+    'small',
+    'sub',
+    'sup',
     'span'
   ],
   RETURN_DOM: true,
