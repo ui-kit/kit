@@ -53,6 +53,7 @@ DOMPurify.addHook('afterSanitizeElements', function (node, data, config) {
 });
 
 function wrapIframes (val, options) {
+  if (!val) return '';
   var iframes = val.getElementsByTagName('iframe');
   if (iframes.length) {
     var iframeContainerClass = options.CUSTOM_CLASSES.iframe_container
@@ -62,7 +63,7 @@ function wrapIframes (val, options) {
       }
     }
   }
-  return val.innerHTML;
+  return val.innerHTML || '';
 }
 
 exports.sanitize = function (dirty, config) {
