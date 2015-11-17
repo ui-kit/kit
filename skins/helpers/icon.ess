@@ -13,3 +13,9 @@
 .icon-glyph-multi-option
   %./../icon/index.ess
   %./../icon/glyph-multi-option.ess
+.icon-glyph-minus
+  %./../icon/index.ess
+  %./../icon/glyph-minus.ess
+.icon-glyph-plus
+  %./../icon/index.ess
+  %./../icon/glyph-plus.ess
