@@ -1,0 +1,12 @@
+width 8px
+
+&:before
+  content '321'
+  display block
+  font-family = __.fontFamily
+  font-size 9px
+  font-weight bold
+  line-height 8px
+  white-space normal
+  word-break break-all
+  width 100%

@@ -19,3 +19,9 @@
 .icon-glyph-plus
   %./../icon/index.ess
   %./../icon/glyph-plus.ess
+.icon-glyph-countdown
+  %./../icon/index.ess
+  %./../icon/glyph-countdown.ess
+.icon-glyph-unranked
+  %./../icon/index.ess
+  %./../icon/glyph-unranked.ess
