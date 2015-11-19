@@ -1,9 +1,13 @@
 %./glyph-hamburger.ess
 
-border-width 3px 0 0 0
-height 3px
-margin -2px 0 0 -1px
-width 3px
+&
+  border-bottom-width 0
+  border-left-width 0
+  border-right-width 0
+  border-top-width 3px
+  height 3px
+  margin -2px 0 0 -1px
+  width 3px
 
 &:before,
 &:after
