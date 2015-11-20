@@ -1,15 +1,24 @@
 %./index.ess
 %./../icon/glyph-close.ess
 %./size/small-square.ess
-%./color/white.ess
 %./fill/no-fill.ess
 
+border = '2px solid #fff !important'
 border-radius 1000px
+color = __.color.white
 
 &:before,
-&:after {
+&:after
   left 50%
   margin -1px 0 0 -6px
   top 50%
   width 12px
-}
+
+&:hover
+  background = __.color.white
+  color = __.color.primary
+
+&:active
+  background = __.color.white
+  color = __.color.primary
+  opacity .5
