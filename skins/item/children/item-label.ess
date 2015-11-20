@@ -1,5 +1,6 @@
 color inherit
-flex-grow 1
+display block
+flex 1
 line-height 1.45em
 padding 8px 0
 text-align left
