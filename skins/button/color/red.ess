@@ -1,1 +1,27 @@
-%./generate.ess(color='red')
+background-color = __.color.red
+border-color = __.color.red
+color = __.color.white
+  
+&:hover
+  background-color = __.color.red
+  border-color = __.color.red
+  opacity .8
+
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.red
+  border-color = __.color.red
+  opacity .5
+  
+&[disabled],
+&:disabled
+  background transparent
+  border-color = __.color.red
+  color = __.color.red
+  cursor default
+  opacity .1
+  &:hover, &:active
+    background transparent
+    border-color = __.color.red
+    color = __.color.red
