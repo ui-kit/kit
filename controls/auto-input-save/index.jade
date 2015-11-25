@@ -11,12 +11,11 @@ export.
   }
 
 export.
-  function submit () {
-    var self = this;
-    var template = self.props.template;
-    var value = self.state.value;
+  function submit (value) {
+    value = value || this.state.value;
+    var template = this.props.template;
     if (template.input.value.required && !value) {
-      self.setState({value: this.propValue()});
+      this.setState({value: this.propValue()});
       return;
     }
     this.context.forms.create(template)
@@ -24,8 +23,8 @@ export.
         'value': value,
         '_name': template.input._name.value})
       .set()
-      .submit(function(err) {
-        if (err) self.setState({error: err, value: this.propValue()});
+      .submit((err) => {
+        if (err) this.setState({error: err, value: this.propValue()});
       });
   }
 
@@ -55,17 +54,17 @@ export.
 
 export.
   function onChange(evt, value) {
-    var value = value != null ? value : evt.target.value;
-    if (this.state.value === value) return;
-    this.setState({value: value});
-    this.submit();
+    var val = value != null ? value : evt.target.value;
+    if (this.state.value === val) return;
+    this.setState({value: val});
+    this.submit(val);
   }
 
 export.
   function setValue (value) {
     if (this.state.value === value) return;
     this.setState({value: value});
-    this.submit();
+    this.submit(value);
   }
 
 export var displayName = 'Autosave'
