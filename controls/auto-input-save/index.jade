@@ -14,14 +14,14 @@ export.
   function submit (value) {
     value = value || this.state.value;
     var template = this.props.template;
+    var valObj = {'value': value};
     if (template.input.value.required && !value) {
       this.setState({value: this.propValue()});
       return;
     }
+    if (template.input._name) valObj['_name'] = template.input._name.value;
     this.context.forms.create(template)
-      .set({
-        'value': value,
-        '_name': template.input._name.value})
+      .set(valObj)
       .set()
       .submit((err) => {
         if (err) this.setState({error: err, value: this.propValue()});
