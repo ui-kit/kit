@@ -1,20 +1,19 @@
 import './index.ess'
 import ToolbarAccount from './account.jade'
 
-.flex.flex-stretch.flex-column
-
+.Toolbar
   .Toolbar-inner
-    .Toolbar-row.flex
+    .Toolbar-row
       if props.logo
-        a(to='/').self-center.mr1.focus-outline-0
-          img.Toolbar-left-logo.flex.flex-auto.self-center(src=props.logo)
+        a.Toolbar-left-logo(to='/')
+          img.Toolbar-left-logo-image(src=props.logo)
 
       if props.left
         .Toolbar-left-content
           yield left
 
       if props.links
-        .Toolbar-row.flex.lte-sm-hide
+        .Toolbar-row
           yield links
 
       if props.center
@@ -32,12 +31,12 @@ import ToolbarAccount from './account.jade'
       // TODO else block
 
     if props.links
-      .Toolbar-row-short.flex.gt-sm-hide.justify-center
+      .Toolbar-row-short
         yield links
 
   .Toolbar-buffer
     if props.links
-      .Toolbar-row-short.flex.gt-sm-hide
+      .Toolbar-row-short
 
 export var mergeProps = true
 export var displayName = 'Toolbar'
