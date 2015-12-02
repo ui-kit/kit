@@ -1,4 +1,7 @@
 .Toolbar
+  align-items stretch
+  display flex
+  flex-direction column
   &-inner
     background-color inherit
     box-sizing border-box
@@ -33,15 +36,21 @@
     z-index -1
 
   &-right
-    flex-direction row-reverse
     flex 1
+    flex-direction row-reverse
 
   &-left-logo
-    height 2.25rem
-    padding 1.5rem
-    transition all .15s ease
-    &:focus
-      outline 0
+    align-self center
+    margin-right 0.25rem
+    &-image
+      align-self center
+      display flex
+      flex 1 1 auto
+      height 2.25rem
+      padding 1.5rem
+      transition all .15s ease
+      &:focus
+        outline 0
 
   &-inner,
   &-buffer
@@ -81,17 +90,25 @@ hr.Toolbar-block-center
   display flex
   height 6rem
   position relative
+  // get the toolbar-row inside the toolbar-row
+  .Toolbar-row &
+    @media all and (max-width: 599px)
+      display none
 
   @media all and (max-height: 600px)
     height 4.5rem
 
   &-short
     height 3rem
-
+    display flex
+    .Toolbar-inner &
+      justify-content center
+    @media all and (min-width: 600px)
+      display none
 .nav-home
-  width 72px
-  text-align center
   display inline-block
+  text-align center
+  width 72px
 
   .icon
     font-size 24px
@@ -101,16 +118,16 @@ hr.Toolbar-block-center
       font-size: 16px
 
 .nav-link
+  align-self center
+  border-radius 2px
   font-size 14px
   font-weight bold
+  height 2rem
+  letter-spacing .05em
+  line-height calc(2rem + 2px)
+  padding 0 .5rem
   text-transform uppercase
   transition all .15s ease
-  letter-spacing .05em
-  height 2rem
-  line-height calc(2rem + 2px)
-  border-radius 2px
-  padding 0 .5rem
-  align-self center
   &:hover
     transition none
   // leave these styles up to app. opt-in for default state colors
@@ -121,11 +138,3 @@ hr.Toolbar-block-center
     &:hover
       color = __.color.primary
       transition none
-
-.lte-sm-hide
-  @media all and (max-width: 599px)
-    display none
-
-.gt-sm-hide
-  @media all and (min-width: 600px)
-    display none
