@@ -27,5 +27,5 @@ user-select none
     right -6px
     top -6px
  
-&:active, &:checked, &.is-active
+&:active, &:checked, &.is-active, &-is-active
   %./active.ess
