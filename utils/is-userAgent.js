@@ -6,5 +6,5 @@ var USERAGENT_NAMES = {
 exports.USERAGENT_NAMES = USERAGENT_NAMES;
 
 exports.isUserAgent = function (name) {
-  return name.test(navigator.userAgent)
+  return name.test(navigator.userAgent);
 }
