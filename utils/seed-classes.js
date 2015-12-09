@@ -4,8 +4,7 @@ export default function(base, statuses = {}, classes = {}) {
   if (classes[base]) base = classes[base];
 
   var rootStatuses = addStatuses(statuses);
-  var baseRegExp = new RegExp('^' + base + '-?');
-
+  
   return function(className, classStatuses) {
     var allStatuses = classStatuses
       ? addStatuses(classStatuses, rootStatuses)
@@ -13,17 +12,13 @@ export default function(base, statuses = {}, classes = {}) {
 
     if (classes[className]) className = classes[className];
 
-    var baseClassName = typeof className === 'string'
-      ? className.replace('&', base)
-      : base + '';
-
-    if (classes[baseClassName]) baseClassName = classes[baseClassName];
-
-    var statusClasses = allStatuses.length
-      ? baseClassName + allStatuses.join(' ' + baseClassName)
-      : '';
-
-    return `${baseClassName} ${statusClasses}`.trim();
+    return base.split(' ').map(function (b) {
+      var baseClassName = typeof className === 'string' ? className.replace('&', b) : b + '';
+      baseClassName = classes[baseClassName] ? classes[baseClassName] : baseClassName;
+      var statusClasses = allStatuses.length ? baseClassName + allStatuses.join(' ' + baseClassName) : '';
+      
+      return `${baseClassName} ${statusClasses}`.trim();
+    }).join(' ');
   };
 }
 
