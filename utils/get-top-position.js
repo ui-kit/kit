@@ -1,35 +1,49 @@
-/*
- * offset - distance from clicked element and container with relative position
- * top - distance from clicked element to top of window
- * itemHeight - height of the item that will be positioned
- * containerHeight - height of the container with relative position
- * adjustment - adjust offset of clicked element (used for some cases)
-*/
+/** Arguments
+  *   target: clicked element
+  *   container: element with relative position that top style position will refer to
+  *   options:
+  *     - itemHeight: height of item that will recieve top position value
+  *     - adjustment: adjust offset of target by adjustment amount
+  *     - padding: amount of padding to place above/below item
+  */
 
-export default function(offset, top, itemHeight, containerHeight, adjustment) {
-  if (!adjustment) adjustment = 0;
-  top = top > offset ? offset : top;
-  var offsetAdjustment = offset + adjustment;
-  var padding = window.innerWidth > 800 ? 24 : 12;
-  
-  // if item will show up too close to the bottom
-  var bottomBleed = containerHeight - offsetAdjustment - itemHeight;
-  var isNearBottom = bottomBleed < padding;
+var defaultOptions = {
+  adjustment: 0,
+  itemHeight: 0,
+  padding: window.innerWidth > 800 ? 24 : 12
+}
 
-  // if clicked element is in lower two thirds of screen
+export default function(target, container, options) {
+  var options = Object.assign(defaultOptions, options);
+
+  var targetBounds = target.getBoundingClientRect();
+  var targetOffset = target.offsetTop;
+  var targetHeight = targetBounds.height;
+  var targetTop = targetOffset > targetTop ? targetOffset : targetBounds.top;
+  var targetAdjustment =  targetOffset + options.adjustment;
+
+  var containerHeight = container.scrollHeight;
+    
+  // if no item height is given, always place top of item near the top of the window
+  if (!options.itemHeight) return targetOffset - targetTop + options.padding;
+
+  // position bottom of item near bottom of container
+  var bottomBleed = containerHeight - targetAdjustment - options.itemHeight;
+  var nearBottom = bottomBleed < options.padding;
+
+  // if target element is in lower two thirds of window
   var windowUpperThird = window.innerHeight / 3;
-  var isLower = top + adjustment > windowUpperThird;
-  
-  // if item would fit directly above clicked element and below window top
-  var itemFits = isLower && itemHeight < top;
 
-  if (itemFits) {
-    return offsetAdjustment - itemHeight - padding;
-  } else if (isNearBottom) {
-    return containerHeight - itemHeight - padding;
-  } else if (isLower) {
-    return offset - top + padding;
-  } else {
-    return offsetAdjustment;
-  }
+  // position top of item near the top of window
+  var nearTop = targetTop + options.adjustment > windowUpperThird;
+  
+  // position bottom of item above the target element
+  var aboveTarget = nearTop && options.itemHeight < targetTop;
+
+  if (aboveTarget) return targetAdjustment - options.itemHeight - options.padding;
+  if (nearBottom) return targetAdjustment - options.itemHeight - options.padding;
+  if (nearTop) return targetOffset - targetTop + options.padding;
+
+  // position top of item on top of target element
+  return targetAdjustment
 }
