@@ -26,7 +26,11 @@ export default function(target, container, options) {
   console.log('targetHeight: ', targetHeight);
   console.log('targetTop: ', targetTop);
   console.log('options: ', options);
-  debugger;
+  console.log('computeFrameOffset: ', computeFrameOffset(window, 0));
+  console.log('windowTopScrollY: ', window.top.scrollY);
+
+
+  //window.top
 
   var containerHeight = container.scrollHeight;
     
@@ -54,3 +58,12 @@ export default function(target, container, options) {
   // position top of item on top of target element
   return targetAdjustment
 }
+
+function computeFrameOffset(win, top) {
+    if (win !== window.top) {
+        var rect = win.frameElement.getBoundingClientRect();
+        top += rect.top;
+        top = computeFrameOffset(win.parent, top); // recursion
+    }
+    return top;
+};
