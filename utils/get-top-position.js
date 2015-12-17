@@ -26,6 +26,7 @@ export default function(target, container, options) {
   console.log('targetHeight: ', targetHeight);
   console.log('targetTop: ', targetTop);
   console.log('options: ', options);
+  debugger;
 
   var containerHeight = container.scrollHeight;
     
