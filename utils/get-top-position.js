@@ -20,7 +20,7 @@ export default function(target, container, options) {
   var targetOffset = target.offsetTop;
   var targetHeight = targetBounds.height;
   var targetAdjustment = targetOffset + options.adjustment;
-  var targetTop = window !== window.top ? targetAdjustment + computeFrameOffset(window, 0) : targetBounds.top;
+  var targetTop = window !== window.top ? computeFrameOffset(window, 0) : targetBounds.top + options.adjustment;
 
   var containerHeight = container.scrollHeight;
 
@@ -53,7 +53,7 @@ export default function(target, container, options) {
 
   if (aboveTarget) return targetAdjustment - options.itemHeight - options.padding;
   if (nearBottom) return containerHeight - options.itemHeight - options.padding;
-  if (nearTop) return targetOffset - targetTop + options.padding;
+  if (nearTop) return targetAdjustment - targetTop + options.padding;
 
   // position top of item on top of target element
   return targetAdjustment
