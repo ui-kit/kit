@@ -10,7 +10,7 @@
 var defaultOptions = {
   adjustment: 0,
   itemHeight: 0,
-  padding: window.innerWidth > 800 ? 24 : 12
+  padding: window.top.innerWidth > 800 ? 24 : 12
 }
 
 export default function(target, container, options) {
@@ -23,6 +23,16 @@ export default function(target, container, options) {
   var targetTop = window !== window.top ? targetAdjustment + computeFrameOffset(window, 0) : targetBounds.top;
 
   var containerHeight = container.scrollHeight;
+
+  console.log('targetBounds: ', targetBounds);
+  console.log('targetOffset: ', targetOffset);
+  console.log('targetHeight: ', targetHeight);
+  console.log('targetAdjustment: ', targetAdjustment);
+  console.log('targetTop: ', targetTop);
+  console.log('computeFrameOffset: ', computeFrameOffset(window, 0));
+  console.log('windowHeight: ', window.innerHeight);
+  console.log('winnerTopHeight: ', window.top.innerHeight);
+  console.log('options: ', options);
     
   // if no item height is given, always place top of item near the top of the window
   if (!options.itemHeight) return targetOffset - targetTop + options.padding;
@@ -33,7 +43,7 @@ export default function(target, container, options) {
   var nearBottom = bottomBleed < options.padding && !fitsAtTop;
 
   // if target element is in lower two thirds of window
-  var windowUpperThird = window.innerHeight / 3;
+  var windowUpperThird = window.top.innerHeight / 3;
 
   // position top of item near the top of window
   var nearTop = targetTop + options.adjustment - options.padding > windowUpperThird;
