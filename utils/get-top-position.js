@@ -21,6 +21,11 @@ export default function(target, container, options) {
   var targetHeight = targetBounds.height;
   var targetTop = targetOffset > targetTop ? targetOffset : targetBounds.top;
   var targetAdjustment =  targetOffset + options.adjustment;
+  console.log('targetBounds: ', targetBounds);
+  console.log('targetOffset: ', targetOffset);
+  console.log('targetHeight: ', targetHeight);
+  console.log('targetTop: ', targetTop);
+  console.log('options: ', options);
 
   var containerHeight = container.scrollHeight;
     
