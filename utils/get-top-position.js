@@ -19,18 +19,8 @@ export default function(target, container, options) {
   var targetBounds = target.getBoundingClientRect();
   var targetOffset = target.offsetTop;
   var targetHeight = targetBounds.height;
-  var targetTop = targetOffset > targetTop ? targetOffset : targetBounds.top;
-  var targetAdjustment =  targetOffset + options.adjustment;
-  console.log('targetBounds: ', targetBounds);
-  console.log('targetOffset: ', targetOffset);
-  console.log('targetHeight: ', targetHeight);
-  console.log('targetTop: ', targetTop);
-  console.log('options: ', options);
-  console.log('computeFrameOffset: ', computeFrameOffset(window, 0));
-  console.log('windowTopScrollY: ', window.top.scrollY);
-
-
-  //window.top
+  var targetAdjustment = targetOffset + options.adjustment;
+  var targetTop = window !== window.top ? targetAdjustment + computeFrameOffset(window, 0) : targetBounds.top;
 
   var containerHeight = container.scrollHeight;
     
