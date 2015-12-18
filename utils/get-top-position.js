@@ -20,7 +20,7 @@ export default function(target, container, options) {
   var targetOffset = target.offsetTop;
   var targetHeight = targetBounds.height;
   var targetAdjustment = targetOffset + options.adjustment;
-  var targetTop = window !== window.top ? computeFrameOffset(window, 0) : targetBounds.top + options.adjustment;
+  var targetTop = window !== window.top ? computeFrameOffset(window, 0) + targetAdjustment : targetBounds.top + options.adjustment;
 
   var containerHeight = container.scrollHeight;
 
