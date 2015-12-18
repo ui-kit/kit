@@ -18,21 +18,10 @@ export default function(target, container, options) {
 
   var targetBounds = target.getBoundingClientRect();
   var targetOffset = target.offsetTop;
-  var targetHeight = targetBounds.height;
   var targetAdjustment = targetOffset + options.adjustment;
   var targetTop = window !== window.top ? computeFrameOffset(window, 0) + targetAdjustment : targetBounds.top + options.adjustment;
 
   var containerHeight = container.scrollHeight;
-
-  console.log('targetBounds: ', targetBounds);
-  console.log('targetOffset: ', targetOffset);
-  console.log('targetHeight: ', targetHeight);
-  console.log('targetAdjustment: ', targetAdjustment);
-  console.log('targetTop: ', targetTop);
-  console.log('computeFrameOffset: ', computeFrameOffset(window, 0));
-  console.log('windowHeight: ', window.innerHeight);
-  console.log('winnerTopHeight: ', window.top.innerHeight);
-  console.log('options: ', options);
     
   // if no item height is given, always place top of item near the top of the window
   if (!options.itemHeight) return targetOffset - targetTop + options.padding;
