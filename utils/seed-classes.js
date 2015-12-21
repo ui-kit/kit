@@ -1,4 +1,4 @@
-import appendStatus from './append-status';
+import appendStatus from './append-status'
 
 export default function(base, statuses = {}, classes = {}) {
   if (classes[base]) base = classes[base];
@@ -24,7 +24,7 @@ export default function(base, statuses = {}, classes = {}) {
 
 function addStatuses(sx, arr = []) {
   for (var s in sx) {
-    arr.push('-' + appendStatus(sx[s], s));
+    arr.push('-' + appendStatus(sx[s], s.replace('@', sx[s])));
   }
   return arr;
 }
