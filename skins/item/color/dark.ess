@@ -2,6 +2,7 @@ background = __.color.charcoal
 color #fff
 
 .item-label,
+&-main,
 &-label
   &:after
     border-color = __.color.black
