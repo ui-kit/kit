@@ -47,9 +47,9 @@ color #fff
 &.has-no-active:active
   background = __.color.charcoal
 
-&.has-no-hover <-label:after,
-&.has-no-hover:hover <-label:after,
-&.has-no-hover:active <-label:after
+&.has-no-hover &-label:after,
+&.has-no-hover:hover &-label:after,
+&.has-no-hover:active &-label:after
   border-top = '1px solid '+__.color.black
 
 &.is-input
