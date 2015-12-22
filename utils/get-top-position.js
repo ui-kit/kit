@@ -20,6 +20,9 @@ export default function(target, container, options) {
   var targetOffset = target.offsetTop;
   var targetAdjustment = targetOffset + options.adjustment;
   var targetTop = window !== window.top ? computeFrameOffset(window, 0) + targetAdjustment : targetBounds.top + options.adjustment;
+  console.log('window: ', window.top);
+  if (window !== window.top) console.log('frameOffset: ', window.frameElement.getBoundingClientRect());
+  console.log('innerHeight: ', window.top.innerHeight);
 
   var containerHeight = container.scrollHeight;
     
@@ -49,10 +52,6 @@ export default function(target, container, options) {
 }
 
 function computeFrameOffset(win, top) {
-    if (win !== window.top) {
-        var rect = win.frameElement.getBoundingClientRect();
-        top += rect.top;
-        top = computeFrameOffset(win.parent, top); // recursion
-    }
-    return top;
+    var rect = win.frameElement.getBoundingClientRect();
+    return rect.top;
 };
