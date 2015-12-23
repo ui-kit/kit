@@ -12,12 +12,12 @@ export.
 
 export.
   function sendForm () {
-    var self = this;
+    if (this.props.onStart) this.props.onStart.apply(null, arguments);
     var template = this.props.template;
     this.context.forms.create(template)
-      .submit(function(err, res) {
-        if (err) self.setState({error: err});
-        if (self.props.onFinish) self.props.onFinish(err, res);
+      .submit((err, res) => {
+        if (err) this.setState({error: err});
+        if (this.props.onFinish) this.props.onFinish(err, res);
       });
   }
 
