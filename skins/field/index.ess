@@ -20,6 +20,8 @@ width 100%
     color = __.color.primary
     opacity 1
   &:valid ~ <-label,
+  &.has-value ~ <-label,
+  &-is-value ~ <-label,
   &:focus ~ <-label
     font-size = __.h10
     font-weight bold
