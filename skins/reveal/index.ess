@@ -9,7 +9,6 @@ position relative
 &-menu
   %./children/menu.ess
 
-&:hover &-menu,
 &.is-active &-menu
   max-height 10rem
   max-width 10rem
