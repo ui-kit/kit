@@ -1,3 +1,5 @@
+//- This control merges query parameters. For example, if a user selects 'List' in the sidenav and then a Sort option, the query params will continually merge.
+
 var params = this.getParams()
 var query = this.getQuery()
 
@@ -9,7 +11,7 @@ var.
     query: this.context.encodeParams(merge(query, props.query))
   }
 
-a(className=props.className to=this.makePath(linkProps.to, linkProps.params, linkProps.query))= props.children
+a(className=props.className to=linkProps.to params=linkProps.params query=linkProps.query)= props.children
 
 export.
   function merge(params, prev) {
