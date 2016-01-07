@@ -9,7 +9,7 @@ var.
     query: this.context.encodeParams(merge(query, props.query))
   }
 
-a(className=props.className to=this.makePath(linkProps.to, linkProps.params, linkProps.query))= props.children
+a(className=props.className to=linkProps.to params=linkProps.params query=linkProps.query)= props.children
 
 export.
   function merge(params, prev) {
