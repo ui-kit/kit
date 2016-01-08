@@ -56,7 +56,7 @@ color hsla(49.6, 73.1%, 26.3%, 1)
 &.has-no-hover,
 &.has-no-hover:hover,
 &.has-no-hover:active
-  color hsla(49.6, 73.%, 26.3%, 1)
+  color hsla(49.6, 73.1%, 26.3%, 1)
   cursor default
 
 &.has-no-active,
