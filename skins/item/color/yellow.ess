@@ -58,7 +58,7 @@ background = __.color.yellow.light
 &.has-no-hover,
 &.has-no-hover:hover,
 &.has-no-hover:active
-  color hsla(49.6, 73.1%, 26.3%, 1)
+  color = brown
   cursor default
 
 &.has-no-active,
