@@ -1,6 +1,6 @@
 import Color from '../../../utils/color.js'
-var brown = new Color('hsl(49.6, 73.1%, 26.3%)')
-  
+var brown = new Color('#746312')
+color = brown 
 background = __.color.yellow.light
 
 .item-label,
