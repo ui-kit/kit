@@ -1,7 +1,7 @@
 %./index.ess
 &-item
-  border-width 2px
   border-style solid
+  border-width 2px
   color inherit
   flex 1 1 100em
   margin 0 0 0 -2px
