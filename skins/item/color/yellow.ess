@@ -1,16 +1,17 @@
-import Color from '../../../utils/color.js'
-var brown = new Color('#746312')
-color = brown 
-background = __.color.yellow.light
+color = __.color.brown
+background = __.color.yellow
 
 .item-label,
 &-main,
 &-label
   &:after
-    border-color = brown
+    border-color = __.color.brown
     
 &:hover
-  color = brown
+  color = __.color.brown
+    
+&:active
+  background = __.color.yellow.dark
   
 &:hover > &-main,
 &:active > &-main,
@@ -19,24 +20,24 @@ background = __.color.yellow.light
 &:active > &-content &-label,
 &.is-active > &-content &-label,
   &:after
-    border-color = brown
+    border-color = __.color.brown
     
 &-input:focus + &-label
-  color = brown
+  color = __.color.brown
   &:after
-    border-color = brown
+    border-color = __.color.brown
     
 // doesn't use variable because the placeholder hijacks it for some reason
 &-input
-  color = brown
-  box-shadow = 'inset 0 -1px 0 ' +__.color.black
+  color = __.color.brown
+  box-shadow = 'inset 0 -1px 0 ' +__.color.brown
   &::placeholder
-    color = __.color.white.clone().clearer(.5)
+    color = __.color.brown.clone().clearer(.5)
   &:hover  
-    box-shadow 'inset 0 -1px 0 ' + brown
+    box-shadow = 'inset 0 -1px 0 ' + __.color.brown
   &:active,
   &:focus
-    box-shadow 'inset 0 -2px 0 ' + brown
+    box-shadow = 'inset 0 -2px 0 ' + __.color.brown
 
 &.is-disabled,
 &[disabled],
@@ -44,7 +45,7 @@ background = __.color.yellow.light
   color hsla(0,0%,100%,.1)
   &:hover &-label
     &:after
-      border-color = __.color.black
+      border-color = __.color.brown
 
 // State classes
 &.is-not-link
@@ -53,12 +54,12 @@ background = __.color.yellow.light
     background = __.color.yellow.light 
     color = __.color.white
     & </-label:after
-      border-color = __.color.black
+      border-color = __.color.brown
 
 &.has-no-hover,
 &.has-no-hover:hover,
 &.has-no-hover:active
-  color = brown
+  color =__.color.brown
   cursor default
 
 &.has-no-active,
@@ -69,10 +70,10 @@ background = __.color.yellow.light
 &.has-no-hover &-label:after,
 &.has-no-hover:hover &-label:after,
 &.has-no-hover:active &-label:after
-  border-top = '1px solid '+__.color.black
+  border-top = '1px solid '+__.color.brown
 
 &.is-input
   &:active,
   &.is-active
-    color = brown 
-    background = __.color.yellow     
+    color =__.color.brown 
+    background = __.color.yellow
