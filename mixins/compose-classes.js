@@ -49,8 +49,16 @@ export function composeClasses(baseName, statuses, options) {
       fns.push(seedClasses(baseName, statuses));
     }
   }
+  
+  return (n, sx) => filterUnique(fns.map((fn) => fn(n, sx))).join(' ');
+}
 
-  return (n, sx) => fns.map((fn) => fn(n, sx)).join(' ');
+function filterUnique(arr = []) {
+  var u = {};
+  return arr.filter(function (str) {
+    if (u[str]) return false;
+    return u[str] = 1;
+  });
 }
 
 export default {composeClasses};
