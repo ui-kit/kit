@@ -1,0 +1,4 @@
+&:before
+  border-bottom 1px solid
+&:after
+  border-left 1px solid
