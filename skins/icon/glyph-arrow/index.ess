@@ -33,7 +33,7 @@ width 8px
   %./weight/bold.ess
 
 &.is-large
-  %./weight/large.ess
+  %./size/large.ess
 
 &.is-extra-large
-  %./weight/extra-large.ess
+  %./size/extra-large.ess
