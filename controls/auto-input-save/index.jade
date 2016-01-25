@@ -12,14 +12,12 @@ export.
 
 export.
   function submit (value) {
-    value = value || this.state.value;
     var template = this.props.template;
-    var valObj = {'value': value};
-    
+    var valObj = {[this.props.valueKey]: value};
+    if (!template) return console.warn('No template passed to UIAutoInputSave. Value not saved:', value);
     if (template.input._name) valObj['_name'] = template.input._name.value;
     this.context.forms.create(template)
       .set(valObj)
-      .set()
       .submit((err) => {
         if (err) this.setState({error: err, value: this.propValue()});
       });
@@ -29,6 +27,13 @@ export.
   function getInitialState() {
     return {
       value: this.propValue()
+    };
+  }
+
+export.
+  function getDefaultProps () {
+    return {
+      valueKey: 'value'
     };
   }
 
@@ -64,4 +69,4 @@ export.
     this.submit(value);
   }
 
-export var displayName = 'Autosave'
+export var displayName = 'UIAutoInputsave'
