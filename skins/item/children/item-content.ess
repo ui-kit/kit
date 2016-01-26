@@ -4,7 +4,9 @@ color inherit
 display flex
 flex 1
 flex-direction row-reverse
+flex-wrap nowrap
 justify-content space-between
+// This is in here to fix a bug where Firefox renders labels outside of content
+max-width 100%
 padding-right 18px
 position relative
-flex-wrap nowrap
