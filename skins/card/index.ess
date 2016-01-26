@@ -5,11 +5,7 @@ border-radius 2px
 overflow hidden
 padding 18px
 
-&-header
-  padding-bottom 12px
-  %./../heading/h4.ess
-
-&-subheader
+&-header, &-subheader
   padding-bottom 12px
   %./../heading/h4.ess
 
@@ -17,12 +13,7 @@ padding 18px
   padding 0
   %./../heading/h6.ess
 
-&-subfooter
-  %./../heading/h8.ess
-  opacity .5
-  padding-top 12px
-
-&-footer
+&-subfooter, &-footer
   %./../heading/h8.ess
   opacity .5
   padding-top 12px
