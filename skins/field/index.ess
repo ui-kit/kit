@@ -32,3 +32,6 @@ width 100%
 
 &.is-error
   %./color/yellow.ess
+
+&.has-label
+  %./has-label.ess
