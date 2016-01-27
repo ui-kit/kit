@@ -50,15 +50,13 @@ export function composeClasses(baseName, statuses, options) {
     }
   }
   
-  return (n, sx) => filterUnique(fns.map((fn) => fn(n, sx))).join(' ');
+  return applyFns.bind(null, fns);
 }
 
-function filterUnique(arr = []) {
-  var u = {};
-  return arr.filter(function (str) {
-    if (u[str]) return false;
-    return u[str] = 1;
-  });
+function applyFns(fns, n, sx) {
+  var classes = {};
+  fns.forEach((fn) => classes[fn(n, sx)] = true);
+  return Object.keys(classes).join(' ');
 }
 
 export default {composeClasses};
