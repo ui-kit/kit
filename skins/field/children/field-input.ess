@@ -14,7 +14,7 @@ justify-content center
 line-height 1.5em
 margin 0
 outline none
-padding 10px 0 9px
+padding 7px 0 8px
 position relative
 resize none
 text-align left
