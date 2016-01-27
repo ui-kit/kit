@@ -49,8 +49,14 @@ export function composeClasses(baseName, statuses, options) {
       fns.push(seedClasses(baseName, statuses));
     }
   }
+  
+  return applyFns.bind(null, fns);
+}
 
-  return (n, sx) => fns.map((fn) => fn(n, sx)).join(' ');
+function applyFns(fns, n, sx) {
+  var classes = {};
+  fns.forEach((fn) => classes[fn(n, sx)] = true);
+  return Object.keys(classes).join(' ');
 }
 
 export default {composeClasses};
