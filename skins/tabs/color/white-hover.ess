@@ -1,0 +1,19 @@
+color = __.color.white
+&-item
+  opacity .5
+  &:hover,
+  &:active
+    filter none
+  &:hover
+    color = __.color.white
+    opacity .7
+  &.is-selected,
+  &:active
+    color = __.color.primary
+    border-color = __.color.white
+    background-color = __.color.white
+    opacity 1
+  &.is-selected &-label,
+  &:active &-label
+    color = __.color.primary
+    
