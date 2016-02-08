@@ -1,3 +1,13 @@
+:doc
+  @name UIAutoInputsave
+  @prop {Object} template
+  @prop {Function} [onChange]
+  @prop {Function} [onStart]
+  @prop {Function} [onFinish]
+  @prop {String} [valueKey]
+  @prop {String} [className]
+  @prop {Number} [debounce]
+
 import * as debounce from 'debounce'
 
 var fns = {onChange: this.onChange, setValue: this.setValue}
@@ -5,68 +15,61 @@ div(className=props.className)
   if props.template
     yield input(state.value, fns, state.error)
 
-export.
-  function componentWillMount() {
+:module
+  export function componentWillMount() {
     this.submit = debounce(this.submit, this.props.debounce || 300);
   }
 
-export.
-  function submit (value) {
+  export function submit (value) {
     var template = this.props.template;
     var valObj = {[this.props.valueKey]: value};
+    if (this.props.onStart) this.props.onStart.apply(null, arguments);
     if (!template) return console.warn('No template passed to UIAutoInputSave. Value not saved:', value);
     if (template.input._name) valObj['_name'] = template.input._name.value;
+    
     this.context.forms.create(template)
       .set(valObj)
       .submit((err) => {
         if (err) this.setState({error: err, value: this.propValue()});
+        if (this.props.onFinish) this.props.onFinish.apply(null, arguments);
       });
   }
 
-export.
-  function getInitialState() {
+  export function getInitialState() {
     return {
       value: this.propValue()
     };
   }
 
-export.
-  function getDefaultProps () {
+  export function getDefaultProps () {
     return {
       valueKey: 'value'
     };
   }
 
-export.
-  function componentWillReceiveProps(props) {
+  export function componentWillReceiveProps(props) {
     if (this.isUpToDate()) this.setState({value: this.propValue(props)});
     return true;
   }
 
-export.
-  function isUpToDate() {
+  export function isUpToDate() {
     return this.propValue() === this.state.value || !this.state.value;
   }
 
-export.
-  function propValue(props) {
+  export function propValue(props) {
     props = props || this.props
     return props.template && props.template.input && props.template.input.value && props.template.input.value.value;
   }
 
-export.
-  function onChange(evt, value) {
+  export function onChange(evt, value) {
     var val = value != null ? value : evt.target.value;
     if (this.state.value === val) return;
     this.setState({value: val});
     this.submit(val);
   }
 
-export.
-  function setValue (value) {
+  export function setValue (value) {
     if (this.state.value === value) return;
     this.setState({value: value});
     this.submit(value);
   }
-
-export var displayName = 'UIAutoInputsave'
