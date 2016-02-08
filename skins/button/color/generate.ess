@@ -1,13 +1,13 @@
-var color = props.color
-var valueColor = __.color[color]
-var valueColorHover = props.colorHover || __.color[color].dark
-var valueColorActive = props.colorActive || __.color[color].darker
+var colorName = props.color
+var valueColor = __.color[colorName]
+var valueColorHover = props.colorHover || __.color[colorName].dark
+var valueColorActive = props.colorActive || __.color[colorName].darker
 
 background-color = valueColor
 border-color = valueColor
 color = valueColor
 &:hover
-  color = __.white
+  color = __.color.white
   background-color = valueColorHover
   border-color = valueColorHover
 &:active,
