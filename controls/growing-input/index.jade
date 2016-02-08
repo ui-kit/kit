@@ -14,10 +14,12 @@
   @prop {String} defaultValue
   @prop {String} type
 
-import {KEY_NAMES} from 'ui-kit/utils/keybinding.js'
+import {KEY_NAMES} from '../../utils/keybinding.js'
 import * as debounce from 'debounce'
 
 import './index.ess'
+
+const VIRTUAL_INPUT_STYLE = {position: 'fixed', left: '10000px', right: '10000px'}
 
 var.
   componentProps = {
@@ -78,15 +80,27 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
     this.setState({value: value});
     if (this.props.onChange) this.props.onChange.apply(null, arguments);
     this.submitTemplate();
-    this.recalculateSize();
   }
 
   export function recalculateSize () {
     if (!this.isMounted()) return;
     var input = this.getDOMNode();
-    input.style.height = '';
-    var newHeight = input.scrollHeight;
-    input.style.height = [newHeight, 'px'].join('');
+    var newHeight = this.getVirtualInputHeight(input);
+    if (newHeight !== Number(input.style.height.split('px')[0]))
+      input.style.height = [newHeight, 'px'].join('');
+  }
+
+  export function getVirtualInputHeight (input) {
+    var vInput = input.cloneNode();
+    vInput.style.width = input.clientWidth + 'px';
+    for (var key in VIRTUAL_INPUT_STYLE) {
+      vInput.style[key] = VIRTUAL_INPUT_STYLE[key];
+    }
+    input.parentElement.appendChild(vInput);
+    vInput.style.height = '';
+    var height = vInput.scrollHeight;
+    input.parentElement.removeChild(vInput);
+    return height;
   }
 
   export function onKeyDown (evt) {
