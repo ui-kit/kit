@@ -17,6 +17,7 @@
   @prop {String} [className]
   @prop {String} [defaultValue]
   @prop {String} [type]
+  @prop {String} [valueKey]
 
 import {KEY_NAMES} from 'ui-kit/utils/keybinding.js'
 import AutoInputSave from 'ui-kit/controls/auto-input-save'
@@ -46,7 +47,7 @@ var value = (state.value || state.value === '' ) ? state.value : props.defaultVa
 
 .is-input(className=classFn())
   if props.template
-    AutoInputSave(className=classFn('&-auto-save') template=props.template onStart=props.onSaveStart onFinish=props.onSaveFinish onError=props.onSaveError)
+    AutoInputSave(className=classFn('&-auto-save') template=props.template valueKey=props.valueKey onStart=props.onSaveStart onFinish=props.onSaveFinish onError=props.onSaveError)
       block input(savedValue, fns)
         = inputContent(fns.onChange)
         yield icon
@@ -72,7 +73,8 @@ function inputContent(onChange)
     return {
       saveOnChange: true,
       submitOnEnter: true,
-      type: 'text'
+      type: 'text',
+      valueKey: 'value'
     };
   }
 

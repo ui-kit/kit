@@ -13,6 +13,7 @@
   @prop {String} className
   @prop {String} defaultValue
   @prop {String} type
+  @prop {String} valueKey
 
 import {KEY_NAMES} from '../../utils/keybinding.js'
 import * as debounce from 'debounce'
@@ -50,7 +51,8 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
 :module
   export function getDefaultProps () {
     return {
-      submitOnEnter: true
+      submitOnEnter: true,
+      valueKey: 'value'
     };
   }
 
@@ -115,7 +117,7 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
     if (!this.props.template) return;
     var value = this.getDOMNode().value.trim();
     this.context.forms.create(this.props.template)
-      .set({value: value})
+      .set({[this.props.valueKey]: value})
       .submit((err, res) => {
         if (err) {
           if (this.props.onError) this.props.onError(err);
