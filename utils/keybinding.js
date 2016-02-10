@@ -36,7 +36,8 @@ exports.hasKeybinding = function (key) {
 }
 
 function keyupHandler (matchChar, callback, evt) {
-  if (evt.target.tagName !== 'INPUT' && evt.target.tagName !== 'TEXTAREA') {
+  // we don't want to fire events when somebody is typing in an input, esc is okay to fire
+  if ((evt.target.tagName !== 'INPUT' && evt.target.tagName !== 'TEXTAREA') || evt.keyCode === KEY_NAMES.esc) {
     if (evt.keyCode === KEY_NAMES[matchChar] || String.fromCharCode(evt.keyCode) === matchChar.toUpperCase()) callback.apply(null);
   }
 }
