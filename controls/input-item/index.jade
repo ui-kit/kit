@@ -8,7 +8,9 @@
   @prop {Function} [onBlur]
   @prop {Function} [onChange]
   @prop {Function} [onFocus]
-  @prop {Function} [onKeydown]
+  @prop {Function} [onSaveStart]
+  @prop {Function} [onSaveFinish]
+  @prop {Function} [onSaveError]
   @prop {Number} [maxLength]
   @prop {Number} [minLength]
   @prop {Object} [template]
@@ -42,13 +44,13 @@ var labelFor = useAutoId ? this.getNextUid('MUIInputItemComponent') : props.inpu
 var labelClass = classFn('&-label')
 var value = (state.value || state.value === '' ) ? state.value : props.defaultValue
 
-.is-input(className=classFn())
-  if props.template
-    AutoInputSave(template=props.template)
-      block input(savedValue, fns)
-        = inputContent(fns.onChange)
-        yield icon
-  else if props.noTemplate
+if props.template
+  AutoInputSave.is-input(className=classFn() template=props.template onStart=props.onSaveStart onFinish=props.onSaveFinish onError=props.onSaveError)
+    block input(savedValue, fns)
+      = inputContent(fns.onChange)
+      yield icon
+else if props.noTemplate
+  .is-input(className=classFn())
     = inputContent()
     yield icon
 
@@ -68,6 +70,7 @@ function inputContent(onChange)
 
   export function getDefaultProps () {
     return {
+      saveOnChange: true,
       submitOnEnter: true,
       type: 'text'
     };
@@ -91,7 +94,7 @@ function inputContent(onChange)
   export function onKeyDown (onChange, evt) {
     if (this.props.submitOnEnter && evt.keyCode === KEY_NAMES.enter) {
       evt.preventDefault();
-      this.onChange(onChange, evt);
+      this.saveValue(onChange, evt.target.value, evt);
     }
   }
 
@@ -100,11 +103,15 @@ function inputContent(onChange)
     if (this.props.onBlur) this.props.onBlur.apply(null, arguments);
   }
 
-  export function onChange (autoSave, ev) {
-    var value = ev.target.value;
+  export function onChange (autoSave, evt) {
+    var value = evt.target.value;
+    if (this.props.onChange) this.props.onChange(evt);
+    if (this.props.saveOnChange) this.saveValue(autoSave, value, evt)
+  }
+
+  export function saveValue (cb, value, evt) {
     var hasValue = !!value;
-    if (this.props.onChange) this.props.onChange.apply(null, arguments);
     if (this.state.hasValue !== hasValue) this.setState({hasValue: hasValue});
     this.setState({value: value});
-    if (autoSave) autoSave(ev, value.trim());
+    if (cb) cb(evt, value.trim()); 
   }
