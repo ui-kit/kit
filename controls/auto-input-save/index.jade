@@ -2,6 +2,7 @@
   @name UIAutoInputsave
   @prop {Object} template
   @prop {Function} [onChange]
+  @prop {Function} [onError]
   @prop {Function} [onStart]
   @prop {Function} [onFinish]
   @prop {String} [valueKey]
@@ -30,7 +31,10 @@ div(className=props.className)
     this.context.forms.create(template)
       .set(valObj)
       .submit((err) => {
-        if (err) this.setState({error: err, value: this.propValue()});
+        if (err) {
+          if (this.props.onError) this.props.onError.apply(null, arguments);
+          this.setState({error: err, value: this.propValue()});
+        }
         if (this.props.onFinish) this.props.onFinish.apply(null, arguments);
       });
   }
