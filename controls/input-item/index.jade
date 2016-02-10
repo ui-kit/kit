@@ -36,7 +36,7 @@ var.
     type: props.multiLine ? 'textarea' : props.type
   }
 
-var classFn = this.composeClasses('MUIInputItem', {'value': !!state.hasValue, 'multi': componentProps.type === 'textarea', 'labeled': !!props.label})
+var classFn = this.composeClasses('MUIInputItem', {'value': !!state.hasValue, 'multi': componentProps.type === 'textarea', 'labeled': !!props.label, 'focused': state.hasFocus})
 
 var useAutoId = (!!props.label || !!props.labelBlock) && !props.inputId
 var inputId = useAutoId ? this.getNextUid('MUIInputItemComponent') : props.inputId
@@ -44,13 +44,13 @@ var labelFor = useAutoId ? this.getNextUid('MUIInputItemComponent') : props.inpu
 var labelClass = classFn('&-label')
 var value = (state.value || state.value === '' ) ? state.value : props.defaultValue
 
-if props.template
-  AutoInputSave.is-input(className=classFn() template=props.template onStart=props.onSaveStart onFinish=props.onSaveFinish onError=props.onSaveError)
-    block input(savedValue, fns)
-      = inputContent(fns.onChange)
-      yield icon
-else if props.noTemplate
-  .is-input(className=classFn())
+.is-input(className=classFn())
+  if props.template
+    AutoInputSave(className=classFn('&-auto-save') template=props.template onStart=props.onSaveStart onFinish=props.onSaveFinish onError=props.onSaveError)
+      block input(savedValue, fns)
+        = inputContent(fns.onChange)
+        yield icon
+  else if props.noTemplate
     = inputContent()
     yield icon
 
