@@ -1,0 +1,36 @@
+background-color = __.color.charcoal
+border-radius 0 0 2px 2px
+color white
+display flex
+height 3rem
+justify-content center
+position relative
+transition background-color linear 50ms
+width 100%
+&-background
+  border-radius 0 0 2px 2px
+  bottom 0
+  left 0
+  overflow hidden
+  position absolute
+  right 0
+  top 0
+  &-container
+    // Here so we don't have vignette
+    height 100%
+    position absolute
+    width 100%
+    // Flips image
+    transform scale(2,-2)
+  &-image
+    background-position bottom
+    background-size cover
+    bottom 0
+    filter blur(8px)
+    left 0
+    opacity .7
+    position absolute
+    right 0
+    top 0
+&-icon
+  %skins/option/option-icon.ess
