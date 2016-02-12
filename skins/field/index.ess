@@ -12,12 +12,17 @@ width 100%
   %./children/field-icon.ess
 &-action
   %./children/field-action.ess
+&-hint
+  %./children/field-hint.ess
 &-input,
 .Input-input
   %./children/field-input.ess
   &:focus ~ <-icon,
   &:focus ~ <-label
     color = __.color.primary
+    opacity 1
+  &:focus ~ <-hint
+    bottom 4px
     opacity 1
   &:valid ~ <-label,
   &.has-value ~ <-label,

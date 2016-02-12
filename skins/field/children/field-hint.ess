@@ -1,0 +1,8 @@
+bottom 12px
+font-size = __.h10
+letter-spacing .1em
+line-height .64em
+opacity 0
+position absolute
+right 3px
+transition all .15s
