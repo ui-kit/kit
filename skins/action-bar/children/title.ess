@@ -1,0 +1,16 @@
+flex-shrink 0
+font-weight bold
+opacity .5
+padding 10px 1rem
+position relative
+
+&:after
+  border-color inherit
+  border-right 1px solid
+  content ''
+  height 1.5rem
+  margin-top -.75rem
+  opacity .6
+  position absolute
+  right 0
+  top 50%

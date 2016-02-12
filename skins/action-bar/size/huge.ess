@@ -1,0 +1,19 @@
+// Modifies to:
+// height 72px
+// font-size 18px
+
+font-size = __.h6
+min-height 72px
+
+&-title
+  &:after
+    height 3rem
+    margin-top -1.5rem
+
+&-title
+  padding 26px 2rem 25px
+
+&-body-item
+  padding 26px 1rem 25px
+  &-icon
+    height 16px

@@ -1,0 +1,18 @@
+// Modifies to:
+// height 60px
+// font-size 14px
+
+min-height 60px
+
+&-title
+  &:after
+    height 3rem
+    margin-top -1.5rem
+
+&-title
+  padding 22px 2rem
+
+&-body-item
+  padding 22px 1rem
+  &-icon
+    height 16px
