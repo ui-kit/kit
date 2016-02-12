@@ -1,0 +1,11 @@
+align-items center
+cursor pointer
+display flex
+padding 10px 1rem
+text-transform uppercase
+
+&-icon
+  color = __.color.primary
+  font-size 16px
+  height 14px
+  margin-right .5rem

@@ -1,0 +1,16 @@
+// Modifies to:
+// height 48px
+// font-size h8
+
+min-height 48px
+
+&-title
+  &:after
+    height 2rem
+    margin-top -1rem
+
+&-title
+  padding 16px 1.5rem
+
+&-body-item
+  padding 16px 1rem

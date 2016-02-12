@@ -1,0 +1,49 @@
+%./../heading/h8.ess
+
+align-items center
+display flex
+flex-wrap wrap
+justify-content center
+letter-spacing .05em
+min-height 36px
+min-height 3rem
+position relative
+transition all ease 200ms
+width 100%
+
+&:before
+  content ''
+  display block
+  transition all ease 200ms
+
+&:after
+  border 1px solid
+  border-color inherit
+  border-radius 2px
+  bottom 0
+  content ''
+  display block
+  left 0
+  opacity .3
+  position absolute
+  right 0
+  top 0
+  transition all ease 200ms
+
+&-title
+  %./children/title.ess
+&-body
+  %./children/body.ess
+  &-item
+    %./children/body-item.ess
+
+&-drop-label
+  %./children/drop-label.ess
+
+&.is-expanded
+  &:after
+    border-width 2px
+    color = __.color.primary
+    opacity 1
+  &:before
+    padding-bottom 66.6666%

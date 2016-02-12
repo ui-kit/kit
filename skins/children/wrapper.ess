@@ -1,0 +1,14 @@
+align-items center
+display flex
+flex-wrap wrap
+justify-content space-between
+min-height 3rem
+transition all ease 200ms
+width 100%
+
+.is-expanded &
+  bottom 0
+  left 0
+  position absolute
+  right 0
+  top 0
