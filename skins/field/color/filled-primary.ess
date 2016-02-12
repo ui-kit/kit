@@ -1,0 +1,37 @@
+background = __.color.primary
+border-radius 2px
+color = __.color.white
+
+&-icon
+  opacity .7
+
+&-input,
+.Input-input
+  box-shadow none
+  &::placeholder
+    color = __.color.white.clone().clearer(.5)
+  &:hover
+    box-shadow none
+  &:active,
+  &.is-active
+    box-shadow none
+  &:focus
+    box-shadow none
+    &::placeholder
+      color = __.color.white.clone().clearer(.7)
+  &:focus ~ <-icon,
+  &:focus ~ <-label
+    color inherit
+    opacity 1
+  &[disabled],
+  &:disabled,
+  .is-disabled &
+    box-shadow none
+    color = __.color.white
+    &:hover, &:active
+      box-shadow none
+      color = __.color.white
+
+&-icon
+  &:after
+    border none
