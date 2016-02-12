@@ -1,5 +1,5 @@
 cursor text
-font-size = __.h6
+font-size = __.h7
 margin-top 2px
 order -1
 position static
