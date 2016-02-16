@@ -1,0 +1,20 @@
+background transparent
+color inherit
+
+&-main,
+&-label
+  &:after
+    border-color initial
+    opacity .3
+
+&-input
+  box-shadow none
+  color inherit
+  &::placeholder
+    color inherit
+    opacity .5
+
+&:hover &-main,
+&:hover &-label
+    &:after
+      opacity 1

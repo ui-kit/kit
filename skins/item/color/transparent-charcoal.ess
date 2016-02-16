@@ -1,0 +1,17 @@
+background transparent
+color inherit
+
+&-main,
+&-label
+  &:after
+    border-color initial
+    opacity .3
+
+&-input
+  box-shadow none
+  color = __.color.charcoal
+
+&:hover &-main,
+&:hover &-label
+    &:after
+      opacity 1
