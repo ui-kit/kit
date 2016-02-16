@@ -3,19 +3,21 @@ position relative
 background #fff
 border-radius 2px
 overflow hidden
-padding 18px
+padding 1.5rem
 
-&-header, &-subheader
-  padding-bottom 12px
+&-header,
+&-subheader
+  padding-bottom 1rem
   %./../heading/h4.ess
 
 &-body
   padding 0
   %./../heading/h6.ess
 
-&-subfooter, &-footer
+&-subfooter,
+&-footer
   %./../heading/h8.ess
   opacity .5
-  padding-top 12px
+  padding-top 1rem
 
 %./color/white.ess

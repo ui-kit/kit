@@ -1,0 +1,41 @@
+align-items center
+border-radius 2px
+box-sizing border-box
+display flex
+flex-wrap wrap
+overflow hidden
+padding 0
+position relative
+&:before
+  border 1px solid
+  border-color inherit
+  border-radius 2px
+  bottom 0
+  content ''
+  content ''
+  display block
+  left 0
+  opacity .3
+  position absolute
+  right 0
+  top 0
+
+&-subheader
+  %./../heading/h8.ess
+  font-weight bold
+  letter-spacing .05em
+  padding-bottom 1rem
+  width 100%
+
+&-body
+  width 100%
+  &:before
+    border-top 1px solid
+    border-color inherit
+    content ''
+    display block
+    left 0
+    opacity .3
+    position absolute
+    right 0
+    top 0
