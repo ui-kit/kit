@@ -42,9 +42,11 @@ textarea
 // Trying to have these descend causes a bug that makes the css not output
 &:hover > &-main,
 &:active > &-main,
+&-is-active > &-main,
 &.is-active > &-main,
 &:hover > &-content &-label,
 &:active > &-content &-label,
+&-is-active > &-content &-label,
 &.is-active > &-content &-label
   &:after
     border-color = __.color.primary
@@ -54,6 +56,7 @@ textarea
     border-top = '2px solid '+__.color.primary
 
 &:active,
+&-is-active,
 &.is-active
   cursor default
   z-index 2
@@ -63,6 +66,8 @@ textarea
 
 &:active > &-content &-input,
 &:active > &-content &-action,
+&-is-active > &-content &-input,
+&-is-active > &-content &-action,
 &.is-active > &-content &-input,
 &.is-active > &-content &-action
   color inherit
@@ -107,6 +112,7 @@ textarea
 
 &.is-input
   &:active,
+  &-is-active,
   &.is-active
     color = __.color.gray
     background = __.color.white
