@@ -7,9 +7,11 @@
   %./children/menu.ess
 
 &:active &-trigger:before,
+&-is-active& > &-trigger:before,
 .is-active& > &-trigger:before
   border-color inherit
 
 &:active &-trigger,
+&-is-active& > &-trigger,
 .is-active& > &-trigger
   color = __.color.white

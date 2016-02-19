@@ -54,6 +54,7 @@ color #fff
 
 &.is-input
   &:active,
+  &-is-active,
   &.is-active
     color = __.color.white
     background = __.color.charcoal

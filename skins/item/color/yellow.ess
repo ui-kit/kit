@@ -15,9 +15,11 @@ background = __.color.yellow
   
 &:hover > &-main,
 &:active > &-main,
+&-is-active > &-main,
 &.is-active > &-main,
 &:hover > &-content &-label,
 &:active > &-content &-label,
+&-is-active > &-content &-label,
 &.is-active > &-content &-label,
   &:after
     border-color = __.color.brown
@@ -74,6 +76,7 @@ background = __.color.yellow
 
 &.is-input
   &:active,
+  &-is-active,
   &.is-active
     color =__.color.brown 
     background = __.color.yellow
