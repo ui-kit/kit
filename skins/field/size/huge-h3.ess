@@ -8,7 +8,10 @@ line-height 1.2em
 &-input,
 .Input-input
   padding 15px 0 14px
-    
+
+&-icon
+  width 6rem
+
 &.has-label
   & </-input,
   .Input-input

@@ -4,6 +4,9 @@
 .Input-input
   padding 14px 0 13px
 
+&-icon
+  width 4rem
+
 &.has-label
   & </-input,
   .Input-input

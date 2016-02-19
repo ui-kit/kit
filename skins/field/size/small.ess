@@ -8,6 +8,9 @@ font-size = __.h9
   padding 3px 0 3px 0
   &:focus ~ <-hint
     margin-top 5px
+
+&-icon
+  width 2rem
   
 &-hint
   bottom auto
@@ -22,6 +25,3 @@ font-size = __.h9
     &:valid ~ </-label,
     &:focus ~ </-label
       top 0px
-
-&-icon
-  width 24px

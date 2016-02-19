@@ -7,6 +7,9 @@ letter-spacing 0
 &-input,
 .Input-input
   padding 17px 0 16px 0
+
+&-icon
+  width 5rem
   
 &.has-label
   & </-input,
