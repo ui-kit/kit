@@ -16,7 +16,9 @@ var defaults = {
     'iframe',
     'img',
     'p',
-    'span'
+    'span',
+    'sub',
+    'sup'
   ],
   CUSTOM_CLASSES: {
     'a': 'link'
