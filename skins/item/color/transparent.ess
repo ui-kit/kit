@@ -14,7 +14,6 @@ color inherit
     color inherit
     opacity .5
 
-&:hover &-main,
-&:hover &-label
-    &:after
-      opacity 1
+&:hover &-main:after,
+&:hover &-label:after
+  opacity 1

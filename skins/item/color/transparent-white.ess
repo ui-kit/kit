@@ -1,17 +1,4 @@
-background transparent
-color inherit
-
-&-main,
-&-label
-  &:after
-    border-color initial
-    opacity .3
+%./transparent.ess
 
 &-input
-  box-shadow none
   color = __.color.white
-
-&:hover &-main,
-&:hover &-label
-    &:after
-      opacity 1
