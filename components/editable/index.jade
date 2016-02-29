@@ -1,3 +1,11 @@
+:doc
+  @name Editable
+  @prop {String} className
+  @prop {Function} onChange
+  @prop {Object} options
+  @prop {String} tag
+  @prop {String} text
+
 import * as MediumEditor from 'medium-editor'
 import './index.ess'
 
@@ -10,20 +18,18 @@ var.
 
 = DOM(props.tag, tagProps);
 
-export.
-  function getInitialState() {
+:module
+  export function getInitialState() {
     return {text: this.props.text};
   }
 
-export.
-  function getDefaultProps() {
+  export function getDefaultProps() {
     return {
       tag: 'div'
     };
   }
 
-export.
-  function componentDidMount() {
+  export function componentDidMount() {
     var dom = this.getDOMNode();
     this.medium = new MediumEditor(dom, this.props.options);
     this.medium.subscribe('editableInput', (e) => {
@@ -32,21 +38,16 @@ export.
     });
   }
 
-export.
-  function componentWillUnmount() {
+  export function componentWillUnmount() {
     this.medium.destroy();
   }
 
-export.
-  function componentWillReceiveProps(nextProps) {
+  export function componentWillReceiveProps(nextProps) {
     if(nextProps.text !== this.state.text && !this._updated)
       this.setState({text: nextProps.text});
     if(this._updated) this._updated = false;
   }
 
-export.
-  function change(text) {
+  export function change(text) {
     if(this.props.onChange) this.props.onChange(text);
   }
-
-export var displayName = 'Editable'

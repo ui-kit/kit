@@ -1,3 +1,20 @@
+:doc
+  @name Input
+  @prop {String} defaultValue
+  @prop {Function} onFocus
+  @prop {String} maxLength
+  @prop {String} minLength
+  @prop {String} multiLine
+  @prop {Function} onBlur
+  @prop {Function} onChange
+  @prop {String} placeholder
+  @prop {Boolean} readonly
+  @prop {String} skinName
+  @prop {String} style
+  @prop {String} tabIndex
+  @prop {String} type
+  @prop {String} value
+
 var.
   componentProps = {
     className: props.skinName,
@@ -21,52 +38,42 @@ div(class=props.className)
   else
     textarea(ref='input' rows='1')&props(componentProps)
 
-export var displayName = 'InputControl'
-
-export.
-  function getDefaultProps () {
+:module
+  export function getDefaultProps () {
     return {
       type: 'text'
     };
   }
 
-export.
-  function onBlur(ev) {
+  export function onBlur(ev) {
     if (this.props.onBlur) this.props.onBlur.call(this, ev);
     if (this.props.multiLine) this.recalculateSize(true);
   }
 
-export.
-  function onFocus(ev) {
+  export function onFocus(ev) {
     if (this.props.onFocus) this.props.onFocus.call(this, ev);
     if (this.props.multiLine) this.recalculateSize();
   }
 
-export.
-  function onChange(ev) {
+  export function onChange(ev) {
     if (this.props.onChange) this.props.onChange.call(this, ev);
     if (this.props.multiLine) this.recalculateSize();
   }
 
-export.
-  function componentDidMount() {
+  export function componentDidMount() {
     var self = this;
     if (this.props.multiLine) setTimeout(function () { self.recalculateSize(true) }, 300);
   }
 
-export.
-  function componentWillReceiveProps(props) {
+  export function componentWillReceiveProps(props) {
     if (this.props.multiLine && props.value !== this.props.value) this.recalculateSize(true);
     return true;
   }
 
-export.
-  function recalculateSize(reset) {
+  export function recalculateSize(reset) {
     if (!this.refs.input) return;
     var input = this.refs.input.getDOMNode();
     if (reset) input.style.height = '';
     var newHeight = input.scrollHeight;
     input.style.height = [newHeight, 'px'].join('');
   }
-
-export var displayName = 'Input'

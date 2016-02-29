@@ -1,3 +1,6 @@
+:doc
+  @name FloatingTooltip
+
 import './index.ess'
 
 const noop = function(){}
@@ -23,20 +26,18 @@ var.
   yield inner
 yield content(actions, this)
 
-export.
-  function handleMouseEnter(cb, ev) {
+:module
+  export function handleMouseEnter(cb, ev) {
     this.setState({visible: true});
     cb(ev);
   }
 
-export.
-  function handleMouseOut(cb, ev) {
+  export function handleMouseOut(cb, ev) {
     this.setState({visible: false, top: null, left: null});
     cb(ev);
   }
 
-export.
-  function handleMouseMove(cb, ev) {
+  export function handleMouseMove(cb, ev) {
     var innerNode = this.refs.inner.getDOMNode();
     var innerNodeWidth = innerNode.offsetWidth;
     var top = ev.clientY;
@@ -48,15 +49,12 @@ export.
     cb(ev);
   }
 
-//-
-//- return a function that takes an optional `cb`
-//-
+  //-
+  //- return a function that takes an optional `cb`
+  //-
 
-export.
-  function wrap(cb) {
+  export function wrap(cb) {
     return function(fn) {
       return typeof fn !== 'function' ? cb.call(null, noop, fn) : cb.bind(null, fn);
     };
   }
-
-export var displayName = 'FloatingTooltip'
