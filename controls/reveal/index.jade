@@ -1,3 +1,6 @@
+:doc
+  @name Reveal
+
 import './reveal-fns.js'
 
 var actions= { toggle: this.toggle, hide: this.hideReveal, show: this.showReveal }
@@ -7,8 +10,7 @@ var actions= { toggle: this.toggle, hide: this.hideReveal, show: this.showReveal
   if(state.isInDom)
     yield menu(actions)
 
-export var mergeProps = true
-export var initialState = {isActive: false, isLocked: false}
-export {componentWillUnmount, hideReveal, lockReveal, onWindowClick, showReveal, toggle, unLockReveal} from './reveal-fns.js'
-
-export var displayName = 'Reveal'
+:module
+  export var mergeProps = true
+  export var initialState = {isActive: false, isLocked: false}
+  export {componentWillUnmount, hideReveal, lockReveal, onWindowClick, showReveal, toggle, unLockReveal} from './reveal-fns.js'

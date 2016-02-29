@@ -1,24 +1,27 @@
-export.
-  function getDefaultProps () {
+:doc
+  @name AutoSubmit
+  @prop {Function} onFinish
+  @prop {Function} onStart
+  @prop {Object} template
+
+:module
+  export function getDefaultProps () {
     return {
       template: {}
     };
   }
 
-export.
-  function componentDidMount () {
+  export function componentDidMount () {
     if (this.props.template && this.props.template.action) this.submit(this.props.template);
   }
 
-export.
-  function componentWillReceiveProps (props) {
+  export function componentWillReceiveProps (props) {
     if (props.template && this.props.template.__hash !== props.template.__hash) {
       this.submit(props.template);
     };
   }
 
-export.
-  function submit (template) {
+  export function submit (template) {
     var self = this;
     var finished = this.props.onFinish;
     var start = this.props.onStart;

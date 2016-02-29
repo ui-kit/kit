@@ -1,3 +1,13 @@
+:doc
+  @name Toolbar
+  @props {Object} account
+  @props {String} accountImg
+  @props {String} center
+  @props {Boolean} left
+  @props {Boolean} links
+  @props {Boolean} logo
+  @props {Boolean} right
+
 import './index.ess'
 import ToolbarAccount from './account.jade'
 
@@ -38,5 +48,5 @@ import ToolbarAccount from './account.jade'
     if props.links
       .Toolbar-row-short
 
-export var mergeProps = true
-export var displayName = 'Toolbar'
+:module
+  export var mergeProps = true
