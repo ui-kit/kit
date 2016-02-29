@@ -33,9 +33,9 @@ yield content(actions, this)
   }
 
   export function handleMouseOut(cb, ev) {
-      this.setState({visible: false, top: null, left: null});
-      cb(ev);
-    }
+    this.setState({visible: false, top: null, left: null});
+    cb(ev);
+  }
 
   export function handleMouseMove(cb, ev) {
     var innerNode = this.refs.inner.getDOMNode();
