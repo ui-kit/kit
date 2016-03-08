@@ -59,9 +59,9 @@ function inputContent(onChange)
   div(className=classFn('&-content'))
     yield actions
     if componentProps.type !== 'textarea' && !props.multiLine
-      input(autoFocus=props.shouldAutoFocus id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, onChange) onFocus=this.onInputFocus onBlur=this.onInputBlur onChange=this.onChange.bind(null, onChange) value=value)&props(componentProps)
+      input(autoFocus=props.shouldAutoFocus name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, onChange) onFocus=this.onInputFocus onBlur=this.onInputBlur onChange=this.onChange.bind(null, onChange) value=value)&props(componentProps)
     else
-      GrowingInput(id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, onChange) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, onChange))&props(componentProps)
+      GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, onChange) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, onChange))&props(componentProps)
     if !!props.label
       label(for=labelFor className=labelClass)=props.label
     yield labelBlock(labelFor, labelClass)
@@ -115,5 +115,5 @@ function inputContent(onChange)
     var hasValue = !!value;
     if (this.state.hasValue !== hasValue) this.setState({hasValue: hasValue});
     this.setState({value: value});
-    if (cb) cb(evt, value.trim()); 
+    if (cb) cb(evt, value.trim());
   }
