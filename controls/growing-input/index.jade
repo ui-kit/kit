@@ -95,6 +95,7 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
   export function getVirtualInputHeight (input) {
     var vInput = input.cloneNode();
     vInput.style.width = input.clientWidth + 'px';
+    vInput.value = input.value;
     for (var key in VIRTUAL_INPUT_STYLE) {
       vInput.style[key] = VIRTUAL_INPUT_STYLE[key];
     }
