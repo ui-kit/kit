@@ -65,7 +65,7 @@ var value = (state.value || state.value === '' ) ? state.value : props.defaultVa
       if componentProps.type !== 'textarea' && !props.multiLine
         input(autoFocus=props.shouldAutoFocus name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, false) onFocus=this.onInputFocus onBlur=this.onInputBlur onChange=this.onChange.bind(null, false) value=value)&props(componentProps)
       else
-        GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, onChange) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, onChange))&props(componentProps)
+        GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, false) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, false))&props(componentProps)
       if !!props.label
         label(for=labelFor className=labelClass)=props.label
       yield labelBlock(labelFor, labelClass, state)    
