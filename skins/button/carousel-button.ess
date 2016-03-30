@@ -1,0 +1,21 @@
+&-prev,
+&-next
+  %./index.ess
+  %./color/white-gray-border.ess
+  %./size/square.ess
+  margin -18px 12px 0 12px
+  position absolute
+  top 100%
+
+&-prev
+  left 0
+  &-icon
+    %../icon/glyph-arrow/index.ess
+    %../icon/glyph-arrow/direction/left.ess
+    margin -1px -2px 0 1px
+    opacity 1
+&-next
+  right 0
+  &-icon
+    %../icon/glyph-arrow/index.ess
+    opacity 1
