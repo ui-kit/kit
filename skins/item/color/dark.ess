@@ -18,6 +18,8 @@ color #fff
   &:focus,
   &:active
     box-shadow = 'inset 0 -2px 0 ' +__.color.primary
+    &::placeholder
+      color = __.color.white.clone().clearer(.7)
       
 &.is-disabled,
 &[disabled],

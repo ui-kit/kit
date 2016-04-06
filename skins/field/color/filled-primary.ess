@@ -8,6 +8,10 @@ color = __.color.white
 &-input,
 .Input-input
   box-shadow none
+
+  &::placeholder
+    color = __.color.white.clone().clearer(.5)
+
   &:hover
     box-shadow none
   &:active,
@@ -15,6 +19,11 @@ color = __.color.white
     box-shadow none
   &:focus
     box-shadow none
+  &:active,
+  &:focus
+    &::placeholder
+      color = __.color.white.clone().clearer(.7)
+
   &:focus ~ <-icon,
   &:focus ~ <-label
     color inherit
