@@ -17,7 +17,7 @@ export default function(target, container, options) {
   var options = Object.assign(defaultOptions, options);
   var targetOffset = target.offsetTop;
   var targetAdjustment = targetOffset + options.adjustment;
-  var containerHeight = container.scrollHeight;
+  var containerHeight = container.clientHeight;
 
   // position bottom of item near bottom of container
   var bottomBleed = containerHeight - targetAdjustment - options.itemHeight;
