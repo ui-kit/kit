@@ -25,3 +25,14 @@
 .icon-glyph-unranked
   %./../icon/index.ess
   %./../icon/glyph-unranked.ess
+.icon-glyph-arrow
+  %./../icon/index.ess
+  %./../icon/glyph-arrow/index.ess
+  &-up
+    %./../icon/glyph-arrow/direction/up.ess
+  &-right
+    %./../icon/glyph-arrow/direction/right.ess
+  &-down
+    %./../icon/glyph-arrow/direction/down.ess
+  &-left
+    %./../icon/glyph-arrow/direction/left.ess
