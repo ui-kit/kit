@@ -1,140 +1,165 @@
 .Toolbar
-  align-items stretch
-  display flex
-  flex-direction column
+  position relative
+  height 6rem
+  @media all and (max-width: 1000px)
+    height 4rem
+  &-is-links
+    @media all and (max-width: 1000px)
+      height 7rem
+
   &-inner
-    background-color inherit
+    align-items center
     box-sizing border-box
     color inherit
-    height inherit
-    line-height inherit
+    display flex
+    flex-wrap wrap
     position fixed
     top 0
     width 100%
-    z-index 8
+    z-index 6
+    height 6rem
+    @media all and (max-width: 1000px)
+      height 4rem
+    &-is-links
+      @media all and (max-width: 1000px)
+        height 8rem
+    if process.env.FEATURE_BRAND === 'qzzr'
+      background-color = __.color.primary
+    if process.env.FEATURE_BRAND === 'pollcaster'
+      background-color = __.color.white
+    if process.env.FEATURE_BRAND === 'boombox'
+      background-color = __.color.black
 
-    + *
-      margin-top 6rem
-      @media all and (max-height: 600px)
-        margin-top 4.5rem
+    &-left,
+    &-center,
+    &-right
+      @media screen and (max-width: 1000px)
+        margin .5rem 0
 
-  &:hover a
-    ='will-change: border-bottom-color, color, text-shadow;'
+    &-left
+      font-size = __.h8
+      line-height 1.2em
+      position relative
+      padding-left 1.5rem
+      @media screen and (max-width: 720px)
+        font-size = __.h9
+        padding-left 1rem
+      @media screen and (max-width: 370px)
+        font-size = __.h10
+        padding-left .75rem
+      &:before
+        border-color inherit
+        border-left 1px solid
+        content ''
+        display block
+        height 3rem
+        opacity .1
+        position absolute
+        left 0
+        top 50%
+        transform translateY(-50%)
+      &-title
+        font-weight bold
+        max-width 15rem
+        overflow hidden
+        position relative
+        white-space nowrap
+        @media screen and (max-width: 370px)
+          max-width 10rem
+        &:after
+          bottom 0
+          content ''
+          display block
+          left calc(15rem - 2rem)
+          position absolute
+          top 0
+          width 2rem
+          if process.env.FEATURE_BRAND === 'qzzr'
+            background = 'linear-gradient(to left, ' + __.color.primary + ' ,' + __.color.primary.clone().clearer(1) + ')'
+          if process.env.FEATURE_BRAND === 'pollcaster'
+            background = 'linear-gradient(to left, ' + __.color.white + ' ,' + __.color.white.clone().clearer(1) + ')'
+          if process.env.FEATURE_BRAND === 'boombox'
+            background = 'linear-gradient(to left, ' + __.color.black + ' ,' + __.color.black.clone().clearer(1) + ')'
+          @media screen and (max-width: 370px)
+            left calc(10rem - 2rem)
 
-  &-left-content,
-  &-right,
-    display flex
-    flex-direction row
-    align-self center
-    align-items center
+      &-subtitle
+        opacity .5
 
-  &-center
-    font-size = __.h8
-    left 0
-    position absolute
-    right 0
-    z-index -1
-
-  &-right
-    flex 1
-    flex-direction row-reverse
-
-  &-left-logo
-    align-self center
-    margin-right 0.25rem
-    &-image
-      align-self center
+    &-center
+      align-items center
       display flex
-      flex 1 1 auto
-      height 2.25rem
-      padding 1.5rem
-      transition all .15s ease
-      &:focus
-        outline 0
-
-  &-inner,
-  &-buffer
-    height inherit
-
-  &-block-left
-    height 100%
-
-  &-block-left,
-  &-block-center,
-  &-block-right
-    align-items center
-
-    &:focus
-      outline 0
-      &:not(.active)
-        text-shadow 0 2px 15px hsla(0, 0%, 0%, .3)
-
-    &.active
-      border-bottom-color inherit
-
-    &:focus,
-    &.active,
-    &:hover:not(label),
-    .active
-      opacity 1
-
-hr.Toolbar-block-left,
-hr.Toolbar-block-center
-  height 1.5rem
-  margin auto 2em auto 1em
-  // why does this have to be buffered?
-  opacity ='.4!important'
-
-.Toolbar-row
-  align-items center
-  display flex
-  height 6rem
-  position relative
-  // get the toolbar-row inside the toolbar-row
-  .Toolbar-row &
-    @media all and (max-width: 599px)
-      display none
-
-  @media all and (max-height: 600px)
-    height 4.5rem
-
-  &-short
-    height 3rem
-    display flex
-    .Toolbar-inner &
       justify-content center
-    @media all and (min-width: 600px)
-      display none
-.nav-home
-  display inline-block
-  text-align center
-  width 72px
+      left 50%
+      position absolute
+      top 50%
+      transform translate(-50%,-50%)
+      @media screen and (max-width: 1000px)
+        left auto
+        margin 0
+        order 99
+        position relative
+        top auto
+        transform none
+        width 100%
+      &-tabs
+        %ui-kit/skins/tabs/index.ess
+        white-space nowrap
+        @media all and (max-width: 1000px)
+          padding .5rem
+        if process.env.FEATURE_BRAND === 'qzzr'
+          %ui-kit/skins/tabs/color/white-hover.ess
+        &-item
+          margin 0 12px
+        @media screen and (max-width: 720px)
+          font-size = __.h9
+          &-item
+            margin 0 6px
+            padding 6px 6px 4px
+        @media all and (max-width: 450px)
+          &-item
+            margin 0 3px
+            padding 6px 4px 4px
+        @media all and (max-width: 390px)
+          &-item
+            margin 0 2px
+            padding 6px 3px 4px
+        @media all and (max-width: 370px)
+          font-size = __.h10
+          &-item
+            padding 6px 3px 6px
+          .icon-glyph-arrow-right
+            height 6px
+            width 6px
 
-  .icon
-    font-size 24px
-  @media screen and (max-height: 600px)
-    width 54px
-    .icon
-      font-size: 16px
+    &-icon
+      @media all and (max-width: 1000px)
+        width 48px
+        .MUILogo
+          margin 0 auto
+          padding 0
+          &-image
+            margin 0 auto
 
-.nav-link
-  align-self center
-  border-radius 2px
-  font-size 14px
-  font-weight bold
-  height 2rem
-  letter-spacing .05em
-  line-height calc(2rem + 2px)
-  padding 0 .5rem
-  text-transform uppercase
-  transition all .15s ease
-  &:hover
-    transition none
-  // leave these styles up to app. opt-in for default state colors
-  &-default
-    &.is-active
-      border-color = __.color.primary
-      color = __.color.primary
-    &:hover
-      color = __.color.primary
-      transition none
+    &-right
+      align-items center
+      display flex
+      flex 1
+      flex-direction row
+      justify-content flex-end
+      margin-right 1.5rem
+      @media all and (max-width: 1000px)
+        margin-right .5rem
+
+    &-logo
+      align-self center
+      margin-right 0.25rem
+      &-image
+        align-self center
+        display flex
+        flex 1 1 auto
+        height 2.25rem
+        padding 1.5rem
+        transition all .15s ease
+        &:focus
+          outline 0
