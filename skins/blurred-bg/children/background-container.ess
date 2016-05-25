@@ -1,0 +1,6 @@
+// Here so we don't have vignette
+height 100%
+position absolute
+width 100%
+// Flips image
+transform scale(2,-2)
