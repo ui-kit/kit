@@ -1,0 +1,29 @@
+%ui-kit/skins/button/index.ess
+
+border-radius 2px 0 0 2px
+border-right 0
+margin-right 12px
+padding-right 8px
+transition none
+&:before
+  border 2px solid
+  border-bottom none
+  border-color inherit
+  border-left none
+  box-sizing border-box
+  content ''
+  height 25px
+  position absolute
+  right 0
+  top 50%
+  transform translate(50%, -50%) rotate(45deg)
+  transition none
+  width 25px
+  z-index -1
+
+&:hover
+  &:before
+    background-color inherit
+&:active
+  &:before
+    background-color inherit
