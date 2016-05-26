@@ -1,165 +1,27 @@
 .Toolbar
   position relative
   height 6rem
-  @media all and (max-width: 1000px)
-    height 4rem
-  &-is-links
-    @media all and (max-width: 1000px)
-      height 7rem
+    @media all and (max-height: 600px)
+      height 4.5rem
 
   &-inner
     align-items center
-    box-sizing border-box
-    color inherit
+    background-color inherit
     display flex
-    flex-wrap wrap
+    flex-direction row
+    flex-wrap nowrap
+    height inherit
+    justify-content space-between
     position fixed
-    top 0
     width 100%
-    z-index 6
-    height 6rem
-    @media all and (max-width: 1000px)
-      height 4rem
-    &-is-links
-      @media all and (max-width: 1000px)
-        height 8rem
-    if process.env.FEATURE_BRAND === 'qzzr'
-      background-color = __.color.primary
-    if process.env.FEATURE_BRAND === 'pollcaster'
-      background-color = __.color.white
-    if process.env.FEATURE_BRAND === 'boombox'
-      background-color = __.color.black
+    z-index 10
 
-    &-left,
-    &-center,
-    &-right
-      @media screen and (max-width: 1000px)
-        margin .5rem 0
-
-    &-left
-      font-size = __.h8
-      line-height 1.2em
-      position relative
-      padding-left 1.5rem
-      @media screen and (max-width: 720px)
-        font-size = __.h9
-        padding-left 1rem
-      @media screen and (max-width: 370px)
-        font-size = __.h10
-        padding-left .75rem
-      &:before
-        border-color inherit
-        border-left 1px solid
-        content ''
-        display block
-        height 3rem
-        opacity .1
-        position absolute
-        left 0
-        top 50%
-        transform translateY(-50%)
-      &-title
-        font-weight bold
-        max-width 15rem
-        overflow hidden
-        position relative
-        white-space nowrap
-        @media screen and (max-width: 370px)
-          max-width 10rem
-        &:after
-          bottom 0
-          content ''
-          display block
-          left calc(15rem - 2rem)
-          position absolute
-          top 0
-          width 2rem
-          if process.env.FEATURE_BRAND === 'qzzr'
-            background = 'linear-gradient(to left, ' + __.color.primary + ' ,' + __.color.primary.clone().clearer(1) + ')'
-          if process.env.FEATURE_BRAND === 'pollcaster'
-            background = 'linear-gradient(to left, ' + __.color.white + ' ,' + __.color.white.clone().clearer(1) + ')'
-          if process.env.FEATURE_BRAND === 'boombox'
-            background = 'linear-gradient(to left, ' + __.color.black + ' ,' + __.color.black.clone().clearer(1) + ')'
-          @media screen and (max-width: 370px)
-            left calc(10rem - 2rem)
-
-      &-subtitle
-        opacity .5
-
-    &-center
-      align-items center
-      display flex
-      justify-content center
-      left 50%
-      position absolute
-      top 50%
-      transform translate(-50%,-50%)
-      @media screen and (max-width: 1000px)
-        left auto
-        margin 0
-        order 99
-        position relative
-        top auto
-        transform none
-        width 100%
-      &-tabs
-        %ui-kit/skins/tabs/index.ess
-        white-space nowrap
-        @media all and (max-width: 1000px)
-          padding .5rem
-        if process.env.FEATURE_BRAND === 'qzzr'
-          %ui-kit/skins/tabs/color/white-hover.ess
-        &-item
-          margin 0 12px
-        @media screen and (max-width: 720px)
-          font-size = __.h9
-          &-item
-            margin 0 6px
-            padding 6px 6px 4px
-        @media all and (max-width: 450px)
-          &-item
-            margin 0 3px
-            padding 6px 4px 4px
-        @media all and (max-width: 390px)
-          &-item
-            margin 0 2px
-            padding 6px 3px 4px
-        @media all and (max-width: 370px)
-          font-size = __.h10
-          &-item
-            padding 6px 3px 6px
-          .icon-glyph-arrow-right
-            height 6px
-            width 6px
-
-    &-icon
-      @media all and (max-width: 1000px)
-        width 48px
-        .MUILogo
-          margin 0 auto
-          padding 0
-          &-image
-            margin 0 auto
-
-    &-right
-      align-items center
-      display flex
-      flex 1
-      flex-direction row
-      justify-content flex-end
-      margin-right 1.5rem
-      @media all and (max-width: 1000px)
-        margin-right .5rem
-
-    &-logo
-      align-self center
-      margin-right 0.25rem
-      &-image
-        align-self center
-        display flex
-        flex 1 1 auto
-        height 2.25rem
-        padding 1.5rem
-        transition all .15s ease
-        &:focus
-          outline 0
+  &-left
+    %./default-inheritance.ess
+    justify-content flex-start
+  &-center
+    %./default-inheritance.ess
+    justify-content center
+  &-right
+    %./default-inheritance.ess
+    justify-content flex-end
