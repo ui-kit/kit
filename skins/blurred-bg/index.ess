@@ -1,0 +1,13 @@
+background-color = __.color.charcoal
+color = __.color.white
+display flex
+justify-content center
+position relative
+width 100%
+
+&-background
+  %./children/background.ess
+  &-container
+    %./children/background-container.ess
+    &-image
+      %./children/background-container-image.ess
