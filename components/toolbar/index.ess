@@ -1,140 +1,59 @@
 .Toolbar
-  align-items stretch
-  display flex
-  flex-direction column
-  &-inner
-    background-color inherit
-    box-sizing border-box
-    color inherit
-    height inherit
-    line-height inherit
-    position fixed
-    top 0
-    width 100%
-    z-index 8
-
-    + *
-      margin-top 6rem
-      @media all and (max-height: 600px)
-        margin-top 4.5rem
-
-  &:hover a
-    ='will-change: border-bottom-color, color, text-shadow;'
-
-  &-left-content,
-  &-right,
-    display flex
-    flex-direction row
-    align-self center
-    align-items center
-
-  &-center
-    font-size = __.h8
-    left 0
-    position absolute
-    right 0
-    z-index -1
-
-  &-right
-    flex 1
-    flex-direction row-reverse
-
-  &-left-logo
-    align-self center
-    margin-right 0.25rem
-    &-image
-      align-self center
-      display flex
-      flex 1 1 auto
-      height 2.25rem
-      padding 1.5rem
-      transition all .15s ease
-      &:focus
-        outline 0
-
-  &-inner,
-  &-buffer
-    height inherit
-
-  &-block-left
-    height 100%
-
-  &-block-left,
-  &-block-center,
-  &-block-right
-    align-items center
-
-    &:focus
-      outline 0
-      &:not(.active)
-        text-shadow 0 2px 15px hsla(0, 0%, 0%, .3)
-
-    &.active
-      border-bottom-color inherit
-
-    &:focus,
-    &.active,
-    &:hover:not(label),
-    .active
-      opacity 1
-
-hr.Toolbar-block-left,
-hr.Toolbar-block-center
-  height 1.5rem
-  margin auto 2em auto 1em
-  // why does this have to be buffered?
-  opacity ='.4!important'
-
-.Toolbar-row
-  align-items center
+  background-color inherit
   display flex
   height 6rem
   position relative
-  // get the toolbar-row inside the toolbar-row
-  .Toolbar-row &
-    @media all and (max-width: 599px)
-      display none
-
   @media all and (max-height: 600px)
     height 4.5rem
 
-  &-short
-    height 3rem
+  &-inner
+    align-items center
+    background-color inherit
     display flex
-    .Toolbar-inner &
-      justify-content center
-    @media all and (min-width: 600px)
-      display none
-.nav-home
-  display inline-block
-  text-align center
-  width 72px
+    flex-direction row
+    flex-wrap nowrap
+    height inherit
+    justify-content space-between
+    position fixed
+    width 100%
+    z-index 10
+    @media screen and (max-width: 875px)
+      flex-wrap wrap
+      padding-top 18px
 
-  .icon
-    font-size 24px
-  @media screen and (max-height: 600px)
-    width 54px
-    .icon
-      font-size: 16px
+  &-left, &-left div:not([class])
+    %./default-inheritance.ess
+    justify-content flex-start
+    @media screen and (max-width: 875px)
+      height 36px
+      order 1
+      width 50%
+    @media screen and (max-width: 435px)
+      width 30%
+    div:not([class])
+      width 100%
 
-.nav-link
-  align-self center
-  border-radius 2px
-  font-size 14px
-  font-weight bold
-  height 2rem
-  letter-spacing .05em
-  line-height calc(2rem + 2px)
-  padding 0 .5rem
-  text-transform uppercase
-  transition all .15s ease
-  &:hover
-    transition none
-  // leave these styles up to app. opt-in for default state colors
-  &-default
-    &.is-active
-      border-color = __.color.primary
-      color = __.color.primary
-    &:hover
-      color = __.color.primary
-      transition none
+  &-center, &-center div:not([class])
+    %./default-inheritance.ess
+    justify-content center
+    @media screen and (max-width: 875px)
+      order 3
+      height 60px
+    div:not([class])
+      width 100%
+
+  &-center
+    &-tabs
+      %../../skins/toolbar/center/tabs.ess
+
+  &-right, &-right div:not([class])
+    %./default-inheritance.ess
+    justify-content flex-end
+    @media screen and (max-width: 875px)
+      height 36px
+      order 2
+      width 50%
+    @media screen and (max-width: 435px)
+      width 70%
+    div:not([class])
+      width 100%
