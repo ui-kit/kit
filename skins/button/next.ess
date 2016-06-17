@@ -5,6 +5,9 @@ border-right 0
 margin-right 12px
 padding-right 8px
 transition none
+& > *
+  // So the immediate child positions above pseudo element
+  position relative
 &:before
   border 2px solid
   border-bottom none
@@ -19,7 +22,6 @@ transition none
   transform translate(50%, -50%) rotate(45deg)
   transition none
   width 25px
-  z-index -1
 
 &:hover
   &:before
