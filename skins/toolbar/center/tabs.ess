@@ -6,6 +6,17 @@ if process.env.FEATURE_BRAND === 'qzzr'
   %ui-kit/skins/tabs/color/white-hover.ess
 &-item
   margin 0 12px
+&-arrow
+  align-self center
+  cursor default
+  display inline-block
+  font-size = __.h7
+  font-weight bold
+  height 2rem
+  line-height 2rem
+  opacity .5
+  padding 0 .75rem
+  user-select none
 @media screen and (max-width: 720px)
   font-size = __.h9
   &-item
