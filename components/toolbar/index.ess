@@ -42,6 +42,37 @@
     div:not([class])
       width 100%
 
+  &-center
+    &-tabs
+      %ui-kit/skins/tabs/index.ess
+      white-space nowrap
+      @media all and (max-width: 1000px)
+        padding .5rem
+      if process.env.FEATURE_BRAND === 'qzzr'
+        %ui-kit/skins/tabs/color/white-hover.ess
+      &-item
+        margin 0 12px
+      @media screen and (max-width: 720px)
+        font-size = __.h9
+        &-item
+          margin 0 6px
+          padding 6px 6px 4px
+      @media all and (max-width: 450px)
+        &-item
+          margin 0 3px
+          padding 6px 4px 4px
+      @media all and (max-width: 390px)
+        &-item
+          margin 0 2px
+          padding 6px 3px 4px
+      @media all and (max-width: 370px)
+        font-size = __.h10
+        &-item
+          padding 6px 3px 6px
+        .icon-glyph-arrow-right
+          height 6px
+          width 6px
+
   &-right, &-right div:not([class])
     %./default-inheritance.ess
     justify-content flex-end
