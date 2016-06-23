@@ -16,6 +16,7 @@
   @prop {Object} [template]
   @prop {String} [className]
   @prop {String} [defaultValue]
+  @prop {String} [inputId]
   @prop {String} [type]
   @prop {String} [valueKey]
 
@@ -57,7 +58,7 @@ var value = (state.value || state.value === '' ) ? state.value : props.defaultVa
             GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, fns.onChange) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, fns.onChange))&props(componentProps)
           if !!props.label
             label(for=labelFor className=labelClass)=props.label
-          yield labelBlock(labelFor, labelClass, state) 
+          yield labelBlock(labelFor, labelClass, state)
         yield icon
   else if props.noTemplate
     div(className=classFn('&-content'))
@@ -68,7 +69,7 @@ var value = (state.value || state.value === '' ) ? state.value : props.defaultVa
         GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, false) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, false))&props(componentProps)
       if !!props.label
         label(for=labelFor className=labelClass)=props.label
-      yield labelBlock(labelFor, labelClass, state)    
+      yield labelBlock(labelFor, labelClass, state)
     yield icon
 
 :module
