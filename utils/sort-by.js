@@ -1,9 +1,12 @@
 exports = module.exports = sortBy;
 exports['default'] = sortBy;
 function sortBy(prop, $get, options) {
-  var inverse = prop.substr(0, 1) === '!' || options.inverse;
   var mod = options.modifier;
-  if (inverse) prop = prop.slice(1, prop.length);
+  var inverse = options.inverse;
+  if (prop.substr(0, 1) === '!') {
+    prop = prop.slice(1, prop.length);
+    inverse = true;
+  }
   return function(a, b) {
     var aVal = $get(prop, a);
     var bVal = $get(prop, b);
