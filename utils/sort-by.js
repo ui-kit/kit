@@ -1,8 +1,8 @@
 /*
 sort-by defaults to ascending order
-@param prop {String} The property to get from each item
-@param $get {Function} hyper-store get function
-@param options {Object}
+@arg prop {String} The property to get from each item
+@arg $get {Function} hyper-store get function
+@arg options {Object}
   inverse  {Boolean}  Applies a decsending order
   modifier {Function} Applies a function to modify each value before sorting
 */
