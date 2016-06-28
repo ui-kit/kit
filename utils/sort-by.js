@@ -1,6 +1,15 @@
+/*
+sort-by defaults to ascending order
+@param prop {String} The property to get from each item
+@param $get {Function} hyper-store get function
+@param options {Object}
+  inverse  {Boolean}  Applies a decsending order
+  modifier {Function} Applies a function to modify each value before sorting
+*/
 exports = module.exports = sortBy;
 exports['default'] = sortBy;
 function sortBy(prop, $get, options) {
+  options = options || {};
   var mod = options.modifier;
   var inverse = options.inverse;
   if (prop.substr(0, 1) === '!') {
