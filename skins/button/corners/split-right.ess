@@ -30,7 +30,7 @@ position relative
   transform rotate(90deg)
   transition all .1s ease
   width 16px
-
+  pointer-events none
 &:active,
 &.is-active,
 .is-active &
