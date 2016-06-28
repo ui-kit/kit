@@ -28,9 +28,8 @@ width 16px
 &:after
   margin-top 6px
 
-&.is-active
+&.is-active, &-is-active
   border-color transparent
-  margin -6px 0 0 -2px
   &:after
     margin 0
     transition all .15s ease
