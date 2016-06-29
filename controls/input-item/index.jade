@@ -38,7 +38,7 @@ var.
     type: props.multiLine ? 'textarea' : props.type
   }
 
-var classFn = this.composeClasses('MUIInputItem', {'value': !!state.hasValue, 'multi': componentProps.type === 'textarea', 'labeled': !!props.label, 'focused': state.hasFocus})
+var classFn = this.composeClasses('UIInputItem', {'value': !!state.hasValue, 'multi': componentProps.type === 'textarea', 'labeled': !!props.label, 'focused': state.hasFocus})
 
 var useAutoId = (!!props.label || !!props.labelBlock) && !props.inputId
 var inputId = useAutoId ? this.getNextUid('MUIInputItemComponent') : props.inputId
