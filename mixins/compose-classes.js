@@ -32,7 +32,7 @@ export function composeClasses(baseName, statuses, options) {
   var classes = props.classes;
   var base = baseName;
   var opts = options
-    ? Object.assign(DEFAULT_OPTIONS, options)
+    ? Object.assign({}, DEFAULT_OPTIONS, options)
     : DEFAULT_OPTIONS;
 
   if (props.displayName) base = props.displayName;
@@ -49,7 +49,7 @@ export function composeClasses(baseName, statuses, options) {
       fns.push(seedClasses(baseName, statuses));
     }
   }
-  
+
   return applyFns.bind(null, fns);
 }
 
