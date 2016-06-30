@@ -24,21 +24,16 @@ const DEFAULT_OPTIONS = {
  *
  */
 
-export function composeClasses(baseName, statuses, options) {
+export function composeClasses(baseName, statuses, options={}) {
   if (process.env.NODE_ENV === 'development' && !baseName)
     return console.error('You must pass a `baseName`');
 
+  var fns = [];
   var props = this.props;
   var classes = props.classes;
-  var base = baseName;
-  var opts = options
-    ? Object.assign({}, DEFAULT_OPTIONS, options)
-    : DEFAULT_OPTIONS;
+  var opts = Object.assign({}, DEFAULT_OPTIONS, options);
+  var base = (opts.master && props.className) ? props.className : props.displayName || baseName;
 
-  if (props.displayName) base = props.displayName;
-  else if (opts.master && props.className) base = props.className;
-
-  var fns = [];
   if (opts.frozen) {
     fns.push(seedClasses(baseName, statuses, classes));
   } else if (opts.overwrite) {
@@ -54,9 +49,9 @@ export function composeClasses(baseName, statuses, options) {
 }
 
 function applyFns(fns, n, sx) {
-  var classes = {};
-  fns.forEach((fn) => classes[fn(n, sx)] = true);
-  return Object.keys(classes).join(' ');
+  var classes = [];
+  fns.forEach((fn) => classes.push(fn(n, sx)));
+  return classes.join(' ');
 }
 
 export default {composeClasses};
