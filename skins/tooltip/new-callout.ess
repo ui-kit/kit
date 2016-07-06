@@ -1,0 +1,29 @@
+%ui-kit/skins/tooltip/index.ess
+%ui-kit/skins/tooltip/visibility/always.ess
+%ui-kit/skins/tooltip/size/tiny.ess
+
+border-color = __.color.green
+display inline-block
+
+&:before
+  border-width 4px
+  bottom auto
+  margin 0 0 0 -4px
+  top 100%
+  transform none
+
+&:after,
+&-body
+  bottom auto
+  left auto
+  right auto
+  position relative
+  top auto
+  transform none
+
+&:after
+  display block
+  background = __.color.green
+  color = __.color.white
+  text-transform uppercase
+  line-height 1em
