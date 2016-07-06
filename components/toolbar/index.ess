@@ -26,7 +26,6 @@
     justify-content flex-start
     @media screen and (max-width: 875px)
       height 36px
-      order 1
       width 50%
     @media screen and (max-width: 435px)
       width 30%
@@ -51,10 +50,7 @@
     justify-content flex-end
     @media screen and (max-width: 875px)
       height 36px
-      order 2
       width 50%
-      flex-direction row-reverse
-      justify-content flex-start
     @media screen and (max-width: 435px)
       width 70%
     div:not([class])
