@@ -3,8 +3,6 @@
   display flex
   height 6rem
   position relative
-  @media all and (max-height: 600px)
-    height 4.5rem
 
   &-inner
     align-items center
