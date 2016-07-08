@@ -4,7 +4,13 @@ font-size = __.h6
 &-label,
 &-input
   min-height 1.45em
-  padding 12px 0
+  padding 11px 0
+
+&-label
+  &-heading
+    margin-top -7px
+  &-subheading
+    margin-bottom -7px
 
 &-icon
   margin-left -18px

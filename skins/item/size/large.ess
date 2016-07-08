@@ -6,6 +6,11 @@ padding-left 18px
   padding-right 18px
 &-label
   padding 14px 0
+  &-heading
+    margin-top -6px
+  &-subheading
+    margin-top 2px
+    margin-bottom -6px
 &-input
   padding 14px 0
 &-icon

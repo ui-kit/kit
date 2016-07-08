@@ -13,3 +13,13 @@ text-align left
   left 0
   position absolute
   right 0
+
+&-heading
+  line-height 1.2em
+  margin-top -4px
+&-subheading
+  opacity .7
+  font-size = __.h9
+  letter-spacing .05em
+  line-height 1.2em
+  margin-bottom -6px
