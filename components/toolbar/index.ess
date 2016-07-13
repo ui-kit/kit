@@ -14,7 +14,7 @@
     justify-content space-between
     position fixed
     width 100%
-    z-index 10
+    z-index 9
     @media screen and (max-width: 875px)
       flex-wrap wrap
       padding-top 18px
