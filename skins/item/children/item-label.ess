@@ -15,11 +15,13 @@ text-align left
   right 0
 
 &-heading
+  display block
   line-height 1.2em
   margin-top -4px
 &-subheading
-  opacity .7
+  display block
   font-size = __.h9
   letter-spacing .05em
   line-height 1.2em
   margin-bottom -6px
+  opacity .7
