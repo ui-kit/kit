@@ -51,22 +51,22 @@ var value = (state.value || state.value === '' ) ? state.value : props.defaultVa
     AutoInputSave(className=classFn('&-auto-save') template=props.template valueKey=props.valueKey onStart=props.onSaveStart onFinish=props.onSaveFinish onError=props.onSaveError)
       block input(savedValue, fns)
         div(className=classFn('&-content'))
-          yield actions
           if componentProps.type !== 'textarea' && !props.multiLine
             input(autoFocus=props.shouldAutoFocus name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, fns.onChange) onFocus=this.onInputFocus onBlur=this.onInputBlur onChange=this.onChange.bind(null, fns.onChange) value=value)&props(componentProps)
           else
             GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, fns.onChange) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, fns.onChange))&props(componentProps)
+          yield actions
           if !!props.label
             label(for=labelFor className=labelClass)=props.label
           yield labelBlock(labelFor, labelClass, state)
         yield icon
   else if props.noTemplate
     div(className=classFn('&-content'))
-      yield actions
       if componentProps.type !== 'textarea' && !props.multiLine
         input(autoFocus=props.shouldAutoFocus name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, false) onFocus=this.onInputFocus onBlur=this.onInputBlur onChange=this.onChange.bind(null, false) value=value)&props(componentProps)
       else
         GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, false) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, false))&props(componentProps)
+      yield actions
       if !!props.label
         label(for=labelFor className=labelClass)=props.label
       yield labelBlock(labelFor, labelClass, state)
