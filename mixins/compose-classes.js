@@ -8,14 +8,32 @@ const DEFAULT_OPTIONS = {
 };
 
 /**
- * Examples
+ * Basic example
  *
  *   var classFn = this.composeClasses('Foobar')
  *   div(class=classFn())
  *     div(class=classFn('&-buz))
  *     div(class=classFn('&-qux))
  *
- * Options
+ * State classes (Second argument)
+ *
+ *   Define as an object in the original class function, or anywhere class function is used.
+ *   If the value provided is truthy/falsey, the class applied will have 'is-'/'is-not' prepended to the key respectively.
+ *   Similarly, if the key is prefixed with 'has-', the class will have 'has-'/'has-no-' prepended when truthy/falsey.
+ *   Using the '@' in the key will insert the value provided in its place
+ *
+ *   var classFn = this.composeClasses('Foobar', {'disabled': false, 'type-@': 'lorem', 'has-bar': true})
+ *   div(class=classFn())
+ *     div(class=classFn('&-buz, {'has-bar': false}))
+ *     div(class=classFn('&-qux, {'active': true, 'disabled': true}))
+ *
+ *   Compiles to:
+ *
+ *   div.Foobar.Foobar-is-not-disabled.Foobar-is-type-lorem.Foobar-has-bar
+ *     div.Foobar-buz.Foobar-buz-is-not-disabled.Foobar-buz-is-type-lorem.Foobar-buz-has-no-bar
+ *     div.Foobar-qux.Foobar-qux-is-disabled.Foobar-qux-is-type-lorem.Foobar-qux-is-active.Foobar-quz-has-bar
+ *
+ * Options (Third argument)
  *
  *   master: use the prop.className as the baseName if possible (default: true)
  *   combination: the component seed can be used together with a master baseName (default: true)
