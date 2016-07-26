@@ -22,8 +22,6 @@ import * as scrollToElement from 'scroll-to-element'
 import elContains from '../../utils/element-contains-el'
 import {attachKeybinding, removeKeybindings} from '../../utils/keybinding.js'
 
-import './index.ess'
-
 :js
   var classFn = this.composeClasses('UIFlyout', {
     'active': state.isActive,
@@ -44,12 +42,12 @@ div(className=classFn())
       div(className=classFn('&-menu') ref='menu')
         yield menu(fns, state.isActive)
         if props.showCloseButton
-          div(className=classFn('&-menu-close'))
+          div(className=classFn('&-menu-close') onClick=this.hideMenu)
   else
     div(className=classFn('&-menu') ref='menu')
       yield menu(fns, state.isActive)
       if props.showCloseButton
-        div(className=classFn('&-menu-close'))
+        div(className=classFn('&-menu-close') onClick=this.hideMenu)
 
 :module
   export var mixins = [require('../../mixins/compose-classes')]
