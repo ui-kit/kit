@@ -1,0 +1,32 @@
+&-has-trigger
+  position relative
+&-menu
+  %./menu/index.ess
+
+&-is-position-left
+  %./position/left-middle.ess
+&-is-position-left-top
+  %./position/left-top.ess
+&-is-position-left-bottom
+  %./position/left-bottom.ess
+
+&-is-position-right
+  %./position/right-middle.ess
+&-is-position-right-top
+  %./position/right-top.ess
+&-is-position-right-bottom
+  %./position/right-bottom.ess
+
+&-is-position-bottom
+  %./position/bottom-middle.ess
+&-is-position-bottom-left
+  %./position/bottom-left.ess
+&-is-position-bottom-right
+  %./position/bottom-right.ess
+
+&-is-position-top
+  %./position/top-middle.ess
+&-is-position-top-left
+  %./position/top-left.ess
+&-is-position-top-right
+  %./position/top-right.ess
