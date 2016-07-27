@@ -132,7 +132,6 @@ div(className=classFn())
 
   export function startShowingMenu (evt) {
     if (this.state.isActive) return;
-    if (evt) evt.stopPropagation();
     if (this.props.showMenuKeyBinding) removeKeybindings(this.props.showMenuKeyBinding);
     if (this.props.hideMenuKeyBinding) attachKeybinding(this.props.hideMenuKeyBinding, this.startHidingMenu);
     this.setState({showMenuStarted: true});
