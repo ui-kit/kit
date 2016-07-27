@@ -1,0 +1,69 @@
+:doc
+  Shows menu immediately when rendered
+  @name UIConfirmDropdown
+  @prop {String} cancelLabel - Label for cancel button
+  @prop {String} [cancelKeybinding='esc'] - Keyboard key that will trigger cancel, can be set to a falsey value
+  @prop {String} confirmLabel - Label for confirm button
+  @prop {String} [confirmKeybinding='enter'] - Keyboard key that will trigger confirm, can be set to a falsey value
+  @prop {String} [message] - Optional String, but puts buttons at the bottom of the menu
+  @prop {Function} [onCancelClick] - Called when cancel, or close button (if shown) is clicked
+  @prop {Function} [onConfirmClick] - Called when confirm is clicked
+  @prop {Function} [onHide] - Called any time this menu hides (including onConfirmClick)
+  @prop {String} [type='delete'] - Types supported are delete or confirm
+
+import {attachKeybinding, removeKeybindings} from '../../utils/keybinding.js'
+import Flyout from '../../controls/flyout'
+import './index.ess'
+
+var classFn = this.composeClasses('UIConfirmDropdown', {'type-@':props.type, 'has-message': !!props.message})
+
+Flyout(className=classFn() showMenuOnLoad onHide=props.onHide hideMenuKeyBinding=props.cancelKeybinding)
+  block menu(actions)
+    if (props.message)
+      div(className=classFn('UIConfirmDropdown-message'))
+        =props.message
+    div(className=classFn('UIConfirmDropdown-button-container'))
+      div(className=(classFn('UIConfirmDropdown-button', {'confirm': true})) onClick=this.onConfirmClick.bind(null, actions.hide))
+        div(className=(classFn('UIConfirmDropdown-button-content')))
+          div(className=(classFn('UIConfirmDropdown-button-label')))
+            = props.confirmLabel
+      div(className=(classFn('UIConfirmDropdown-button', {'cancel': true})) onClick=this.onCancelClick.bind(null, actions.hide))
+        div(className=(classFn('UIConfirmDropdown-button-content')))
+          div(className=(classFn('UIConfirmDropdown-button-label')))
+            = props.cancelLabel
+    div(className=(classFn('UIConfirmDropdown-close-icon')) onClick=this.onCancelClick.bind(null, actions.hide))
+
+:module
+  export var mixins = [require('../../mixins/compose-classes')]
+
+  export function getDefaultProps() {
+    return {
+      type: 'delete',
+      confirmKeybinding: 'enter',
+      cancelKeybinding: 'esc'
+    }
+  }
+
+  export function componentWillMount () {
+    if (this.props.confirmKeybinding) {
+      attachKeybinding(this.props.confirmKeybinding, this.onEnterPress);
+    }
+  }
+
+  export function componentWillUnmount () {
+    removeKeybindings(this.props.confirmKeybinding);
+  }
+
+  export function onCancelClick (hideDropdown) {
+    if (hideDropdown) hideDropdown();
+    if (this.props.onCancelClick) this.props.onCancelClick();
+  }
+
+  export function onConfirmClick (hideDropdown) {
+    if (hideDropdown) hideDropdown();
+    if (this.props.onConfirmClick) this.props.onConfirmClick();
+  }
+
+  export function onEnterPress () {
+    this.onConfirmClick();
+  }
