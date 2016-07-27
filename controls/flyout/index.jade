@@ -88,9 +88,8 @@ div(className=classFn())
       removeKeybindings(this.props.toggleMenuKeyBinding);
       attachKeybinding(nextProps.toggleMenuKeyBinding, this.toggleMenu);
     }
-    if (nextProps.showMenuOnLoad && !this.state.hasShownMenuOnLoad) {
+    if (nextProps.showMenuOnLoad && !this.state.hasShownMenu) {
       this.startShowingMenu();
-      this.setState({hasShownMenuOnLoad: true});
     }
   }
 
@@ -122,6 +121,7 @@ div(className=classFn())
   export function componentWillUnmount () {
     window.removeEventListener('click', this.onWindowClick);
     removeKeybindings([this.props.showMenuKeyBinding, this.props.hideMenuKeyBinding, this.props.toggleMenuKeyBinding]);
+    if (this.state.isActive && this.props.onHide) this.props.onHide();
   }
 
   export function toggleMenu (evt) {
@@ -134,7 +134,7 @@ div(className=classFn())
     if (this.state.isActive) return;
     if (this.props.showMenuKeyBinding) removeKeybindings(this.props.showMenuKeyBinding);
     if (this.props.hideMenuKeyBinding) attachKeybinding(this.props.hideMenuKeyBinding, this.startHidingMenu);
-    this.setState({showMenuStarted: true});
+    this.setState({showMenuStarted: true, hasShownMenu: true});
   }
 
   export function startHidingMenu (evt) {

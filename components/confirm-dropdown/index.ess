@@ -1,0 +1,64 @@
+.UIConfirmDropdown
+  %../../skins/flyout/index.ess
+  &-menu
+    %../../skins/shadow/shadow-darker.ess
+  &-message
+    background-color = __.color.white
+    border-top-left-radius 2px
+    border-top-right-radius 2px
+    box-sizing border-box
+    color = __.color.gray
+    padding 1.5rem
+    min-width 280px
+    white-space pre-wrap
+  &-menu
+    &-has-message
+      min-width 15rem
+  &-button-container
+    &-has-message
+      display flex
+      flex-direction row-reverse
+
+  &-button
+    %../../skins/button/index.ess
+    %../../skins/button/corners/sharp.ess
+    %../../skins/button/size/large.ess
+    border-radius 0
+    width 100%
+    &-is-confirm
+      border-top-left-radius 2px
+      border-top-right-radius 2px
+    &-is-cancel
+      border-bottom-left-radius 2px
+      border-bottom-right-radius 2px
+    &-is-type-delete&-is-confirm
+      %../../skins/button/color/red.ess
+      %../../skins/button/fill/fill.ess
+    &-is-type-confirm&-is-confirm
+      %../../skins/button/color/primary.ess
+      %../../skins/button/fill/fill.ess
+    &-is-cancel
+      %../../skins/button/color/gray.ess
+      %../../skins/button/fill/fill.ess
+    &-has-message&-is-cancel
+      border-radius 0
+      border-bottom-left-radius 2px
+    &-has-message&-is-confirm
+      border-radius 0
+      border-bottom-right-radius 2px
+    &-label
+      text-align center
+      white-space nowrap
+      &-has-no-message
+        font-weight normal
+        text-transform none
+        letter-spacing 0
+      &:after
+        content none
+  &-close-icon
+    %../../skins/button/close.ess
+    left 0
+    margin 0
+    position absolute
+    top 0
+    transform translate(-50%,-50%)
