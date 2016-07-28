@@ -1,18 +1,53 @@
 :doc
-  @name Submit
-  @prop {String} className
-  @prop {String} confirmMessage
-  @prop {Function} onFinish
-  @prop {Function} onStart
-  @prop {Object} template
+  @name UISubmit
+  @prop {Function} [onFinish]
+  @prop {Function} [onStart]
+  @prop {Object}    template
+  //-- message props
+  @prop {Boolean} [useSystemDialog] - Uses system dialog over confirm dropdown
+  @prop {String}  [confirmMessage] - The message to use before submitting
+  @prop {String}  [messageConfirmLabel] - see ConfirmDropdown:confirmLabel
+  @prop {String}  [messageCancelLabel] - see ConfirmDropdown:cancelLabel
+  @prop {String}  [messagePosition] - see ConfirmDropdown:position
+  @prop {String}  [messageType] - see ConfirmDropdown:type
+  @prop {Function}[onCancel] - called onCancelClick in ConfirmDropdown
+  //--
+import ConfirmDropdown from '../../components/confirm-dropdown'
 
 div(class=props.className onClick=this.submitForm)
+  if state.isShowingMessage
+    ConfirmDropdown(
+      cancelLabel=props.messageCancelLabel
+      confirmLabel=props.messageConfirmLabel
+      message=props.confirmMessage
+      onConfirmClick=this.sendForm
+      onCancelClick=props.onCancel
+      onHide=this.hideMessage
+      position=props.messagePosition
+      type=props.messageType)
   yield
 
 :module
+  export function getDefaultProps () {
+    return {
+      messageConfirmLabel: 'Confirm',
+      messageCancelLabel: 'Cancel',
+      messagePosition: 'bottom-middle'
+    };
+  }
+
+  export function showMessage () {
+    this.setState({isShowingMessage: true});
+  }
+
+  export function hideMessage () {
+    this.setState({isShowingMessage: false});
+  }
+
   export function submitForm() {
     if (this.props.confirmMessage) {
-      if (window.confirm(this.props.confirmMessage)) this.sendForm();
+      if (this.props.useSystemDialog && window.confirm(this.props.confirmMessage)) return this.sendForm();
+      return this.showMessage();
     } else {
       this.sendForm();
     }
@@ -20,10 +55,9 @@ div(class=props.className onClick=this.submitForm)
 
   export function sendForm () {
     if (this.props.onStart) this.props.onStart.apply(null, arguments);
-    var template = this.props.template;
-    this.context.forms.create(template)
+    this.context.forms.create(this.props.template)
       .submit((err, res) => {
-        if (err) this.setState({error: err});
+        err = err || res.error;
         if (this.props.onFinish) this.props.onFinish(err, res);
       });
   }

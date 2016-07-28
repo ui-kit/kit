@@ -26,30 +26,27 @@
     & <-arrow
       margin-left 0.5rem
       %../icon/glyph-arrow/direction/up.ess
-&-is-position-left
-  %./position/left-middle.ess
-&-is-position-left-top
-  %./position/left-top.ess
-&-is-position-left-bottom
-  %./position/left-bottom.ess
-
-&-is-position-right
-  %./position/right-middle.ess
-&-is-position-right-top
-  %./position/right-top.ess
-&-is-position-right-bottom
-  %./position/right-bottom.ess
-
-&-is-position-bottom
-  %./position/bottom-middle.ess
-&-is-position-bottom-left
-  %./position/bottom-left.ess
-&-is-position-bottom-right
-  %./position/bottom-right.ess
-
-&-is-position-top
-  %./position/top-middle.ess
-&-is-position-top-left
-  %./position/top-left.ess
-&-is-position-top-right
-  %./position/top-right.ess
+&-menu-is-position-left-middle
+  %../../skins/flyout/position/left-middle.ess
+&-menu-is-position-left-top
+  %../../skins/flyout/position/left-top.ess
+&-menu-is-position-left-bottom
+  %../../skins/flyout/position/left-bottom.ess
+&-menu-is-position-right-middle
+  %../../skins/flyout/position/right-middle.ess
+&-menu-is-position-right-top
+  %../../skins/flyout/position/right-top.ess
+&-menu-is-position-right-bottom
+  %../../skins/flyout/position/right-bottom.ess
+&-menu-is-position-bottom-middle
+  %../../skins/flyout/position/bottom-middle.ess
+&-menu-is-position-bottom-left
+  %../../skins/flyout/position/bottom-left.ess
+&-menu-is-position-bottom-right
+  %../../skins/flyout/position/bottom-right.ess
+&-menu-is-position-top-middle
+  %../../skins/flyout/position/top-middle.ess
+&-menu-is-position-top-left
+  %../../skins/flyout/position/top-left.ess
+&-menu-is-position-top-right
+  %../../skins/flyout/position/top-right.ess
