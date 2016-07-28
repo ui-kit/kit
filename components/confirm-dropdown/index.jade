@@ -6,6 +6,7 @@
   @prop {String} confirmLabel - Label for confirm button
   @prop {String} [confirmKeybinding='enter'] - Keyboard key that will trigger confirm, can be set to a falsey value
   @prop {String} [message] - Optional String, but puts buttons at the bottom of the menu
+  @prop {String} [position] Inherits Flyout:position
   @prop {Function} [onCancelClick] - Called when cancel, or close button (if shown) is clicked
   @prop {Function} [onConfirmClick] - Called when confirm is clicked
   @prop {Function} [onHide] - Called any time this menu hides (including onConfirmClick)
@@ -17,7 +18,7 @@ import './index.ess'
 
 var classFn = this.composeClasses('UIConfirmDropdown', {'type-@':props.type, 'has-message': !!props.message})
 
-Flyout(className=classFn() showMenuOnLoad onHide=props.onHide hideMenuKeyBinding=props.cancelKeybinding)
+Flyout(className=classFn() showMenuOnLoad onHide=props.onHide onKeybindingPress=this.onKeybindingPress onWindowClickHide=this.onCancelClick hideMenuKeyBinding=props.cancelKeybinding position=props.position)
   block menu(actions)
     if (props.message)
       div(className=classFn('UIConfirmDropdown-message'))
@@ -66,4 +67,8 @@ Flyout(className=classFn() showMenuOnLoad onHide=props.onHide hideMenuKeyBinding
 
   export function onEnterPress () {
     this.onConfirmClick();
+  }
+
+  export function onKeybindingPress (action) {
+    if (action === 'hide') this.onCancelClick();
   }
