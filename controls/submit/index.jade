@@ -3,6 +3,7 @@
   @prop {Function} [onFinish]
   @prop {Function} [onStart]
   @prop {Object}    template
+  @prop {Boolean} [useConfirm] confirm using confirm dropdown before submitting
   //-- message props
   @prop {Boolean} [useSystemDialog] - Uses system dialog over confirm dropdown
   @prop {String}  [confirmMessage] - The message to use before submitting
@@ -30,6 +31,7 @@ div(class=props.className onClick=this.submitForm)
 :module
   export function getDefaultProps () {
     return {
+      useSystemDialog: true,
       messageConfirmLabel: 'Confirm',
       messageCancelLabel: 'Cancel',
       messagePosition: 'bottom-middle'
@@ -45,7 +47,7 @@ div(class=props.className onClick=this.submitForm)
   }
 
   export function submitForm() {
-    if (this.props.confirmMessage) {
+    if (this.props.confirmMessage || this.props.useConfirm) {
       if (this.props.useSystemDialog && window.confirm(this.props.confirmMessage)) return this.sendForm();
       return this.showMessage();
     } else {
