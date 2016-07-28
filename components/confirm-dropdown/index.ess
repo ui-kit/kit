@@ -4,6 +4,7 @@
     %../../skins/shadow/shadow-darker.ess
   &-message
     background-color = __.color.white
+    cursor default
     border-top-left-radius 2px
     border-top-right-radius 2px
     box-sizing border-box
