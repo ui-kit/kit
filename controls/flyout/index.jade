@@ -99,11 +99,6 @@ div(className=classFn())
     }
   }
 
-  export function componentWillUpdate (newProps, newState) {
-    if (newState.hideMenuStarted && this.props.onComponentWillHide) this.props.onComponentWillHide();
-    if (newState.showMenuStarted  && this.props.onComponentWillShow) this.props.onComponentWillShow();
-  }
-
   export function componentDidUpdate (prevProps, prevState) {
     if (this.state.isActive && !prevState.isActive) {
       this.scrollToMenu();
@@ -153,6 +148,7 @@ div(className=classFn())
 
   export function startShowingMenu (evt) {
     if (this.state.isActive) return;
+    if (this.props.onComponentWillShow) this.props.onComponentWillShow();
     if (this.props.showMenuKeyBinding) removeKeybindings(this.props.showMenuKeyBinding);
     if (this.props.hideMenuKeyBinding) attachKeybinding(this.props.hideMenuKeyBinding, this.onKeybindingPress.bind(null, 'hide'));
     this.setState({showMenuStarted: true, hasShownMenu: true});
@@ -161,6 +157,7 @@ div(className=classFn())
   export function startHidingMenu (evt) {
     if (!this.state.isActive) return;
     if (evt) evt.stopPropagation();
+    if (this.props.onComponentWillHide) this.props.onComponentWillHide();
     if (this.props.hideMenuKeyBinding) removeKeybindings(this.props.hideMenuKeyBinding);
     if (this.props.showMenuKeyBinding) attachKeybinding(this.props.showMenuKeyBinding, this.onKeybindingPress.bind(null, 'show'));
     this.setState({hideMenuStarted: true});
