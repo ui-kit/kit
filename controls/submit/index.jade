@@ -6,8 +6,6 @@
   @prop {Markup}   [confirm] block for custom confirm component
   @prop {String}   [confirmMessage] - The message to use before submitting
 
-import ConfirmDropdown from '../../components/confirm-dropdown'
-
 div(class=props.className onClick=this.submitForm)
   if state.isShowingConfirm
     yield confirm({confirm: this.sendForm, cancel: this.hideMessage})
