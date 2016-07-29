@@ -1,1 +1,0 @@
-exports['default'] = require('./index.jade');
