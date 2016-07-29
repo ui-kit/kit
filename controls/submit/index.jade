@@ -3,59 +3,36 @@
   @prop {Function} [onFinish]
   @prop {Function} [onStart]
   @prop {Object}    template
-  @prop {Boolean} [useConfirm] confirm using confirm dropdown before submitting
-  //-- message props
-  @prop {Boolean} [useSystemDialog] - Uses system dialog over confirm dropdown
-  @prop {String}  [confirmMessage] - The message to use before submitting
-  @prop {String}  [messageConfirmLabel] - see ConfirmDropdown:confirmLabel
-  @prop {String}  [messageCancelLabel] - see ConfirmDropdown:cancelLabel
-  @prop {String}  [messagePosition] - see ConfirmDropdown:position
-  @prop {String}  [messageType] - see ConfirmDropdown:type
-  @prop {Function}[onCancel] - called onCancelClick in ConfirmDropdown
-  //--
+  @prop {Markup}   [confirm] block for custom confirm component
+  @prop {String}   [confirmMessage] - The message to use before submitting
+
 import ConfirmDropdown from '../../components/confirm-dropdown'
 
 div(class=props.className onClick=this.submitForm)
-  if state.isShowingMessage
-    ConfirmDropdown(
-      cancelLabel=props.messageCancelLabel
-      confirmLabel=props.messageConfirmLabel
-      message=props.confirmMessage
-      onConfirmClick=this.sendForm
-      onCancelClick=props.onCancel
-      onHide=this.hideMessage
-      position=props.messagePosition
-      type=props.messageType)
+  if state.isShowingConfirm
+    yield confirm({confirm: this.sendForm, cancel: this.hideMessage})
   yield
 
 :module
-  export function getDefaultProps () {
-    return {
-      useSystemDialog: true,
-      messageConfirmLabel: 'Confirm',
-      messageCancelLabel: 'Cancel',
-      messagePosition: 'bottom-middle'
-    };
-  }
-
   export function showMessage () {
-    this.setState({isShowingMessage: true});
+    this.setState({isShowingConfirm: true});
   }
 
   export function hideMessage () {
-    this.setState({isShowingMessage: false});
+    this.setState({isShowingConfirm: false});
   }
 
-  export function submitForm() {
-    if (this.props.confirmMessage || this.props.useConfirm) {
-      if (this.props.useSystemDialog && window.confirm(this.props.confirmMessage)) return this.sendForm();
-      return this.showMessage();
+  export function submitForm () {
+    if (this.props.confirm) return this.showMessage();
+    if (this.props.confirmMessage) {
+      if (window.confirm(this.props.confirmMessage)) return this.sendForm();
     } else {
       this.sendForm();
     }
   }
 
   export function sendForm () {
+    this.hideMessage();
     if (this.props.onStart) this.props.onStart.apply(null, arguments);
     this.context.forms.create(this.props.template)
       .submit((err, res) => {
