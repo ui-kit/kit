@@ -1,4 +1,4 @@
-.UIConfirmDropdown
+.UIConfirm
   %../../skins/flyout/index.ess
   &-menu
     %../../skins/shadow/shadow-darker.ess

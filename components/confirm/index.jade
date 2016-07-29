@@ -1,6 +1,6 @@
 :doc
   Shows menu immediately when rendered
-  @name UIConfirmDropdown
+  @name UIConfirm
   @prop {String} cancelLabel - Label for cancel button
   @prop {String} [cancelKeybinding='esc'] - Keyboard key that will trigger cancel, can be set to a falsey value
   @prop {String} confirmLabel - Label for confirm button
@@ -16,23 +16,23 @@ import {attachKeybinding, removeKeybindings} from '../../utils/keybinding.js'
 import Flyout from '../../controls/flyout'
 import './index.ess'
 
-var classFn = this.composeClasses('UIConfirmDropdown', {'type-@':props.type, 'has-message': !!props.message})
+var classFn = this.composeClasses('UIConfirm', {'type-@':props.type, 'has-message': !!props.message})
 
 Flyout(className=classFn() showMenuOnLoad onHide=props.onHide onKeybindingPress=this.onKeybindingPress onWindowClickHide=this.onCancelClick hideMenuKeyBinding=props.cancelKeybinding position=props.position)
   block menu(actions)
     if (props.message)
-      div(className=classFn('UIConfirmDropdown-message'))
+      div(className=classFn('UIConfirm-message'))
         =props.message
-    div(className=classFn('UIConfirmDropdown-button-container'))
-      div(className=(classFn('UIConfirmDropdown-button', {'confirm': true})) onClick=this.onConfirmClick.bind(null, actions.hide))
-        div(className=(classFn('UIConfirmDropdown-button-content')))
-          div(className=(classFn('UIConfirmDropdown-button-label')))
+    div(className=classFn('UIConfirm-button-container'))
+      div(className=(classFn('UIConfirm-button', {'confirm': true})) onClick=this.onConfirmClick.bind(null, actions.hide))
+        div(className=(classFn('UIConfirm-button-content')))
+          div(className=(classFn('UIConfirm-button-label')))
             = props.confirmLabel
-      div(className=(classFn('UIConfirmDropdown-button', {'cancel': true})) onClick=this.onCancelClick.bind(null, actions.hide))
-        div(className=(classFn('UIConfirmDropdown-button-content')))
-          div(className=(classFn('UIConfirmDropdown-button-label')))
+      div(className=(classFn('UIConfirm-button', {'cancel': true})) onClick=this.onCancelClick.bind(null, actions.hide))
+        div(className=(classFn('UIConfirm-button-content')))
+          div(className=(classFn('UIConfirm-button-label')))
             = props.cancelLabel
-    div(className=(classFn('UIConfirmDropdown-close-icon')) onClick=this.onCancelClick.bind(null, actions.hide))
+    div(className=(classFn('UIConfirm-close-icon')) onClick=this.onCancelClick.bind(null, actions.hide))
 
 :module
   export var mixins = [require('../../mixins/compose-classes')]
