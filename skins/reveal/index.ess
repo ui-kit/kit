@@ -9,8 +9,9 @@ position relative
 &-menu
   %./children/menu.ess
 
-&-menu-is-active, .is-active &-menu
-  max-height 10rem
-  max-width 10rem
-  opacity 1
-  overflow visible
+&-is-active
+  & <-menu
+    max-height 10rem
+    max-width 10rem
+    opacity 1
+    overflow visible
