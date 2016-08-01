@@ -9,7 +9,7 @@ position relative
 &-menu
   %./children/menu.ess
 
-&.is-active &-menu
+&-menu-is-active, .is-active &-menu
   max-height 10rem
   max-width 10rem
   opacity 1

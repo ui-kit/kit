@@ -39,9 +39,11 @@ Flyout(className=classFn() showMenuOnLoad onHide=props.onHide onKeybindingPress=
 
   export function getDefaultProps() {
     return {
-      type: 'delete',
+      cancelKeybinding: 'esc',
+      cancelLabel: 'cancel',
       confirmKeybinding: 'enter',
-      cancelKeybinding: 'esc'
+      confirmLabel: 'confrm',
+      type: 'delete'
     }
   }
 

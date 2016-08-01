@@ -1,16 +1,22 @@
 :doc
-  @name Reveal
+  @name UIReveal
 
-import './reveal-fns.js'
+import Flyout from '../flyout'
 
-var actions= { toggle: this.toggle, hide: this.hideReveal, show: this.showReveal }
+Flyout(className=props.className class={'is-active':state.isActive} onComponentWillShow=this.onShow onHide=this.onHide)
+  block trigger(fns, isActive)
+    yield handler(fns, isActive)
+  block menu(fns, isActive)
+    yield menu(fns, isActive)
 
-.Reveal(class={'is-active': state.isActive})
-  yield handler(actions, state.isActive)
-  if(state.isInDom)
-    yield menu(actions)
 
 :module
-  export var mergeProps = true
   export var initialState = {isActive: false, isLocked: false}
-  export {componentWillUnmount, hideReveal, lockReveal, onWindowClick, showReveal, toggle, unLockReveal} from './reveal-fns.js'
+
+  export function onShow () {
+    this.setState({isActive: true});
+  }
+
+  export function onHide () {
+    this.setState({isActive: false});
+  }
