@@ -11,7 +11,7 @@
   @prop {Boolean}  [showMenuOnLoad] Mounts with flyout open
   @prop {Number}   [animationTimeout=0] number in ms to wait before removing menu, or sending false value for isActive
   @prop {Boolean}  [scrollToMenu=true] body will scroll to fully show menu when active
-  @prop {Object}   [scrollToMenuOptions={}] custom options for scroll-to-element
+  @prop {Object}   [scrollToMenuOptions={}] custom options for scroll-to-element (incl. top/bottomOffset for offset when above/below the fold)
   @prop {String}   [hideMenuKeyBinding] key to listen for that will hide flyout
   @prop {String}   [showMenuKeyBinding] key to listen for that will show flyout
   @prop {String}   [toggleMenuKeyBinding] key to listen for that will toggle flyout
@@ -65,7 +65,8 @@ div(className=classFn())
     return {
       position: 'bottom-middle',
       animationTimeout: 0,
-      scrollToMenu: {}
+      scrollToMenu: true,
+      scrollToMenuOptions: {}
     };
   }
 
@@ -173,17 +174,21 @@ div(className=classFn())
   export function scrollToMenu () {
     var menu = this.refs.menu && this.refs.menu.getDOMNode();
     if (!menu || !this.props.scrollToMenu) return;
+    var menuIsBelowFold = menu.getBoundingClientRect().bottom > window.innerHeight;
+    var menuIsAboveFold = menu.getBoundingClientRect().top < 0;
+    var align = menuIsAboveFold ? 'top' : 'bottom'
+    var offset = menuIsAboveFold ? this.props.scrollToMenuOptions.topOffset : this.props.scrollToMenuOptions.bottomOffset
 
     var defaultOptions = {
-      align: 'bottom',
+      align,
       ease: 'inOutSine',
       duration: 150,
-      offset: 12
+      offset: offset || 0
     };
 
     var scrollToMenuOptions = Object.assign(defaultOptions, this.props.scrollToMenuOptions);
 
-    if (menu.getBoundingClientRect().bottom > window.innerHeight && scrollToElement) {
+    if ((menuIsBelowFold || menuIsAboveFold) && scrollToElement) {
       scrollToElement(menu, scrollToMenuOptions);
     }
   }
