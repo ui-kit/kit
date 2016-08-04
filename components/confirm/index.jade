@@ -18,7 +18,7 @@ import './index.ess'
 
 var classFn = this.composeClasses('UIConfirm', {'type-@':props.type, 'has-message': !!props.message})
 
-Flyout(className=classFn() showMenuOnLoad onHide=props.onHide onKeybindingPress=this.onKeybindingPress onWindowClickHide=this.onCancelClick hideMenuKeyBinding=props.cancelKeybinding position=props.position)
+Flyout(className=classFn() scrollToMenuOptions=props.scrollToOptions scrollToMenu=props.scrollToMenu showMenuOnLoad onHide=props.onHide onKeybindingPress=this.onKeybindingPress onWindowClickHide=this.onCancelClick hideMenuKeyBinding=props.cancelKeybinding position=props.position)
   block menu(actions)
     if (props.message)
       div(className=classFn('UIConfirm-message'))
