@@ -4,8 +4,7 @@ transition all .15s ease
 width 16px
 height 16px
 
-&:before,
-&:after
+&:before
   border 1px solid
   border-color initial
   border-radius 2px
@@ -18,8 +17,4 @@ height 16px
   top 50%
   transform translate(-50%,-50%)
   transition all .15s ease
-  width 100%
-
-&:after
   width 2px
-  height 100%
