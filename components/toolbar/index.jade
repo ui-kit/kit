@@ -8,7 +8,7 @@ import './index.ess'
 
 var classFn = this.composeClasses('Toolbar')
 
-.Toolbar
+.Toolbar(className=classFn())
   div(className=classFn('&-inner'))
     if props.left
       div(className=classFn('&-left'))
