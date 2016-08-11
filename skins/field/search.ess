@@ -1,0 +1,31 @@
+%ui-kit/skins/field/index.ess
+&-icon
+  margin-top 5px
+  &:after
+    border 2px solid
+    border-color inherit
+    border-radius 1000px
+    bottom 0
+    left 0
+    opacity .7
+    right 0
+    top 0
+&:hover &-icon
+  color inherit
+&:hover &-icon:after
+    border-color initial
+    opacity 1
+&-input:active ~ &-icon,
+&-input:focus ~ &-icon
+  color = __.color.primary
+&-input:active ~ &-icon:after,
+&-input:focus ~ &-icon:after
+  border-color = __.color.primary
+  opacity 1
+&-input
+  z-index 1
+  &,
+  &:hover,
+  &:focus,
+  &:active
+    box-shadow none
