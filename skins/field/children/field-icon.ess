@@ -1,5 +1,7 @@
 cursor text
+flex-shrink 0
 font-size = __.h7
+letter-spacing 0
 margin-top 2px
 order -1
 position static
