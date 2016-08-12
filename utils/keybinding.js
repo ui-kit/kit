@@ -1,5 +1,4 @@
 var bindings = {};
-var windowMethods = {};
 var KEY_NAMES = {
   'backspace': 8,
   'enter': 13,
@@ -34,39 +33,36 @@ function removeKeybindings (bindings, method) {
   Object.keys(bindings).forEach((key) => removeMethod(key, bindings[key]));
 }
 
-//- Adds the event to window and the methods to bindings and windowMethods
+//- Adds the event to window and the methods to bindings
 //- @arg {String} char     - the character key to be bound
 //- @arg {Function} method - the callback handler to call
 function addMethod (char, method) {
   var keyIsBound = hasKeybinding(char);
-  var boundHandler = keyupHandler.bind(null, char, method);
+  var listener = keyupHandler.bind(null, char, method);
 
-  bindings[char] = bindings[char] || [];
-  windowMethods[char] = windowMethods[char] || [];
+  bindings[char] = bindings[char] || {methods: [], listeners: []};
 
-  if (keyIsBound) window.removeEventListener('keyup', windowMethods[char][0]);
+  if (keyIsBound) window.removeEventListener('keyup', bindings[char].listeners[0]);
 
-  bindings[char].unshift(method);
-  windowMethods[char].unshift(boundHandler);
-
-  window.addEventListener('keyup', boundHandler);
+  bindings[char].methods.unshift(method);
+  bindings[char].listeners.unshift(listener);
+  window.addEventListener('keyup', listener);
 }
 
-//- Removes the event from window and the methods from bindings and windowMethods
+//- Removes the event from window and the methods from bindings
 //- @arg {String} char     - the character key to be removed
 //- @arg {Function} method - the callback handler to remove
 function removeMethod (char, method) {
   if (!hasKeybinding(char, method)) return;
-  var fnIndex = bindings[char].indexOf(method);
-  window.removeEventListener('keyup', windowMethods[char][fnIndex]);
-  bindings[char].splice(fnIndex, 1);
-  windowMethods[char].splice(fnIndex, 1);
+  var fnIndex = bindings[char].methods.indexOf(method);
+  window.removeEventListener('keyup', bindings[char].listeners[fnIndex]);
+  bindings[char].methods.splice(fnIndex, 1);
+  bindings[char].listeners.splice(fnIndex, 1);
 
-  if (!bindings[char].length) {
+  if (!bindings[char].methods.length) {
     delete bindings[char];
-    delete windowMethods[char];
   } else if (fnIndex === 0) {
-    window.addEventListener('keyup', windowMethods[char][0]);
+    window.addEventListener('keyup', bindings[char].listeners[0]);
   }
 }
 
@@ -75,7 +71,7 @@ function removeMethod (char, method) {
 //- @arg {Function} method - used when you want to know if a key has been bound to a method.
 function hasKeybinding (key, method) {
   if (!bindings[key]) return false;
-  return method ? !!~bindings[key].indexOf(method) : true;
+  return method ? !!~bindings[key].methods.indexOf(method) : true;
 }
 
 // The method we call to parse the event for the key pressed
