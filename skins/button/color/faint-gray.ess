@@ -1,0 +1,12 @@
+%./faint-white.ess
+color = __.color.gray
+
+&:hover
+  background = __.color.gray
+  color = __.color.primary
+
+&:active,
+.is-active,
+&-is-active
+  background = __.color.primary
+  color = __.color.white
