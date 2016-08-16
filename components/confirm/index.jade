@@ -12,13 +12,23 @@
   @prop {Function} [onHide] - Called any time this menu hides (including onConfirmClick)
   @prop {String} [type='delete'] - Types supported are delete or confirm
 
-import {attachKeybinding, removeKeybindings} from '../../utils/keybinding.js'
+import {attachKeybindings, removeKeybindings} from '../../utils/keybinding.js'
 import Flyout from '../../controls/flyout'
 import './index.ess'
 
 var classFn = this.composeClasses('UIConfirm', {'type-@':props.type, 'has-message': !!props.message})
 
-Flyout(className=classFn() scrollToMenuOptions=props.scrollToOptions scrollToMenu=props.scrollToMenu showMenuOnLoad onHide=props.onHide onKeybindingPress=this.onKeybindingPress onWindowClickHide=this.onCancelClick hideMenuKeyBinding=props.cancelKeybinding position=props.position)
+Flyout(
+  className=classFn()
+  hideMenuKeybinding=props.cancelKeybinding
+  onShow=this.onShow
+  onHide=this.onHide
+  onKeybindingPress=this.onKeybindingPress
+  onWindowClickHide=this.onCancelClick
+  position=props.position
+  scrollToMenu=props.scrollToMenu
+  scrollToMenuOptions=props.scrollToOptions
+  showMenuOnLoad)
   block menu(actions)
     if (props.message)
       div(className=classFn('UIConfirm-message'))
@@ -47,14 +57,8 @@ Flyout(className=classFn() scrollToMenuOptions=props.scrollToOptions scrollToMen
     }
   }
 
-  export function componentWillMount () {
-    if (this.props.confirmKeybinding) {
-      attachKeybinding(this.props.confirmKeybinding, this.onEnterPress);
-    }
-  }
-
   export function componentWillUnmount () {
-    removeKeybindings(this.props.confirmKeybinding);
+    removeKeybindings(this.props.confirmKeybinding, this.onEnterPress);
   }
 
   export function onCancelClick (hideDropdown) {
@@ -65,6 +69,15 @@ Flyout(className=classFn() scrollToMenuOptions=props.scrollToOptions scrollToMen
   export function onConfirmClick (hideDropdown) {
     if (hideDropdown) hideDropdown();
     if (this.props.onConfirmClick) this.props.onConfirmClick();
+  }
+
+  export function onShow () {
+    if (this.props.confirmKeybinding) attachKeybindings(this.props.confirmKeybinding, this.onEnterPress);
+  }
+
+  export function onHide () {
+    if (this.props.onHide) this.props.onHide();
+    removeKeybindings(this.props.confirmKeybinding, this.onEnterPress);
   }
 
   export function onEnterPress () {

@@ -17,7 +17,10 @@ div(class=props.className onClick=!state.isShowingConfirm ? this.submitForm : nu
   }
 
   export function hideMessage () {
-    this.setState({isShowingConfirm: false});
+    // setTimeout so confirm still belongs to submit through the click event (i.e. confirming in flyouts)
+    setTimeout(() => {
+      if (this.isMounted()) this.setState({isShowingConfirm: false});
+    }, 100);
   }
 
   export function submitForm () {
@@ -30,7 +33,7 @@ div(class=props.className onClick=!state.isShowingConfirm ? this.submitForm : nu
   }
 
   export function sendForm () {
-    this.hideMessage();
+    if (this.state.isShowingConfirm) this.hideMessage();
     if (this.props.onStart) this.props.onStart.apply(null, arguments);
     this.context.forms.create(this.props.template)
       .submit((err, res) => {
