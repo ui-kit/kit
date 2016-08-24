@@ -28,6 +28,7 @@ function attachKeybindings (binding, method) {
 //    || {Object} bindings - the character to remove, with method as the value {[character]: method}
 //- @arg {Function} method - the callback handler to call when string is passed to bindingsr
 function removeKeybindings (bindings, method) {
+  if (!bindings) return;
   if (typeof bindings === 'string' && !method) console.warn('removeKeybindings requries method as second arg');
   if (typeof bindings === 'string') return removeMethod(bindings, method);
   Object.keys(bindings).forEach((key) => removeMethod(key, bindings[key]));
