@@ -31,6 +31,7 @@
   &-center, &-center div:not([class])
     display flex
     justify-content center
+    width 100%
     @media screen and (max-width: 875px)
       order 3
       width 100%
