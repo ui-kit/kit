@@ -5,6 +5,7 @@
   @prop {Function} [onError]
   @prop {Function} [onStart]
   @prop {Function} [onFinish]
+  @prop {Function} [saveValueModifier]
   @prop {String} [valueKey]
   @prop {String} [className]
   @prop {Number} [debounce]
@@ -22,12 +23,13 @@ div(className=props.className)
   }
 
   export function submit (value) {
+    if (this.props.saveValueModifier) value = this.props.saveValueModifier(value);
     var template = this.props.template;
     var valObj = {[this.props.valueKey]: value};
     if (this.props.onStart) this.props.onStart.apply(null, arguments);
     if (!template) return console.warn('No template passed to UIAutoInputSave. Value not saved:', value);
     if (template.input._name) valObj['_name'] = template.input._name.value;
-    
+
     this.context.forms.create(template)
       .set(valObj)
       .submit((err) => {
