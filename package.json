@@ -1,0 +1,26 @@
+{
+  "name": "ui-kit",
+  "version": "1.0.0",
+  "description": "user interface kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ui-kit/ui-kit.git"
+  },
+  "keywords": [
+    "user",
+    "interface",
+    "kit"
+  ],
+  "author": "Michael Andrew Vanasse <mail@mndvns.com> (http://mndvns.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ui-kit/ui-kit/issues"
+  },
+  "homepage": "https://github.com/ui-kit/ui-kit",
+  "dependencies": {
+  }
+}
