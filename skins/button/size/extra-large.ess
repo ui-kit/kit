@@ -1,0 +1,5 @@
+// Modifies to:
+// height 60px
+// font-size h6
+font-size = __.h6
+padding 19px 24px

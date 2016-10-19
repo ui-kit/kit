@@ -1,0 +1,42 @@
+:doc
+  @name UISubmit
+  @prop {Function} [onFinish]
+  @prop {Function} [onStart]
+  @prop {Object}    template
+  @prop {Markup}   [confirm] block for custom confirm component
+  @prop {String}   [confirmMessage] - The message to use before submitting
+
+div(class=props.className onClick=!state.isShowingConfirm ? this.submitForm : null)
+  if state.isShowingConfirm
+    yield confirm({confirm: this.sendForm, cancel: this.hideMessage})
+  yield
+
+:module
+  export function showMessage () {
+    this.setState({isShowingConfirm: true});
+  }
+
+  export function hideMessage () {
+    // setTimeout so confirm still belongs to submit through the click event (i.e. confirming in flyouts)
+    setTimeout(() => {
+      if (this.isMounted()) this.setState({isShowingConfirm: false});
+    }, 100);
+  }
+
+  export function submitForm () {
+    if (this.props.confirm) return this.showMessage();
+    if (this.props.confirmMessage) {
+      if (window.confirm(this.props.confirmMessage)) return this.sendForm();
+    } else {
+      this.sendForm();
+    }
+  }
+
+  export function sendForm () {
+    if (this.state.isShowingConfirm) this.hideMessage();
+    if (this.props.onStart) this.props.onStart.apply(null, arguments);
+    this.context.forms.create(this.props.template)
+      .submit((err, res) => {
+        if (this.props.onFinish) this.props.onFinish(err, res);
+      });
+  }

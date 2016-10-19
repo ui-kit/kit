@@ -1,0 +1,9 @@
+display table-cell
+line-height 1.35em
+padding 1.5rem
+text-align left
+color = __.color.white
+background = __.color.gray
+&:nth-child(even)
+  background = __.color.gray.dark
+

@@ -1,0 +1,27 @@
+align-items center
+display flex
+height 4rem
+position relative
+width 100%
+
+&-range
+  %./children/range.ess
+
+  &::-moz-range-track
+    background-color transparent 
+    display none
+
+  &-handle,
+  &::-webkit-slider-thumb
+    %./children/range-handle.ess
+  &::-moz-range-thumb
+    %./children/range-handle.ess
+
+  &-selection
+    %./children/range-selection.ess
+
+&-label-left
+  %./children/label-left.ess
+  
+&-label-right
+  %./children/label-right.ess

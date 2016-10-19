@@ -1,0 +1,11 @@
+%./html.ess
+%./body.ess
+
+// this normalizes the vertical height on translation strings before they've loaded
+.translate-component.is-loading:after
+  content '\00a0'
+
+::selection
+  background-color = __.color.primary
+  color white
+  text-shadow none

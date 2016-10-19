@@ -1,0 +1,12 @@
+align-self stretch
+display block
+font-size = __.h7
+margin-left -18px
+position relative
+width 36px
+z-index 1
+.icon
+  left 50%
+  position absolute
+  top 50%
+  transform translate(-50%,-50%)

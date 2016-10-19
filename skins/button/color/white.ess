@@ -1,0 +1,29 @@
+background-color = __.color.white
+border-color = __.color.white
+color = __.color.white
+  
+&:hover
+  background-color = __.color.white
+  border-color = __.color.white
+  color = __.color.primary
+  opacity .8
+
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.white
+  border-color = __.color.white
+  color = __.color.primary
+  opacity .5
+  
+&[disabled],
+&:disabled
+  background transparent
+  border-color = __.color.white
+  color = __.color.white
+  cursor default
+  opacity .1
+  &:hover, &:active
+    background transparent
+    border-color = __.color.white
+    color = __.color.white

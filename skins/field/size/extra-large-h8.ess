@@ -1,0 +1,21 @@
+// Modifies to:
+// height 60px
+// font-size h6
+
+&-input,
+.Input-input
+  padding 20px 0 19px 0
+
+&-icon
+  width 5rem
+  
+&.has-label
+  & </-input,
+  .Input-input
+    padding 26px 0 13px
+    &:valid ~ </-label,
+    &:focus ~ </-label
+      top 12px
+
+&-icon
+  width 60px

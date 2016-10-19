@@ -1,0 +1,9 @@
+var fontSize = __.baseFontSize || '18px'
+
+font = 'normal ' + fontSize + '/1.5em ' + __.fontFamily
+-webkit-text-size-adjust 100%
+-webkit-font-smoothing antialiased
+-moz-osx-font-smoothing auto
+
+@media screen and (max-width: 600px) 
+  font = 'normal ' + fontSize + '/1.5em ' + __.fontFamily

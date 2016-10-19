@@ -1,0 +1,19 @@
+%./size/medium.ess
+
+align-items stretch
+border-color inherit
+border-radius 1000px
+box-sizing border-box
+cursor pointer
+display flex
+font-weight bold
+position relative
+text-transform uppercase
+
+&-content
+  %./children/content.ess
+  &-text
+    %./children/content-text.ess
+    
+&-image
+  %./children/image.ess

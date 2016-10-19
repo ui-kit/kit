@@ -1,0 +1,12 @@
+line-height 1.35em
+width 100%
+display table
+
+&-row,
+&-head,
+&-foot
+  %./children/row.ess
+&-header
+  %./children/header.ess
+&-cell
+  %./children/cell.ess

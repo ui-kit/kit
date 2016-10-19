@@ -1,0 +1,6 @@
+border-color = __.color.white
+color = __.color.accent
+  
+&:active, &:checked, &.is-active
+  background = __.color.primary
+  border-color = __.color.primary

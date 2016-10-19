@@ -1,0 +1,6 @@
+&:after,
+&-body
+  padding 6px 6px 6px 11px  
+  text-align left
+  white-space normal
+  width 200px

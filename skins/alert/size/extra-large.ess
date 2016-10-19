@@ -1,0 +1,16 @@
+// Modifies to:
+// height 60px
+// font-size h6
+
+font-size = __.h6
+
+&-content,
+&-action-left,
+&-action-right
+  padding 17px 24px 16px
+  
+
+&-action-left,
+&-action-right
+  padding-left 12px
+  padding-right 12px

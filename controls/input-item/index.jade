@@ -1,0 +1,126 @@
+:doc
+  @name UIInputItem
+  @prop {Boolean} [multiLine]
+  @prop {Boolean} [noTemplate]
+  @prop {Boolean} [readonly]
+  @prop {Boolean} [required]
+  @prop {Boolean} [shouldAutoFocus]
+  @prop {Function} [onBlur]
+  @prop {Function} [onChange]
+  @prop {Function} [onFocus]
+  @prop {Function} [onSaveStart]
+  @prop {Function} [onSaveFinish]
+  @prop {Function} [onSaveError]
+  @prop {Function} [saveValueModifier]
+  @prop {Number} [maxLength]
+  @prop {Number} [minLength]
+  @prop {Object} [template]
+  @prop {String} [className]
+  @prop {String} [defaultValue]
+  @prop {String} [inputId]
+  @prop {String} [type]
+  @prop {String} [valueKey]
+
+import {KEY_NAMES} from 'ui-kit/utils/keybinding.js'
+import AutoInputSave from 'ui-kit/controls/auto-input-save'
+import GrowingInput from '../growing-input'
+
+var.
+  componentProps = {
+    defaultValue: props.defaultValue,
+    maxLength: props.maxLength,
+    minLength: props.minLength,
+    placeholder: props.placeholder,
+    readonly: props.readonly,
+    required: props.required,
+    shouldAutoFocus: props.shouldAutoFocus,
+    style: props.style,
+    tabIndex: props.tabIndex,
+    type: props.multiLine ? 'textarea' : props.type
+  }
+
+var classFn = this.composeClasses('UIInputItem', {'value': !!state.hasValue, 'multi': componentProps.type === 'textarea', 'labeled': !!props.label, 'focused': state.hasFocus})
+
+var useAutoId = (!!props.label || !!props.labelBlock) && !props.inputId
+var inputId = useAutoId ? this.getNextUid('MUIInputItemComponent') : props.inputId
+var labelFor = useAutoId ? this.getNextUid('MUIInputItemComponent') : props.inputId
+var labelClass = classFn('&-label')
+var value = (state.value || state.value === '' ) ? state.value : props.defaultValue
+
+.is-input(className=classFn())
+  if props.template
+    AutoInputSave(className=classFn('&-auto-save') template=props.template valueKey=props.valueKey saveValueModifier=props.saveValueModifier onStart=props.onSaveStart onFinish=props.onSaveFinish onError=props.onSaveError)
+      block input(savedValue, fns)
+        div(className=classFn('&-content'))
+          if componentProps.type !== 'textarea' && !props.multiLine
+            input(autoFocus=props.shouldAutoFocus name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, fns.onChange) onFocus=this.onInputFocus onBlur=this.onInputBlur onChange=this.onChange.bind(null, fns.onChange) value=value)&props(componentProps)
+          else
+            GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, fns.onChange) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, fns.onChange))&props(componentProps)
+          yield actions
+          if !!props.label
+            label(for=labelFor className=labelClass)=props.label
+          yield labelBlock(labelFor, labelClass, state)
+        yield icon
+  else if props.noTemplate
+    div(className=classFn('&-content'))
+      if componentProps.type !== 'textarea' && !props.multiLine
+        input(autoFocus=props.shouldAutoFocus name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, false) onFocus=this.onInputFocus onBlur=this.onInputBlur onChange=this.onChange.bind(null, false) value=value)&props(componentProps)
+      else
+        GrowingInput(name=props.name id=inputId className=classFn('&-input') onKeyDown=this.onKeyDown.bind(null, false) onFocus=props.onFocus onBlur=props.onBlur onChange=this.onChange.bind(null, false))&props(componentProps)
+      yield actions
+      if !!props.label
+        label(for=labelFor className=labelClass)=props.label
+      yield labelBlock(labelFor, labelClass, state)
+    yield icon
+
+:module
+  export var mixins = [require('ui-kit/mixins/compose-classes'), require('unique-id-mixin')]
+
+  export function getDefaultProps () {
+    return {
+      saveOnChange: true,
+      submitOnEnter: true,
+      type: 'text',
+      valueKey: 'value'
+    };
+  }
+
+  export function getInitialState () {
+    return {
+      hasValue: !!this.props.defaultValue
+    };
+  }
+
+  export function componentWillReceiveProps (props) {
+    if (props.defaultValue !== this.props.defaultValue && !this.state.hasFocus) this.setState({value: props.defaultValue});
+  }
+
+  export function onInputFocus () {
+    this.setState({hasFocus: true});
+    if (this.props.onFocus) this.props.onFocus.apply(null, arguments);
+  }
+
+  export function onKeyDown (onChange, evt) {
+    if (this.props.submitOnEnter && evt.keyCode === KEY_NAMES.enter) {
+      evt.preventDefault();
+      this.saveValue(onChange, evt.target.value, evt);
+    }
+  }
+
+  export function onInputBlur () {
+    this.setState({hasFocus: false});
+    if (this.props.onBlur) this.props.onBlur.apply(null, arguments);
+  }
+
+  export function onChange (autoSave, evt) {
+    var value = evt.target.value;
+    if (this.props.onChange) this.props.onChange(evt);
+    if (this.props.saveOnChange) this.saveValue(autoSave, value, evt)
+  }
+
+  export function saveValue (cb, value, evt) {
+    var hasValue = !!value;
+    if (this.state.hasValue !== hasValue) this.setState({hasValue: hasValue});
+    this.setState({value: value});
+    if (cb) cb(evt, value.trim());
+  }

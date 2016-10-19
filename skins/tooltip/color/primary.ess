@@ -1,0 +1,6 @@
+border-color = __.color.primary
+
+&:after,
+&-body
+  background-color = __.color.primary
+  color = __.color.white

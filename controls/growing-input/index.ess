@@ -1,0 +1,9 @@
+.UIGrowingInput
+  &-component
+    box-sizing border-box
+    display block
+    height 0
+    overflow hidden
+    position relative
+    resize none
+    transition height 0.1s linear

@@ -1,0 +1,51 @@
+.Toolbar
+  background-color inherit
+  display flex
+  height 6rem
+  position relative
+
+  &-inner
+    align-items center
+    display flex
+    flex-direction row
+    flex-wrap nowrap
+    height inherit
+    justify-content space-between
+    position fixed
+    width 100%
+    z-index 9
+    @media screen and (max-width: 875px)
+      flex-wrap wrap
+      padding-top 18px
+
+  &-left, &-left div:not([class])
+    display flex
+    justify-content flex-start
+    width 100%
+    @media screen and (max-width: 875px)
+      height 36px
+      width 50%
+    @media screen and (max-width: 435px)
+      width 30%
+
+  &-center, &-center div:not([class])
+    display flex
+    justify-content center
+    width 100%
+    @media screen and (max-width: 875px)
+      order 3
+      width 100%
+
+  &-center
+    &-tabs
+      %../../skins/toolbar/center/tabs.ess
+
+  &-right, &-right div:not([class])
+    display flex
+    justify-content flex-end
+    width 100%
+    @media screen and (max-width: 875px)
+      height 36px
+      width 50%
+    @media screen and (max-width: 435px)
+      width 70%

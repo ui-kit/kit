@@ -1,0 +1,12 @@
+&:before,
+&:after,
+&-body
+  bottom 110%
+  left 50%
+  right auto
+  top auto
+  transform translateX(-50%)
+
+&:before
+  transform translate3d(-6px, 12px, 0)
+  border-top-color inherit

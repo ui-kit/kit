@@ -1,0 +1,34 @@
+:doc
+  @name AutoSubmit
+  @prop {Function} onFinish
+  @prop {Function} onStart
+  @prop {Object} template
+
+:module
+  export function getDefaultProps () {
+    return {
+      template: {}
+    };
+  }
+
+  export function componentDidMount () {
+    if (this.props.template && this.props.template.action) this.submit(this.props.template);
+  }
+
+  export function componentWillReceiveProps (props) {
+    if (props.template && this.props.template.__hash !== props.template.__hash) {
+      this.submit(props.template);
+    };
+  }
+
+  export function submit (template) {
+    var self = this;
+    var finished = this.props.onFinish;
+    var start = this.props.onStart;
+    if (start) start.apply(null, arguments);
+    this.context.forms.create(template)
+      .submit(function (err) {
+        if (err) self.setState({err: err});
+        if (finished) finished.apply(null, arguments);
+      });
+  }

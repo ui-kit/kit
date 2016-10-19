@@ -1,0 +1,39 @@
+// This is used for things like the quiz start button
+%./index.ess
+
+%./size/huge.ess
+%./shadow/shadow-dark.ess
+
+background = __.color.white
+border-color = __.color.white
+color = __.color.accent
+
+@keyframes pulse
+  0%
+    opacity 1
+  50%
+    opacity 0
+  100%
+    opacity 1
+
+&:after
+  animation pulse 4s linear
+  animation-iteration-count infinite
+  border = '2px solid '+__.color.accent
+  bottom 2px
+  content ""
+  display block
+  left 2px
+  position absolute
+  right 2px
+  top 2px
+  z-index 0
+&:hover
+  background-color = __.color.accent
+  border-color = __.color.accent.dark
+  color = __.color.white
+  &:after
+    border-color #fff
+&:active
+  background-color = __.color.accent.darker
+  border-color = __.color.accent.darker

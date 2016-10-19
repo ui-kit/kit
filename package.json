@@ -1,6 +1,6 @@
 {
   "name": "ui-kit",
-  "version": "1.0.0",
+  "version": "0.16.4",
   "description": "user interface kit",
   "main": "index.js",
   "scripts": {
@@ -22,5 +22,12 @@
   },
   "homepage": "https://github.com/ui-kit/ui-kit",
   "dependencies": {
+    "color": "^0.7.3",
+    "debounce": "^1.0.0",
+    "dompurify": "0.7.0",
+    "object-assign": "^4.0.1",
+    "sanitize-html": "^1.11.1",
+    "scroll-to-element": "^2.0.0",
+    "unique-id-mixin": "^1.0.0"
   }
 }

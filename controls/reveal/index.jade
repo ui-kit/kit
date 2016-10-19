@@ -1,0 +1,22 @@
+:doc
+  @name UIReveal
+
+import Flyout from '../flyout'
+
+Flyout(className=props.className class={'is-active':state.isActive} onComponentWillShow=this.onShow onHide=this.onHide)
+  block trigger(fns, isActive)
+    yield handler(fns, isActive)
+  block menu(fns, isActive)
+    yield menu(fns, isActive)
+
+
+:module
+  export var initialState = {isActive: false, isLocked: false}
+
+  export function onShow () {
+    this.setState({isActive: true});
+  }
+
+  export function onHide () {
+    this.setState({isActive: false});
+  }

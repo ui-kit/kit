@@ -1,0 +1,7 @@
+flex-direction column-reverse
+
+&-content
+  width 100%
+&-label
+  &:after
+    display none

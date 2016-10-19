@@ -1,0 +1,4 @@
+// Modifies to:
+// height: 48px
+&-item
+  padding 15px 0

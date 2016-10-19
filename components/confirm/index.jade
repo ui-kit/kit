@@ -1,0 +1,89 @@
+:doc
+  Shows menu immediately when rendered
+  @name UIConfirm
+  @prop {String} cancelLabel - Label for cancel button
+  @prop {String} [cancelKeybinding='esc'] - Keyboard key that will trigger cancel, can be set to a falsey value
+  @prop {String} confirmLabel - Label for confirm button
+  @prop {String} [confirmKeybinding='enter'] - Keyboard key that will trigger confirm, can be set to a falsey value
+  @prop {String} [message] - Optional String, but puts buttons at the bottom of the menu
+  @prop {String} [position] Inherits Flyout:position
+  @prop {Function} [onCancelClick] - Called when cancel, or close button (if shown) is clicked
+  @prop {Function} [onConfirmClick] - Called when confirm is clicked
+  @prop {Function} [onHide] - Called any time this menu hides (including onConfirmClick)
+  @prop {String} [type='delete'] - Types supported are delete or confirm
+
+import {attachKeybindings, removeKeybindings} from '../../utils/keybinding.js'
+import Flyout from '../../controls/flyout'
+import './index.ess'
+
+var classFn = this.composeClasses('UIConfirm', {'type-@':props.type, 'has-message': !!props.message})
+
+Flyout(
+  className=classFn()
+  hideMenuKeybinding=props.cancelKeybinding
+  onShow=this.onShow
+  onHide=this.onHide
+  onKeybindingPress=this.onKeybindingPress
+  onWindowClickHide=this.onCancelClick
+  position=props.position
+  scrollToMenu=props.scrollToMenu
+  scrollToMenuOptions=props.scrollToOptions
+  showMenuOnLoad)
+  block menu(actions)
+    if (props.message)
+      div(className=classFn('UIConfirm-message'))
+        =props.message
+    div(className=classFn('UIConfirm-button-container'))
+      div(className=(classFn('UIConfirm-button', {'confirm': true})) onClick=this.onConfirmClick.bind(null, actions.hide))
+        div(className=(classFn('UIConfirm-button-content')))
+          div(className=(classFn('UIConfirm-button-label')))
+            = props.confirmLabel
+      div(className=(classFn('UIConfirm-button', {'cancel': true})) onClick=this.onCancelClick.bind(null, actions.hide))
+        div(className=(classFn('UIConfirm-button-content')))
+          div(className=(classFn('UIConfirm-button-label')))
+            = props.cancelLabel
+    div(className=(classFn('UIConfirm-close-icon')) onClick=this.onCancelClick.bind(null, actions.hide))
+
+:module
+  export var mixins = [require('../../mixins/compose-classes')]
+
+  export function getDefaultProps() {
+    return {
+      cancelKeybinding: 'esc',
+      cancelLabel: 'cancel',
+      confirmKeybinding: 'enter',
+      confirmLabel: 'confirm',
+      type: 'delete'
+    }
+  }
+
+  export function componentWillUnmount () {
+    removeKeybindings(this.props.confirmKeybinding, this.onEnterPress);
+  }
+
+  export function onCancelClick (hideDropdown) {
+    if (hideDropdown) hideDropdown();
+    if (this.props.onCancelClick) this.props.onCancelClick();
+  }
+
+  export function onConfirmClick (hideDropdown) {
+    if (hideDropdown) hideDropdown();
+    if (this.props.onConfirmClick) this.props.onConfirmClick();
+  }
+
+  export function onShow () {
+    if (this.props.confirmKeybinding) attachKeybindings(this.props.confirmKeybinding, this.onEnterPress);
+  }
+
+  export function onHide () {
+    if (this.props.onHide) this.props.onHide();
+    removeKeybindings(this.props.confirmKeybinding, this.onEnterPress);
+  }
+
+  export function onEnterPress () {
+    this.onConfirmClick();
+  }
+
+  export function onKeybindingPress (action) {
+    if (action === 'hide') this.onCancelClick();
+  }

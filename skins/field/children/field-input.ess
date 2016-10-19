@@ -1,0 +1,50 @@
+-webkit-appearance none
+-webkit-touch-callout none
+background transparent
+border none
+border-radius 0
+box-shadow = 'inset 0 -1px 0 ' +__.color.gray.clone().clearer(.7)
+box-sizing border-box
+color inherit
+cursor text
+display block
+font-size 1em
+height auto
+justify-content center
+line-height 1.5em
+margin 0
+outline none
+padding 7px 0 8px
+position relative
+resize none
+text-align left
+text-decoration none
+transition all .1s ease
+vertical-align middle
+width 100%
+
+&::placeholder
+  color = __.color.gray.clone().clearer(.5)
+
+&:hover
+  box-shadow = 'inset 0 -1px 0 ' +__.color.primary
+  text-decoration none
+  transition none
+&:active,
+&.is-active,
+&:focus
+  box-shadow = 'inset 0 -2px 0 ' +__.color.primary
+&:focus
+  &::placeholder
+    color = __.color.gray.clone().clearer(.7)
+&[disabled],
+&:disabled,
+.is-disabled &
+  box-shadow = 'inset 0 -1px 0 ' +__.color.gray.clone().clearer(.7)
+  color = __.color.gray
+  cursor default
+  opacity .2
+  &:hover, &:active
+    background transparent
+    box-shadow = 'inset 0 -1px 0 ' +__.color.gray.clone().clearer(.7)
+    color = __.color.gray

@@ -1,0 +1,20 @@
+box-sizing border-box
+position relative
+transition all .15s ease
+width 16px
+height 16px
+
+&:before
+  border 1px solid
+  border-color initial
+  border-radius 2px
+  box-sizing border-box
+  content ""
+  display block
+  height 2px
+  left 50%
+  position absolute
+  top 50%
+  transform translate(-50%,-50%)
+  transition all .15s ease
+  width 2px

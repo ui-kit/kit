@@ -1,0 +1,21 @@
+// Modifies to:
+// height 60px
+// font-size h6
+font-size = __.h3
+letter-spacing 0
+line-height 1.2em
+
+&-input,
+.Input-input
+  padding 3px 0 3px 0
+
+&-icon
+  width 5rem
+  
+&.has-label
+  & </-input,
+  .Input-input
+    padding 17px 0 0
+    &:valid ~ </-label,
+    &:focus ~ </-label
+      top 12px

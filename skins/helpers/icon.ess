@@ -1,0 +1,38 @@
+.icon-glyph-overflow
+  %./../icon/index.ess
+  %./../icon/glyph-overflow.ess
+.icon-glyph-hamburger
+  %./../icon/index.ess
+  %./../icon/glyph-hamburger.ess
+.icon-glyph-close
+  %./../icon/index.ess
+  %./../icon/glyph-close.ess
+.icon-glyph-this-or-that
+  %./../icon/index.ess
+  %./../icon/glyph-this-or-that.ess
+.icon-glyph-multi-option
+  %./../icon/index.ess
+  %./../icon/glyph-multi-option.ess
+.icon-glyph-minus
+  %./../icon/index.ess
+  %./../icon/glyph-minus.ess
+.icon-glyph-plus
+  %./../icon/index.ess
+  %./../icon/glyph-plus.ess
+.icon-glyph-countdown
+  %./../icon/index.ess
+  %./../icon/glyph-countdown.ess
+.icon-glyph-unranked
+  %./../icon/index.ess
+  %./../icon/glyph-unranked.ess
+.icon-glyph-arrow
+  %./../icon/index.ess
+  %./../icon/glyph-arrow/index.ess
+  &-up
+    %./../icon/glyph-arrow/direction/up.ess
+  &-right
+    %./../icon/glyph-arrow/direction/right.ess
+  &-down
+    %./../icon/glyph-arrow/direction/down.ess
+  &-left
+    %./../icon/glyph-arrow/direction/left.ess

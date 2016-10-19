@@ -1,0 +1,33 @@
+%./index.ess
+
+&-item
+  background transparent
+  margin 0 .5rem
+  padding 0
+    
+  &:hover
+    border-color transparent
+    color = __.color.primary
+    z-index 2
+    
+  &:active
+    color = __.color.primary.dark
+
+  &:active,
+  &.is-selected,
+  &.is-active
+    background transparent
+    border-color transparent
+    color = __.color.primary
+    cursor default
+    z-index 1
+    
+  &:active:not(.is-selected),
+  &:active:not(.is-active)
+    z-index 2
+
+  &:first-of-type
+    margin-left 0
+
+  &:last-of-type
+    margin-right 0

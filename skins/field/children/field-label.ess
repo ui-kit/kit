@@ -1,0 +1,10 @@
+color inherit
+cursor text
+font-size 1em
+left 0
+line-height 1em
+opacity .5
+position absolute
+top 50%
+transform translateY(-50%)
+transition all .1s linear

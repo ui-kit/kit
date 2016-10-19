@@ -1,0 +1,22 @@
+body,
+textarea,
+input,
+button
+  %./../base/typography.ess
+
+.weight-bold
+  %./../text-style/weight/bold.ess
+.weight-normal
+  %./../text-style/weight/normal.ess
+.weight-light
+  %./../text-style/weight/light.ess
+.style-italic
+  %./../text-style/style/italic.ess
+.style-normal
+  %./../text-style/style/normal.ess
+.leading-paragraph
+  %./../text-style/leading/paragraph.ess
+.leading-heading
+  %./../text-style/leading/heading.ess
+.leading-tight
+  %./../text-style/leading/tight.ess

@@ -1,0 +1,7 @@
+// Modifies to:
+// height 24px
+// font-size h9
+&-item
+  font-size = __.h9
+  line-height 14px
+  padding 4px 0 2px

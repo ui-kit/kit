@@ -1,0 +1,9 @@
+if !__.omitNormalize
+  %./body.ess
+  %./img.ess
+  %./a.ess
+  %./text.ess
+  %./text-blocks.ess
+  %./lists.ess
+  %./headings.ess
+  %./tables.ess

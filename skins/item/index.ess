@@ -1,0 +1,118 @@
+align-items center
+background = __.color.white
+color = __.color.gray
+cursor pointer
+display flex
+flex-direction row-reverse
+font-size = __.h8
+justify-content space-between
+padding-left 18px
+position relative
+text-align left
+
+&:first-of-type
+  border-top-left-radius 2px
+  border-top-right-radius 2px
+&:last-of-type
+  border-bottom-left-radius 2px
+  border-bottom-right-radius 2px
+
+input,
+textarea
+  background transparent
+  border none
+  outline none
+
+&-content
+  %./children/item-content.ess
+&-icon
+  %./children/item-icon.ess
+&-label
+  %./children/item-label.ess
+&-input
+  %./children/item-input.ess
+&-action
+  %./children/item-action.ess
+&-main
+  %./children/item-main.ess
+
+&:hover
+  color = __.color.primary
+
+// Trying to have these descend causes a bug that makes the css not output
+&:hover > &-main,
+&:active > &-main,
+&-is-active > &-main,
+&.is-active > &-main,
+&:hover > &-content &-label,
+&:active > &-content &-label,
+&-is-active > &-content &-label,
+&.is-active > &-content &-label
+  &:after
+    border-color = __.color.primary
+
+&:active > &-content &-label
+  &:after
+    border-top = '2px solid '+__.color.primary
+
+&:active,
+&-is-active,
+&.is-active
+  cursor default
+  z-index 2
+  color = __.color.white
+  background = __.color.primary
+  box-shadow none
+
+&:active > &-content &-input,
+&:active > &-content &-action,
+&-is-active > &-content &-input,
+&-is-active > &-content &-action,
+&.is-active > &-content &-input,
+&.is-active > &-content &-action
+  color inherit
+
+&.is-disabled,
+&[disabled],
+&:disabled,
+.is-disabled &
+  color = __.color.gray.clone().clearer(.7)
+  cursor default
+  pointer-events none
+
+// Styles underline on focus
+&-input + &-label
+  font-weight bold
+&-input:focus + &-label
+  color = __.color.primary
+  &:after
+    opacity 1
+    border-top = '2px solid '+__.color.primary
+
+// State classes
+&.is-not-link
+  cursor default
+  pointer-events none
+
+&.has-no-hover,
+&.has-no-hover:hover,
+&.has-no-hover:active
+  color = __.color.gray
+  cursor default
+
+&.has-no-active,
+&.has-no-active:hover,
+&.has-no-active:active
+  background = __.color.white
+
+&.has-no-hover &-label:after,
+&.has-no-hover:hover &-label:after,
+&.has-no-hover:active &-label:after
+  border-top = '1px solid '+__.color.azure
+
+&.is-input
+  &:active,
+  &-is-active,
+  &.is-active
+    color = __.color.gray
+    background = __.color.white

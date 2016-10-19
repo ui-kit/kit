@@ -1,0 +1,21 @@
+// Modifies to:
+// height 72px
+// font-size 18px
+font-size = __.h3
+letter-spacing 0
+line-height 1.2em
+
+&-input,
+.Input-input
+  padding 15px 0 14px
+
+&-icon
+  width 6rem
+
+&.has-label
+  & </-input,
+  .Input-input
+    padding 24px 0 5px
+    &:valid ~ </-label,
+    &:focus ~ </-label
+      top 16px

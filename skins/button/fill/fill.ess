@@ -1,0 +1,4 @@
+color = __.color.white
+&:hover,
+&:active
+  color = __.color.white

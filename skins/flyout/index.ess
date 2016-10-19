@@ -1,0 +1,52 @@
+&-has-trigger
+  position relative
+
+&-menu
+  %./menu/index.ess
+
+&-menu-close
+    %../button/close.ess
+    position absolute
+    top 0
+    left 0
+    transform translate(-50%, -25%)
+    // because active items have z-index of 2
+    z-index 3
+&-trigger
+  cursor pointer
+  display flex
+  &-arrow
+    %../icon/glyph-arrow/index.ess
+    %../icon/glyph-arrow/direction/down.ess
+    margin-left 0.5rem
+    transition all .2s ease
+  &-is-active, &:hover
+    color = __.color.primary
+  &-is-active
+    & <-arrow
+      margin-left 0.5rem
+      %../icon/glyph-arrow/direction/up.ess
+&-menu-is-position-left-middle
+  %../../skins/flyout/position/left-middle.ess
+&-menu-is-position-left-top
+  %../../skins/flyout/position/left-top.ess
+&-menu-is-position-left-bottom
+  %../../skins/flyout/position/left-bottom.ess
+&-menu-is-position-right-middle
+  %../../skins/flyout/position/right-middle.ess
+&-menu-is-position-right-top
+  %../../skins/flyout/position/right-top.ess
+&-menu-is-position-right-bottom
+  %../../skins/flyout/position/right-bottom.ess
+&-menu-is-position-bottom-middle
+  %../../skins/flyout/position/bottom-middle.ess
+&-menu-is-position-bottom-left
+  %../../skins/flyout/position/bottom-left.ess
+&-menu-is-position-bottom-right
+  %../../skins/flyout/position/bottom-right.ess
+&-menu-is-position-top-middle
+  %../../skins/flyout/position/top-middle.ess
+&-menu-is-position-top-left
+  %../../skins/flyout/position/top-left.ess
+&-menu-is-position-top-right
+  %../../skins/flyout/position/top-right.ess

@@ -1,0 +1,6 @@
+%./../../button/close.ess
+border-color = __.color.white
+left 0
+margin 18px
+position fixed
+top 0

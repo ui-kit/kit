@@ -1,0 +1,6 @@
+border-color = __.color.accent
+
+&:after,
+&-body
+  background-color = __.color.accent
+  color = __.color.white

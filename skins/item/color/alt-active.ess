@@ -1,0 +1,59 @@
+&:active,
+&-is-active,
+&.is-active
+  background = __.color.azure  
+  box-shadow none
+  color = __.color.primary
+  cursor default
+  z-index 2
+  
+&-is-active &-label,
+&.is-active &-label,
+&:active &-label
+  &:after
+    opacity 0
+
+&:active &-input,
+&-is-active &-input,
+&.is-active &-input
+  color #fff
+  &::placeholder
+    color rgba(255,255,255,.3)
+    
+&:active > &-content &-action,
+&-is-active > &-content &-action,
+&.is-active > &-content &-action
+  color inherit
+  
+&.is-disabled:hover &-label,
+&[disabled]:hover &-label,
+&:disabled:hover &-label
+  &:after
+    border-color = __.color.azure
+
+// State classes
+&.is-not-link
+  &:hover,
+  &:active
+    background = __.color.azure
+    color = __.color.gray
+    & </-label:after
+      border-color = __.color.azure
+
+&.has-no-hover,
+&.has-no-hover:hover,
+&.has-no-hover:active
+  color = __.color.primary
+  cursor default
+
+&.has-no-active,
+&.has-no-active:hover,
+&.has-no-active:active
+  background = __.color.azure
+
+&.is-input
+  &:active,
+  &-is-active,
+  &.is-active
+    background = __.color.azure
+    color = __.color.gray 

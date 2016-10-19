@@ -1,0 +1,76 @@
+&-8,
+&-8-s
+  margin .666666rem !important
+&-8-s
+  @media screen and (max-width: 900px)
+    margin .33333rem !important
+  @media screen and (max-width: 350px)
+    margin .222222rem !important
+
+&-8-y,
+&-8-sy
+  margin-top .666666rem !important
+  margin-bottom .666666rem !important
+&-8-sy
+  margin-top .666666rem !important
+  margin-bottom .666666rem !important
+  @media screen and (max-width: 900px)
+    margin-top .33333rem !important
+    margin-bottom .33333rem !important
+  @media screen and (max-width: 350px)
+    margin-top .222222rem !important
+    margin-bottom .222222rem !important
+
+&-8-x,
+&-8-sx
+  margin-left .666666rem !important
+  margin-right .222222rem !important
+&-8-sx
+  margin-left .666666rem !important
+  margin-right .666666rem !important
+  @media screen and (max-width: 900px)
+    margin-left .33333rem !important
+  @media screen and (max-width: 350px)
+    margin-right .222222rem !important
+
+&-8-t,
+&-8-st
+  margin-top .666666rem !important
+&-8-st
+  margin-top .666666rem !important
+  @media screen and (max-width: 900px)
+    margin-top .33333rem !important
+  @media screen and (max-width: 350px)
+    margin-top .222222rem !important
+
+&-8-r,
+&-8-sr
+  margin-right .666666rem !important
+&-8-sr
+  margin-right .666666rem !important
+  @media screen and (max-width: 900px)
+    margin-right .33333rem !important
+  @media screen and (max-width: 350px)
+    margin-right .222222rem !important
+
+
+&-8-b,
+&-8-sb
+  margin-bottom .666666rem !important
+&-8-sb
+  margin-bottom .666666rem !important
+  @media screen and (max-width: 900px)
+    margin-bottom .33333rem !important
+  @media screen and (max-width: 350px)
+    margin-bottom .222222rem !important
+
+
+&-8-l,
+&-8-sl
+  margin-left .666666rem !important
+&-8-sl
+  margin-left .666666rem !important
+  @media screen and (max-width: 900px)
+    margin-left .33333rem !important
+  @media screen and (max-width: 350px)
+    margin-left .222222rem !important

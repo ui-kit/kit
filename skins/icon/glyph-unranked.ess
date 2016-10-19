@@ -1,0 +1,34 @@
+border 3px solid
+border-bottom none
+border-color initial 
+border-left none
+border-radius 20px 
+border-right none
+box-sizing border-box
+height 3px
+margin -2px 0 0 -1px
+position relative
+transition all .15s ease
+width 3px
+
+&:before,
+&:after 
+  border 3px solid
+  border-bottom none
+  border-color initial 
+  border-left none
+  border-radius 20px 
+  border-right none
+  box-sizing border-box
+  content "" 
+  display block 
+  margin -9px 0 0 0
+  position absolute 
+  transition all .15s ease 
+  width 100%
+  border-width 3px 0 0 0
+  height 3px
+  width 3px
+
+&:after 
+  margin 3px 0 0 0

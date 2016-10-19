@@ -1,0 +1,36 @@
+%./index.ess
+
+%./color/white.ess
+%./corners/sharp.ess
+%./fill/fill-light.ess
+%./shadow/shadow-dark.ess
+
+color = __.color.primary
+display inline-block
+line-height 1.25rem
+padding 6px 6px 7px
+&:hover
+  background = __.color.primary.dark
+  border-color = __.color.primary.dark
+  color = __.color.white
+  opacity 1
+  &-sub-label
+    color = __.color.white
+&:active
+  background = __.color.primary.darker
+  border-color = __.color.primary.darker
+  color = __.color.white
+  opacity 1
+
+// Children
+&-label
+  display block
+  font-size = __.h8
+  font-weight bold
+
+&-sub-label
+  color = __.color.gray
+  font-size = __.h9
+  font-weight normal
+  opacity .5
+  text-transform none

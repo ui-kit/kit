@@ -1,0 +1,14 @@
+%./white.ess
+color = __.color.white
+&-input,
+.Input-input
+  &::placeholder
+    color = __.color.white.clone().clearer(.5)
+  &:hover
+    box-shadow = 'inset 0 -1px 0 ' +__.color.white
+  &:focus
+    box-shadow = 'inset 0 -2px 0 ' +__.color.white
+  &:active,
+  &:focus
+    &::placeholder
+      color = __.color.white.clone().clearer(.7)

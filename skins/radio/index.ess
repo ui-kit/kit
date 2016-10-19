@@ -1,0 +1,31 @@
+%./size/medium.ess
+
+-webkit-appearance none
+border 2px solid
+border-color inherit
+border-radius 100px
+box-sizing border-box
+cursor pointer
+outline none
+position relative
+vertical-align middle
+user-select none
+
+&:hover
+  filter brightness(65%)
+
+&:focus
+  &:after
+    border 2px solid
+    border-color inherit
+    opacity .5
+    border-radius 100px
+    bottom -6px
+    content ''
+    left -6px
+    position absolute
+    right -6px
+    top -6px
+ 
+&:active, &:checked, &.is-active, &-is-active
+  %./active.ess

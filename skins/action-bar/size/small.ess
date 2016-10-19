@@ -1,0 +1,19 @@
+// Modifies to:
+// height 24px
+// font-size h9
+
+font-size = __.h9
+min-height 24px
+
+&-title
+  &:after
+    height 1rem
+    margin-top -.5rem
+
+&-title,
+&-body-item
+  padding 6px .5rem 4px
+
+&-body-item
+  &-icon
+    font-size 12px

@@ -1,0 +1,12 @@
+background-color = __.color.gplus
+border-color = __.color.gplus
+color = __.color.gplus
+&:hover
+  color = __.white
+  background-color = __.color.gplus.dark
+  border-color = __.color.gplus.dark
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.gplus.darker
+  border-color = __.color.gplus.darker

@@ -1,0 +1,26 @@
+:doc
+  @name Toolbar
+  @props {Boolean} [left]
+  @props {Boolean} [center]
+  @props {Boolean} [right]
+
+import './index.ess'
+
+var classFn = this.composeClasses('Toolbar')
+
+.Toolbar(className=classFn())
+  div(className=classFn('&-inner'))
+    if props.left
+      div(className=classFn('&-left'))
+        yield left
+
+    if props.center
+      div(className=classFn('&-center'))
+        yield center
+
+    if props.right
+      div(className=classFn('&-right'))
+        yield right
+
+:module
+  export var mixins = [require('ui-kit/mixins/compose-classes')]

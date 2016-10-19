@@ -1,0 +1,30 @@
+background = __.color.accent
+color #fff
+&-item
+  &:before,
+  &:after
+    border = '2px solid ' + __.color.white
+    bottom 0
+    content ""
+    display block
+    left 0
+    opacity .1
+    position absolute
+    right 0
+    top 0
+  &:after
+    border = '4px solid ' + __.color.charcoal
+    bottom 1.5rem
+    left 1.5rem
+    right 1.5rem
+    top 1.5rem
+    @media screen and (max-width: 900px)
+      bottom .75rem
+      left .75rem
+      right .75rem
+      top .75rem
+    @media screen and (max-width: 900px)
+      bottom .333333rem
+      left .333333rem
+      right .333333rem
+      top .333333rem

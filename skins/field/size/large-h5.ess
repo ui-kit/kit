@@ -1,0 +1,19 @@
+// Modifies to:
+// height: 48px
+font-size = __.h5
+letter-spacing 0
+
+&-input,
+.Input-input
+  padding 8px 0 9px
+  
+&-icon
+  width 4rem
+
+&.has-label
+  & </-input,
+  .Input-input
+    padding 17px 0 6px
+    &:valid ~ </-label,
+    &:focus ~ </-label
+      top 8px

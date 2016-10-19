@@ -1,0 +1,14 @@
+display block
+font-weight normal
+line-height 1.2em
+margin 0
+
+&-icon 
+  display block
+  font-size 24px
+  margin 2px 4px 0 0
+  position absolute
+  right 100%
+  top 50%
+  transform translate(0,-50%)
+

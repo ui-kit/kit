@@ -1,0 +1,23 @@
+&-6
+  margin .5rem !important
+
+&-6-y
+  margin-top .5rem !important
+  margin-bottom .5rem !important
+
+&-6-x
+  margin-left .5rem !important
+  margin-right .5rem !important
+
+&-6-t
+  margin-top .5rem !important
+
+&-6-r
+  margin-right .5rem !important
+
+
+&-6-b
+  margin-bottom .5rem !important
+
+&-6-l
+  margin-left .5rem !important

@@ -1,0 +1,4 @@
+%./transparent.ess
+
+&-input
+  color = __.color.white

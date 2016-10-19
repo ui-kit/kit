@@ -1,0 +1,27 @@
+color inherit
+display block
+flex 1
+line-height 1.45em
+padding 8px 0
+text-align left
+&:after
+  border-top = '1px solid '+__.color.azure
+  bottom 0
+  content ""
+  display block
+  height 0
+  left 0
+  position absolute
+  right 0
+
+&-heading
+  display block
+  line-height 1.2em
+  margin-top -4px
+&-subheading
+  display block
+  font-size = __.h9
+  letter-spacing .05em
+  line-height 1.2em
+  margin-bottom -6px
+  opacity .7

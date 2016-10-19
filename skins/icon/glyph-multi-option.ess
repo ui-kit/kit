@@ -1,0 +1,22 @@
+border-color transparent
+
+&:before
+  content ''
+  display inline-block
+  height 2px
+  border-top 7px solid
+  border-bottom 7px solid
+  border-color initial
+  margin-right 2px
+  width 7px
+  border-radius 2px
+
+&:after
+  content ''
+  display inline-block
+  height 2px
+  border-top 7px solid
+  border-bottom 7px solid
+  border-color inital
+  width 7px
+  border-radius 2px

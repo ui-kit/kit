@@ -1,0 +1,37 @@
+color = __.color.yellow
+& </-input,
+.Input-input
+  box-shadow = 'inset 0 -1px 0 ' +__.color.yellow
+  &::placeholder
+    color = __.color.yellow.clone().clearer(.5)
+  &:active,
+  &.is-active,
+  &:focus
+    box-shadow = 'inset 0 -2px 0 ' +__.color.yellow
+    &::placeholder
+      color = __.color.yellow.clone().clearer(.7)
+  &:focus ~ </-icon,
+  &:focus ~ </-label
+    color = __.color.yellow
+    opacity 1
+  &[disabled],
+  &:disabled,
+  .is-disabled &
+    box-shadow = 'inset 0 -1px 0 ' +__.color.yellow
+    color = __.color.yellow
+    &:hover, &:active
+      box-shadow = 'inset 0 -1px 0 ' +__.color.yellow
+      color = __.color.yellow
+      
+& </-label
+  opacity 1
+
+& </-icon,
+  &:after
+    border-color = __.color.yellow
+
+&.has-label
+  & </-input,
+  .Input-input
+    &::placeholder
+      color transparent

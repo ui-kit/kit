@@ -1,0 +1,21 @@
+&:before,
+&:after,
+&-body
+  left 110%
+  top 50%
+  bottom auto
+  right auto
+  transform translateY(-50%)
+
+&:before
+  transform translate3d(-12px, -6px, 0)
+  border-top-color transparent
+  border-right-color inherit
+
+&:hover:after,
+&:hover:before,
+&:focus:after,
+&:focus:before,
+&:hover &-body,
+&:focus &-body
+  bottom auto

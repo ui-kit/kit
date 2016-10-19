@@ -1,0 +1,84 @@
+color = __.color.brown
+background = __.color.yellow
+
+.item-label,
+&-main,
+&-label
+  &:after
+    border-color = __.color.brown
+    
+&:hover
+  color = __.color.brown
+    
+&:active
+  background = __.color.yellow.dark
+  
+&:hover > &-main,
+&:active > &-main,
+&-is-active > &-main,
+&.is-active > &-main,
+&:hover > &-content &-label,
+&:active > &-content &-label,
+&-is-active > &-content &-label,
+&.is-active > &-content &-label,
+  &:after
+    border-color = __.color.brown
+    
+&-input:focus + &-label
+  color = __.color.brown
+  &:after
+    border-color = __.color.brown
+    
+// doesn't use variable because the placeholder hijacks it for some reason
+&-input
+  color = __.color.brown
+  box-shadow = 'inset 0 -1px 0 ' +__.color.brown
+  &::placeholder
+    color = __.color.brown.clone().clearer(.5)
+  &:hover  
+    box-shadow = 'inset 0 -1px 0 ' + __.color.brown
+  &:active,
+  &:focus
+    box-shadow = 'inset 0 -2px 0 ' + __.color.brown
+    &::placeholder
+      color = __.color.brown.clone().clearer(.7)
+
+&.is-disabled,
+&[disabled],
+&:disabled
+  color hsla(0,0%,100%,.1)
+  &:hover &-label
+    &:after
+      border-color = __.color.brown
+
+// State classes
+&.is-not-link
+  &:hover,
+  &:active
+    background = __.color.yellow.light 
+    color = __.color.white
+    & </-label:after
+      border-color = __.color.brown
+
+&.has-no-hover,
+&.has-no-hover:hover,
+&.has-no-hover:active
+  color =__.color.brown
+  cursor default
+
+&.has-no-active,
+&.has-no-active:hover,
+&.has-no-active:active
+  background = __.color.yellow 
+
+&.has-no-hover &-label:after,
+&.has-no-hover:hover &-label:after,
+&.has-no-hover:active &-label:after
+  border-top = '1px solid '+__.color.brown
+
+&.is-input
+  &:active,
+  &-is-active,
+  &.is-active
+    color =__.color.brown 
+    background = __.color.yellow

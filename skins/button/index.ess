@@ -1,0 +1,66 @@
+border 2px solid
+border-color inherit
+border-radius 1000px
+box-sizing border-box
+color inherit
+cursor pointer
+display inline-block
+font-size = __.h8
+font-weight bold
+height auto
+justify-content center
+letter-spacing .05em
+line-height 1em
+padding 9px 1.25rem
+position relative
+text-align center
+text-decoration none
+text-transform uppercase
+transition all .1s ease
+user-select none
+vertical-align middle
+-webkit-appearance none
+-webkit-touch-callout none
+
+&:hover
+  background-color = __.color.gray.dark
+  border-color = __.color.gray.dark
+  color = __.color.white
+  text-decoration none
+  transition none
+
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  background-color = __.color.gray.darker
+  border-color = __.color.gray.darker
+  color = __.color.white
+  
+&:after
+  border-radius 1000px
+
+&[disabled],
+&:disabled
+  background transparent
+  border-color = __.color.gray
+  color = __.color.gray
+  cursor default
+  opacity .3
+  &:hover, &:active
+    background transparent
+    border-color = __.color.gray
+    color = __.color.gray
+
+&-icon,
+.icon
+  box-sizing border-box
+  display inline-block
+  line-height 12px
+  vertical-align middle
+  margin-top -1px
+  &:before,
+  &:after
+    vertical-align middle
+  
+if props.children
+  yield

@@ -1,0 +1,215 @@
+:doc
+  @name UIFlyout
+  recommended skins:
+    %ui-kit/skins/flyout/index.ess
+    %ui-kit/skins/flyout/position/bottom.ess
+  @prop {Boolean}  [hideOnClick] Always hide flyout after anything is clicked
+  @prop {String}   [position] applies state classes for position
+  @prop {Boolean}  [showCloseButton=false] Shows close button that calls hideMenu
+  @prop {Boolean}  [lazyYield] Do not yield the menu unless menu is active
+  @prop {Boolean}  [manualHide] Only hide flyout by calling toggle or hide
+  @prop {Boolean}  [showMenuOnLoad] Mounts with flyout open
+  @prop {Number}   [animationTimeout=0] number in ms to wait before removing menu, or sending false value for isActive
+  @prop {Boolean}  [scrollToMenu=true] body will scroll to fully show menu when active
+  @prop {Object}   [scrollToMenuOptions={}] custom options for scroll-to-element (incl. top/bottomOffset for offset when above/below the fold)
+  @prop {String}   [hideMenuKeybinding] key to listen for that will hide flyout
+  @prop {String}   [showMenuKeybinding] key to listen for that will show flyout
+  @prop {String}   [toggleMenuKeybinding] key to listen for that will toggle flyout
+  @prop {Function} [onShow] called after flyout shows
+  @prop {Function} [onHide] called after flyout hides
+  @prop {Function} [onWindowClickHide] this is called when flyout will hide because of clicking outside the menu (onHide will also be called)
+  @prop {Function} [onComponentWillHide] called when component will hide
+  @prop {Funciton} [onComponentWillShow] called when component will show
+  @prop {Function} [onKeybindingPress] called when a keybinding is pressed
+    @arg {String} action - the keybinding action called (show, hide, toggle)
+
+import * as scrollToElement from 'scroll-to-element'
+import elContains from '../../utils/element-contains-el'
+import {attachKeybindings, removeKeybindings, hasKeybinding} from '../../utils/keybinding.js'
+
+:js
+  var classFn = this.composeClasses('UIFlyout', {
+    'active': state.isActive,
+    'has-trigger': !!props.trigger
+  })
+
+  var fns= {
+    classFn: classFn,
+    hide: this.startHidingMenu,
+    show: this.startShowingMenu,
+    toggle: this.toggleMenu }
+
+  var menuStates = {
+    'showing': state.isActive,
+    'position-@': props.position
+  }
+
+div(className=classFn())
+  yield trigger(fns, state.isActive)
+  if props.lazyYield
+    if state.isActive || state.showMenuStarted || state.hideMenuStarted
+      div(className=classFn('&-menu', menuStates) ref='menu')
+        yield menu(fns, state.isActive)
+        if props.showCloseButton
+          div(className=classFn('&-menu-close') onClick=this.startHidingMenu)
+  else
+    div(className=classFn('&-menu', menuStates) ref='menu')
+      yield menu(fns, state.isActive)
+      if props.showCloseButton
+        div(className=classFn('&-menu-close') onClick=this.startHidingMenu)
+
+:module
+  export var mixins = [require('../../mixins/compose-classes')]
+
+  export function getDefaultProps () {
+    return {
+      position: 'bottom-middle',
+      animationTimeout: 0,
+      scrollToMenu: true,
+      scrollToMenuOptions: {}
+    };
+  }
+
+  export function componentDidMount () {
+    this.setKeybindings();
+    if (this.keybindings.show)   attachKeybindings(this.keybindings.show);
+    if (this.keybindings.toggle) attachKeybindings(this.keybindings.toggle);
+    if (this.props.showMenuOnLoad) this.startShowingMenu();
+  }
+
+  export function componentWillReceiveProps (nextProps) {
+    if (!this.equalPairs(nextProps.showMenuKeybinding, this.props.showMenuKeybinding) ||
+        !this.equalPairs(nextProps.hideMenuKeybinding, this.props.hideMenuKeybinding) ||
+        !this.equalPairs(nextProps.toggleMenuKeybinding, this.props.toggleMenuKeybinding)) {
+      removeKeybindings(this.getKeybindings());
+      this.setKeybindings(nextProps);
+      if (this.state.isActive) attachKeybindings(this.keybindings.hide)
+      else attachKeybindings(Object.assign({},
+        this.keybindings.show || {},
+        this.keybindings.toggle || {}))
+    }
+
+    if (nextProps.showMenuOnLoad && !this.state.hasShownMenu) {
+      this.startShowingMenu();
+    }
+  }
+
+  export function componentDidUpdate (prevProps, prevState) {
+    if (this.state.isActive && !prevState.isActive) {
+      this.scrollToMenu();
+      if (this.props.onShow) this.props.onShow();
+      if (!this.props.manualHide) window.addEventListener('click', this.onWindowClick);
+    }
+
+    if (!this.state.isActive && prevState.isActive) {
+      if (this.props.onHide) this.props.onHide();
+    }
+
+    if (this.state.hideMenuStarted && !prevState.hideMenuStarted) {
+      setTimeout(this.hideMenu, this.props.animationTimeout);
+    }
+
+    if (this.state.showMenuStarted && !prevState.showMenuStarted) {
+      setTimeout(this.showMenu, 0);
+    }
+  }
+
+  export function componentWillUnmount () {
+    window.removeEventListener('click', this.onWindowClick);
+    removeKeybindings(this.getKeybindings());
+    if (this.state.isActive && this.props.onHide) this.props.onHide();
+  }
+
+  export function setKeybindings (nextProps) {
+    var props = nextProps || this.props;
+    var kb = {};
+    if (props.showMenuKeybinding)   kb.show   = {[props.showMenuKeybinding]  : this.onKeybindingPress.bind(null, 'show')};
+    if (props.hideMenuKeybinding)   kb.hide   = {[props.hideMenuKeybinding]  : this.onKeybindingPress.bind(null, 'hide')};
+    if (props.toggleMenuKeybinding) kb.toggle = {[props.toggleMenuKeybinding]: this.onKeybindingPress.bind(null, 'toggle')};
+    this.keybindings = kb;
+  }
+
+  export function getKeybindings () {
+    return Object.assign({},
+        this.keybindings.show   || {},
+        this.keybindings.hide   || {},
+        this.keybindings.toggle || {});
+  }
+
+  export function onKeybindingPress (action) {
+    if (this.props.onKeybindingPress) this.props.onKeybindingPress(action);
+    switch (action) {
+      case 'toggle':
+        this.toggleMenu();
+        break;
+      case 'show':
+        this.startShowingMenu();
+        break;
+      case 'hide':
+        this.startHidingMenu();
+        break;
+    }
+  }
+
+  export function toggleMenu (evt) {
+    this.state.isActive ?
+      this.startHidingMenu(evt) :
+      this.startShowingMenu(evt);
+  }
+
+  export function startShowingMenu (evt) {
+    if (this.state.isActive) return;
+    if (this.props.onComponentWillShow) this.props.onComponentWillShow();
+    if (this.keybindings.show) removeKeybindings(this.keybindings.show);
+    if (this.keybindings.hide) attachKeybindings(this.keybindings.hide);
+    this.setState({showMenuStarted: true, hasShownMenu: true});
+  }
+
+  export function startHidingMenu (evt) {
+    if (!this.state.isActive) return;
+    if (evt) evt.stopPropagation();
+    if (this.props.onComponentWillHide) this.props.onComponentWillHide();
+    if (this.keybindings.hide) removeKeybindings(this.keybindings.hide);
+    if (this.keybindings.show) attachKeybindings(this.keybindings.show);
+    this.setState({hideMenuStarted: true});
+    window.removeEventListener('click', this.onWindowClick);
+  }
+
+  export function hideMenu () {
+    this.setState({hideMenuStarted: false, isActive: false});
+  }
+
+  export function showMenu () {
+    this.setState({showMenuStarted: false, isActive: true});
+  }
+
+  export function scrollToMenu () {
+    var menu = this.refs.menu && this.refs.menu.getDOMNode();
+    if (!menu || !this.props.scrollToMenu) return;
+    var menuIsBelowFold = menu.getBoundingClientRect().bottom > window.innerHeight;
+    var menuIsAboveFold = menu.getBoundingClientRect().top < 0;
+    var align = menuIsAboveFold ? 'top' : 'bottom'
+    var offset = menuIsAboveFold ? this.props.scrollToMenuOptions.topOffset : this.props.scrollToMenuOptions.bottomOffset
+
+    var defaultOptions = {
+      align,
+      ease: 'inOutSine',
+      duration: 150,
+      offset: offset || 0
+    };
+
+    var scrollToMenuOptions = Object.assign(defaultOptions, this.props.scrollToMenuOptions);
+
+    if ((menuIsBelowFold || menuIsAboveFold) && scrollToElement) {
+      scrollToElement(menu, scrollToMenuOptions);
+    }
+  }
+
+  export function onWindowClick (evt) {
+    if (!this.isMounted()) return;
+    var el = this.getDOMNode();
+    if (this.props.hideOnClick || !elContains(el, evt.target)) {
+      if (this.props.onWindowClickHide && !elContains(el, evt.target)) this.props.onWindowClickHide();
+      this.startHidingMenu();
+    }
+  }

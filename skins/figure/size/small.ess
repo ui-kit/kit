@@ -1,0 +1,6 @@
+font-size = __.h10
+height 24px
+width 24px
+
+&-content
+  line-height 20px

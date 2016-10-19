@@ -1,0 +1,5 @@
+display block
+max-width 600px
+padding 0 1.5rem
+position relative
+width 100%

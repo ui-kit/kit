@@ -1,0 +1,11 @@
+%./glyph-hamburger.ess
+
+border-color = 'transparent !important'
+
+&:before 
+  margin 0
+  transform rotate(45deg)
+
+&:after 
+  margin 0
+  transform rotate(-45deg) 

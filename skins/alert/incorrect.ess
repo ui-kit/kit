@@ -1,0 +1,5 @@
+%./index.ess
+%./color/red.ess
+
+&-content
+  text-align left

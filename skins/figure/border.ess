@@ -1,0 +1,10 @@
+%./size/medium.ess
+
+&-content
+  %./children/content.ess
+  text-transform uppercase
+  font-weight bold
+  letter-spacing .05em
+    
+&-image
+  %./children/image.ess

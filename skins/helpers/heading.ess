@@ -1,0 +1,35 @@
+// headings
+
+.h1
+  %./../heading/h1.ess
+  
+.h2
+  %./../heading/h2.ess
+  
+.h3
+  %./../heading/h3.ess
+  
+.h4
+  %./../heading/h4.ess
+  
+.h5
+  %./../heading/h5.ess
+  
+.h6
+  %./../heading/h6.ess
+  
+.h7
+  %./../heading/h7.ess
+  
+.h8
+  %./../heading/h8.ess
+  
+.h9
+  %./../heading/h9.ess
+  
+.h10
+  %./../heading/h10.ess
+   
+.cap
+  %./../heading/cap.ess
+  

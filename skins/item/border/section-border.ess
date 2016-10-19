@@ -1,0 +1,2 @@
+&:last-of-type &-content
+  position static

@@ -1,0 +1,22 @@
+border 1px solid
+border-color initial 
+border-radius 2px 
+box-sizing border-box
+height 0
+margin -4px 0 0 
+position relative
+width 0 
+
+&:before,
+&:after 
+  border 1px solid
+  border-color initial 
+  border-radius 2px 
+  content "" 
+  display block 
+  margin -1px 0 0 -4px 
+  position absolute 
+  width 100%
+
+&:after 
+  margin-left 2px

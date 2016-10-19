@@ -1,0 +1,3 @@
+border-color = __.color.gray
+&-progress
+  border-color = __.color.gray

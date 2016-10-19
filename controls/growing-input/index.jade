@@ -1,0 +1,129 @@
+:doc
+  @name UIGrowingInput
+  @prop {Boolean} readonly
+  @prop {Boolean} required
+  @prop {Boolean} shouldAutoFocus
+  @prop {Function} onBlur
+  @prop {Function} onChange
+  @prop {Function} onFocus
+  @prop {Function} onKeydown
+  @prop {Object} template
+  @prop {Number} maxLength
+  @prop {Number} minLength
+  @prop {String} className
+  @prop {String} defaultValue
+  @prop {String} type
+  @prop {String} valueKey
+
+import {KEY_NAMES} from '../../utils/keybinding.js'
+import * as debounce from 'debounce'
+
+import './index.ess'
+
+const VIRTUAL_INPUT_STYLE = {position: 'absolute', left: '10000px', right: '10000px'}
+
+var.
+  componentProps = {
+    className: props.className,
+    defaultValue: props.defaultValue,
+    maxLength: props.maxLength,
+    minLength: props.minLength,
+    onBlur: this.onBlur,
+    onFocus: this.onFocus,
+    onChange: this.onChange,
+    onKeyDown: this.onKeyDown,
+    placeholder: props.placeholder,
+    readOnly: props.readOnly,
+    required: props.required,
+    style: props.style,
+    tabIndex: props.tabIndex,
+    type: 'textarea'
+  }
+
+var useAutoId = !!props.label && !props.id
+var id = useAutoId ? this.getNextUid('InputComponent') : props.id
+var labelFor = useAutoId ? this.getNextUid('InputComponent') : props.id
+var value = (state.value || state.value === '' ) ? state.value : props.defaultValue
+
+textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(componentProps)
+-this.recalculateSize();
+
+:module
+  export function getDefaultProps () {
+    return {
+      submitOnEnter: true,
+      valueKey: 'value'
+    };
+  }
+
+  export function componentWillMount () {
+    this.recalculateSize = debounce(this.recalculateSize, 100);
+    this.submitTemplate = debounce(this.submitTemplate, 500);
+  }
+
+  export function componentWillReceiveProps (props) {
+    if (props.defaultValue !== this.props.defaultValue && !this.state.hasFocus) this.setState({value: props.defaultValue});
+    if (props.shouldAutoFocus && props.shouldAutoFocus !== this.props.shouldAutoFocus) this.getDOMNode().focus();
+    return true;
+  }
+
+  export function onBlur (ev) {
+    this.setState({hasFocus: false});
+    if (this.props.onBlur) this.props.onBlur.apply(this, arguments);
+  }
+
+  export function onFocus (ev) {
+    this.setState({hasFocus: true});
+    if (this.props.onFocus) this.props.onFocus.apply(this, arguments);
+  }
+
+  export function onChange (ev) {
+    var value = ev.target.value;
+    this.setState({value: value});
+    if (this.props.onChange) this.props.onChange.apply(null, arguments);
+    this.submitTemplate();
+  }
+
+  export function recalculateSize () {
+    if (!this.isMounted()) return;
+    var input = this.getDOMNode();
+    var newHeight = this.getVirtualInputHeight(input);
+    if (newHeight !== Number(input.style.height.split('px')[0]))
+      input.style.height = [newHeight, 'px'].join('');
+  }
+
+  export function getVirtualInputHeight (input) {
+    var vInput = input.cloneNode();
+    vInput.style.width = input.clientWidth + 'px';
+    vInput.value = input.value;
+    for (var key in VIRTUAL_INPUT_STYLE) {
+      vInput.style[key] = VIRTUAL_INPUT_STYLE[key];
+    }
+    input.parentElement.appendChild(vInput);
+    vInput.style.height = '';
+    var height = vInput.scrollHeight;
+    input.parentElement.removeChild(vInput);
+    return height;
+  }
+
+  export function onKeyDown (evt) {
+    if (this.props.onKeyDown) this.props.onKeyDown.apply(null, arguments);
+    if (this.props.submitOnEnter === true && evt.keyCode === KEY_NAMES.enter) {
+      evt.preventDefault();
+      this.submitTemplate();
+    }
+  }
+
+  export function submitTemplate () {
+    if (!this.props.template) return;
+    var value = this.getDOMNode().value.trim();
+    this.context.forms.create(this.props.template)
+      .set({[this.props.valueKey]: value})
+      .submit((err, res) => {
+        if (err) {
+          if (this.props.onError) this.props.onError(err);
+          console.warn(err);
+        }
+
+      });
+  }

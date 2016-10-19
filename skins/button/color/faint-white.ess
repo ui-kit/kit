@@ -1,0 +1,31 @@
+border-width 0
+color = __.color.white
+line-height calc(1em + 4px)
+
+&:after
+  border 1px solid
+  border-color initial
+  bottom 0
+  content ''
+  display block
+  left 0
+  opacity .1
+  position absolute
+  right 0
+  top 0
+
+&:hover
+  &:after
+    opacity 0
+
+&:hover
+  background = __.color.white
+  color = __.color.primary
+  &:after
+    opacity 0
+
+&:active,
+.is-active,
+&-is-active
+  background = __.color.primary
+  color = __.color.white

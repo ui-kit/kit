@@ -1,0 +1,5 @@
+&-menu
+  %./../../position/coordinates/middle-right.ess
+  left 100%
+  margin-left .5rem
+  right auto

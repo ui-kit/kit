@@ -1,0 +1,13 @@
+color inherit
+display flex
+flex-wrap nowrap
+height 20px
+line-height 20px
+padding-left 1em
+white-space nowrap
+&:hover
+  color inherit
+&:active
+  color inherit
+&-icon
+  font-size = __.h7

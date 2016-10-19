@@ -1,0 +1,22 @@
+// Modifies to:
+// height 60px
+// font-size h6
+font-size = __.h6
+padding-left 24px
+
+&-content
+  padding-right 24px
+&-label
+  padding 17px 0
+  &-heading
+    margin-top -6px
+  &-subheading
+    margin-top 3px
+    margin-bottom -6px
+&-input
+  padding 17px 0
+&-icon
+  margin-left -24px
+  width 60px
+&-main
+  padding 0 24px 24px 0

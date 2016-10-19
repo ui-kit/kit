@@ -1,0 +1,31 @@
+:doc
+  This control merges query parameters. For example, if a user selects 'List' in the sidenav and then a Sort option, the query params will continually merge.
+
+  @name MergeLink
+  @prop {String} className
+  @prop {Object} params
+  @prop {Object} query
+  @prop {String} to
+
+var params = this.getParams()
+var query = this.getQuery()
+
+var.
+  linkProps = {
+    // yes, this is the only time you should use getRoutes().pop().name
+    to: props.to || this.getRoutes().pop().name,
+    params: this.context.encodeParams(merge(params, props.params)),
+    query: this.context.encodeParams(merge(query, props.query))
+  }
+
+a(className=props.className to=linkProps.to params=linkProps.params query=linkProps.query)= props.children
+
+:module
+  export function merge(params, prev) {
+    params = JSON.parse(JSON.stringify(params));
+    for(var k in prev) {
+      if (prev[k]) params[k] = prev[k];
+      else delete params[k];
+    }
+    return params;
+  }

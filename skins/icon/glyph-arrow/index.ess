@@ -1,0 +1,39 @@
+%../index.ess
+box-sizing border-box
+display inline-block
+height 8px
+margin -1px 1px 0 -3px
+opacity .3
+position relative
+transform rotate(45deg)
+vertical-align middle
+width 8px
+
+&:before,
+&:after
+  border-color inherit
+  border-radius 100px
+  border-top 1px solid
+  box-sizing border-box
+  content ''
+  left 0
+  position absolute
+  right 0
+  top 0
+
+&:after
+  border-right 1px solid
+  border-top none
+  bottom 0
+  left auto
+  right 0
+  top 0
+
+&.is-bold
+  %./weight/bold.ess
+
+&.is-large
+  %./size/large.ess
+
+&.is-extra-large
+  %./size/extra-large.ess

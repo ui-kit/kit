@@ -1,0 +1,36 @@
+%./size/medium.ess
+
+-webkit-appearance none
+border-radius 100px
+box-sizing border-box
+cursor pointer
+outline none
+position relative
+user-select none
+vertical-align middle
+margin 0
+
+&:before
+  background = __.color.white
+  border-radius 100px
+  box-shadow = '0 2px 4px ' + __.color.black.clone().clearer(.9)
+  content ''
+  display block
+  padding-bottom 50%
+  transition all .1s ease
+  width 50%
+  margin-left 8.33333%
+  position absolute
+  left 0
+  top 50%
+  transform translateY(-50%)
+
+&:not([disabled]):hover
+  filter brightness(75%)
+
+&:not([disabled]):active,
+&:not([disabled]):checked,
+&:not([disabled]).is-active
+  filter none
+  background = __.color.green
+  border-color = __.color.green

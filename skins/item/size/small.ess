@@ -1,0 +1,18 @@
+// Modifies to:
+// height 24px
+// font-size h9
+font-size = __.h9
+padding-left 8px
+
+&-content
+  padding-right 8px
+&-label
+  line-height 1.5em
+  padding 3px 0
+&-input
+  padding 3px 0
+&-icon
+  margin-left -8px
+  width 24px
+&-main
+  padding 0 8px 8px 0

@@ -1,0 +1,9 @@
+%ui-kit/skins/field/search.ess
+color = __.color.white
+
+&-input
+  &::placeholder
+    color = __.color.white.clone().clearer(.5)
+  &:focus
+    &::placeholder
+      color = __.color.white.clone().clearer(.7)

@@ -1,0 +1,46 @@
+border-bottom-left-radius 0
+border-top-left-radius 0
+margin-left -2px
+position relative
+
+&:hover,
+&:active,
+.is-active &,
+&.is-active
+  z-index 1
+
+&:before
+  color transparent
+  content "\25bc"
+  display inline-block
+&:after
+  box-sizing border-box
+  color inherit
+  content "\203A"
+  display inline-block
+  font-size = __.h6
+  font-weight bold
+  height 16px
+  left 50%
+  line-height 16px
+  margin -8px 0 0 -10px
+  position absolute
+  text-align center
+  top 50%
+  transform rotate(90deg)
+  transition all .1s ease
+  width 16px
+  pointer-events none
+&:active,
+&.is-active,
+.is-active &
+  &:after
+    transform rotate(270deg)
+
+&:hover,
+&:active,
+&.is-active,
+.is-active &
+  &:after
+    border-bottom-color initial
+    border-right-color initial

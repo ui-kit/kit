@@ -1,0 +1,11 @@
+border-radius 2px
+box-shadow = "0 10px 10px " + __.color.black.clone().clearer(.9)
+height 0
+overflow hidden
+position absolute
+width 0
+z-index 10
+&-is-active
+  overflow visible
+  height auto
+  width auto

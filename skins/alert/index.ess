@@ -1,0 +1,24 @@
+%./size/medium.ess
+%./color/white.ess
+
+align-items center
+border-radius 2px
+display flex
+justify-content center
+
+&-content
+  flex-grow 1
+  text-align center
+  
+  &-heading
+    font-weight bold
+    text-transform uppercase
+    
+  &-body
+    line-height 1.5em
+  
+&-action-left
+  order -1
+  
+&-action-right
+  order 99
