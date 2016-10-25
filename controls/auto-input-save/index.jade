@@ -32,10 +32,11 @@ div(className=props.className)
 
     this.context.forms.create(template)
       .set(valObj)
-      .submit((err) => {
+      .submit((err, res) => {
+        err = err || res.error;
         if (err) {
           if (this.props.onError) this.props.onError.apply(null, arguments);
-          this.setState({error: err, value: this.propValue()});
+          return this.setState({error: err, value: this.propValue()});
         }
         if (this.props.onFinish) this.props.onFinish.apply(null, arguments);
       });
