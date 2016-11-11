@@ -23,6 +23,7 @@
   @prop {Function} [onKeybindingPress] called when a keybinding is pressed
     @arg {String} action - the keybinding action called (show, hide, toggle)
 
+import * as ReactDOM from 'react-dom'
 import * as scrollToElement from 'scroll-to-element'
 import elContains from '../../utils/element-contains-el'
 import {attachKeybindings, removeKeybindings, hasKeybinding} from '../../utils/keybinding.js'
@@ -44,7 +45,7 @@ import {attachKeybindings, removeKeybindings, hasKeybinding} from '../../utils/k
     'position-@': props.position
   }
 
-div(className=classFn() ref='root')
+div(className=classFn())
   yield trigger(fns, state.isActive)
   if props.lazyYield
     if state.isActive || state.showMenuStarted || state.hideMenuStarted
@@ -207,7 +208,7 @@ div(className=classFn() ref='root')
 
   export function onWindowClick (evt) {
     if (!this.isMounted()) return;
-    var el = this.getDOMNode ? this.getDOMNode() : this.refs.root;
+    var el = this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
     if (this.props.hideOnClick || !elContains(el, evt.target)) {
       if (this.props.onWindowClickHide && !elContains(el, evt.target)) this.props.onWindowClickHide();
       this.startHidingMenu();
