@@ -38,7 +38,7 @@ yield content(actions, this)
   }
 
   export function handleMouseMove(cb, ev) {
-    var innerNode = this.refs.inner.getDOMNode();
+    var innerNode = this.refs.inner.getDOMNode ? this.refs.inner.getDOMNode() : this.refs.inner;
     var innerNodeWidth = innerNode.offsetWidth;
     var top = ev.clientY;
     var left = ev.clientX - (innerNodeWidth / 2);
