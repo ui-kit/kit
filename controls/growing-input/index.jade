@@ -45,7 +45,7 @@ var id = useAutoId ? this.getNextUid('InputComponent') : props.id
 var labelFor = useAutoId ? this.getNextUid('InputComponent') : props.id
 var value = (state.value || state.value === '' ) ? state.value : props.defaultValue
 
-textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(componentProps)
+textarea(id=id rows='1' ref='root' autoFocus=props.shouldAutoFocus value=value)&props(componentProps)
 -this.recalculateSize();
 
 :module
@@ -63,7 +63,7 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
 
   export function componentWillReceiveProps (props) {
     if (props.defaultValue !== this.props.defaultValue && !this.state.hasFocus) this.setState({value: props.defaultValue});
-    if (props.shouldAutoFocus && props.shouldAutoFocus !== this.props.shouldAutoFocus) this.getDOMNode().focus();
+    if (props.shouldAutoFocus && props.shouldAutoFocus !== this.props.shouldAutoFocus) this.refs.root.focus();
     return true;
   }
 
@@ -86,7 +86,7 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
 
   export function recalculateSize () {
     if (!this.isMounted()) return;
-    var input = this.getDOMNode();
+    var input = this.getDOMNode ? this.getDOMNode() : this.refs.root;
     var newHeight = this.getVirtualInputHeight(input);
     if (newHeight !== Number(input.style.height.split('px')[0]))
       input.style.height = [newHeight, 'px'].join('');
@@ -116,7 +116,8 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
 
   export function submitTemplate () {
     if (!this.props.template) return;
-    var value = this.getDOMNode().value.trim();
+    var el = this.getDOMNode ? this.getDOMNode() : this.refs.root;
+    var value = el.value.trim();
     this.context.forms.create(this.props.template)
       .set({[this.props.valueKey]: value})
       .submit((err, res) => {

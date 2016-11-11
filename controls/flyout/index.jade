@@ -44,7 +44,7 @@ import {attachKeybindings, removeKeybindings, hasKeybinding} from '../../utils/k
     'position-@': props.position
   }
 
-div(className=classFn())
+div(className=classFn() ref='root')
   yield trigger(fns, state.isActive)
   if props.lazyYield
     if state.isActive || state.showMenuStarted || state.hideMenuStarted
@@ -184,7 +184,7 @@ div(className=classFn())
   }
 
   export function scrollToMenu () {
-    var menu = this.refs.menu && this.refs.menu.getDOMNode();
+    var menu = this.refs.menu.getDOMNode ? this.refs.menu.getDOMNode() : this.refs.menu;
     if (!menu || !this.props.scrollToMenu) return;
     var menuIsBelowFold = menu.getBoundingClientRect().bottom > window.innerHeight;
     var menuIsAboveFold = menu.getBoundingClientRect().top < 0;
@@ -207,7 +207,7 @@ div(className=classFn())
 
   export function onWindowClick (evt) {
     if (!this.isMounted()) return;
-    var el = this.getDOMNode();
+    var el = this.getDOMNode ? this.getDOMNode() : this.refs.root;
     if (this.props.hideOnClick || !elContains(el, evt.target)) {
       if (this.props.onWindowClickHide && !elContains(el, evt.target)) this.props.onWindowClickHide();
       this.startHidingMenu();

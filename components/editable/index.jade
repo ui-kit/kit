@@ -6,6 +6,7 @@
   @prop {String} tag
   @prop {String} text
 
+import * as ReactDOM from 'react-dom'
 import * as MediumEditor from 'medium-editor'
 import './index.ess'
 
@@ -30,7 +31,7 @@ var.
   }
 
   export function componentDidMount() {
-    var dom = this.getDOMNode();
+    var dom = this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
     this.medium = new MediumEditor(dom, this.props.options);
     this.medium.subscribe('editableInput', (e) => {
       this._updated = true;

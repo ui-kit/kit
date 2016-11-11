@@ -72,7 +72,7 @@ div(class=props.className)
 
   export function recalculateSize(reset) {
     if (!this.refs.input) return;
-    var input = this.refs.input.getDOMNode();
+    var input = this.refs.input.getDOMNode ? this.refs.input.getDOMNode() : this.refs.input;
     if (reset) input.style.height = '';
     var newHeight = input.scrollHeight;
     input.style.height = [newHeight, 'px'].join('');
