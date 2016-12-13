@@ -1,4 +1,9 @@
 var bindings = {};
+var KEYS = {
+  'backspace': 'Backspace',
+  'enter': 'Enter',
+  'esc': 'Escape'
+}
 var KEY_NAMES = {
   'backspace': 8,
   'enter': 13,
@@ -81,7 +86,16 @@ function hasKeybinding (key, method) {
 //- @arg {Object}   evt       - default browser keyup event
 function keyupHandler (matchChar, method, evt) {
   // except for esc, we don't want to fire events when somebody is typing in an input
-  if ((evt.target.tagName !== 'INPUT' && evt.target.tagName !== 'TEXTAREA' && !evt.target.hasAttribute('contenteditable')) || evt.keyCode === KEY_NAMES.esc) {
-    if (evt.keyCode === KEY_NAMES[matchChar] || String.fromCharCode(evt.keyCode) === matchChar.toUpperCase()) method(evt);
+  if ((evt.target.tagName !== 'INPUT' && evt.target.tagName !== 'TEXTAREA' && !evt.target.hasAttribute('contenteditable')) || keysMatch(evt, 'esc')) {
+    if (keysMatch(evt, matchChar)) method(evt);
+  }
+}
+
+function keysMatch (evt, matchChar) {
+  if (evt.code) {
+    return evt.key === KEYS[matchChar] || evt.key === matchChar;
+  } else if (evt.keyCode) {
+    // KeyCode is being deprecated https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+    return evt.keyCode === KEY_NAMES[matchChar] || String.fromCharCode(evt.keyCode) === matchChar.toUpperCase();
   }
 }
