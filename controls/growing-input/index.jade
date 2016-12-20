@@ -64,8 +64,12 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
 
   export function componentWillReceiveProps (props) {
     if (props.defaultValue !== this.props.defaultValue && !this.state.hasFocus) this.setState({value: props.defaultValue});
-    if (props.shouldAutoFocus && props.shouldAutoFocus !== this.props.shouldAutoFocus) ReactDOM.findDOMNode(this).focus();
+    if (props.shouldAutoFocus && props.shouldAutoFocus !== this.props.shouldAutoFocus) this.getRootNode().focus();
     return true;
+  }
+
+  export function getRootNode () {
+    return this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
   }
 
   export function onBlur (ev) {
@@ -87,7 +91,7 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
 
   export function recalculateSize () {
     if (!this.isMounted()) return;
-    var input = this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
+    var input = this.getRootNode();
     var newHeight = this.getVirtualInputHeight(input);
     if (newHeight !== Number(input.style.height.split('px')[0]))
       input.style.height = [newHeight, 'px'].join('');
@@ -117,7 +121,7 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
 
   export function submitTemplate () {
     if (!this.props.template) return;
-    var el = this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
+    var el = this.getRootNode();
     var value = el.value.trim();
     this.context.forms.create(this.props.template)
       .set({[this.props.valueKey]: value})
