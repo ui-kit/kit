@@ -11,3 +11,8 @@ color hsla(210,47%,40%,1)
   color #fff
   background-color = __.color.reddit.darker
   border-color = __.color.reddit.darker
+&:focus
+  outline-color = __.color.reddit.clone().clearer(0.4)
+  outline-width 2px
+  outline-style solid
+  outline-offset 1px

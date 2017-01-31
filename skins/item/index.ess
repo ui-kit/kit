@@ -41,6 +41,7 @@ textarea
 
 // Trying to have these descend causes a bug that makes the css not output
 &:hover > &-main,
+&[tab-index]:focus > &-main,
 &:active > &-main,
 &-is-active > &-main,
 &.is-active > &-main,

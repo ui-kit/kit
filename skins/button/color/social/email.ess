@@ -10,3 +10,8 @@ color = __.color.cyan
 .is-active .dropdown-trigger&
   background-color = __.color.cyan.darker
   border-color = __.color.cyan.darker
+&:focus
+  outline-color = __.color.cyan.clone().clearer(0.4)
+  outline-width 2px
+  outline-style solid
+  outline-offset 1px

@@ -15,3 +15,8 @@ color = valueColor
 .is-active .dropdown-trigger&
   background-color = valueColorActive
   border-color = valueColorActive
+&:focus
+  color = __.color.white
+  background-color = valueColorHover
+  border-color = valueColorHover
+  outline = ['1px', 'solid' + __.color.white].join(' ')

@@ -14,6 +14,7 @@ color inherit
     color inherit
     opacity .5
 
+&[tab-index]:focus > &-main:after,
 &:hover &-main:after,
 &:hover &-label:after
   opacity 1

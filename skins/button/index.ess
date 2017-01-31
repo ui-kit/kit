@@ -21,7 +21,7 @@ user-select none
 vertical-align middle
 -webkit-appearance none
 -webkit-touch-callout none
-
+outline none
 &:hover
   background-color = __.color.gray.dark
   border-color = __.color.gray.dark
@@ -35,7 +35,7 @@ vertical-align middle
   background-color = __.color.gray.darker
   border-color = __.color.gray.darker
   color = __.color.white
-  
+
 &:after
   border-radius 1000px
 
@@ -61,6 +61,6 @@ vertical-align middle
   &:before,
   &:after
     vertical-align middle
-  
+
 if props.children
   yield

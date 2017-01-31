@@ -10,3 +10,8 @@ color = __.color.twitter
 .is-active .dropdown-trigger&
   background-color = __.color.twitter.darker
   border-color = __.color.twitter.darker
+&:focus
+  outline-color = __.color.twitter.clone().clearer(0.4)
+  outline-width 2px
+  outline-style solid
+  outline-offset 1px

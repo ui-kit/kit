@@ -9,6 +9,7 @@
   @prop {Function} onChange
   @prop {String} placeholder
   @prop {Boolean} readonly
+  @prop {String} [ariaLabel] label for accessibility
   @prop {String} skinName
   @prop {String} style
   @prop {String} tabIndex
@@ -34,9 +35,9 @@ var.
 
 div(class=props.className)
   if componentProps.type !== 'textarea' && !props.multiLine
-    input(ref='input')&props(componentProps)
+    input(ref='input' ariaLabel=props.ariaLabel)&props(componentProps)
   else
-    textarea(ref='input' rows='1')&props(componentProps)
+    textarea(ref='input' ariaLabel=props.ariaLabel rows='1')&props(componentProps)
 
 :module
   export function getDefaultProps () {

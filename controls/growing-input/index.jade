@@ -10,6 +10,7 @@
   @prop {Object} template
   @prop {Number} maxLength
   @prop {Number} minLength
+  @prop {String} [ariaLabel] label for accessibility
   @prop {String} className
   @prop {String} defaultValue
   @prop {String} type
@@ -38,7 +39,8 @@ var.
     required: props.required,
     style: props.style,
     tabIndex: props.tabIndex,
-    type: 'textarea'
+    type: 'textarea',
+    'aria-label': props.aria-label
   }
 
 var useAutoId = !!props.label && !props.id
