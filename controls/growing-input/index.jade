@@ -16,7 +16,7 @@
   @prop {String} valueKey
 
 import * as debounce from 'debounce'
-import * as ReactDOM from 'react-dom'
+// import * as ReactDOM from 'react-dom'
 import {KEY_NAMES} from '../../utils/keybinding.js'
 
 import './index.ess'
@@ -69,7 +69,8 @@ textarea(id=id rows='1' autoFocus=props.shouldAutoFocus value=value)&props(compo
   }
 
   export function getRootNode () {
-    return this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
+    // return this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
+    return this.getDOMNode();
   }
 
   export function onBlur (ev) {
