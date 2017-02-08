@@ -6,7 +6,7 @@
   @prop {Markup}   [confirm] block for custom confirm component
   @prop {String}   [confirmMessage] - The message to use before submitting
 
-button(class=props.className onClick=!state.isShowingConfirm ? this.submitForm : null)
+button(onClick=!state.isShowingConfirm ? this.submitForm : null)&props(props)
   if state.isShowingConfirm
     yield confirm({confirm: this.sendForm, cancel: this.hideMessage})
   yield
