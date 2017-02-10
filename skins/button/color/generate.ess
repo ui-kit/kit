@@ -1,7 +1,7 @@
 var colorName = props.color
-var valueColor = __.color[colorName]
-var valueColorHover = props.colorHover || __.color[colorName].dark
-var valueColorActive = props.colorActive || __.color[colorName].darker
+var valueColor = colorName._value ? colorName : __.color[colorName]
+var valueColorHover = props.colorHover || valueColor.dark
+var valueColorActive = props.colorActive || valueColor.darker
 
 background-color = valueColor
 border-color = valueColor

@@ -1,11 +1,14 @@
 background-color = __.color.white
 border-color = __.color.white
 color = __.color.white
-  
-&:hover
+
+&:hover, &:focus
   background-color = __.color.white
   border-color = __.color.white
   color = __.color.primary
+&:focus
+  box-shadow = '0 0 4px ' + __.color.primary
+&:hover
   opacity .8
 
 &:active,
@@ -15,7 +18,7 @@ color = __.color.white
   border-color = __.color.white
   color = __.color.primary
   opacity .5
-  
+
 &[disabled],
 &:disabled
   background transparent
