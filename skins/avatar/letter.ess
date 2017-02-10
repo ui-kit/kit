@@ -1,6 +1,7 @@
 border 2px solid
 border-color currentColor
 box-sizing border-box
+color = __.color.gray.light
 font-size 14px
 font-weight bold
 height 36px
@@ -8,7 +9,3 @@ line-height 32px
 text-align center
 text-transform capitalize
 width 36px
-if process.env.FEATURE_BRAND === 'enterprise'
-  color = __.color.white
-else
-  color = __.color.gray.light
