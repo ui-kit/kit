@@ -58,8 +58,10 @@ function wrapIframes (val, options) {
   if (iframes.length) {
     var iframeContainerClass = options.CUSTOM_CLASSES.iframe_container
     for (var i = 0; i < iframes.length; i++) {
-      if (!iframes[i].parentNode.classList.contains(iframeContainerClass)) {
-        iframes[i].outerHTML = `<div class='${iframeContainerClass}'>${iframes[i].outerHTML}</div>`;  
+      var iframe = iframes[i];
+      var heightClass = iframe.height || iframe.style.height ? 'has-height' : ''
+      if (!iframe.parentNode.classList.contains(iframeContainerClass)) {
+        iframe.outerHTML = `<div class='${iframeContainerClass} ${heightClass}'>${iframe.outerHTML}</div>`;
       }
     }
   }
