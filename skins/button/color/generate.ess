@@ -19,4 +19,3 @@ color = valueColor
   color = __.color.white
   background-color = valueColorHover
   border-color = valueColorHover
-  outline = ['1px', 'solid' + __.color.white].join(' ')
