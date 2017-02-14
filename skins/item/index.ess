@@ -54,7 +54,8 @@ textarea
 
 &:active > &-content &-label
   &:after
-    border-top = '2px solid '+__.color.primary
+    border-top 2px solid
+    border-top-color = __.color.primary
 
 &:active,
 &-is-active,
@@ -88,7 +89,10 @@ textarea
   color = __.color.primary
   &:after
     opacity 1
-    border-top = '2px solid '+__.color.primary
+    border-top 2px solid
+    border-top-color = __.color.primary
+&-input:focus:active + &-label
+  color inherit
 
 // State classes
 &.is-not-link
@@ -109,8 +113,8 @@ textarea
 &.has-no-hover &-label:after,
 &.has-no-hover:hover &-label:after,
 &.has-no-hover:active &-label:after
-  border-top = '1px solid '+__.color.azure
-
+  border-top 1px solid
+  border-top-color = __.color.azure
 &.is-input
   &:active,
   &-is-active,

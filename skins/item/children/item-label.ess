@@ -5,7 +5,8 @@ line-height 1.45em
 padding 8px 0
 text-align left
 &:after
-  border-top = '1px solid '+__.color.azure
+  border-top 1px solid
+  border-top-color = __.color.azure
   bottom 0
   content ""
   display block
