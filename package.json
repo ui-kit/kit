@@ -24,7 +24,7 @@
   "dependencies": {
     "color": "^0.7.3",
     "debounce": "^1.0.0",
-    "dompurify": "0.7.0",
+    "dompurify": "^0.8.5",
     "object-assign": "^4.0.1",
     "sanitize-html": "^1.11.1",
     "scroll-to-element": "^2.0.0",

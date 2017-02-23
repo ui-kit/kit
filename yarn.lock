@@ -89,9 +89,9 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
-dompurify@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-0.7.0.tgz#f3b78327bbc3fbe883c965fb320144955a150c02"
+dompurify@^0.8.5:
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-0.8.5.tgz#5bc591b61e222243cc827ca382d7a2e2660c1a44"
 
 domutils@^1.5.1:
   version "1.5.1"
