@@ -11,7 +11,5 @@ color = __.color.linkedin
   background-color = __.color.linkedin.darker
   border-color = __.color.linkedin.darker
 &:focus
-  outline-color = __.color.linkedin.clone().clearer(0.4)
-  outline-width 2px
-  outline-style solid
-  outline-offset 1px
+  outline none
+  box-shadow = '0 0 2px 2pt ' + __.color.linkedin.clone().clearer(0.4)

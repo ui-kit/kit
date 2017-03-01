@@ -11,7 +11,5 @@ color = __.color.pinterest
   background-color = __.color.pinterest.darker
   border-color = __.color.pinterest.darker
 &:focus
-  outline-color = __.color.pinterest.clone().clearer(0.4)
-  outline-width 2px
-  outline-style solid
-  outline-offset 1px
+  outline none
+  box-shadow = '0 0 2px 2pt ' + __.color.pinterest.clone().clearer(0.4)
