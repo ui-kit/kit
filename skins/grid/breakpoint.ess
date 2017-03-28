@@ -43,7 +43,7 @@
     %./children/grid-item.ess
 
 @media screen and (max-width: 650px)
-  &-item-600
+  &-item-650
     %./children/grid-item.ess
 
 @media screen and (max-width: 600px)
