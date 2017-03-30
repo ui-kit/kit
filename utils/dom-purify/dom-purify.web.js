@@ -22,6 +22,7 @@ var defaults = {
     'span'
   ],
   RETURN_DOM: true,
+  REMOVE_EMPTY_PARAGRAPHS: true,
   CUSTOM_CLASSES: {
     'a': 'link',
     'iframe_container': 'embedded-iframe-container'
@@ -72,7 +73,9 @@ function wrapIframes (val, options) {
 exports.sanitize = function (dirty, config) {
   var options = objectAssign({}, defaults, config);
   var val = wrapIframes(DOMPurify.sanitize(dirty, options), options);
-  return val.replace(/&nbsp;/g, ' ');
+  val = val.replace(/&nbsp;/g, ' ');
+  if (options.REMOVE_EMPTY_PARAGRAPHS) val = val.replace(/<p><\/p>/g, '');
+  return val;
 }
 
 exports['default'] = DOMPurify;

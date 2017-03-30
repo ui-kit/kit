@@ -1,3 +1,4 @@
+// deprecated - use dom-purify/index.js
 var objectAssign = require('object-assign');
 var DOMPurify = require('dompurify');
 
