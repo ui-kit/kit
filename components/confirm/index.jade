@@ -34,11 +34,11 @@ Flyout(
       div(className=classFn('UIConfirm-message'))
         =props.message
     div(className=classFn('UIConfirm-button-container'))
-      div(className=(classFn('UIConfirm-button', {'confirm': true})) onClick=this.onConfirmClick.bind(null, actions.hide))
+      button(className=(classFn('UIConfirm-button', {'confirm': true})) autoFocus onClick=this.onConfirmClick.bind(null, actions.hide))
         div(className=(classFn('UIConfirm-button-content')))
           div(className=(classFn('UIConfirm-button-label')))
             = props.confirmLabel
-      div(className=(classFn('UIConfirm-button', {'cancel': true})) onClick=this.onCancelClick.bind(null, actions.hide))
+      button(className=(classFn('UIConfirm-button', {'cancel': true})) onClick=this.onCancelClick.bind(null, actions.hide))
         div(className=(classFn('UIConfirm-button-content')))
           div(className=(classFn('UIConfirm-button-label')))
             = props.cancelLabel
@@ -72,7 +72,11 @@ Flyout(
   }
 
   export function onShow () {
-    if (this.props.confirmKeybinding) attachKeybindings(this.props.confirmKeybinding, this.onEnterPress);
+    if (!this.props.confirmKeybinding) return;
+    setTimeout(() => {
+      attachKeybindings(this.props.confirmKeybinding, this.onEnterPress);
+    }, 200);
+
   }
 
   export function onHide () {

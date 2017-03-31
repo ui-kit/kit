@@ -63,11 +63,18 @@ div(className=classFn())
   export var mixins = [require('../../mixins/compose-classes')]
 
   export function getDefaultProps () {
+    var noop = () => {};
     return {
       position: 'bottom-middle',
       animationTimeout: 0,
       scrollToMenu: true,
-      scrollToMenuOptions: {}
+      scrollToMenuOptions: {},
+      onShow: noop,
+      onHide: noop,
+      onWindowClickHide: noop,
+      onComponentWillHide: noop,
+      onComponentWillShow: noop,
+      onKeybindingPress: noop
     };
   }
 
@@ -98,12 +105,12 @@ div(className=classFn())
   export function componentDidUpdate (prevProps, prevState) {
     if (this.state.isActive && !prevState.isActive) {
       this.scrollToMenu();
-      if (this.props.onShow) this.props.onShow();
+      this.props.onShow();
       if (!this.props.manualHide) window.addEventListener('click', this.onWindowClick);
     }
 
     if (!this.state.isActive && prevState.isActive) {
-      if (this.props.onHide) this.props.onHide();
+      this.props.onHide();
     }
 
     if (this.state.hideMenuStarted && !prevState.hideMenuStarted) {
@@ -138,7 +145,7 @@ div(className=classFn())
   }
 
   export function onKeybindingPress (action) {
-    if (this.props.onKeybindingPress) this.props.onKeybindingPress(action);
+    this.props.onKeybindingPress(action);
     switch (action) {
       case 'toggle':
         this.toggleMenu();
@@ -160,16 +167,17 @@ div(className=classFn())
 
   export function startShowingMenu (evt) {
     if (this.state.isActive) return;
-    if (this.props.onComponentWillShow) this.props.onComponentWillShow();
+    this.props.onComponentWillShow();
     if (this.keybindings.show) removeKeybindings(this.keybindings.show);
     if (this.keybindings.hide) attachKeybindings(this.keybindings.hide);
+
     this.setState({showMenuStarted: true, hasShownMenu: true});
   }
 
   export function startHidingMenu (evt) {
     if (!this.state.isActive) return;
     if (evt) evt.stopPropagation();
-    if (this.props.onComponentWillHide) this.props.onComponentWillHide();
+    this.props.onComponentWillHide();
     if (this.keybindings.hide) removeKeybindings(this.keybindings.hide);
     if (this.keybindings.show) attachKeybindings(this.keybindings.show);
     this.setState({hideMenuStarted: true});
@@ -211,7 +219,7 @@ div(className=classFn())
     // var el = this.getDOMNode ? this.getDOMNode() : ReactDOM.findDOMNode(this);
     var el = this.getDOMNode();
     if (this.props.hideOnClick || !elContains(el, evt.target)) {
-      if (this.props.onWindowClickHide && !elContains(el, evt.target)) this.props.onWindowClickHide();
+      if (!elContains(el, evt.target)) this.props.onWindowClickHide();
       this.startHidingMenu();
     }
   }
