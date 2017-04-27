@@ -193,7 +193,7 @@ div(className=classFn())
   }
 
   export function scrollToMenu () {
-    var menu = this.refs.menu.getDOMNode ? this.refs.menu.getDOMNode() : this.refs.menu;
+    var menu = this.getDOMNode().getElementsByClassName('UIFlyout-menu')[0];
     if (!menu || !this.props.scrollToMenu) return;
     var menuIsBelowFold = menu.getBoundingClientRect().bottom > window.innerHeight;
     var menuIsAboveFold = menu.getBoundingClientRect().top < 0;
