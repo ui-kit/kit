@@ -39,6 +39,7 @@ Root(onClick=!state.isShowingConfirm ? this.submitForm : null)&props(props)
     if (this.state.isShowingConfirm) this.hideMessage();
     if (this.props.onStart) this.props.onStart.apply(null, arguments);
     this.context.forms.create(this.props.template)
+      .set(this.props.inputs || {})
       .submit((err, res) => {
         if (this.props.onFinish) this.props.onFinish(err, res);
       });
