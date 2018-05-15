@@ -13,7 +13,7 @@ display inline-block
   
 &:after,
 &-body
-  border-radius 2px
+  border-radius 6px
   content attr(data-tooltip)
   font-size = __.h8
   font-weight normal 

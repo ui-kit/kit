@@ -2,7 +2,7 @@
 %./color/white.ess
 
 align-items center
-border-radius 2px
+border-radius 6px
 display flex
 justify-content center
 

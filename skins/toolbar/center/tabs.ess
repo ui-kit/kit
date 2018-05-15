@@ -1,9 +1,9 @@
 %ui-kit/skins/tabs/index.ess
 white-space nowrap
+&-item
+  margin 0 .5rem
 @media all and (max-width: 1000px)
   padding .5rem
-&-item
-  margin 0 12px
 &-arrow
   align-self center
   cursor default
@@ -22,6 +22,13 @@ white-space nowrap
   &-item
     margin 0 6px
     padding 6px 6px 4px
+    &:hover,
+    &:active,
+    &.is-selected,
+    &.is-active
+      &:after
+        left 1rem
+        right 1rem
 @media all and (max-width: 450px)
   &-item
     margin 0 3px

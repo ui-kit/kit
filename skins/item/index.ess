@@ -11,11 +11,11 @@ position relative
 text-align left
 
 &:first-of-type
-  border-top-left-radius 2px
-  border-top-right-radius 2px
+  border-top-left-radius 6px
+  border-top-right-radius 6px
 &:last-of-type
-  border-bottom-left-radius 2px
-  border-bottom-right-radius 2px
+  border-bottom-left-radius 6px
+  border-bottom-right-radius 6px
 
 input,
 textarea

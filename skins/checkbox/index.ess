@@ -3,7 +3,7 @@
 -webkit-appearance none
 border 2px solid
 border-color inherit
-border-radius 2px
+border-radius 6px
 box-sizing border-box
 color inherit
 cursor pointer
