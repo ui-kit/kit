@@ -1,34 +1,48 @@
-border 1px solid transparent
-border-radius 2px
 color inherit
 cursor pointer
 display flex
 font-weight normal
 letter-spacing .05em
 line-height 1em
-margin 0 .75rem
 opacity .7
 overflow hidden
-padding 4px 6px
+padding 13px 1rem 9px
 position relative
 text-align center
 text-transform uppercase
+
+&:after
+  border-bottom 1px solid
+  border-color inherit
+  bottom 0
+  content ''
+  display block
+  left 50%
+  position absolute
+  right 50%
+  opacity 0
+  transition all .2s ease
   
 &:hover
-  border-color initial
   color = __.color.primary
   opacity 1
   z-index 2
+  &:after
+    opacity 1
+    left 2rem
+    right 2rem
   
 &:active,
 &.is-selected,
 &.is-active
-  background = __.color.primary
-  border-color = __.color.primary
-  color = __.color.white
+  color = __.color.primary
   cursor default
   opacity 1
   z-index 1
+  &:after
+    opacity 1
+    left 2rem
+    right 2rem
   
 &:active:not(.is-selected),
 &:active:not(.is-active)

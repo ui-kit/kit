@@ -9,7 +9,7 @@ border-color transparent
   border-color initial
   margin-right 2px
   width 7px
-  border-radius 2px
+  border-radius 6px
 
 &:after
   content ''
@@ -19,4 +19,4 @@ border-color transparent
   border-bottom 7px solid
   border-color inital
   width 7px
-  border-radius 2px
+  border-radius 6px

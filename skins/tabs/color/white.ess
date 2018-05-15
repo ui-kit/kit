@@ -6,13 +6,9 @@ color = __.color.white
     filter none
   &:hover
     opacity .7
-  &:active
-    border-color = __.color.primary
-    opacity 1
-  &.is-selected,
-  &:active
-    opacity 1
-  &.is-selected &-label,
-  &:active &-label
     color = __.color.primary
-    
+  &.is-selected,
+  &:active,
+  &:active
+    color = __.color.primary
+    opacity 1

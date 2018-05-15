@@ -11,7 +11,7 @@ height auto
 justify-content center
 letter-spacing .05em
 line-height 1em
-padding 9px 1.25rem
+padding 11px 1.25rem 7px
 position relative
 text-align center
 text-decoration none

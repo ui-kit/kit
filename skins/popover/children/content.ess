@@ -1,6 +1,6 @@
 %./../../shadow/shadow.ess
 background = __.color.white
-border-radius 2px
+border-radius 6px
 display block
 height 0
 max-width 300px

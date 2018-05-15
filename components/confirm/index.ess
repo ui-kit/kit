@@ -5,8 +5,8 @@
   &-message
     background-color = __.color.white
     cursor default
-    border-top-left-radius 2px
-    border-top-right-radius 2px
+    border-top-left-radius 6px
+    border-top-right-radius 6px
     box-sizing border-box
     color = __.color.gray
     padding 1.5rem
@@ -27,11 +27,11 @@
     border-radius 0
     width 100%
     &-is-confirm
-      border-top-left-radius 2px
-      border-top-right-radius 2px
+      border-top-left-radius 6px
+      border-top-right-radius 6px
     &-is-cancel
-      border-bottom-left-radius 2px
-      border-bottom-right-radius 2px
+      border-bottom-left-radius 6px
+      border-bottom-right-radius 6px
     &-is-type-delete&-is-confirm
       %../../skins/button/color/red.ess
       %../../skins/button/fill/fill.ess
@@ -43,10 +43,10 @@
       %../../skins/button/fill/fill.ess
     &-has-message&-is-cancel
       border-radius 0
-      border-bottom-left-radius 2px
+      border-bottom-left-radius 6px
     &-has-message&-is-confirm
       border-radius 0
-      border-bottom-right-radius 2px
+      border-bottom-right-radius 6px
     &-label
       text-align center
       white-space nowrap

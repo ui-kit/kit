@@ -1,5 +1,5 @@
 background = __.color.primary
-border-radius 2px
+border-radius 6px
 color = __.color.white
 
 &-icon

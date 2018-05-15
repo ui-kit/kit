@@ -7,7 +7,7 @@ height 16px
 &:before
   border 1px solid
   border-color initial 
-  border-radius 2px 
+  border-radius 6px 
   box-sizing border-box
   content "" 
   display block 

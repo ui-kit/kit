@@ -1,4 +1,4 @@
-border-radius 2px
+border-radius 6px
 box-shadow = "0 10px 10px " + __.color.black.clone().clearer(.9)
 height 0
 overflow hidden

@@ -2,7 +2,7 @@ border 1px solid
 border-left none
 border-right none
 border-color initial
-border-radius 2px
+border-radius 6px
 box-sizing border-box
 height 0
 margin -4px 0 0
@@ -15,7 +15,7 @@ width 16px
   border 1px solid
   border-color initial
   border-left none
-  border-radius 2px
+  border-radius 6px
   border-right none
   box-sizing border-box
   content ""
