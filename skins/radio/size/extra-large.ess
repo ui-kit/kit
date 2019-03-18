@@ -1,2 +1,8 @@
 height 36px
 width 36px
+
+&:before
+	bottom 8px
+	left 8px
+	right 8px
+	top 8px

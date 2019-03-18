@@ -1,2 +1,2 @@
-border-color = __.color.gray
-color = __.color.white
+border-color = __.color.black.clone().clearer(.5)
+color = __.color.black.clone().clearer(.5)

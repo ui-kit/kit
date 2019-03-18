@@ -4,7 +4,7 @@ position relative
 padding 0 12px 12px 0
 
 &:after
-  border-top = '1px solid '+__.color.azure
+  border-top = '1px solid '+__.color.black
   bottom 0
   content ""
   display block

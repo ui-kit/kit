@@ -2,7 +2,6 @@
 &-icon
   margin-top 5px
   &:after
-    border 2px solid
     border-color inherit
     border-radius 1000px
     bottom 0

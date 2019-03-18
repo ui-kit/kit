@@ -2,10 +2,13 @@
 // height 24px
 // font-size h9
 font-size = __.h9
+&-label
+  left 6px
+  margin 1px 0 0 -3px
 
 &-input,
 .Input-input
-  padding 3px 0 3px 0
+  padding 3px 6px 1px
   &:focus ~ <-hint
     margin-top 5px
 
@@ -16,12 +19,3 @@ font-size = __.h9
   bottom auto
   margin-top -8px
   top 100%
-
-&.has-label
-  font-size = __.h10
-  & </-input,
-  .Input-input
-    padding 9px 0 0
-    &:valid ~ </-label,
-    &:focus ~ </-label
-      top 0px

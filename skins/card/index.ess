@@ -1,6 +1,7 @@
 display block
 position relative
-background #fff
+background = __.color.charcoal
+color = __.color.white
 border-radius 6px
 overflow hidden
 padding 1.5rem
@@ -19,5 +20,3 @@ padding 1.5rem
   %./../heading/h8.ess
   opacity .5
   padding-top 1rem
-
-%./color/white.ess

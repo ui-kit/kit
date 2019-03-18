@@ -1,12 +1,21 @@
 align-self stretch
 display block
 font-size = __.h7
-margin-left -18px
+margin -1px -18px -1px 0
 position relative
 width 36px
-z-index 1
+z-index 3
 .icon
   left 50%
   position absolute
   top 50%
   transform translate(-50%,-50%)
+
+.is-active &,
+<:active &
+	background = __.color.white
+
+<:first-of-type &
+  border-top-left-radius 5px
+<:last-of-type &
+  border-bottom-left-radius 5px

@@ -1,21 +1,38 @@
 align-items center
-background = __.color.white
-color = __.color.gray
+background = __.color.black
+color = __.color.white
 cursor pointer
 display flex
 flex-direction row-reverse
 font-size = __.h8
 justify-content space-between
-padding-left 18px
-position relative
 text-align left
-
+border 1px solid
+border-color = __.color.white
+border-top-width 0
+border-bottom-width 0
+position relative
+&:active
+  background = __.color.white
+  color = __.color.black
 &:first-of-type
   border-top-left-radius 6px
   border-top-right-radius 6px
+  border-top-width 1px
+  & <-label:after
+    border-top-left-radius 5px
+    border-top-right-radius 5px
 &:last-of-type
   border-bottom-left-radius 6px
   border-bottom-right-radius 6px
+  border-bottom-width 1px
+  & <-label:after
+    border-bottom-left-radius 5px
+    border-bottom-right-radius 5px
+  & <-label:after
+    opacity 0
+  & <-input:focus + <-label:after
+    opacity 1
 
 input,
 textarea
@@ -37,34 +54,20 @@ textarea
   %./children/item-main.ess
 
 &:hover
-  color = __.color.primary
-
-// Trying to have these descend causes a bug that makes the css not output
-&:hover > &-main,
-&[tab-index]:focus > &-main,
-&:active > &-main,
-&-is-active > &-main,
-&.is-active > &-main,
-&:hover > &-content &-label,
-&:active > &-content &-label,
-&-is-active > &-content &-label,
-&.is-active > &-content &-label
-  &:after
-    border-color = __.color.primary
-
-&:active > &-content &-label
-  &:after
-    border-top 2px solid
-    border-top-color = __.color.primary
+  background = __.color.white.clone().clearer(.9)
 
 &:active,
 &-is-active,
 &.is-active
   cursor default
   z-index 2
-  color = __.color.white
-  background = __.color.primary
-  box-shadow none
+  color = __.color.primary
+  & <-label:after
+    background = __.color.white
+    height calc(100% + 2px)
+    left 0
+    bottom -1px
+    opacity 1
 
 &:active > &-content &-input,
 &:active > &-content &-action,
@@ -73,24 +76,28 @@ textarea
 &.is-active > &-content &-input,
 &.is-active > &-content &-action
   color inherit
+  background = __.color.white
+  color = __.color.black
 
 &.is-disabled,
 &[disabled],
 &:disabled,
 .is-disabled &
-  color = __.color.gray.clone().clearer(.7)
+  color = __.color.white.clone().clearer(.7)
   cursor default
   pointer-events none
 
 // Styles underline on focus
+&-input:focus ~ ::after
+  height calc(100% + 2px)
+  left 0
+  bottom -1px
 &-input + &-label
   font-weight bold
 &-input:focus + &-label
   color = __.color.primary
   &:after
-    opacity 1
-    border-top 2px solid
-    border-top-color = __.color.primary
+    background = __.color.white
 &-input:focus:active + &-label
   color inherit
 
@@ -102,22 +109,19 @@ textarea
 &.has-no-hover,
 &.has-no-hover:hover,
 &.has-no-hover:active
-  color = __.color.gray
+  color = __.color.white
   cursor default
 
 &.has-no-active,
 &.has-no-active:hover,
 &.has-no-active:active
-  background = __.color.white
+  background = __.color.black
 
-&.has-no-hover &-label:after,
-&.has-no-hover:hover &-label:after,
-&.has-no-hover:active &-label:after
-  border-top 1px solid
-  border-top-color = __.color.azure
 &.is-input
+  & <-input:focus,
+  & <-input:active,
   &:active,
   &-is-active,
   &.is-active
-    color = __.color.gray
+    color = __.color.black
     background = __.color.white

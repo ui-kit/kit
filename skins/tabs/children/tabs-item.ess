@@ -24,9 +24,8 @@ text-transform uppercase
   transition all .2s ease
   
 &:hover
-  color = __.color.primary
   opacity 1
-  z-index 2
+  z-index 1
   &:after
     opacity 1
     left 2rem
@@ -35,10 +34,9 @@ text-transform uppercase
 &:active,
 &.is-selected,
 &.is-active
-  color = __.color.primary
   cursor default
   opacity 1
-  z-index 1
+  z-index 2
   &:after
     opacity 1
     left 2rem

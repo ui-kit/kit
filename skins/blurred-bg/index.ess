@@ -1,4 +1,4 @@
-background-color = __.color.charcoal
+background-color = __.color.black
 color = __.color.white
 display flex
 justify-content center

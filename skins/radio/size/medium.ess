@@ -2,3 +2,9 @@ font-size 12px
 height 16px
 margin-top -1px
 width 16px
+
+&:before
+	bottom 4px
+	left 4px
+	right 4px
+	top 4px

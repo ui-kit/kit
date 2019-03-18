@@ -3,7 +3,7 @@
 color = __.color.primary
 
 &:after
-  border-bottom-color = __.color.gray
+  border-bottom-color = __.color.white
   
 &:hover
   border-bottom-color = __.color.primary

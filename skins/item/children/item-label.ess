@@ -2,23 +2,26 @@ color inherit
 display block
 flex 1
 line-height 1.45em
-padding 8px 0
+padding 8px 0 7px 12px
 text-align left
 &:after
-  border-top 1px solid
-  border-top-color = __.color.azure
+  border-color inherit
   bottom 0
   content ""
   display block
   height 0
-  left 0
+  left 12px
   position absolute
   right 0
+  height 1px
+  background = __.color.white
+  z-index -1
 
 &-heading
   display block
   line-height 1.2em
   margin-top -4px
+
 &-subheading
   display block
   font-size = __.h9

@@ -8,7 +8,7 @@ color hsla(210,47%,40%,1)
 &:active,
 &.is-active,
 .is-active .dropdown-trigger&
-  color #fff
+  color hsla(210,47%,40%,1)
   background-color = __.color.reddit.darker
   border-color = __.color.reddit.darker
 &:focus

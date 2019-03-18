@@ -1,5 +1,5 @@
 display table-row
 &:nth-child(even) > *
-  background = __.color.azure
+  background = __.color.black
   &:nth-child(even)
-    background = __.color.azure.darker
+    background = __.color.black.darker

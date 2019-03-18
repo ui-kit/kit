@@ -1,12 +1,17 @@
-%ui-kit/skins/button/index.ess
-%ui-kit/skins/button/size/small-square.ess
-%ui-kit/skins/button/color/white.ess
-%ui-kit/skins/button/fill/fill.ess
-box-shadow = '0 10px 10px ' + __.color.black.clone().clearer(.9) + ', 0 0 1px 1px ' + __.color.black.clone().clearer(.9)
+border-radius 1000px
+height 16px
+width 16px
+border 8px solid
+border-color inherit
+box-sizing border-box
+-webkit-appearance none
+-webkit-touch-callout none
+
+box-shadow = '0 10px 10px ' + __.color.black.clone().clearer(.7) + ', 0 0 1px 1px ' + __.color.black.clone().clearer(.7)
 &:hover
   background = __.color.white
   border-color = __.color.white
-  box-shadow = '0 15px 15px ' + __.color.black.clone().clearer(.8) + ', 0 0 1px 1px ' + __.color.black.clone().clearer(.9)
+  box-shadow = '0 15px 15px ' + __.color.black.clone().clearer(.8) + ', 0 0 1px 1px ' + __.color.black.clone().clearer(.7)
   opacity 1
 &:active
   background = __.color.primary

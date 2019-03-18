@@ -5,17 +5,15 @@ font-size = __.h3
 letter-spacing 0
 line-height 1.2em
 
+&-label
+  left 14px
+  margin 2px 0 0 -3px
+
 &-input,
 .Input-input
-  padding 3px 0 3px 0
+  padding 4px 14px 0px
+  &:focus ~ <-label
+  	margin-left 0
 
 &-icon
   width 5rem
-  
-&.has-label
-  & </-input,
-  .Input-input
-    padding 17px 0 0
-    &:valid ~ </-label,
-    &:focus ~ </-label
-      top 12px

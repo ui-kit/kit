@@ -1,3 +1,4 @@
+border-color inherit
 cursor text
 flex-shrink 0
 font-size = __.h7
@@ -9,21 +10,18 @@ text-align center
 width 36px
 
 &:after
-  border = '1px solid ' + __.color.gray.lighter
-  border-left-width 0
-  border-right-width 0
-  border-top-width 0
+  border = '1px solid '
+  border-color inherit
+  border-radius 6px
   bottom 0
   content ""
   display block
   left 0
   position absolute
   right 0
+  top 0
 </:hover &:after
-  border-color = __.color.primary
-</:active &:after
-  border-bottom-width 2px
-  border-color = __.color.primary
+  opacity 1
+</:active &:after,
 </-input:focus ~ </-icon:after
-  border-bottom-width 2px
   border-color = __.color.primary

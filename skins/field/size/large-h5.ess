@@ -2,18 +2,12 @@
 // height: 48px
 font-size = __.h5
 letter-spacing 0
+&-label
+  left 15px
 
 &-input,
 .Input-input
-  padding 8px 0 9px
+  padding 8px 15px 9px
   
 &-icon
   width 4rem
-
-&.has-label
-  & </-input,
-  .Input-input
-    padding 17px 0 6px
-    &:valid ~ </-label,
-    &:focus ~ </-label
-      top 8px

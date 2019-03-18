@@ -1,9 +1,14 @@
+background = __.color.black
 color inherit
 cursor text
 font-size 1em
-left 0
+left 9px
 line-height 1em
+margin-left -2px
 opacity .5
+padding 0 4px
+margin-top 1px
+letter-spacing 0
 position absolute
 top 50%
 transform translateY(-50%)

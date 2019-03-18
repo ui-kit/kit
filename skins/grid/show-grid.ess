@@ -13,7 +13,7 @@ color #fff
     right 0
     top 0
   &:after
-    border = '4px solid ' + __.color.charcoal
+    border = '4px solid ' + __.color.black
     bottom 1.5rem
     left 1.5rem
     right 1.5rem

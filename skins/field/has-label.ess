@@ -1,6 +1,4 @@
 &-input
-  padding-bottom 3px
-  padding-top 12px
   &::placeholder
     opacity 0
   &:focus

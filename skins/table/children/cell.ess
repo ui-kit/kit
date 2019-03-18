@@ -4,5 +4,5 @@ line-height 1.35em
 padding 1.5rem
 text-align left
 &:nth-child(even)
-  background = __.color.azure
+  background = __.color.black
 

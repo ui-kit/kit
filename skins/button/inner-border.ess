@@ -6,7 +6,7 @@
 
 background = __.color.white
 border-color = __.color.white
-color = __.color.accent
+color = __.color.primary
 
 @keyframes pulse
   0%
@@ -19,7 +19,7 @@ color = __.color.accent
 &:after
   animation pulse 4s linear
   animation-iteration-count infinite
-  border = '2px solid '+__.color.accent
+  border = '2px solid '+__.color.primary
   bottom 2px
   content ""
   display block
@@ -29,11 +29,11 @@ color = __.color.accent
   top 2px
   z-index 0
 &:hover
-  background-color = __.color.accent
-  border-color = __.color.accent.dark
+  background-color = __.color.primary.dark
+  border-color = __.color.primary.dark
   color = __.color.white
   &:after
     border-color #fff
 &:active
-  background-color = __.color.accent.darker
+  background-color = __.color.primary.darker
   border-color = __.color.accent.darker

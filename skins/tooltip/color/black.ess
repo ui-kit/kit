@@ -1,6 +1,6 @@
-border-color = __.color.black
+border-color = __.color.charcoal
 
 &:after,
 &-body
-  background-color = __.color.black
+  background-color = __.color.charcoal
   color = __.color.white

@@ -20,7 +20,6 @@ transition color 0.25s ease-out, border-color 0.25s ease-out, opacity 0.25s line
   cursor pointer
   transition none
   &:after
-    border-bottom-color = __.color.primary
     opacity 1
 
 &:active 

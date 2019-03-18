@@ -1,6 +1,6 @@
 border 2px solid
 border-color inherit
-border-radius 1000px
+border-radius .5rem
 box-sizing border-box
 color inherit
 cursor pointer
@@ -23,33 +23,34 @@ vertical-align middle
 -webkit-touch-callout none
 outline none
 &:hover
-  background-color = __.color.gray.dark
-  border-color = __.color.gray.dark
-  color = __.color.white
+  background-color = __.color.white.clone().darken(.2)
+  border-color = __.color.white.clone().darken(.2)
+  color = __.color.black
   text-decoration none
   transition none
 
 &:active,
 &.is-active,
 .is-active .dropdown-trigger&
-  background-color = __.color.gray.darker
-  border-color = __.color.gray.darker
-  color = __.color.white
+  background-color = __.color.white.clone().darken(.5)
+  border-color = __.color.white.clone().darken(.5)
+  color = __.color.black
+  transform scale(.95)
 
 &:after
-  border-radius 1000px
+  border-radius 4px
 
 &[disabled],
 &:disabled
   background transparent
-  border-color = __.color.gray
-  color = __.color.gray
+  border-color = __.color.white
+  color = __.color.white
   cursor default
   opacity .3
   &:hover, &:active
     background transparent
-    border-color = __.color.gray
-    color = __.color.gray
+    border-color = __.color.white
+    color = __.color.white
 
 &-icon,
 .icon

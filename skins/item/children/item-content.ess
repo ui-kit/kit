@@ -6,7 +6,30 @@ flex 1
 flex-direction row-reverse
 flex-wrap nowrap
 justify-content space-between
+z-index 2
+position relative
 // This is in here to fix a bug where Firefox renders labels outside of content
 max-width 100%
 padding-right 18px
-position relative
+&:after
+  border-color inherit
+  bottom 0
+  content ""
+  display block
+  height 0
+  left 12px
+  position absolute
+  right 0
+  height 1px
+  background = __.color.white
+  z-index -1
+
+<:last-of-type &:after
+  opacity 0
+
+&:first-of-type
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+&:last-of-type
+  border-bottom-left-radius 5px
+  border-bottom-right-radius 5px

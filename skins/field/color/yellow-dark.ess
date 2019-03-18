@@ -1,0 +1,36 @@
+color initial
+border-color = __.color.yellowDark
+
+&:hover
+  border-color = __.color.yellowDark
+
+& </-input,
+.Input-input
+  &::placeholder
+    color = __.color.yellowDark.clone().clearer(.2)
+  &:active,
+  &.is-active,
+  &:focus
+    border-color = 'inset 0 -2px 0 ' +__.color.yellowDark
+    &::placeholder
+      color = __.color.yellowDark.clone().clearer(.4)
+  &:focus ~ </-icon,
+  &:focus ~ </-label
+    color = __.color.yellowDark
+    opacity 1
+  &[disabled],
+  &:disabled,
+  .is-disabled &
+    border-color = __.color.yellowDark
+    color = __.color.white
+    &:hover, &:active
+      border-color = __.color.yellowDark
+      color = __.color.white
+      
+& </-label
+  opacity 1
+  color = __.color.yellowDark
+
+& </-icon,
+  &:after
+    border-color = __.color.yellowDark

@@ -5,9 +5,9 @@ color = __.color.white
 &:hover, &:focus
   background-color = __.color.white
   border-color = __.color.white
-  color = __.color.primary
+  color = __.color.black
 &:focus
-  box-shadow = '0 0 4px ' + __.color.primary
+  box-shadow = '0 0 4px ' + __.color.black
 &:hover
   opacity .8
 
@@ -16,7 +16,7 @@ color = __.color.white
 .is-active .dropdown-trigger&
   background-color = __.color.white
   border-color = __.color.white
-  color = __.color.primary
+  color = __.color.black
   opacity .5
 
 &[disabled],

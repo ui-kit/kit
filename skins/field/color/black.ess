@@ -1,0 +1,36 @@
+color = __.color.black
+border-color = __.color.black.clone().clearer(.7)
+
+&:hover
+  border-color = __.color.black
+
+&-label
+  background = __.color.white
+
+&-input,
+.Input-input
+  &::placeholder
+    color = __.color.black.clone().clearer(.5)
+  &:hover
+    border-color = __.color.black
+  &:active,
+  &.is-active
+    border-color = __.color.primary
+  &:active,
+  &:focus
+    &::placeholder
+      color = __.color.black.clone().clearer(.7)
+  &:focus
+    border-color = __.color.primary
+  &[disabled],
+  &:disabled,
+  .is-disabled &
+    border-color = __.color.black.clone().clearer(.7)
+    color = __.color.black
+    &:hover, &:active
+      box-shadow = 'inset 0 -1px 0 ' +__.color.black.clone().clearer(.3)
+      color = __.color.black
+
+&-icon
+  &:after
+    border-color = __.color.black.light

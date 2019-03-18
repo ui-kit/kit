@@ -4,7 +4,7 @@ font-size = __.h6
 &-label,
 &-input
   min-height 1.45em
-  padding 11px 0
+  padding 10px 0
 
 &-label
   &-heading
@@ -13,7 +13,7 @@ font-size = __.h6
     margin-bottom -7px
 
 &-icon
-  margin-left -18px
+  margin-right -18px
   width 48px
 
 @media screen and (max-width: 640px)

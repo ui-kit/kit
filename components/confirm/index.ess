@@ -22,7 +22,6 @@
 
   &-button
     %../../skins/button/index.ess
-    %../../skins/button/corners/sharp.ess
     %../../skins/button/size/large.ess
     border-radius 0
     width 100%
@@ -39,7 +38,6 @@
       %../../skins/button/color/primary.ess
       %../../skins/button/fill/fill.ess
     &-is-cancel
-      %../../skins/button/color/gray.ess
       %../../skins/button/fill/fill.ess
     &-has-message&-is-cancel
       border-radius 0

@@ -2,21 +2,24 @@
 // height 72px
 // font-size 18px
 font-size = __.h6
-padding-left 30px
 
 &-content
   padding-right 30px
+  &:after
+    left 30px
 &-label
-  padding 23px 0
+  padding 23px 0 22px 30px
+  &:after
+    left 30px
   &-heading
     margin-top -6px
   &-subheading
     margin-top 3px
     margin-bottom -6px
 &-input
-  padding 23px 0
+  padding 22px 0
 &-icon
-  margin-left -30px
+  margin-right -30px
   width 72px
 &-main
   padding 0 39px 30px 0

@@ -1,7 +1,7 @@
 border 2px solid
 border-color currentColor
 box-sizing border-box
-color = __.color.gray.light
+color = __.color.white.light
 font-size 14px
 font-weight bold
 height 36px

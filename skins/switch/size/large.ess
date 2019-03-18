@@ -1,9 +1,0 @@
-width 36px
-height 0
-border-top-width 12px
-border-bottom-width 12px
-
-&:active, &:checked, &.is-active
-  &:before
-    margin-left 14px
-  

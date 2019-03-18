@@ -3,7 +3,7 @@ line-height 1.35em
 padding 1.5rem
 text-align left
 color = __.color.white
-background = __.color.gray
+background = __.color.white
 &:nth-child(even)
-  background = __.color.gray.dark
+  background = __.color.white.dark
 

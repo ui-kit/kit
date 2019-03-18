@@ -1,12 +1,17 @@
-background = __.color.accent
-border-color = __.color.accent
+background = __.color.primary
+border-color = __.color.primary
 color = __.color.white
 filter none
 &:before
-  content '✓'
-  font-family 'SSGeomiconsSquared'
+	content ''
+	display block
+	width 70%
+	height 45%
+	border-left 1px solid #fff
+	border-bottom 1px solid #fff
+	box-sizing border-box
   position absolute
   top 50%
   left 50%
-  transform translate(-50%, -50%)
-  margin-top 2px
+  transform translate(-50%, -50%) rotate(-45deg)
+  margin-top -10%

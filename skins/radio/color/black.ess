@@ -1,9 +1,9 @@
-border-color = __.color.white
+border-color = __.color.black
 color = __.color.primary
   
 &:active, &:checked, &.is-active
-  background = __.color.white
-  border-color = __.color.white
+  background = __.color.black
+  border-color = __.color.black
 
   &:before
     background = __.color.primary

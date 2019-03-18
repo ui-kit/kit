@@ -1,12 +1,10 @@
 -webkit-appearance none
-background-color #fff
 border none
-border-bottom 2px solid
+border 1px solid
 border-color inherit
 border-radius 8px
-border-top 2px solid
 box-sizing border-box 
-height 0
+height 4px
 outline none
 width 100%
 z-index 1
