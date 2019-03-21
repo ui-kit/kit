@@ -1,15 +1,7 @@
-background-color = __.color.twitter
-border-color = __.color.twitter
-color = __.color.twitter
-&:hover
-  color = __.white
-  background-color = __.color.twitter.dark
-  border-color = __.color.twitter.dark
 &:active,
 &.is-active,
 .is-active .dropdown-trigger&
-  background-color = __.color.twitter.darker
-  border-color = __.color.twitter.darker
-&:focus
-  outline none
-  box-shadow = '0 0 2px 2pt ' + __.color.twitter.clone().clearer(0.4)
+  background-color = __.color.twitter
+  border-color = __.color.twitter
+& <-icon
+  color = __.color.twitter

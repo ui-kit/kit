@@ -1,16 +1,7 @@
-background-color = __.color.reddit
-border-color = __.color.reddit
-color hsla(210,47%,40%,1)
-&:hover
-  color hsla(210,47%,40%,1)
-  background-color = __.color.reddit.dark
-  border-color = __.color.reddit.dark
 &:active,
 &.is-active,
 .is-active .dropdown-trigger&
-  color hsla(210,47%,40%,1)
-  background-color = __.color.reddit.darker
-  border-color = __.color.reddit.darker
-&:focus
-  outline none
-  box-shadow = '0 0 2px 2pt ' + __.color.reddit.clone().clearer(0.4)
+  background-color = __.color.reddit
+  border-color = __.color.reddit
+& <-icon
+  color = __.color.reddit

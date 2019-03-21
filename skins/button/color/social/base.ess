@@ -1,0 +1,31 @@
+background-color = __.color.white
+border = '1px solid ' + __.color.black.clone().clearer(.8)
+&:hover
+	border-color = __.color.black.clone().clearer(.8)
+	background-color = __.color.black.clone().clearer(.8)
+	border-color transparent
+&:active,
+&.is-active,
+.is-active .dropdown-trigger&
+  border-color transparent
+  border-color = __.color.black
+  color = __.color.white
+  background = __.color.black
+	& <-icon
+		color inherit
+		opacity .8
+&:focus
+  outline none
+  position relative
+  &:after
+    animation pulselight 4s linear 0s infinite
+    content ''
+    display block
+    border-radius 5px
+    border = '1px solid ' + __.color.black.clone().clearer(.7)
+    box-shadow = '0 0 5px ' + __.color.black.clone().clearer(0.9) + ', inset 0 0 5px ' + __.color.black.clone().clearer(0.9)
+    position absolute
+    left 1px
+    top 1px
+    bottom 1px
+    right 1px

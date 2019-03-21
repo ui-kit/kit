@@ -1,15 +1,7 @@
-background-color = __.color.facebook
-border-color = __.color.facebook
-color = __.color.facebook
-&:hover
-  color = __.white
-  background-color = __.color.facebook.dark
-  border-color = __.color.facebook.dark
 &:active,
 &.is-active,
 .is-active .dropdown-trigger&
-  background-color = __.color.facebook.darker
-  border-color = __.color.facebook.darker
-&:focus
-  outline none
-  box-shadow = '0 0 2px 2pt ' + __.color.facebook.clone().clearer(0.4)
+  background-color = __.color.facebook
+  border-color = __.color.facebook
+& <-icon
+  color = __.color.facebook

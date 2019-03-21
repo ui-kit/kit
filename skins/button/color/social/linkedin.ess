@@ -1,15 +1,7 @@
-background-color = __.color.linkedin
-border-color = __.color.linkedin
-color = __.color.linkedin
-&:hover
-  color = __.white
-  background-color = __.color.linkedin.dark
-  border-color = __.color.linkedin.dark
 &:active,
 &.is-active,
 .is-active .dropdown-trigger&
-  background-color = __.color.linkedin.darker
-  border-color = __.color.linkedin.darker
-&:focus
-  outline none
-  box-shadow = '0 0 2px 2pt ' + __.color.linkedin.clone().clearer(0.4)
+  background-color = __.color.linkedin
+  border-color = __.color.linkedin
+& <-icon
+  color = __.color.linkedin

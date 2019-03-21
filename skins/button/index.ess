@@ -43,14 +43,11 @@ outline none
 &[disabled],
 &:disabled
   background transparent
-  border-color = __.color.white
-  color = __.color.white
+  color inherit
+  border-color initial
   cursor default
   opacity .3
-  &:hover, &:active
-    background transparent
-    border-color = __.color.white
-    color = __.color.white
+  pointer-events none
 
 &-icon,
 .icon

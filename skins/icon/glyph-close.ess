@@ -2,6 +2,12 @@
 
 border-color = 'transparent !important'
 
+&:before,
+&:after
+	border-bottom none
+	border-right none
+	border-left none
+
 &:before 
   margin 0
   transform rotate(45deg)

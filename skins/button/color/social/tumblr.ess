@@ -1,15 +1,7 @@
-background-color = __.color.tumblr
-border-color = __.color.tumblr
-color = __.color.tumblr
-&:hover
-  color = __.white
-  background-color = __.color.tumblr.dark
-  border-color = __.color.tumblr.dark
 &:active,
 &.is-active,
 .is-active .dropdown-trigger&
-  background-color = __.color.tumblr.darker
-  border-color = __.color.tumblr.darker
-&:focus
-  outline none
-  box-shadow = '0 0 2px 2pt ' + __.color.tumblr.clone().clearer(0.4)
+  background-color = __.color.tumblr
+  border-color = __.color.tumblr
+& <-icon
+  color = __.color.tumblr
