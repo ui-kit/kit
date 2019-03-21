@@ -69,12 +69,12 @@ textarea
     bottom -1px
     opacity 1
 
-&:active > &-content &-input,
-&:active > &-content &-action,
-&-is-active > &-content &-input,
-&-is-active > &-content &-action,
-&.is-active > &-content &-input,
-&.is-active > &-content &-action
+&:not(.has-no-hover):active > &-content &-input,
+&:not(.has-no-hover):active > &-content &-action,
+&:not(.has-no-hover)-is-active > &-content &-input,
+&:not(.has-no-hover)-is-active > &-content &-action,
+&:not(.has-no-hover).is-active > &-content &-input,
+&:not(.has-no-hover).is-active > &-content &-action
   color inherit
   background = __.color.white
   color = __.color.black
@@ -111,6 +111,10 @@ textarea
 &.has-no-hover:active
   color = __.color.white
   cursor default
+  background transparent
+  <-label:after
+    display none
+
 
 &.has-no-active,
 &.has-no-active:hover,
