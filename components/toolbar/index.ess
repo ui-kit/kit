@@ -3,6 +3,8 @@
   display flex
   position relative
   min-height 6rem
+  @media screen and (max-width: 700px)
+    min-height 4rem
 
   &-inner
     align-items center
@@ -15,26 +17,25 @@
     width 100%
     min-height inherit
     z-index 9
-    @media screen and (max-width: 1000px)
-      flex-wrap wrap
+
+  &-left,
+  &-right
+    flex 1 1 300px
+    @media screen and (max-width: 1050px)
+      flex 1 1 1px
 
   &-left, &-left div:not([class])
     display flex
     justify-content flex-start
-    width 100%
-    @media screen and (max-width: 1000px)
-      height 36px
-      width 50%
-    @media screen and (max-width: 435px)
-      width 30%
 
   &-center, &-center div:not([class])
     display flex
     justify-content center
+    flex 10000 1 300px
     width 100%
-    @media screen and (max-width: 1000px)
-      order 3
-      width 100%
+    @media screen and (max-width: 1050px)
+      max-width 0
+      flex 1 1 0
 
   &-center
     background-color inherit
@@ -45,12 +46,6 @@
     display flex
     justify-content flex-end
     align-items center
-    width 100%
     min-height 6rem
-    @media screen and (max-width: 1000px)
-      height 36px
-      width 50%
     @media screen and (max-width: 700px)
       min-height 4rem
-    @media screen and (max-width: 435px)
-      width 70%

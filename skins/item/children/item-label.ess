@@ -4,16 +4,17 @@ flex 1
 line-height 1.45em
 padding 8px 0 7px 12px
 text-align left
-&:after
+position relative
+z-index 1
+&:before
   border-color inherit
   bottom 0
-  content ""
+  content ''
   display block
   height 0
   left 1.5rem
   position absolute
   right 1.5rem
-  height 1px
   background = __.color.white
   z-index -1
 

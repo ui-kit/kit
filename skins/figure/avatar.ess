@@ -2,9 +2,12 @@
 
 &-content
   %./children/content.ess
-  font-weight bold
-  letter-spacing .05em
   text-transform uppercase
+  font-size 1rem
+  font-weight bold
+  background = __.color.white
+  &-text
+  	margin-top 1px
     
 &-image
   %./children/image.ess

@@ -1,18 +1,13 @@
-border 1px solid
-border-left none
-border-right none
-border-color initial
-border-radius 6px
 box-sizing border-box
 height 0
 margin -4px 0 0
 position relative
 transition all .15s ease
-width 16px
+width 12px
 
 &:before,
 &:after
-  border 1px solid
+  border-top 1px solid
   border-color initial
   border-left none
   border-radius 6px
@@ -20,13 +15,13 @@ width 16px
   box-sizing border-box
   content ""
   display block
-  margin -8px 0 0
+  margin -3px 0 0
   position absolute
   transition all .15s ease
   width 100%
 
 &:after
-  margin-top 6px
+  margin-top 3px
 
 &.is-active, &-is-active
   border-color transparent

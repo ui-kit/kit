@@ -1,7 +1,9 @@
 %ui-kit/skins/button/index.ess
+%ui-kit/skins/button/color/white.ess
 
-border-radius 6px 0 0 2px
+border-radius 6px 0 0 6px
 border-right 0
+color = __.color.black
 margin-right 12px
 padding-right 8px
 transition none
@@ -9,23 +11,12 @@ transition none
   // So the immediate child positions above pseudo element
   position relative
 &:before
-  border 1px solid
-  border-bottom none
-  border-color inherit
-  border-left none
+  border 1.5rem solid transparent
+  border-left-color inherit
   box-sizing border-box
   content ''
-  height 25px
   position absolute
-  right 0
+  left 100%
   top 50%
-  transform translate(50%, -50%) rotate(45deg)
+  transform translateY(-50%)
   transition none
-  width 25px
-
-&:hover
-  &:before
-    background-color inherit
-&:active
-  &:before
-    background-color inherit

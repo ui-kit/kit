@@ -7,9 +7,9 @@
 &-menu-close
     %../button/close.ess
     position absolute
-    top 0
-    left 0
-    transform translate(-50%, -25%)
+    top -1rem
+    left -1rem
+    margin 0
     // because active items have z-index of 2
     z-index 3
 &-trigger

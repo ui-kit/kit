@@ -19,20 +19,16 @@ position relative
   border-top-left-radius 6px
   border-top-right-radius 6px
   border-top-width 1px
-  & <-label:after
-    border-top-left-radius 5px
-    border-top-right-radius 5px
+&:first-of-type &-label:before
+  border-top-left-radius 5px
+  border-top-right-radius 5px
 &:last-of-type
   border-bottom-left-radius 6px
   border-bottom-right-radius 6px
   border-bottom-width 1px
-  & <-label:after
-    border-bottom-left-radius 5px
-    border-bottom-right-radius 5px
-  & <-label:after
-    opacity 0
-  & <-input:focus + <-label:after
-    opacity 1
+&:last-of-type &-label:before
+  border-bottom-left-radius 5px
+  border-bottom-right-radius 5px
 
 input,
 textarea
@@ -96,8 +92,14 @@ textarea
   font-weight bold
 &-input:focus + &-label
   color = __.color.primary
-  &:after
-    background = __.color.white
+  position static
+&-input:focus + &-label:before
+  background = __.color.white
+  left 0
+  right 0
+  bottom 0
+  top -1px
+  height auto
 &-input:focus:active + &-label
   color inherit
 

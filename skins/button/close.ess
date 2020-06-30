@@ -4,9 +4,19 @@
 %./fill/fill.ess
 %./shadow/shadow-dark.ess
 
+background = __.color.black
 border = '1px solid #fff !important'
-
 border-radius 1000px
+
+&:hover
+	background = __.color.white
+	color = __.color.black
+
+&:active
+	background = __.color.primary
+	border-color = __.color.primary
+	color = __.color.white
+	margin 0
 
 &:before,
 &:after

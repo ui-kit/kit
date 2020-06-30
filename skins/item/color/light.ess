@@ -1,0 +1,64 @@
+background = __.color.white
+color = __.color.black
+border-color = __.color.black
+&:active
+  background = __.color.black
+  color = __.color.white
+
+&:hover
+  background = __.color.black.clone().clearer(.9)
+
+&:active,
+&-is-active,
+&.is-active
+  color = __.color.primary
+  & <-label:after
+    background = __.color.black
+
+&:not(.has-no-hover):active > &-content &-input,
+&:not(.has-no-hover):active > &-content &-action,
+&:not(.has-no-hover)-is-active > &-content &-input,
+&:not(.has-no-hover)-is-active > &-content &-action,
+&:not(.has-no-hover).is-active > &-content &-input,
+&:not(.has-no-hover).is-active > &-content &-action
+  color inherit
+  background = __.color.black
+  color = __.color.white
+
+&.is-disabled,
+&[disabled],
+&:disabled,
+.is-disabled &
+  color = __.color.black.clone().clearer(.7)
+
+
+&-content:after
+  background = __.color.black
+
+&-input:focus + &-label
+  color = __.color.primary
+  position static
+&-input:focus + &-label:before
+  background = __.color.black
+&-input:focus:active + &-label
+  color inherit
+
+&.has-no-hover,
+&.has-no-hover:hover,
+&.has-no-hover:active
+  color = __.color.black
+  background transparent
+
+&.has-no-active,
+&.has-no-active:hover,
+&.has-no-active:active
+  background = __.color.white
+
+&.is-input
+  & <-input:focus,
+  & <-input:active,
+  &:active,
+  &-is-active,
+  &.is-active
+    color = __.color.white
+    background = __.color.black

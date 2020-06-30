@@ -6,7 +6,6 @@ border-radius 1000px
 box-sizing border-box
 cursor pointer
 display flex
-font-weight bold
 position relative
 text-transform uppercase
 

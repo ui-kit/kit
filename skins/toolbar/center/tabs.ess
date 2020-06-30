@@ -1,5 +1,14 @@
 %ui-kit/skins/tabs/index.ess
 white-space nowrap
+@media screen and (max-width: 1050px)
+  background = 'linear-gradient(' + __.color.black.clone().clearer(1) + ', ' +  __.color.black + '  50%)'
+  bottom 0
+  height 4rem
+  justify-content center
+  left 0
+  padding 0
+  position fixed
+  right 0
 &-item
   margin 0 .5rem
 @media all and (max-width: 1000px)

@@ -5,6 +5,7 @@ overflow hidden
 position absolute
 width 0
 z-index 10
+background = __.color.black
 &-is-active
   overflow visible
   height auto

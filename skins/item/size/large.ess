@@ -5,8 +5,9 @@
   padding-right 1.5rem
   &:after
     left 1.5rem
+    right 1.5rem
 &-label
-  padding 15px 0 12px 1.5rem
+  padding 17px 0 14px 1.5rem
   &:after
     left 1.5rem
   &-heading
@@ -15,7 +16,7 @@
     margin-top 2px
     margin-bottom -6px
 &-input
-  padding 15px 0 12px 1.5rem
+  padding 17px 0 14px 1.5rem
 &-icon
   width 48px
   margin-right -1.5rem

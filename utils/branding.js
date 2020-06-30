@@ -131,8 +131,8 @@ out.h4 = '24px';
 out.h5 = '21px';
 out.h6 = '18px';
 out.h7 = '16px';
-out.h8 = '14px';
-out.h9 = '12px';
-out.h10 = '10px';
+out.h8 = '12px';
+out.h9 = '10px';
+out.h10 = '8px';
 
 exports['default'] = module.exports = out;

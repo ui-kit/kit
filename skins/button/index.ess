@@ -11,7 +11,7 @@ height auto
 justify-content center
 letter-spacing .05em
 line-height 1em
-padding 12px 1.25rem 7px
+padding 12px 1.25rem 10px
 position relative
 text-align center
 text-decoration none
@@ -53,9 +53,8 @@ outline none
 .icon
   box-sizing border-box
   display inline-block
-  line-height 12px
+  line-height 1em
   vertical-align middle
-  margin-top -1px
   &:before,
   &:after
     vertical-align middle
