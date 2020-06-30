@@ -4,7 +4,7 @@
 %./fill/fill.ess
 %./shadow/shadow-dark.ess
 
-border = '2px solid #fff !important'
+border = '1px solid #fff !important'
 
 border-radius 1000px
 

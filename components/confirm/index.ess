@@ -32,7 +32,7 @@
       border-bottom-left-radius 6px
       border-bottom-right-radius 6px
     &-is-type-delete&-is-confirm
-      %../../skins/button/color/red.ess
+      %../../skins/button/color/primary.ess
       %../../skins/button/fill/fill.ess
     &-is-type-confirm&-is-confirm
       %../../skins/button/color/primary.ess

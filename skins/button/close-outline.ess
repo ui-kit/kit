@@ -3,7 +3,7 @@
 %./size/small-square.ess
 %./fill/no-fill.ess
 
-border = '2px solid #fff !important'
+border = '1px solid #fff !important'
 border-radius 1000px
 color = __.color.white
 

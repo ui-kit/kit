@@ -11,10 +11,6 @@ z-index 3
   top 50%
   transform translate(-50%,-50%)
 
-.is-active &,
-<:active &
-	background = __.color.white
-
 <:first-of-type &
   border-top-left-radius 5px
 <:last-of-type &

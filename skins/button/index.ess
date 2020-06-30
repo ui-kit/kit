@@ -1,4 +1,4 @@
-border 2px solid
+border 1px solid
 border-color inherit
 border-radius .5rem
 box-sizing border-box
@@ -11,7 +11,7 @@ height auto
 justify-content center
 letter-spacing .05em
 line-height 1em
-padding 11px 1.25rem 7px
+padding 12px 1.25rem 7px
 position relative
 text-align center
 text-decoration none

@@ -1,4 +1,4 @@
-border 2px solid
+border 1px solid
 border-color currentColor
 box-sizing border-box
 color = __.color.white.light

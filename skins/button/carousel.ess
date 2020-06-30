@@ -1,7 +1,6 @@
 &-prev,
 &-next
   %./index.ess
-  %./color/white-gray-border.ess
   %./size/square.ess
   margin -18px 12px 0 12px
   position absolute

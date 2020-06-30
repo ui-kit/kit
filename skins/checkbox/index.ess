@@ -17,7 +17,7 @@ vertical-align middle
 
 &:focus
   &:after
-    border 2px solid
+    border 1px solid
     border-color inherit
     border-radius 9px
     bottom -6px

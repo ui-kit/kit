@@ -3,7 +3,7 @@ color #fff
 &-item
   &:before,
   &:after
-    border = '2px solid ' + __.color.white
+    border = '1px solid ' + __.color.white
     bottom 0
     content ""
     display block

@@ -9,7 +9,7 @@ transition none
   // So the immediate child positions above pseudo element
   position relative
 &:before
-  border 2px solid
+  border 1px solid
   border-bottom none
   border-color inherit
   border-left none
