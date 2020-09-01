@@ -5,7 +5,7 @@ box-sizing border-box
 color inherit
 cursor pointer
 display inline-block
-font-size = __.h8
+font-size 1rem
 font-weight bold
 height auto
 justify-content center

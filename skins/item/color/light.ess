@@ -1,12 +1,12 @@
-background = __.color.white
+background = __.color.white 
 color = __.color.black
 border-color = __.color.black
 &:active
-  background = __.color.black
+  background = __.color.white.clone().clearer(.2)
   color = __.color.white
 
 &:hover
-  background = __.color.black.clone().clearer(.9)
+  background = __.color.white.clone().clearer(.1)
 
 &:active,
 &-is-active,
@@ -30,7 +30,6 @@ border-color = __.color.black
 &:disabled,
 .is-disabled &
   color = __.color.black.clone().clearer(.7)
-
 
 &-content:after
   background = __.color.black

@@ -4,7 +4,7 @@ color = __.color.white
 cursor pointer
 display flex
 flex-direction row-reverse
-font-size = __.h8
+font-size 1rem
 justify-content space-between
 text-align left
 border 1px solid
@@ -58,6 +58,8 @@ textarea
   cursor default
   z-index 2
   color = __.color.primary
+  & <-content:after
+    background = __.color.primary
   & <-label:after
     background = __.color.white
     height calc(100% + 2px)

@@ -1,6 +1,8 @@
 // Modifies to:
 // height: 48px
 
+font-size 1rem
+
 &-content
   padding-right 1.5rem
   &:after
