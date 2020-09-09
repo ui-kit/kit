@@ -3,6 +3,7 @@
 align-items center
 display flex
 flex-wrap wrap
+font-size 1rem
 justify-content center
 letter-spacing .05em
 min-height 36px
@@ -24,7 +25,6 @@ width 100%
   content ''
   display block
   left 0
-  opacity .3
   position absolute
   right 0
   top 0

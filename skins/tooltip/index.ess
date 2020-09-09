@@ -1,6 +1,6 @@
 position relative
 display inline-block
- 
+
 &:after, 
 &:before,
 &-body 
@@ -15,8 +15,9 @@ display inline-block
 &-body
   border-radius 6px
   content attr(data-tooltip)
-  font-size = __.h8
+  font-size 1rem
   font-weight normal 
+  letter-spacing .05em
   letter-spacing 0
   line-height 21px
   max-width 200px
