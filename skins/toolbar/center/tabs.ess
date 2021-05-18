@@ -1,7 +1,9 @@
 %ui-kit/skins/tabs/index.ess
 white-space nowrap
 @media screen and (max-width: 1050px)
-  background = 'linear-gradient(' + __.color.black.clone().clearer(1) + ', ' +  __.color.black + '  50%)'
+  background = __.color.black.clone().clearer(.4)
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   bottom 0
   height 4rem
   justify-content center
