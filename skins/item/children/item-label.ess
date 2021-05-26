@@ -26,7 +26,6 @@ z-index 1
 &-subheading
   display block
   font-size = __.h9
-  letter-spacing .05em
   line-height 1.2em
   margin-bottom -6px
   opacity .7
