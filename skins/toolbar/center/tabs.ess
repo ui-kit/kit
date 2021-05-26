@@ -14,7 +14,7 @@ white-space nowrap
 &-item
   margin 0 .5rem
 @media all and (max-width: 1000px)
-  padding .5rem
+  padding 0
 &-arrow
   align-self center
   cursor default
