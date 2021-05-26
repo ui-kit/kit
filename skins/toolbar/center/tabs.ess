@@ -28,6 +28,7 @@ white-space nowrap
   &-icon
     %../../icon/glyph-arrow/index.ess
     %../../icon/glyph-arrow/direction/right.ess
+    opacity 1
 @media screen and (max-width: 720px)
   font-size = __.h9
   &-item
