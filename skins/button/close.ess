@@ -16,7 +16,6 @@ border-radius 1000px
 	background = __.color.primary
 	border-color = __.color.primary
 	color = __.color.white
-	margin 0
 
 &:before,
 &:after
